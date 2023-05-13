@@ -1,0 +1,17 @@
+R[0]=StatementList : StatementList Statement ; T[0->7]
+ ├─R[1]=StatementList : Statement ; T[0->3]
+ │  └─R[2]=Statement : SyntaxProduction ; T[0->3]
+ │     └─R[4]=SyntaxProduction : 'Vn' ':' CandidateList ';' ; T[0->3]
+ │        ├─T[0]='Vn' PreRegex
+ │        ├─T[1]=':' :
+ │        ├─R[6]=CandidateList : Candidate ; T[2]
+ │        │  └─R[8]=Candidate : V ; T[2]
+ │        │     └─R[10]=V : 'Vt' ; T[2]
+ │        │        └─T[2]='Vt' 'refVt'
+ │        └─T[3]=';' ;
+ └─R[3]=Statement : LexiProduction ; T[4->7]
+    └─R[12]=LexiProduction : 'Vt' ':' 'pattern' ';' ; T[4->7]
+       ├─T[4]='Vt' 'refVt'
+       ├─T[5]=':' :
+       ├─T[6]='pattern' %%(\\|[Y-\\])+%%
+       └─T[7]=';' ;

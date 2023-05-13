@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<!-- saved from url=(0039)http://mermaideditor.example/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">	
+    <style>
+        body {
+            margin: 0;
+            width: fit-content;
+        }
+        .loader {
+            border: 16px solid #f3f3f3; /* Light grey */
+            border-top: 16px solid #3498db; /* Blue */
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            animation: spin 2s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        #busyIndicator {
+            text-align: center;
+        }
+
+        .loader {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+        }
+        #mermaidErrors{
+            color: red;
+        }
+        svg, img, canvas {
+            display: block;
+        }
+        #ui{
+            display : none;
+        }
+    </style>
+</head>
+<body>
+    <div id="busyIndicator" style="display: none;">
+        <div class="loader">
+
+        </div>
+    </div>
+
+    <div id="ui" style="display: block;">
+        <textarea rows="10" cols="100" id="myCode" style="display : none">    
+        graph TD
+        A[Client] --&gt; B[Load Balancer]
+        B --&gt; C[Server01]
+        B --&gt; D[Server02]
+        </textarea>
+
+        <pre id="mermaidErrors" style="display: none;">Error: Parse error on line 7:
+...-3)
+state0 --&gt;|"\""| state4_1
+state4_1...
+----------------------^
+Expecting 'SEMI', 'NEWLINE', 'SPACE', 'EOF', 'GRAPH', 'DIR', 'subgraph', 'SQS', 'SQE', 'end', 'AMP', 'DOUBLECIRCLEEND', 'PE', '-)', 'STADIUMEND', 'SUBROUTINEEND', 'ALPHA', 'COLON', 'PIPE', 'CYLINDEREND', 'DIAMOND_STOP', 'TAGEND', 'TRAPEND', 'INVTRAPEND', 'START_LINK', 'LINK', 'STYLE', 'LINKSTYLE', 'CLASSDEF', 'CLASS', 'CLICK', 'DOWN', 'UP', 'DEFAULT', 'NUM', 'COMMA', 'MINUS', 'BRKT', 'DOT', 'PCT', 'TAGSTART', 'PUNCTUATION', 'UNICODE_TEXT', 'PLUS', 'EQUALS', 'MULT', 'UNDERSCORE', got 'STR'</pre>
+
+        <div id="svgContainer" style="display: block;">
+            <div id="mermaidGraph"><svg aria-roledescription="flowchart-v2" role="graphics-document document" viewBox="-8 -8 270.0390625 359" style="max-width: 270.0390625px;" xmlns="http://www.w3.org/2000/svg" width="100%" id="mermaidGraphInSVG"><style>#mermaidGraphInSVG{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;fill:#333;}#mermaidGraphInSVG .error-icon{fill:#552222;}#mermaidGraphInSVG .error-text{fill:#552222;stroke:#552222;}#mermaidGraphInSVG .edge-thickness-normal{stroke-width:2px;}#mermaidGraphInSVG .edge-thickness-thick{stroke-width:3.5px;}#mermaidGraphInSVG .edge-pattern-solid{stroke-dasharray:0;}#mermaidGraphInSVG .edge-pattern-dashed{stroke-dasharray:3;}#mermaidGraphInSVG .edge-pattern-dotted{stroke-dasharray:2;}#mermaidGraphInSVG .marker{fill:#333333;stroke:#333333;}#mermaidGraphInSVG .marker.cross{stroke:#333333;}#mermaidGraphInSVG svg{font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:16px;}#mermaidGraphInSVG .label{font-family:"trebuchet ms",verdana,arial,sans-serif;color:#333;}#mermaidGraphInSVG .cluster-label text{fill:#333;}#mermaidGraphInSVG .cluster-label span{color:#333;}#mermaidGraphInSVG .label text,#mermaidGraphInSVG span{fill:#333;color:#333;}#mermaidGraphInSVG .node rect,#mermaidGraphInSVG .node circle,#mermaidGraphInSVG .node ellipse,#mermaidGraphInSVG .node polygon,#mermaidGraphInSVG .node path{fill:#ECECFF;stroke:#9370DB;stroke-width:1px;}#mermaidGraphInSVG .node .label{text-align:center;}#mermaidGraphInSVG .node.clickable{cursor:pointer;}#mermaidGraphInSVG .arrowheadPath{fill:#333333;}#mermaidGraphInSVG .edgePath .path{stroke:#333333;stroke-width:2.0px;}#mermaidGraphInSVG .flowchart-link{stroke:#333333;fill:none;}#mermaidGraphInSVG .edgeLabel{background-color:#e8e8e8;text-align:center;}#mermaidGraphInSVG .edgeLabel rect{opacity:0.5;background-color:#e8e8e8;fill:#e8e8e8;}#mermaidGraphInSVG .cluster rect{fill:#ffffde;stroke:#aaaa33;stroke-width:1px;}#mermaidGraphInSVG .cluster text{fill:#333;}#mermaidGraphInSVG .cluster span{color:#333;}#mermaidGraphInSVG div.mermaidTooltip{position:absolute;text-align:center;max-width:200px;padding:2px;font-family:"trebuchet ms",verdana,arial,sans-serif;font-size:12px;background:hsl(80, 100%, 96.2745098039%);border:1px solid #aaaa33;border-radius:2px;pointer-events:none;z-index:100;}#mermaidGraphInSVG .flowchartTitleText{text-anchor:middle;font-size:18px;fill:#333;}#mermaidGraphInSVG :root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}#mermaidGraphInSVG .default&gt;*{fill:#C7EDCC!important;stroke:#993399!important;stroke-width:4px!important;text-align:left!important;}#mermaidGraphInSVG .default span{fill:#C7EDCC!important;stroke:#993399!important;stroke-width:4px!important;text-align:left!important;}</style><g><marker orient="auto" markerHeight="12" markerWidth="12" markerUnits="userSpaceOnUse" refY="5" refX="10" viewBox="0 0 12 20" class="marker flowchart" id="flowchart-pointEnd"><path style="stroke-width: 1; stroke-dasharray: 1, 0;" class="arrowMarkerPath" d="M 0 0 L 10 5 L 0 10 z"></path></marker><marker orient="auto" markerHeight="12" markerWidth="12" markerUnits="userSpaceOnUse" refY="5" refX="0" viewBox="0 0 10 10" class="marker flowchart" id="flowchart-pointStart"><path style="stroke-width: 1; stroke-dasharray: 1, 0;" class="arrowMarkerPath" d="M 0 5 L 10 10 L 10 0 z"></path></marker><marker orient="auto" markerHeight="11" markerWidth="11" markerUnits="userSpaceOnUse" refY="5" refX="11" viewBox="0 0 10 10" class="marker flowchart" id="flowchart-circleEnd"><circle style="stroke-width: 1; stroke-dasharray: 1, 0;" class="arrowMarkerPath" r="5" cy="5" cx="5"></circle></marker><marker orient="auto" markerHeight="11" markerWidth="11" markerUnits="userSpaceOnUse" refY="5" refX="-1" viewBox="0 0 10 10" class="marker flowchart" id="flowchart-circleStart"><circle style="stroke-width: 1; stroke-dasharray: 1, 0;" class="arrowMarkerPath" r="5" cy="5" cx="5"></circle></marker><marker orient="auto" markerHeight="11" markerWidth="11" markerUnits="userSpaceOnUse" refY="5.2" refX="12" viewBox="0 0 11 11" class="marker cross flowchart" id="flowchart-crossEnd"><path style="stroke-width: 2; stroke-dasharray: 1, 0;" class="arrowMarkerPath" d="M 1,1 l 9,9 M 10,1 l -9,9"></path></marker><marker orient="auto" markerHeight="11" markerWidth="11" markerUnits="userSpaceOnUse" refY="5.2" refX="-1" viewBox="0 0 11 11" class="marker cross flowchart" id="flowchart-crossStart"><path style="stroke-width: 2; stroke-dasharray: 1, 0;" class="arrowMarkerPath" d="M 1,1 l 9,9 M 10,1 l -9,9"></path></marker><g class="root"><g class="clusters"></g><g class="edgePaths"><path marker-end="url(#flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-state0 LE-state4_1" id="L-state0-state4_1-0" d="M119.80859375,28.822716346153847L103.11588541666667,35.435596955128204C86.42317708333333,42.04847756410256,53.037760416666664,55.27423878205128,38.27930951658576,67.63711939102565C23.520858616504853,80,27.389373483009706,91.5,29.323630916262132,97.25L31.257888349514563,103"></path><path marker-end="url(#flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-state4_1 LE-state0" id="L-state4_1-state0-0" d="M60.302563713592235,103L68.19224059466019,97.25C76.08191747572816,91.5,91.86127123786407,80,104.44157691140776,68.5C117.02188258495146,57,126.40314016990293,45.5,131.09376896237865,39.75L135.78439775485438,34"></path><path marker-end="url(#flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-state4_1 LE-state4_2" id="L-state4_1-state4_2-0" d="M49.32554611650485,137L53.502408222087375,142.75C57.679270327669904,148.5,66.03299453883496,160,74.90048543689319,171.5C83.76797633495146,183,93.1492339199029,194.5,97.83986271237865,200.25L102.53049150485437,206"></path><path marker-end="url(#flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-state4_1 LE-state4_3" id="L-state4_1-state4_3-0" d="M30.488091626213592,137L28.29346177184466,142.75C26.098831917475724,148.5,21.709572208737864,160,19.51494235436893,174.33333333333334C17.3203125,188.66666666666666,17.3203125,205.83333333333334,17.3203125,223C17.3203125,240.16666666666666,17.3203125,257.3333333333333,28.382433252427187,271.6666666666667C39.444554004854375,286,61.56879550970874,297.5,72.63091626213593,303.25L83.69303701456312,309"></path><path marker-end="url(#flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-state4_3 LE-state4_2" id="L-state4_3-state4_2-0" d="M131.46556432038835,309L136.5617983919903,303.25C141.65803246359224,297.5,151.85050060679612,286,151.85050060679612,274.5C151.85050060679612,263,141.65803246359224,251.5,136.5617983919903,245.75L131.46556432038835,240"></path><path marker-end="url(#flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-state4_3 LE-state0" id="L-state4_3-state0-0" d="M153.375,311.4190644254352L168.97916666666666,305.26588702119597C184.58333333333334,299.1127096169568,215.79166666666666,286.8063548084784,231.39583333333334,272.06984407090584C247,257.3333333333333,247,240.16666666666666,247,223C247,205.83333333333334,247,188.66666666666666,247,171.5C247,154.33333333333334,247,137.16666666666666,247,120C247,102.83333333333333,247,85.66666666666667,235.74934895833334,71.13138183325977C224.49869791666666,56.59609699985287,201.99739583333334,44.69219399970573,190.74674479166666,38.74024249963217L179.49609375,32.788290999558605"></path><path marker-end="url(#flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-state4_2 LE-state4_2" id="L-state4_2-state4_2-0" d="M153.375,214.4107746503932L159.40972222222223,213.00897887532767C165.44444444444446,211.60718310026212,177.5138888888889,208.80359155013107,185.05729166666666,207.40179577506555C192.60069444444446,206,195.61805555555554,206,198.63541666666666,208.83333333333334C201.65277777777774,211.66666666666666,204.67013888888889,217.33333333333334,204.6701388888889,223C204.67013888888889,228.66666666666666,201.65277777777774,234.33333333333334,198.63541666666666,237.16666666666666C195.61805555555554,240,192.60069444444446,240,185.05729166666666,238.59820422493445C177.5138888888889,237.19640844986893,165.44444444444446,234.39281689973788,159.40972222222223,232.99102112467233L153.375,231.5892253496068"></path><path marker-end="url(#flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-state4_2 LE-state4_3" id="L-state4_2-state4_3-0" d="M99.81234830097088,240L94.20234754247572,245.75C88.59234678398059,251.5,77.3723452669903,263,77.3723452669903,274.5C77.3723452669903,286,88.59234678398059,297.5,94.20234754247572,303.25L99.81234830097088,309"></path><path marker-end="url(#flowchart-pointEnd)" style="fill:none;" class="edge-thickness-normal edge-pattern-solid flowchart-link LS-state4_2 LE-state0" id="L-state4_2-state0-0" d="M132.66474514563106,206L138.1665844963592,200.25C143.66842384708738,194.5,154.67210254854368,183,160.17394189927185,168.66666666666666C165.67578125,154.33333333333334,165.67578125,137.16666666666666,165.67578125,120C165.67578125,102.83333333333333,165.67578125,85.66666666666667,163.88675667475727,71.33333333333333C162.09773209951456,57,158.51968294902912,45.5,156.73065837378638,39.75L154.94163379854368,34"></path></g><g class="edgeLabels"><g transform="translate(19.65234375, 68.5)" class="edgeLabel"><g transform="translate(-2.6015625, -9.5)" class="label"><foreignobject height="19" width="5.203125"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel">"</span></div></foreignobject></g></g><g transform="translate(107.640625, 68.5)" class="edgeLabel"><g transform="translate(-12.046875, -9.5)" class="label"><foreignobject height="19" width="24.09375"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel">" \0</span></div></foreignobject></g></g><g transform="translate(74.38671875, 171.5)" class="edgeLabel"><g transform="translate(-19.3125, -9.5)" class="label"><foreignobject height="19" width="38.625"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel">other</span></div></foreignobject></g></g><g transform="translate(17.3203125, 223)" class="edgeLabel"><g transform="translate(-2.84375, -9.5)" class="label"><foreignobject height="19" width="5.6875"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel">\</span></div></foreignobject></g></g><g transform="translate(162.04296875, 274.5)" class="edgeLabel"><g transform="translate(-19.3125, -9.5)" class="label"><foreignobject height="19" width="38.625"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel">other</span></div></foreignobject></g></g><g transform="translate(247, 171.5)" class="edgeLabel"><g transform="translate(-7.0390625, -9.5)" class="label"><foreignobject height="19" width="14.078125"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel">\0</span></div></foreignobject></g></g><g transform="translate(207.6875, 223)" class="edgeLabel"><g transform="translate(-19.3125, -9.5)" class="label"><foreignobject height="19" width="38.625"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel">other</span></div></foreignobject></g></g><g transform="translate(66.15234375, 274.5)" class="edgeLabel"><g transform="translate(-2.84375, -9.5)" class="label"><foreignobject height="19" width="5.6875"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel">\</span></div></foreignobject></g></g><g transform="translate(165.67578125, 120)" class="edgeLabel"><g transform="translate(-12.046875, -9.5)" class="label"><foreignobject height="19" width="24.09375"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="edgeLabel">" \0</span></div></foreignobject></g></g></g><g class="nodes"><g transform="translate(149.65234375, 17)" id="flowchart-state0-2213" class="node default default"><rect height="34" width="59.6875" y="-17" x="-29.84375" ry="5" rx="5" style="" class="basic label-container"></rect><g transform="translate(-22.34375, -9.5)" style="" class="label"><foreignobject height="19" width="44.6875"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel">state0</span></div></foreignobject></g></g><g transform="translate(36.9765625, 120)" id="flowchart-state4_1-2214" class="node default default"><rect height="34" width="73.953125" y="-17" x="-36.9765625" ry="5" rx="5" style="" class="basic label-container"></rect><g transform="translate(-29.4765625, -9.5)" style="" class="label"><foreignobject height="19" width="58.953125"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel">state4-1</span></div></foreignobject></g></g><g transform="translate(116.3984375, 223)" id="flowchart-state4_2-2215" class="node default default"><rect height="34" width="73.953125" y="-17" x="-36.9765625" ry="5" rx="5" style="" class="basic label-container"></rect><g transform="translate(-29.4765625, -9.5)" style="" class="label"><foreignobject height="19" width="58.953125"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel">state4-2</span></div></foreignobject></g></g><g transform="translate(116.3984375, 326)" id="flowchart-state4_3-2216" class="node default default"><rect height="34" width="73.953125" y="-17" x="-36.9765625" ry="5" rx="5" style="" class="basic label-container"></rect><g transform="translate(-29.4765625, -9.5)" style="" class="label"><foreignobject height="19" width="58.953125"><div style="display: inline-block; white-space: nowrap;" xmlns="http://www.w3.org/1999/xhtml"><span class="nodeLabel">state4-3</span></div></foreignobject></g></g></g></g></g></svg></div>
+        </div>
+
+        <div id="pngContainer" style="display: none;">
+            <canvas width="270" height="359"></canvas>
+        </div>
+    </div>
+    <!--<script src="https://cdn.jsdelivr.net/npm/mermaid@9.4.2-rc.1/dist/mermaid.js"></script>-->
+    <!--<script src="mermaid.js"></script>-->
+    <script type="module">
+        /*import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10.0.0/+esm'*/
+        import mermaid from 'http://mermaideditor.example/mermaid.10.0.0/mermaid.esm.mjs'
+        mermaid.initialize({ startOnLoad: false });
+
+        const sendMessage = function (msg) {
+            window.chrome.webview.postMessage(msg);
+        }
+
+        export async function updateGraph(graphDefinition, imageExt) {
+            console.log("updateGraph invoked()")
+
+            const svgContainerElement = document.getElementById("svgContainer");
+            const pngContainerElement = document.getElementById("pngContainer");
+            svgContainerElement.style.display = imageExt == "png" ? "none" : "block";
+            pngContainerElement.style.display = imageExt == "svg" ? "none" : "block";
+
+            const busyIndicatorElement = document.getElementById("busyIndicator");
+            busyIndicatorElement.style.display = "none";
+            const uiElement = document.getElementById("ui");
+            uiElement.style.display = "block";
+
+            const myGraph = document.querySelector("#mermaidGraph");
+            const myErrors = document.querySelector("#mermaidErrors");
+
+            try
+            {
+                console.log("mermaid.parse");
+                await mermaid.parse(graphDefinition);
+            }
+            catch (error)
+            {                
+                console.log("mermaid.parse -> catch (error) \r\n");
+                console.log(JSON.stringify(error));
+                //console.log(mermaid.parseError(error));
+            }
+
+            try
+            {
+                 console.log("mermaid.mermaidAPI.render start");
+                 let graph = await mermaid.mermaidAPI.render('mermaidGraphInSVG', graphDefinition);
+                 //console.log(JSON.stringify(graph));                
+                 myGraph.innerHTML = graph.svg;
+                 myErrors.style.display = "none";
+                 getPNG(false);                
+            }
+            catch (error)
+            {
+                console.log("mermaid.mermaidAPI.render -> catch (error) \r\n");
+                console.log(JSON.stringify(error));
+                //console.log(mermaid.parseError(error));
+            }
+        }
+
+        window.updateGraph = updateGraph;
+
+        const codeElement = document.getElementById('myCode');
+        codeElement.addEventListener('input', (e) => updateGraph(e.target.value, "svg"));
+
+
+        function drawInlineSVG(svgElement, ctx) {
+            return new Promise((resolve, reject) => {
+                var svgURL = new XMLSerializer().serializeToString(svgElement);
+                var img = new Image();
+
+                img.onload = function () {
+                    ctx.drawImage(this, 0, 0);
+                    resolve();
+                }
+                img.src = 'data:image/svg+xml; charset=utf8, ' + encodeURIComponent(svgURL);
+            })
+        }
+
+        async function getPNG(save = true) {
+            var svgElem = document.querySelector('svg');
+            var canvas = document.querySelector('canvas');
+            var ctx = canvas.getContext("2d");
+
+            const { x, y, width, height } = svgElem.viewBox.baseVal;
+
+            canvas.width = width ?? svgElem.clientWidth;
+            canvas.height = height ?? svgElem.clientHeight;
+
+            await drawInlineSVG(svgElem, ctx);
+            var img = canvas.toDataURL("image/png");
+            //console.log(img);
+            if (save) {
+                sendMessage(img);
+            }
+            return img;
+        }
+
+        mermaid.parseError = (error, hash) => {
+            console.log("mermaid.parseError \r\n");
+            console.log(error);
+            console.log("\r\n");
+            console.log(JSON.stringify(error));
+            const myErrors = document.querySelector("#mermaidErrors");
+            myErrors.style.display = "block";
+            myErrors.innerHTML = error;
+        };
+
+        console.log("script end")
+    </script>
+  
+
+
+</body></html>

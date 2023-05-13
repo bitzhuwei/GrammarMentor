@@ -1,0 +1,32 @@
+flowchart
+classDef c0001 color:#FF0000;
+classDef c0010 stroke-dasharray: 10 10;
+classDef c0011 stroke-dasharray: 10 10,color:#FF0000;
+classDef c0100 fill:#BB66EE;
+classDef c0101 fill:#BB66EE,color:#FF0000;
+classDef c0110 fill:#BB66EE,stroke-dasharray: 10 10;
+classDef c0111 fill:#BB66EE,stroke-dasharray: 10 10,color:#FF0000;
+classDef c1000 stroke:#333,stroke-width:4px;
+classDef c1001 stroke:#333,stroke-width:4px,color:#FF0000;
+classDef c1010 stroke:#333,stroke-width:4px,stroke-dasharray: 10 10;
+classDef c1011 stroke:#333,stroke-width:4px,stroke-dasharray: 10 10,color:#FF0000;
+classDef c1100 stroke:#333,stroke-width:4px,fill:#BB66EE;
+classDef c1101 stroke:#333,stroke-width:4px,fill:#BB66EE,color:#FF0000;
+classDef c1110 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10;
+classDef c1111 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10,color:#FF0000;
+NFA0_0_30399051("NFA0-0 wholeStart")
+class NFA0_0_30399051 c1000;
+NFA1_1_55573455[\"NFA1-1 scope[1]
+AcceptToken 'integer'"/]
+class NFA1_1_55573455 c0101;
+NFA2_1_5156011[\"NFA2-1 char[1]
+AcceptToken ','"/]
+class NFA2_1_5156011 c0101;
+NFA0_0_30399051 -->|"[0-9]
+BeginToken 'integer'
+ExtendToken 'integer'"|NFA1_1_55573455
+NFA0_0_30399051 -->|",
+BeginToken ','
+ExtendToken ','"|NFA2_1_5156011
+NFA1_1_55573455 -->|"[0-9]
+ExtendToken 'integer'"|NFA1_1_55573455

@@ -1,0 +1,75 @@
+flowchart
+classDef c0001 color:#FF0000;
+classDef c0010 stroke-dasharray: 10 10;
+classDef c0011 stroke-dasharray: 10 10,color:#FF0000;
+classDef c0100 fill:#BB66EE;
+classDef c0101 fill:#BB66EE,color:#FF0000;
+classDef c0110 fill:#BB66EE,stroke-dasharray: 10 10;
+classDef c0111 fill:#BB66EE,stroke-dasharray: 10 10,color:#FF0000;
+classDef c1000 stroke:#333,stroke-width:4px;
+classDef c1001 stroke:#333,stroke-width:4px,color:#FF0000;
+classDef c1010 stroke:#333,stroke-width:4px,stroke-dasharray: 10 10;
+classDef c1011 stroke:#333,stroke-width:4px,stroke-dasharray: 10 10,color:#FF0000;
+classDef c1100 stroke:#333,stroke-width:4px,fill:#BB66EE;
+classDef c1101 stroke:#333,stroke-width:4px,fill:#BB66EE,color:#FF0000;
+classDef c1110 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10;
+classDef c1111 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10,color:#FF0000;
+subgraph MiniDFA0_585917162["MiniDFA0 {1}"]
+DFA0_1716080415_0{{"DFA0 wholeStart"}}
+class DFA0_1716080415_0 c1000;
+end
+class MiniDFA0_585917162 c1000;
+subgraph MiniDFA1_-240199859["MiniDFA1 {1}"]
+DFA1_-240143629_1[\"DFA1 {1}
+AcceptToken 's'"/]
+class DFA1_-240143629_1 c0101;
+end
+class MiniDFA1_-240199859 c0101;
+subgraph MiniDFA2_1028159909["MiniDFA2 {1}"]
+DFA2_301028278_2[\"DFA2 {1}
+AcceptToken 't'"/]
+class DFA2_301028278_2 c0101;
+end
+class MiniDFA2_1028159909 c0101;
+subgraph MiniDFA3_566924018["MiniDFA3 {1}"]
+DFA3_-386939718_3[\"DFA3 {1}
+AcceptToken 'g'"/]
+class DFA3_-386939718_3 c0101;
+end
+class MiniDFA3_566924018 c0101;
+subgraph MiniDFA4_1609187585["MiniDFA4 {1}"]
+DFA4_-1306490502_4[\"DFA4 {1}
+AcceptToken 'w'"/]
+class DFA4_-1306490502_4 c0101;
+end
+class MiniDFA4_1609187585 c0101;
+subgraph MiniDFA5_1522998107["MiniDFA5 {1}"]
+DFA5_-1787280378_5[\"DFA5 {1}
+AcceptToken 'e'"/]
+class DFA5_-1787280378_5 c0101;
+end
+class MiniDFA5_1522998107 c0101;
+subgraph MiniDFA6_1977924070["MiniDFA6 {1}"]
+DFA6_-1886935679_6[\"DFA6 {1}
+AcceptToken 'd'"/]
+class DFA6_-1886935679_6 c0101;
+end
+class MiniDFA6_1977924070 c0101;
+MiniDFA0_585917162 -->|"s
+BeginToken 's'
+ExtendToken 's'"|MiniDFA1_-240199859
+MiniDFA0_585917162 -->|"t
+BeginToken 't'
+ExtendToken 't'"|MiniDFA2_1028159909
+MiniDFA0_585917162 -->|"g
+BeginToken 'g'
+ExtendToken 'g'"|MiniDFA3_566924018
+MiniDFA0_585917162 -->|"w
+BeginToken 'w'
+ExtendToken 'w'"|MiniDFA4_1609187585
+MiniDFA0_585917162 -->|"e
+BeginToken 'e'
+ExtendToken 'e'"|MiniDFA5_1522998107
+MiniDFA0_585917162 -->|"d
+BeginToken 'd'
+ExtendToken 'd'"|MiniDFA6_1977924070

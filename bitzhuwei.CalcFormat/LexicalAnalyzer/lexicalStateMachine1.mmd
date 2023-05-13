@@ -1,0 +1,9 @@
+stateDiagram-v2
+[*] --> state1_1 : c == '/'
+state1_1 --> state1_2 : c == '*'
+state1_2 --> state1_3 : c == '*'
+state1_2 --> state1_2 : other
+state1_3 --> [*] : c == '/'
+state1_1 --> state1_4 : c == '/'
+state1_4 --> [*] : c == '\u000A'
+

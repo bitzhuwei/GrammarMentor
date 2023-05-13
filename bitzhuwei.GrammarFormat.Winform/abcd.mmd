@@ -1,0 +1,29 @@
+flowchart
+classDef default fill:#C7EDCC,stroke:#993399,stroke-width:0px,text-align:left,font-weight:bold;
+classDef titlebarStyle fill:gold;
+titlebar>"(ab|cd)*"]
+class titlebar titlebarStyle
+state0_10("S/E")
+state0_4("1")
+state0_5("10")
+state0_0("2")
+state0_6("6")
+state0_3("5")
+state0_9("9")
+state0_1("3")
+state0_7("7")
+state0_2("4")
+state0_8("8")
+state0_10 -->|"#949;"|state0_4
+state0_10 -->|"#949;"|state0_5
+state0_4 -->|"#949;"|state0_0
+state0_4 -->|"#949;"|state0_6
+state0_5 -->|"#949;"|state0_10
+state0_0 -->|"'a'"|state0_1
+state0_6 -->|"'c'"|state0_7
+state0_1 -->|"#949;"|state0_2
+state0_7 -->|"#949;"|state0_8
+state0_2 -->|"'b'"|state0_3
+state0_8 -->|"'d'"|state0_9
+state0_3 -->|"#949;"|state0_5
+state0_9 -->|"#949;"|state0_5

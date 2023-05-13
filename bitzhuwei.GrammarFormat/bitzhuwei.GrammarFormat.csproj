@@ -1,0 +1,414 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9D9FB42C-8D94-40D0-9F35-6F2D752D8340}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>bitzhuwei.GrammarFormat</RootNamespace>
+    <AssemblyName>bitzhuwei.GrammarFormat</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="yieldTemplate\LexicalAnalyzer\CompilerXxx.LexicalDelegates.cs_">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <Content Include="Memo\ASCII.txt" />
+    <None Include="Memo\ASCII码表详解.md" />
+    <None Include="doc\Grammar.formatted.st" />
+    <None Include="doc\Grammar.node" />
+    <None Include="doc\Grammar.tokens" />
+    <None Include="LexicalAnalyzer\StateMachine4.mmd" />
+    <Content Include="TODO.txt" />
+    <None Include="readme.manual.md" />
+    <None Include="SyntaxParser\readme.md" />
+    <None Include="TExtracter\readme.md" />
+    <Compile Include="XxxFormatYielder\GenerateCode\Gen.LexicalAnalyzer.GetNewLexicalRules.cs" />
+    <Compile Include="XxxFormatYielder\GenerateCode\Gen.LexicalAnalyzer.Delegates.cs" />
+    <Compile Include="XxxFormatYielder\GenerateCode\Gen.LexicalAnalyzer.WriteMiniDFATokenScripts.cs" />
+    <Compile Include="XxxFormatYielder\GenerateCode\Gen.LexicalAnalyzer.WriteDFATokenScripts.cs" />
+    <Compile Include="XxxFormatYielder\GenerateCode\Gen.LexicalAnalyzer.MiniDFAStates.cs" />
+    <Compile Include="XxxFormatYielder\GenerateCode\Gen.LexicalAnalyzer.README.cs" />
+    <Compile Include="XxxFormatYielder\GenerateCode\Gen.LexicalAnalyzer.Mermaid.cs" />
+    <Compile Include="XxxFormatYielder\GenerateCode\Gen.LexicalAnalyzer.TokensMD.cs" />
+    <Compile Include="XxxFormatYielder\GenerateCode\Gen.Main.GrammarInfo.cs" />
+    <Compile Include="XxxFormatYielder\GenerateCode\Gen.Main.CompilerXxx.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\DataStructure\Automaton\ConditionHelper.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\DataStructure\Automaton\DFAEdgeDraft.ToMermaid.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\DataStructure\Automaton\DFAStateDraft.ToMermaid.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\DataStructure\Automaton\eNFAEdgeDraft.ToMermaid.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\DataStructure\Automaton\eNFAStateDraft.ToMermaid.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\DataStructure\Automaton\MiniDFAEdgeDraft.ToMermaid.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\DataStructure\Automaton\MiniDFAStateDraft.ToMermaid.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\DataStructure\Automaton\NFAEdgeDraft.ToMermaid.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\DataStructure\Automaton\NFAStateDraft.ToMermaid.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\DataStructure\Automaton\StateSign.Parse.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\DataStructure\Automaton\StateSign.PrintClass.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\DataStructure\Automaton\StateSign.GetStyleList.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\DataStructure\Automaton\StateSign.PrintStyle.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\DataStructure\Automaton\StateSign.Hash.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\DataStructure\Automaton\StateSign.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\DataStructure\Automaton\MiniDFAInfo.ToMermaid.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\DataStructure\Automaton\MiniDFAInfo.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\DataStructure\Automaton\MiniDFAEdgeDraft.Hash.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\DataStructure\Automaton\MiniDFAEdgeDraft.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\DataStructure\Automaton\MiniDFAStateDraft.Hash.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\DataStructure\Automaton\MiniDFAStateDraft.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\DataStructure\Automaton\RangeItem.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\DataStructure\eNFAFragment.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\DataStructure\TokenScript\TokenScript.IMermaid.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\DataStructure\TokenScript\TokenScript.Hash.cs" />
+    <Compile Include="XxxFormatYielder\ListedDict.cs" />
+    <Compile Include="XxxFormatYielder\GenerateCode\Gen.FIRSTFOLLOW.cs" />
+    <Compile Include="XxxFormatYielder\GenerateCode\Gen.LexicalAnalyzer.DFAStates.cs" />
+    <Compile Include="XxxFormatYielder\GenerateCode\Gen.LexicalAnalyzer.GetWholeAutomaton.cs" />
+    <Compile Include="XxxFormatYielder\GenerateCode\Gen.LexicalAnalyzer.GetTokenDraftDict.cs" />
+    <Compile Include="XxxFormatYielder\Algo.GetPatternDict.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\CompilerPattern.Misc.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\CompilerPattern.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\CompilerPattern.EType.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\DataStructure\Automaton\AutomatonInfo.ToMermaid.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\DataStructure\Automaton\DFAInfo.ToMermaid.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\DataStructure\Automaton\eNFAInfo.Traverse.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\DataStructure\Automaton\eNFAInfo.ToMermaid.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\DataStructure\Automaton\eNFAInfo.Copy.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\DataStructure\Automaton\AutomatonInfo.ToMiniDFA.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\DataStructure\Automaton\AutomatonInfo.ToDFA.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\DataStructure\Automaton\AutomatonInfo.ToNFA.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\DataStructure\Automaton\AutomatonInfo.ManifesteNFA.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\DataStructure\Automaton\AutomatonInfo.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\DataStructure\Automaton\eNFAInfo.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\DataStructure\Automaton\DFAStateDraft.Hash.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\DataStructure\Automaton\eNFAStateDraft.Hash.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\DataStructure\Automaton\NFAInfo.ToMermaid.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\DataStructure\Automaton\NFAStateDraft.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\DataStructure\Automaton\NFAStateDraft.Hash.cs" />
+    <None Include="XxxFormatYielder\PatternFormat\doc\FIRST-FOLLOW.md" />
+    <None Include="XxxFormatYielder\PatternFormat\doc\readme-full.md" />
+    <None Include="XxxFormatYielder\PatternFormat\doc\SyntaxMachineLALR%281%29.md" />
+    <None Include="XxxFormatYielder\PatternFormat\doc\SyntaxMachineLL%281%29.md" />
+    <None Include="XxxFormatYielder\PatternFormat\doc\SyntaxMachineLR%281%29.md" />
+    <None Include="XxxFormatYielder\PatternFormat\doc\SyntaxMachineSLR%281%29.md" />
+    <None Include="XxxFormatYielder\PatternFormat\doc\SytnaxMachineLR%280%29.md" />
+    <None Include="XxxFormatYielder\PatternFormat\LexicalAnalyzer\StateMachine4.mmd" />
+    <None Include="XxxFormatYielder\PatternFormat\LexicalAnalyzer\StateMachine3.mmd" />
+    <None Include="XxxFormatYielder\PatternFormat\LexicalAnalyzer\readme.md" />
+    <None Include="XxxFormatYielder\PatternFormat\Mermaid.mmd" />
+    <None Include="XxxFormatYielder\PatternFormat\Pattern.formatted.st" />
+    <None Include="XxxFormatYielder\PatternFormat\Pattern.node" />
+    <None Include="XxxFormatYielder\PatternFormat\Pattern.tokens" />
+    <None Include="XxxFormatYielder\PatternFormat\readme-full.md" />
+    <None Include="XxxFormatYielder\PatternFormat\readme.md" />
+    <None Include="XxxFormatYielder\PatternFormat\SyntaxParser\readme.md" />
+    <None Include="XxxFormatYielder\PatternFormat\TExtracter\readme.md" />
+    <None Include="XxxFormatYielder\Xxx.Hash.md" />
+    <None Include="LexicalAnalyzer\demo0.mmd" />
+    <None Include="Memo\Mermaid语法简介.md" />
+    <None Include="doc\Grammar.st" />
+    <None Include="readme.md" />
+    <Compile Include="CompilerGrammar.cs" />
+    <Compile Include="CompilerGrammar.EType.cs" />
+    <Compile Include="LexicalAnalyzer\CompilerGrammar.LexicalState4_2.cs" />
+    <Compile Include="LexicalAnalyzer\CompilerGrammar.LexicalState4_4.cs" />
+    <Compile Include="LexicalAnalyzer\CompilerGrammar.LexicalState4_3.cs" />
+    <Compile Include="SyntaxParser\CompilerGrammar.TableLALR%281%29.cs" />
+    <Compile Include="TExtracter\GrammarExtracter.Init.UserModified.cs" />
+    <Compile Include="XxxFormatYielder\Algo.SemanticCheck.cs" />
+    <None Include="XxxFormatYielder\Names\readme.md" />
+    <Compile Include="XxxFormatYielder\PatternFormat\DataStructure\TokenDraft.ToMermaid.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\TExtracter\PatternExtracter.Init.cs" />
+    <Compile Include="XxxFormatYielder\Names\ToMermaid.cs" />
+    <Compile Include="XxxFormatYielder\Names\ToMarkdown.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\DataStructure\Automaton\DFAEdgeDraft.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\DataStructure\Automaton\DFAEdgeDraft.Hash.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\DataStructure\Automaton\DFAStateDraft.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\DataStructure\Automaton\DFAInfo.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\DataStructure\Automaton\NFAInfo.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\DataStructure\Automaton\NFAEdgeDraft.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\DataStructure\Automaton\NFAEdgeDraft.Hash.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\DataStructure\Pattern.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\DataStructure\TokenDraft.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\DataStructure\TokenScript\TokenScript.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\LexicalAnalyzer\CompilerPattern.LexcicalState5_4.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\LexicalAnalyzer\CompilerPattern.LexcicalState5_3.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\LexicalAnalyzer\CompilerPattern.LexcicalState5_2.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\LexicalAnalyzer\CompilerPattern.LexcicalState5_1.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\SyntaxParser\CompilerPattern.Regulations.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\SyntaxParser\CompilerPattern.TableLALR%281%29.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\TExtracter\PatternExtracter.Init.UserModified.cs" />
+    <Compile Include="XxxFormatYielder\Utility.Misc.cs" />
+    <Compile Include="XxxFormatYielder\GenerateCode\Gen.DataStructure.cs" />
+    <Compile Include="XxxFormatYielder\GenerateCode\Gen.EType.cs" />
+    <Compile Include="XxxFormatYielder\GenerateCode\Gen.LexicalAnalyzer.Keywords.cs" />
+    <Compile Include="XxxFormatYielder\GenerateCode\Gen.Main.GetXxx.cs" />
+    <Compile Include="XxxFormatYielder\GenerateCode\Gen.Main.README-full.cs" />
+    <Compile Include="XxxFormatYielder\GenerateCode\Gen.Main.SyntaxParsing.cs" />
+    <Compile Include="XxxFormatYielder\GenerateCode\Gen.Main.README.cs" />
+    <Compile Include="XxxFormatYielder\GenerateCode\Gen.SyntaxParser.SyntaxParsing.cs" />
+    <Compile Include="XxxFormatYielder\GenerateCode\Gen.SyntaxParser.GetXxx.cs" />
+    <Compile Include="XxxFormatYielder\GenerateCode\Gen.SyntaxParser.Pre.cs" />
+    <Compile Include="XxxFormatYielder\GenerateCode\Gen.TExtracter.cs" />
+    <Compile Include="XxxFormatYielder\GenerateCode\Gen.Misc.cs" />
+    <Compile Include="XxxFormatYielder\GenerateCode\Grammar.YieldCompiler.cs" />
+    <Compile Include="XxxFormatYielder\Utility.Print.cs" />
+    <Compile Include="XxxFormatYielder\GenerateCode\YieldContext.cs" />
+    <Compile Include="XxxFormatYielder\GenerateCode\YieldParameter.cs" />
+    <Compile Include="DataStructure\GrammarDraft.cs" />
+    <Compile Include="XxxFormatYielder\Names\CharApperance.cs" />
+    <Compile Include="XxxFormatYielder\Names\Node.type.cs" />
+    <Compile Include="XxxFormatYielder\Names\ToVarName.cs" />
+    <Compile Include="XxxFormatYielder\Names\Type2VarName.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\DataStructure\Repeat.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\LexicalAnalyzer\CompilerPattern.LexcicalState4_4.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\LexicalAnalyzer\CompilerPattern.LexcicalState4_3.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\LexicalAnalyzer\CompilerPattern.LexcicalState4_2.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\LexicalAnalyzer\CompilerPattern.LexcicalState4_1.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\LexicalAnalyzer\CompilerPattern.UserDefined.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\LexicalAnalyzer\CompilerPattern.LexcicalConst.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\LexicalAnalyzer\CompilerPattern.LexcicalState0_0.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\LexicalAnalyzer\CompilerPattern.LexcicalState2_5.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\LexicalAnalyzer\CompilerPattern.LexcicalState2_4.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\LexicalAnalyzer\CompilerPattern.LexcicalState2_3.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\LexicalAnalyzer\CompilerPattern.LexcicalState2_2.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\LexicalAnalyzer\CompilerPattern.LexcicalState3_6.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\LexicalAnalyzer\CompilerPattern.LexcicalState3_5.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\LexicalAnalyzer\CompilerPattern.LexcicalState3_4.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\LexicalAnalyzer\CompilerPattern.LexcicalState3_3.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\LexicalAnalyzer\CompilerPattern.LexcicalState3_2.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\LexicalAnalyzer\CompilerPattern.LexcicalState3_1.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\LexicalAnalyzer\CompilerPattern.LexcicalState2_1.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\LexicalAnalyzer\CompilerPattern.LexcicalState1_1.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\LexicalAnalyzer\CompilerPattern.LexcicalState1_2.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\LexicalAnalyzer\CompilerPattern.LexcicalState1_3.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\LexicalAnalyzer\CompilerPattern.LexcicalState1_4.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\TExtracter\PatternExtracter.Init.DraftContext.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\DataStructure\Automaton\eNFAEdgeDraft.Hash.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\DataStructure\Automaton\eNFAEdgeDraft.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\DataStructure\Automaton\eNFAStateDraft.cs" />
+    <Compile Include="XxxFormatYielder\SyntaxParsing\LALR%281%29\Algo.LALR%281%29.Closure.cs" />
+    <Compile Include="XxxFormatYielder\SyntaxParsing\FIRST\Algo.GetFIRST.cs" />
+    <Compile Include="XxxFormatYielder\SyntaxParsing\FIRST\Algo.GetFIRSTDict.cs" />
+    <Compile Include="XxxFormatYielder\SyntaxParsing\FOLLOW\Algo.GetFOLLOWDict.cs" />
+    <Compile Include="XxxFormatYielder\SyntaxParsing\LL%281%29\Algo.LL%281%29.GetLL%281%29SyntaxInfo.cs" />
+    <Compile Include="XxxFormatYielder\SyntaxParsing\LALR%281%29\Algo.LALR%281%29.GetLALR%281%29SyntaxInfo.cs" />
+    <Compile Include="XxxFormatYielder\SyntaxParsing\LALR%281%29\Algo.LALR%281%29.Goto.cs" />
+    <Compile Include="XxxFormatYielder\SyntaxParsing\LR%280%29\Algo.LR%280%29.Closure.cs" />
+    <Compile Include="XxxFormatYielder\SyntaxParsing\LR%280%29\Algo.LR%280%29.GetLR%280%29SyntaxInfo.cs" />
+    <Compile Include="XxxFormatYielder\SyntaxParsing\LR%280%29\Algo.LR%280%29.Goto.cs" />
+    <Compile Include="XxxFormatYielder\SyntaxParsing\LR%281%29\Algo.LR%281%29.Closure.cs" />
+    <Compile Include="XxxFormatYielder\SyntaxParsing\LR%281%29\Algo.LR%281%29.GetLR%281%29SyntaxInfo.cs" />
+    <Compile Include="XxxFormatYielder\SyntaxParsing\LR%281%29\Algo.LR%281%29.Goto.cs" />
+    <Compile Include="XxxFormatYielder\SyntaxParsing\Nullable\Algo.Nullable.cs" />
+    <Compile Include="XxxFormatYielder\SyntaxParsing\Nullable\Algo.NullableDict.cs" />
+    <Compile Include="XxxFormatYielder\SyntaxParsing\SLR%281%29\Algo.SLR%281%29.Closure.cs" />
+    <Compile Include="XxxFormatYielder\SyntaxParsing\SLR%281%29\Algo.SLR%281%29.GetSLR%281%29SyntaxInfo.cs" />
+    <Compile Include="XxxFormatYielder\SyntaxParsing\SLR%281%29\Algo.SLR%281%29.Goto.cs" />
+    <Compile Include="XxxFormatYielder\Algo.static.ctor.cs" />
+    <Compile Include="XxxFormatYielder\Algo.VnRegulationDraft.cs" />
+    <Compile Include="XxxFormatYielder\CoupleList`1.cs" />
+    <Compile Include="XxxFormatYielder\CoupleList`1.Hash.cs" />
+    <Compile Include="XxxFormatYielder\SyntaxParsing\FIRST\FIRST.cs" />
+    <Compile Include="XxxFormatYielder\SyntaxParsing\FOLLOW\FOLLOW.cs" />
+    <Compile Include="XxxFormatYielder\CSCodeContext.cs" />
+    <Compile Include="XxxFormatYielder\SyntaxParsing\LL%281%29\LL%281%29SyntaxInfo.cs" />
+    <Compile Include="XxxFormatYielder\SyntaxParsing\LL%281%29\LL%281%29ParsingActionDraft.cs" />
+    <Compile Include="XxxFormatYielder\SyntaxParsing\LL%281%29\LL%281%29ParsingTableDraft.cs" />
+    <Compile Include="XxxFormatYielder\SyntaxParsing\LRParsingTable\LRParsingActionDraft.cs" />
+    <Compile Include="XxxFormatYielder\SyntaxParsing\LRParsingTable\LRParsingTableDraft.cs" />
+    <Compile Include="XxxFormatYielder\SyntaxParsing\NFF.cs" />
+    <Compile Include="XxxFormatYielder\SyntaxParsing\LALR%281%29\LALR%281%29Edge.cs" />
+    <Compile Include="XxxFormatYielder\SyntaxParsing\LALR%281%29\LALR%281%29Edge.Hash.cs" />
+    <Compile Include="XxxFormatYielder\SyntaxParsing\LALR%281%29\LALR%281%29EdgeList.cs" />
+    <Compile Include="XxxFormatYielder\SyntaxParsing\LALR%281%29\LALR%281%29Item.cs" />
+    <Compile Include="XxxFormatYielder\SyntaxParsing\LALR%281%29\LALR%281%29Item.Hash.cs" />
+    <Compile Include="XxxFormatYielder\SyntaxParsing\LALR%281%29\LALR%281%29State.cs" />
+    <Compile Include="XxxFormatYielder\SyntaxParsing\LALR%281%29\LALR%281%29State.Hash.cs" />
+    <Compile Include="XxxFormatYielder\SyntaxParsing\LALR%281%29\LALR%281%29StateList.cs" />
+    <Compile Include="XxxFormatYielder\SyntaxParsing\LALR%281%29\LALR%281%29SyntaxInfo.cs" />
+    <Compile Include="XxxFormatYielder\SyntaxParsing\LR%280%29\LR%280%29Edge.cs" />
+    <Compile Include="XxxFormatYielder\SyntaxParsing\LR%280%29\LR%280%29Edge.Hash.cs" />
+    <Compile Include="XxxFormatYielder\SyntaxParsing\LR%280%29\LR%280%29EdgeList.cs" />
+    <Compile Include="XxxFormatYielder\SyntaxParsing\LR%280%29\LR%280%29Item.cs" />
+    <Compile Include="XxxFormatYielder\SyntaxParsing\LR%280%29\LR%280%29Item.Hash.cs" />
+    <Compile Include="XxxFormatYielder\SyntaxParsing\LR%280%29\LR%280%29State.cs" />
+    <Compile Include="XxxFormatYielder\SyntaxParsing\LR%280%29\LR%280%29State.Hash.cs" />
+    <Compile Include="XxxFormatYielder\SyntaxParsing\LR%280%29\LR%280%29StateList.cs" />
+    <Compile Include="XxxFormatYielder\SyntaxParsing\LR%280%29\LR%280%29SyntaxInfo.cs" />
+    <Compile Include="XxxFormatYielder\SyntaxParsing\LR%281%29\LR%281%29Edge.cs" />
+    <Compile Include="XxxFormatYielder\SyntaxParsing\LR%281%29\LR%281%29Edge.Hash.cs" />
+    <Compile Include="XxxFormatYielder\SyntaxParsing\LR%281%29\LR%281%29EdgeList.cs" />
+    <Compile Include="XxxFormatYielder\SyntaxParsing\LR%281%29\LR%281%29Item.cs" />
+    <Compile Include="XxxFormatYielder\SyntaxParsing\LR%281%29\LR%281%29Item.Hash.cs" />
+    <Compile Include="XxxFormatYielder\SyntaxParsing\LR%281%29\LR%281%29State.cs" />
+    <Compile Include="XxxFormatYielder\SyntaxParsing\LR%281%29\LR%281%29State.Hash.cs" />
+    <Compile Include="XxxFormatYielder\SyntaxParsing\LR%281%29\LR%281%29StateList.cs" />
+    <Compile Include="XxxFormatYielder\SyntaxParsing\LR%281%29\LR%281%29SyntaxInfo.cs" />
+    <Compile Include="XxxFormatYielder\SyntaxParsing\SLR%281%29\SLR%281%29Edge.cs" />
+    <Compile Include="XxxFormatYielder\SyntaxParsing\SLR%281%29\SLR%281%29Edge.Hash.cs" />
+    <Compile Include="XxxFormatYielder\SyntaxParsing\SLR%281%29\SLR%281%29EdgeList.cs" />
+    <Compile Include="XxxFormatYielder\SyntaxParsing\SLR%281%29\SLR%281%29Item.cs" />
+    <Compile Include="XxxFormatYielder\SyntaxParsing\SLR%281%29\SLR%281%29Item.Hash.cs" />
+    <Compile Include="XxxFormatYielder\SyntaxParsing\SLR%281%29\SLR%281%29State.cs" />
+    <Compile Include="XxxFormatYielder\SyntaxParsing\SLR%281%29\SLR%281%29State.Hash.cs" />
+    <Compile Include="XxxFormatYielder\SyntaxParsing\SLR%281%29\SLR%281%29StateList.cs" />
+    <Compile Include="XxxFormatYielder\SyntaxParsing\SLR%281%29\SLR%281%29SyntaxInfo.cs" />
+    <Compile Include="XxxFormatYielder\TryBinaryInsert.cs" />
+    <Compile Include="DataStructure\VnRegulationDraft.cs" />
+    <Compile Include="DataStructure\VnRegulationDraft.Hash.cs" />
+    <Compile Include="DataStructure\VtPatternDraft.cs" />
+    <Compile Include="DataStructure\VtPatternDraft.Hash.cs" />
+    <Compile Include="LexicalAnalyzer\CompilerGrammar.LexicalConst.cs" />
+    <Compile Include="LexicalAnalyzer\CompilerGrammar.LexicalState0.cs" />
+    <Compile Include="LexicalAnalyzer\CompilerGrammar.LexicalState1_1.cs" />
+    <Compile Include="LexicalAnalyzer\CompilerGrammar.LexicalState1_2.cs" />
+    <Compile Include="LexicalAnalyzer\CompilerGrammar.LexicalState1_3.cs" />
+    <Compile Include="LexicalAnalyzer\CompilerGrammar.LexicalState1_4.cs" />
+    <Compile Include="LexicalAnalyzer\CompilerGrammar.LexicalState2_1.cs" />
+    <Compile Include="LexicalAnalyzer\CompilerGrammar.LexicalState3_1.cs" />
+    <Compile Include="LexicalAnalyzer\CompilerGrammar.LexicalState3_2.cs" />
+    <Compile Include="LexicalAnalyzer\CompilerGrammar.LexicalState3_3.cs" />
+    <Compile Include="LexicalAnalyzer\CompilerGrammar.LexicalState4_1.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SyntaxParser\CompilerGrammar.Regulations.cs" />
+    <None Include="yieldTemplate\CompilerXxx.cs_">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="yieldTemplate\CompilerXxx.EType.cs_">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="yieldTemplate\DataStructure\Vn.cs_">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="yieldTemplate\DataStructure\ExtractedType.cs_">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="yieldTemplate\LexicalAnalyzer\CompilerXxx.LexicalKeywords.cs_">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="yieldTemplate\LexicalAnalyzer\CompilerXxx.LexicalStates.cs_">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="yieldTemplate\LexicalAnalyzer\CompilerXxx.LexicalState0.cs_">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="yieldTemplate\LexicalAnalyzer\CompilerXxx.LexicalState1_1.cs_">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="yieldTemplate\LexicalAnalyzer\CompilerXxx.LexicalState1_2.cs_">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="yieldTemplate\LexicalAnalyzer\CompilerXxx.LexicalState1_3.cs_">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="yieldTemplate\LexicalAnalyzer\CompilerXxx.LexicalState1_4.cs_">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="yieldTemplate\LexicalAnalyzer\ChooseDFAorMiniDFA.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="yieldTemplate\LexicalAnalyzer\README.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="yieldTemplate\doc\FIRST-FOLLOW.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="yieldTemplate\doc\SyntaxMachine.LL%281%29.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="yieldTemplate\doc\SytnaxMachine.LR%280%29.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="yieldTemplate\doc\SyntaxMachine.LALR%281%29.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="yieldTemplate\doc\SyntaxMachine.LR%281%29.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="yieldTemplate\doc\LexicalStates.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="yieldTemplate\doc\readme-full.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="yieldTemplate\doc\SyntaxMachine.SLR%281%29.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="yieldTemplate\README.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="yieldTemplate\SyntaxParser\CompilerXxx.Table.LL%281%29.cs_">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="yieldTemplate\TExtracter\README.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="yieldTemplate\TExtracter\XxxExtracter.Init.cs_">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="yieldTemplate\SyntaxParser\CompilerXxx.Table.LR.cs_">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="yieldTemplate\SyntaxParser\CompilerXxx.Regulations.cs_">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="yieldTemplate\SyntaxParser\README.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Memo\单个ASCII码的正则表达式.md" />
+    <None Include="Memo\正则表达式基础知识.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\bitzhuwei.Compiler\bitzhuwei.Compiler.csproj">
+      <Project>{ac6957ab-e76b-4c08-9aa6-7eff02175a92}</Project>
+      <Name>bitzhuwei.Compiler</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Memo\Calc.st.explain.jpg" />
+    <Content Include="LexicalAnalyzer\StateMachine0.jpg" />
+    <Content Include="LexicalAnalyzer\StateMachine1.jpg" />
+    <Content Include="LexicalAnalyzer\StateMachine2.jpg" />
+    <Content Include="LexicalAnalyzer\StateMachine3.jpg" />
+    <Content Include="LexicalAnalyzer\StateMachine4.png" />
+    <Content Include="Memo\MetaCharCS.png" />
+    <Content Include="Memo\Unicode2Mermaid.txt" />
+    <None Include="XxxFormatYielder\PatternFormat\memo.md" />
+    <Content Include="XxxFormatYielder\PatternFormat\LexicalAnalyzer\StateMachine3.png" />
+    <Content Include="yieldTemplate\GrammarTypes.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

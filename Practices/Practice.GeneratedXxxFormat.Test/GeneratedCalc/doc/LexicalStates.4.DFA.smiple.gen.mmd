@@ -1,0 +1,62 @@
+flowchart
+classDef c0001 color:#FF0000;
+classDef c0010 stroke-dasharray: 10 10;
+classDef c0011 stroke-dasharray: 10 10,color:#FF0000;
+classDef c0100 fill:#BB66EE;
+classDef c0101 fill:#BB66EE,color:#FF0000;
+classDef c0110 fill:#BB66EE,stroke-dasharray: 10 10;
+classDef c0111 fill:#BB66EE,stroke-dasharray: 10 10,color:#FF0000;
+classDef c1000 stroke:#333,stroke-width:4px;
+classDef c1001 stroke:#333,stroke-width:4px,color:#FF0000;
+classDef c1010 stroke:#333,stroke-width:4px,stroke-dasharray: 10 10;
+classDef c1011 stroke:#333,stroke-width:4px,stroke-dasharray: 10 10,color:#FF0000;
+classDef c1100 stroke:#333,stroke-width:4px,fill:#BB66EE;
+classDef c1101 stroke:#333,stroke-width:4px,fill:#BB66EE,color:#FF0000;
+classDef c1110 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10;
+classDef c1111 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10,color:#FF0000;
+DFA0_1371898302{{"DFA0 wholeStart"}}
+class DFA0_1371898302 c1000;
+DFA1_736285203[\"DFA1 {1}
+AcceptToken 'number'"/]
+class DFA1_736285203 c0101;
+DFA2_24116860[\"DFA2 {1}
+AcceptToken '+'"/]
+class DFA2_24116860 c0101;
+DFA3_1215392932[\"DFA3 {1}
+AcceptToken '-'"/]
+class DFA3_1215392932 c0101;
+DFA4_-740876899[\"DFA4 {1}
+AcceptToken '*'"/]
+class DFA4_-740876899 c0101;
+DFA5_-2132989191[\"DFA5 {1}
+AcceptToken '/'"/]
+class DFA5_-2132989191 c0101;
+DFA6_-489194620[\"DFA6 {1}
+AcceptToken '('"/]
+class DFA6_-489194620 c0101;
+DFA7_431494236[\"DFA7 {1}
+AcceptToken ')'"/]
+class DFA7_431494236 c0101;
+DFA0_1371898302 -->|"[0-9]
+BeginToken 'number'
+ExtendToken 'number'"|DFA1_736285203
+DFA0_1371898302 -->|"+
+BeginToken '+'
+ExtendToken '+'"|DFA2_24116860
+DFA0_1371898302 -->|"-
+BeginToken '-'
+ExtendToken '-'"|DFA3_1215392932
+DFA0_1371898302 -->|"*
+BeginToken '*'
+ExtendToken '*'"|DFA4_-740876899
+DFA0_1371898302 -->|"/
+BeginToken '/'
+ExtendToken '/'"|DFA5_-2132989191
+DFA0_1371898302 -->|"(
+BeginToken '('
+ExtendToken '('"|DFA6_-489194620
+DFA0_1371898302 -->|")
+BeginToken ')'
+ExtendToken ')'"|DFA7_431494236
+DFA1_736285203 -->|"[0-9]
+ExtendToken 'number'"|DFA1_736285203

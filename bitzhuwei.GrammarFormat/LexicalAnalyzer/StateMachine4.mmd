@@ -1,0 +1,19 @@
+﻿flowchart
+classDef default fill:#C7EDCC,stroke:#993399,stroke-width:0px,text-align:left;
+classDef titlebarStyle fill:gold;
+titlebar>"lexical state(part 4)"]
+class titlebar titlebarStyle
+state0(state0)
+state4_1(state4-1)
+state4_2(state4-2)
+state4_3(state4-3)
+state4_4(state4-4)
+state0 -->|"%"| state4_1
+state4_1 -->|"%"| state4_2
+state4_2 -->|"\"| state4_3
+state4_2 -->|"%"| state4_4
+state4_2 -->|"other"| state4_2
+state4_3 -->|"other"| state4_2
+state4_4 -->|"other"| state4_2
+state4_4 -->|"%"| state0
+

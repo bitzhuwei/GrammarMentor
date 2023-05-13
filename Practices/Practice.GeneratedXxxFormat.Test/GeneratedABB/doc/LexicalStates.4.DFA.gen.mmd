@@ -1,0 +1,48 @@
+flowchart
+classDef c0001 color:#FF0000;
+classDef c0010 stroke-dasharray: 10 10;
+classDef c0011 stroke-dasharray: 10 10,color:#FF0000;
+classDef c0100 fill:#BB66EE;
+classDef c0101 fill:#BB66EE,color:#FF0000;
+classDef c0110 fill:#BB66EE,stroke-dasharray: 10 10;
+classDef c0111 fill:#BB66EE,stroke-dasharray: 10 10,color:#FF0000;
+classDef c1000 stroke:#333,stroke-width:4px;
+classDef c1001 stroke:#333,stroke-width:4px,color:#FF0000;
+classDef c1010 stroke:#333,stroke-width:4px,stroke-dasharray: 10 10;
+classDef c1011 stroke:#333,stroke-width:4px,stroke-dasharray: 10 10,color:#FF0000;
+classDef c1100 stroke:#333,stroke-width:4px,fill:#BB66EE;
+classDef c1101 stroke:#333,stroke-width:4px,fill:#BB66EE,color:#FF0000;
+classDef c1110 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10;
+classDef c1111 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10,color:#FF0000;
+subgraph DFA0_1303046169["DFA0 wholeStart"]
+NFA0_0_63388340_0("NFA0-0 wholeStart")
+class NFA0_0_63388340_0 c1000;
+end
+class DFA0_1303046169 c1000;
+subgraph DFA1_642929875["DFA1 {1}"]
+NFA1_1_44325851_1[\"NFA1-1 char[1]
+AcceptToken '+'"/]
+class NFA1_1_44325851_1 c0101;
+end
+class DFA1_642929875 c0101;
+subgraph DFA2_1083584447["DFA2 {1}"]
+NFA2_1_33624151_2[\"NFA2-1 char[1]
+AcceptToken 'a'"/]
+class NFA2_1_33624151_2 c0101;
+end
+class DFA2_1083584447 c0101;
+subgraph DFA3_924445311["DFA3 {1}"]
+NFA3_1_34181910_3[\"NFA3-1 char[1]
+AcceptToken 'b'"/]
+class NFA3_1_34181910_3 c0101;
+end
+class DFA3_924445311 c0101;
+DFA0_1303046169 -->|"+
+BeginToken '+'
+ExtendToken '+'"|DFA1_642929875
+DFA0_1303046169 -->|"a
+BeginToken 'a'
+ExtendToken 'a'"|DFA2_1083584447
+DFA0_1303046169 -->|"b
+BeginToken 'b'
+ExtendToken 'b'"|DFA3_924445311

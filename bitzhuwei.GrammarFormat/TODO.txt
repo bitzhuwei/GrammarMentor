@@ -1,0 +1,5 @@
+所有Algorithm.punctuationDict中的Value，都是`Grammar`的关键字。
+因为他们都要用于给`Vt`命名。
+
+重写`Pattern`文法。使多个pattern能够对应同一个`Vt`。
+

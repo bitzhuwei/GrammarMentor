@@ -1,0 +1,122 @@
+flowchart
+classDef c0001 color:#FF0000;
+classDef c0010 stroke-dasharray: 10 10;
+classDef c0011 stroke-dasharray: 10 10,color:#FF0000;
+classDef c0100 fill:#BB66EE;
+classDef c0101 fill:#BB66EE,color:#FF0000;
+classDef c0110 fill:#BB66EE,stroke-dasharray: 10 10;
+classDef c0111 fill:#BB66EE,stroke-dasharray: 10 10,color:#FF0000;
+classDef c1000 stroke:#333,stroke-width:4px;
+classDef c1001 stroke:#333,stroke-width:4px,color:#FF0000;
+classDef c1010 stroke:#333,stroke-width:4px,stroke-dasharray: 10 10;
+classDef c1011 stroke:#333,stroke-width:4px,stroke-dasharray: 10 10,color:#FF0000;
+classDef c1100 stroke:#333,stroke-width:4px,fill:#BB66EE;
+classDef c1101 stroke:#333,stroke-width:4px,fill:#BB66EE,color:#FF0000;
+classDef c1110 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10;
+classDef c1111 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10,color:#FF0000;
+MiniDFA0_-339152269(["MiniDFA0 {1}"])
+class MiniDFA0_-339152269 c1000;
+MiniDFA8_1794100827[\"MiniDFA8 {1}
+AcceptToken 'Vn'"/]
+class MiniDFA8_1794100827 c0101;
+MiniDFA9_553554605[\"MiniDFA9 {1}
+AcceptToken 'Vn'"/]
+class MiniDFA9_553554605 c0101;
+MiniDFA1_-1189134655(["MiniDFA1 {1}"])
+MiniDFA2_215997034(["MiniDFA2 {1}"])
+MiniDFA10_-925134283[\"MiniDFA10 {1}
+AcceptToken ':'"/]
+class MiniDFA10_-925134283 c0101;
+MiniDFA11_1289570263[\"MiniDFA11 {1}
+AcceptToken ';'"/]
+class MiniDFA11_1289570263 c0101;
+MiniDFA12_-1201688988[\"MiniDFA12 {1}
+AcceptToken '|'"/]
+class MiniDFA12_-1201688988 c0101;
+MiniDFA13_-1062044516[\"MiniDFA13 {1}
+AcceptToken 'Vn'"/]
+class MiniDFA13_-1062044516 c0101;
+MiniDFA14_-772034862[\"MiniDFA14 {1}
+AcceptToken 'Vn'"/]
+class MiniDFA14_-772034862 c0101;
+MiniDFA3_742957008(["MiniDFA3 {10}"])
+MiniDFA4_2001254085(["MiniDFA4 {2}"])
+MiniDFA5_7543543(["MiniDFA5 {1}"])
+MiniDFA15_1367419142[\"MiniDFA15 {1}
+AcceptToken 'Vn'"/]
+class MiniDFA15_1367419142 c0101;
+MiniDFA16_667520748[\"MiniDFA16 {1}
+AcceptToken 'Vt'"/]
+class MiniDFA16_667520748 c0101;
+MiniDFA6_-1460448968(["MiniDFA6 {3}"])
+MiniDFA17_-1358450166[\"MiniDFA17 {1}
+AcceptToken 'Vn'"/]
+class MiniDFA17_-1358450166 c0101;
+MiniDFA7_1744683586(["MiniDFA7 {1}"])
+MiniDFA18_-1113869385[\"MiniDFA18 {1}
+AcceptToken 'Vn'
+AcceptToken 'empty'"/]
+class MiniDFA18_-1113869385 c0101;
+MiniDFA19_-541931836[\"MiniDFA19 {1}
+AcceptToken 'pattern'"/]
+class MiniDFA19_-541931836 c0101;
+MiniDFA0_-339152269 -->|"[A-Z_a-df-z]
+BeginToken 'Vn'
+ExtendToken 'Vn'"|MiniDFA8_1794100827
+MiniDFA0_-339152269 -->|"e
+BeginToken 'Vn''empty'
+ExtendToken 'Vn'"|MiniDFA9_553554605
+MiniDFA0_-339152269 -->|"'
+BeginToken 'Vt'"|MiniDFA1_-1189134655
+MiniDFA0_-339152269 -->|"[%]
+BeginToken 'pattern'"|MiniDFA2_215997034
+MiniDFA0_-339152269 -->|":
+BeginToken ':'
+ExtendToken ':'"|MiniDFA10_-925134283
+MiniDFA0_-339152269 -->|";
+BeginToken ';'
+ExtendToken ';'"|MiniDFA11_1289570263
+MiniDFA0_-339152269 -->|"|
+BeginToken '|'
+ExtendToken '|'"|MiniDFA12_-1201688988
+MiniDFA8_1794100827 -->|"[a-zA-Z0-9_]
+ExtendToken 'Vn'"|MiniDFA13_-1062044516
+MiniDFA9_553554605 -->|"[0-9A-Z_a-ln-z]
+ExtendToken 'Vn'"|MiniDFA13_-1062044516
+MiniDFA9_553554605 -->|"m
+ExtendToken 'Vn'"|MiniDFA14_-772034862
+MiniDFA1_-1189134655 -->|"[#32;-&]"|MiniDFA3_742957008
+MiniDFA1_-1189134655 -->|"#92;"|MiniDFA4_2001254085
+MiniDFA1_-1189134655 -->|"[(-[]"|MiniDFA3_742957008
+MiniDFA1_-1189134655 -->|"[]-~]"|MiniDFA3_742957008
+MiniDFA2_215997034 -->|"[%]"|MiniDFA5_7543543
+MiniDFA13_-1062044516 -->|"[a-zA-Z0-9_]
+ExtendToken 'Vn'"|MiniDFA13_-1062044516
+MiniDFA14_-772034862 -->|"[0-9A-Z_a-oq-z]
+ExtendToken 'Vn'"|MiniDFA13_-1062044516
+MiniDFA14_-772034862 -->|"p
+ExtendToken 'Vn'"|MiniDFA15_1367419142
+MiniDFA3_742957008 -->|"[#32;-&]"|MiniDFA3_742957008
+MiniDFA3_742957008 -->|"#92;"|MiniDFA4_2001254085
+MiniDFA3_742957008 -->|"[(-[]"|MiniDFA3_742957008
+MiniDFA3_742957008 -->|"[]-~]"|MiniDFA3_742957008
+MiniDFA3_742957008 -->|"'
+ExtendToken 'Vt'"|MiniDFA16_667520748
+MiniDFA4_2001254085 -->|"'"|MiniDFA3_742957008
+MiniDFA4_2001254085 -->|"#92;"|MiniDFA3_742957008
+MiniDFA5_7543543 -->|"[#32;-~]"|MiniDFA6_-1460448968
+MiniDFA15_1367419142 -->|"[0-9A-Z_a-su-z]
+ExtendToken 'Vn'"|MiniDFA13_-1062044516
+MiniDFA15_1367419142 -->|"t
+ExtendToken 'Vn'"|MiniDFA17_-1358450166
+MiniDFA6_-1460448968 -->|"[^%]"|MiniDFA6_-1460448968
+MiniDFA6_-1460448968 -->|"%"|MiniDFA7_1744683586
+MiniDFA17_-1358450166 -->|"[0-9A-Z_a-xz]
+ExtendToken 'Vn'"|MiniDFA13_-1062044516
+MiniDFA17_-1358450166 -->|"y
+ExtendToken 'Vn''empty'"|MiniDFA18_-1113869385
+MiniDFA7_1744683586 -->|"[^%]"|MiniDFA6_-1460448968
+MiniDFA7_1744683586 -->|"[%]
+ExtendToken 'pattern'"|MiniDFA19_-541931836
+MiniDFA18_-1113869385 -->|"[a-zA-Z0-9_]
+ExtendToken 'Vn'"|MiniDFA13_-1062044516

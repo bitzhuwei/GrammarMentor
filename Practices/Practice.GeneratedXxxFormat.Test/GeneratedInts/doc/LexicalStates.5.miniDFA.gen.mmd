@@ -1,0 +1,32 @@
+flowchart
+classDef c0001 color:#FF0000;
+classDef c0010 stroke-dasharray: 10 10;
+classDef c0011 stroke-dasharray: 10 10,color:#FF0000;
+classDef c0100 fill:#BB66EE;
+classDef c0101 fill:#BB66EE,color:#FF0000;
+classDef c0110 fill:#BB66EE,stroke-dasharray: 10 10;
+classDef c0111 fill:#BB66EE,stroke-dasharray: 10 10,color:#FF0000;
+classDef c1000 stroke:#333,stroke-width:4px;
+classDef c1001 stroke:#333,stroke-width:4px,color:#FF0000;
+classDef c1010 stroke:#333,stroke-width:4px,stroke-dasharray: 10 10;
+classDef c1011 stroke:#333,stroke-width:4px,stroke-dasharray: 10 10,color:#FF0000;
+classDef c1100 stroke:#333,stroke-width:4px,fill:#BB66EE;
+classDef c1101 stroke:#333,stroke-width:4px,fill:#BB66EE,color:#FF0000;
+classDef c1110 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10;
+classDef c1111 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10,color:#FF0000;
+subgraph MiniDFA0_-471964189["MiniDFA0 {1}"]
+DFA0_774839393_0{{"DFA0 wholeStart"}}
+class DFA0_774839393_0 c1000;
+end
+class MiniDFA0_-471964189 c1000;
+subgraph MiniDFA1_-1553326227["MiniDFA1 {1}"]
+DFA1_1542509584_1[\"DFA1 {1}
+AcceptToken 'integer'"/]
+class DFA1_1542509584_1 c0101;
+end
+class MiniDFA1_-1553326227 c0101;
+MiniDFA0_-471964189 -->|"[0-9]
+BeginToken 'integer'
+ExtendToken 'integer'"|MiniDFA1_-1553326227
+MiniDFA1_-1553326227 -->|"[0-9]
+ExtendToken 'integer'"|MiniDFA1_-1553326227

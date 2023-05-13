@@ -1,0 +1,188 @@
+flowchart
+classDef c0001 color:#FF0000;
+classDef c0010 stroke-dasharray: 10 10;
+classDef c0011 stroke-dasharray: 10 10,color:#FF0000;
+classDef c0100 fill:#BB66EE;
+classDef c0101 fill:#BB66EE,color:#FF0000;
+classDef c0110 fill:#BB66EE,stroke-dasharray: 10 10;
+classDef c0111 fill:#BB66EE,stroke-dasharray: 10 10,color:#FF0000;
+classDef c1000 stroke:#333,stroke-width:4px;
+classDef c1001 stroke:#333,stroke-width:4px,color:#FF0000;
+classDef c1010 stroke:#333,stroke-width:4px,stroke-dasharray: 10 10;
+classDef c1011 stroke:#333,stroke-width:4px,stroke-dasharray: 10 10,color:#FF0000;
+classDef c1100 stroke:#333,stroke-width:4px,fill:#BB66EE;
+classDef c1101 stroke:#333,stroke-width:4px,fill:#BB66EE,color:#FF0000;
+classDef c1110 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10;
+classDef c1111 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10,color:#FF0000;
+eNFA0_0_28516429[["εNFA0-0 wholeStart"]]
+class eNFA0_0_28516429 c1000;
+eNFA1_2_28129408[["εNFA1-2 regex start"]]
+class eNFA1_2_28129408 c1000;
+eNFA2_2_55321272[["εNFA2-2 regex start"]]
+class eNFA2_2_55321272 c1000;
+eNFA1_0_63889584[["εNFA1-0 scope{1, ∞}"]]
+class eNFA1_0_63889584 c1000;
+eNFA2_0_46920042[["εNFA2-0 char{1, 1}"]]
+class eNFA2_0_46920042 c1000;
+eNFA1_1_51838085[\"εNFA1-1 scope[1]
+AcceptToken 'entityId'"/]
+class eNFA1_1_51838085 c0111;
+eNFA2_1_19627195[\"εNFA2-1 char[1]
+AcceptToken '='"/]
+class eNFA2_1_19627195 c1111;
+eNFA1_3_38135346[\"εNFA1-3 regex end
+AcceptToken 'entityId'"/]
+class eNFA1_3_38135346 c0111;
+eNFA1_4_49952580[\"εNFA1-4 post-regex start
+AcceptToken 'entityId'"/]
+class eNFA1_4_49952580 c0011;
+eNFA1_5_10954379[\"εNFA1-5 post-regex end"/]
+class eNFA1_5_10954379 c0011;
+eNFA0_1_16130234[\"εNFA0-1 wholeEnd"/]
+eNFA2_3_7673796[\"εNFA2-3 regex end
+AcceptToken '='"/]
+class eNFA2_3_7673796 c1111;
+eNFA2_4_17597733[\"εNFA2-4 post-regex start
+AcceptToken '='"/]
+class eNFA2_4_17597733 c0011;
+eNFA3_2_1955303[\"εNFA3-2 regex start"/]
+class eNFA3_2_1955303 c1000;
+eNFA2_5_24161869[\"εNFA2-5 post-regex end"/]
+class eNFA2_5_24161869 c0011;
+eNFA3_0_14889546[\"εNFA3-0 scope{1, ∞}"/]
+class eNFA3_0_14889546 c1000;
+eNFA3_1_31480555[\"εNFA3-1 scope[1]
+AcceptToken 'refEntity'"/]
+class eNFA3_1_31480555 c0111;
+eNFA3_3_66897058[\"εNFA3-3 regex end
+AcceptToken 'refEntity'"/]
+class eNFA3_3_66897058 c0111;
+eNFA3_4_42427034[\"εNFA3-4 post-regex start
+AcceptToken 'refEntity'"/]
+class eNFA3_4_42427034 c0011;
+eNFA3_5_65202610[\"εNFA3-5 post-regex end"/]
+class eNFA3_5_65202610 c0011;
+eNFA0_0_28516429 -.->|"ε"|eNFA1_2_28129408
+eNFA0_0_28516429 -.->|"ε"|eNFA2_2_55321272
+eNFA0_0_28516429 -.->|"ε
+BeginToken 'entityId'"|eNFA1_0_63889584
+eNFA0_0_28516429 -.->|"ε
+BeginToken '='"|eNFA2_0_46920042
+eNFA0_0_28516429 -->|"[0-9]
+BeginToken 'entityId'
+ExtendToken 'entityId'"|eNFA1_1_51838085
+eNFA0_0_28516429 -->|"=
+BeginToken '='
+ExtendToken '='"|eNFA2_1_19627195
+eNFA1_2_28129408 -.->|"ε
+BeginToken 'entityId'"|eNFA1_0_63889584
+eNFA1_2_28129408 -->|"[0-9]
+BeginToken 'entityId'
+ExtendToken 'entityId'"|eNFA1_1_51838085
+eNFA2_2_55321272 -.->|"ε
+BeginToken '='"|eNFA2_0_46920042
+eNFA2_2_55321272 -->|"=
+BeginToken '='
+ExtendToken '='"|eNFA2_1_19627195
+eNFA1_0_63889584 -->|"[0-9]
+BeginToken 'entityId'
+ExtendToken 'entityId'"|eNFA1_1_51838085
+eNFA2_0_46920042 -->|"=
+BeginToken '='
+ExtendToken '='"|eNFA2_1_19627195
+eNFA1_1_51838085 -->|"[0-9]
+ExtendToken 'entityId'"|eNFA1_1_51838085
+eNFA1_1_51838085 -.->|"ε
+ExtendToken 'entityId'"|eNFA1_3_38135346
+eNFA1_1_51838085 -.->|"ε"|eNFA1_4_49952580
+eNFA1_1_51838085 -.->|"ε
+CheckToken 'entityId'
+AcceptToken 'entityId'"|eNFA1_5_10954379
+eNFA1_1_51838085 -.->|"ε
+CheckToken 'entityId'"|eNFA0_1_16130234
+eNFA2_1_19627195 -.->|"ε
+ExtendToken '='"|eNFA2_3_7673796
+eNFA2_1_19627195 -.->|"ε"|eNFA2_4_17597733
+eNFA2_1_19627195 -.->|"ε
+AcceptPrevious '='"|eNFA3_2_1955303
+eNFA2_1_19627195 -.->|"ε
+CheckToken '='
+AcceptToken '='"|eNFA2_5_24161869
+eNFA2_1_19627195 -.->|"ε
+CheckToken '='"|eNFA0_1_16130234
+eNFA2_1_19627195 -.->|"ε
+AcceptPrevious '='
+BeginToken 'refEntity'"|eNFA3_0_14889546
+eNFA2_1_19627195 -->|"[0-9]
+AcceptPrevious '='
+BeginToken 'refEntity'
+ExtendToken 'refEntity'"|eNFA3_1_31480555
+eNFA1_3_38135346 -.->|"ε"|eNFA1_4_49952580
+eNFA1_3_38135346 -.->|"ε
+CheckToken 'entityId'
+AcceptToken 'entityId'"|eNFA1_5_10954379
+eNFA1_3_38135346 -.->|"ε
+CheckToken 'entityId'"|eNFA0_1_16130234
+eNFA1_4_49952580 -.->|"ε
+CheckToken 'entityId'
+AcceptToken 'entityId'"|eNFA1_5_10954379
+eNFA1_4_49952580 -.->|"ε
+CheckToken 'entityId'"|eNFA0_1_16130234
+eNFA1_5_10954379 -.->|"ε
+CheckToken 'entityId'"|eNFA0_1_16130234
+eNFA2_3_7673796 -.->|"ε"|eNFA2_4_17597733
+eNFA2_3_7673796 -.->|"ε
+AcceptPrevious '='"|eNFA3_2_1955303
+eNFA2_3_7673796 -.->|"ε
+CheckToken '='
+AcceptToken '='"|eNFA2_5_24161869
+eNFA2_3_7673796 -.->|"ε
+AcceptPrevious '='
+BeginToken 'refEntity'"|eNFA3_0_14889546
+eNFA2_3_7673796 -.->|"ε
+CheckToken '='"|eNFA0_1_16130234
+eNFA2_3_7673796 -->|"[0-9]
+AcceptPrevious '='
+BeginToken 'refEntity'
+ExtendToken 'refEntity'"|eNFA3_1_31480555
+eNFA2_4_17597733 -.->|"ε
+CheckToken '='
+AcceptToken '='"|eNFA2_5_24161869
+eNFA2_4_17597733 -.->|"ε
+CheckToken '='"|eNFA0_1_16130234
+eNFA3_2_1955303 -.->|"ε
+AcceptPrevious '='
+BeginToken 'refEntity'"|eNFA3_0_14889546
+eNFA3_2_1955303 -->|"[0-9]
+AcceptPrevious '='
+BeginToken 'refEntity'
+ExtendToken 'refEntity'"|eNFA3_1_31480555
+eNFA2_5_24161869 -.->|"ε
+CheckToken '='"|eNFA0_1_16130234
+eNFA3_0_14889546 -->|"[0-9]
+AcceptPrevious '='
+BeginToken 'refEntity'
+ExtendToken 'refEntity'"|eNFA3_1_31480555
+eNFA3_1_31480555 -->|"[0-9]
+ExtendToken 'refEntity'"|eNFA3_1_31480555
+eNFA3_1_31480555 -.->|"ε
+ExtendToken 'refEntity'"|eNFA3_3_66897058
+eNFA3_1_31480555 -.->|"ε"|eNFA3_4_42427034
+eNFA3_1_31480555 -.->|"ε
+CheckToken 'refEntity'
+AcceptToken 'refEntity'"|eNFA3_5_65202610
+eNFA3_1_31480555 -.->|"ε
+CheckToken 'refEntity'"|eNFA0_1_16130234
+eNFA3_3_66897058 -.->|"ε"|eNFA3_4_42427034
+eNFA3_3_66897058 -.->|"ε
+CheckToken 'refEntity'
+AcceptToken 'refEntity'"|eNFA3_5_65202610
+eNFA3_3_66897058 -.->|"ε
+CheckToken 'refEntity'"|eNFA0_1_16130234
+eNFA3_4_42427034 -.->|"ε
+CheckToken 'refEntity'
+AcceptToken 'refEntity'"|eNFA3_5_65202610
+eNFA3_4_42427034 -.->|"ε
+CheckToken 'refEntity'"|eNFA0_1_16130234
+eNFA3_5_65202610 -.->|"ε
+CheckToken 'refEntity'"|eNFA0_1_16130234

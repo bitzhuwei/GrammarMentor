@@ -1,0 +1,54 @@
+flowchart
+classDef c0001 color:#FF0000;
+classDef c0010 stroke-dasharray: 10 10;
+classDef c0011 stroke-dasharray: 10 10,color:#FF0000;
+classDef c0100 fill:#BB66EE;
+classDef c0101 fill:#BB66EE,color:#FF0000;
+classDef c0110 fill:#BB66EE,stroke-dasharray: 10 10;
+classDef c0111 fill:#BB66EE,stroke-dasharray: 10 10,color:#FF0000;
+classDef c1000 stroke:#333,stroke-width:4px;
+classDef c1001 stroke:#333,stroke-width:4px,color:#FF0000;
+classDef c1010 stroke:#333,stroke-width:4px,stroke-dasharray: 10 10;
+classDef c1011 stroke:#333,stroke-width:4px,stroke-dasharray: 10 10,color:#FF0000;
+classDef c1100 stroke:#333,stroke-width:4px,fill:#BB66EE;
+classDef c1101 stroke:#333,stroke-width:4px,fill:#BB66EE,color:#FF0000;
+classDef c1110 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10;
+classDef c1111 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10,color:#FF0000;
+NFA0_0_133067("NFA0-0 wholeStart")
+class NFA0_0_133067 c1000;
+NFA1_1_29840947[\"NFA1-1 char[1]
+AcceptToken 's'"/]
+class NFA1_1_29840947 c0101;
+NFA2_1_1197606[\"NFA2-1 char[1]
+AcceptToken 't'"/]
+class NFA2_1_1197606 c0101;
+NFA3_1_10778462[\"NFA3-1 char[1]
+AcceptToken 'g'"/]
+class NFA3_1_10778462 c0101;
+NFA4_1_29897299[\"NFA4-1 char[1]
+AcceptToken 'w'"/]
+class NFA4_1_29897299 c0101;
+NFA5_1_640238[\"NFA5-1 char[1]
+AcceptToken 'e'"/]
+class NFA5_1_640238 c0101;
+NFA6_1_5762144[\"NFA6-1 char[1]
+AcceptToken 'd'"/]
+class NFA6_1_5762144 c0101;
+NFA0_0_133067 -->|"s
+BeginToken 's'
+ExtendToken 's'"|NFA1_1_29840947
+NFA0_0_133067 -->|"t
+BeginToken 't'
+ExtendToken 't'"|NFA2_1_1197606
+NFA0_0_133067 -->|"g
+BeginToken 'g'
+ExtendToken 'g'"|NFA3_1_10778462
+NFA0_0_133067 -->|"w
+BeginToken 'w'
+ExtendToken 'w'"|NFA4_1_29897299
+NFA0_0_133067 -->|"e
+BeginToken 'e'
+ExtendToken 'e'"|NFA5_1_640238
+NFA0_0_133067 -->|"d
+BeginToken 'd'
+ExtendToken 'd'"|NFA6_1_5762144

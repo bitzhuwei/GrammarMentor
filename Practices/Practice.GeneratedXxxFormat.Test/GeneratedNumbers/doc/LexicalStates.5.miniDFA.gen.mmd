@@ -1,0 +1,46 @@
+flowchart
+classDef c0001 color:#FF0000;
+classDef c0010 stroke-dasharray: 10 10;
+classDef c0011 stroke-dasharray: 10 10,color:#FF0000;
+classDef c0100 fill:#BB66EE;
+classDef c0101 fill:#BB66EE,color:#FF0000;
+classDef c0110 fill:#BB66EE,stroke-dasharray: 10 10;
+classDef c0111 fill:#BB66EE,stroke-dasharray: 10 10,color:#FF0000;
+classDef c1000 stroke:#333,stroke-width:4px;
+classDef c1001 stroke:#333,stroke-width:4px,color:#FF0000;
+classDef c1010 stroke:#333,stroke-width:4px,stroke-dasharray: 10 10;
+classDef c1011 stroke:#333,stroke-width:4px,stroke-dasharray: 10 10,color:#FF0000;
+classDef c1100 stroke:#333,stroke-width:4px,fill:#BB66EE;
+classDef c1101 stroke:#333,stroke-width:4px,fill:#BB66EE,color:#FF0000;
+classDef c1110 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10;
+classDef c1111 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10,color:#FF0000;
+subgraph MiniDFA0_569336601["MiniDFA0 {1}"]
+DFA0_-719760743_0{{"DFA0 wholeStart"}}
+class DFA0_-719760743_0 c1000;
+end
+class MiniDFA0_569336601 c1000;
+subgraph MiniDFA2_-164932217["MiniDFA2 {1}"]
+DFA1_-1749208652_1[\"DFA1 {2}
+AcceptToken 'integer'"/]
+class DFA1_-1749208652_1 c0101;
+end
+class MiniDFA2_-164932217 c0101;
+subgraph MiniDFA1_-292777981["MiniDFA1 {1}"]
+DFA2_-646656898_2{{"DFA2 {1}"}}
+end
+subgraph MiniDFA3_-406947756["MiniDFA3 {1}"]
+DFA3_-496823011_3[\"DFA3 {1}
+AcceptToken 'float'"/]
+class DFA3_-496823011_3 c0101;
+end
+class MiniDFA3_-406947756 c0101;
+MiniDFA0_569336601 -->|"[0-9]
+BeginToken 'integer''float'
+ExtendToken 'integer'"|MiniDFA2_-164932217
+MiniDFA2_-164932217 -->|"[0-9]
+ExtendToken 'integer'"|MiniDFA2_-164932217
+MiniDFA2_-164932217 -->|"."|MiniDFA1_-292777981
+MiniDFA1_-292777981 -->|"[0-9]
+ExtendToken 'float'"|MiniDFA3_-406947756
+MiniDFA3_-406947756 -->|"[0-9]
+ExtendToken 'float'"|MiniDFA3_-406947756

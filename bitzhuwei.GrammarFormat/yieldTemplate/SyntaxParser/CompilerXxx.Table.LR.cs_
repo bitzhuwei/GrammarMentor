@@ -1,0 +1,30 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using bitzhuwei.Compiler;
+
+namespace bitzhuwei.{GrammarName}Format {
+    partial class Compiler{GrammarName} {
+        const int syntaxStateCount = {syntaxStateCount};
+        // NOTE: choose only one from Compiler{GrammarName}.TableLL(1).cs, Compiler{GrammarName}.TableLR(0).cs, Compiler{GrammarName}.TableSLR(1).cs, Compiler{GrammarName}.TableLALR(1).cs, Compiler{GrammarName}.TableLR(1).cs
+        /// <summary>
+        /// {EParsingTable}
+        /// </summary>
+        private static readonly SyntaxState[] syntaxStates = new SyntaxState[syntaxStateCount];
+        /// <summary>
+        /// <see cref="Token"/> list to syntax tree(<see cref="Node"/>).
+        /// </summary>
+        private readonly LRSyntaxParser syntaxParser = new LRSyntaxParser(Compiler{GrammarName}.syntaxStates[0], new Token(-1, -1, -1) { type = EType.EndOfTokenList, value = "[EOT]" });
+
+        private static void InitializeSyntaxStates() {
+            var list = Compiler{GrammarName}.syntaxStates;
+            for (int i = 0; i < syntaxStateCount; i++) {
+                list[i] = new SyntaxState($"{nameof(Compiler{GrammarName})}.syntaxStates[{i}]");
+            }
+            // {actionCount} actions. {conflicts} conflicts.
+{actionDict.Add.List}
+        }
+    }
+}

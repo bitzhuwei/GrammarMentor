@@ -1,0 +1,46 @@
+﻿using bitzhuwei.Compiler;
+using System.Collections.Generic;
+using System;
+using System.Diagnostics.Eventing.Reader;
+using System.Collections;
+using System.Data;
+using System.Net.Http.Headers;
+
+namespace bitzhuwei.{GrammarName}Format {
+    public partial class Compiler{GrammarName} {
+        /// <summary>
+        /// <see cref="Node.type"/> -&gt; <see cref="Action{Node, TContext{{ExtractedType}}}"/>
+        /// </summary>
+        private static readonly Dictionary<string/*Node.type*/, Action<Node, TContext<{ExtractedType}>>> {ExtractedType.var}ExtracterDict = new Dictionary<string, Action<Node, TContext<{ExtractedType}>>>();
+
+        private static readonly Action<Node, TContext<{ExtractedType}>> VtHandler =
+            (node, context) => {
+                var token = context.tokens[node.tokenIndex];
+                context.objStack.Push(token);
+            };
+
+        /// <summary>
+        /// initialize dict for extracter.
+        /// </summary>
+        private static void Initialize{ExtractedType}ExtracterDict() {
+            var extracterDict = {ExtractedType.var}ExtracterDict;
+            //extracterDict.Add(EType.NotYet,
+            //(node, context) => {
+            // not needed.
+            //});
+            //extracterDict.Add(EType.Error,
+            //(node, context) => {
+            // nothing to do.
+            //});
+            //extracterDict.Add(EType.MultipleLineComment,
+            //(node, context) => {
+            // not needed.
+            //});
+            //extracterDict.Add(EType.SingleLineComment,
+            //(node, context) => {
+            // not needed.
+            //});
+{extracterDict.Add.List}
+        }
+    }
+}

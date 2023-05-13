@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4E95DE53-886E-4280-839C-4F95F66EC5CC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>bitzhuwei.ABBFormat</RootNamespace>
+    <AssemblyName>bitzhuwei.ABBFormat</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="How2Use.cs" />
+    <Compile Include="CompilerABB.cs" />
+    <Compile Include="CompilerABB.EType.cs" />
+    <Compile Include="DataStructure\A.cs" />
+    <Compile Include="DataStructure\B.cs" />
+    <Compile Include="DataStructure\BCounter.cs" />
+    <Compile Include="LexicalAnalyzer\CompilerABB.LexcicalConst.cs" />
+    <Compile Include="LexicalAnalyzer\CompilerABB.LexcicalState0.cs" />
+    <Compile Include="LexicalAnalyzer\CompilerABB.LexcicalState1_1.cs" />
+    <Compile Include="LexicalAnalyzer\CompilerABB.LexcicalState1_2.cs" />
+    <Compile Include="LexicalAnalyzer\CompilerABB.LexcicalState1_3.cs" />
+    <Compile Include="LexicalAnalyzer\CompilerABB.LexcicalState1_4.cs" />
+    <Compile Include="Printer\Node.Printer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SyntaxParser\CompilerABB.Regulations.cs" />
+    <Compile Include="SyntaxParser\CompilerABB.TableSLR%281%29.cs" />
+    <Compile Include="TExtracter\ABBExtracter.Init.UserModified.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ABB.st" />
+    <None Include="ABB.formatted.st" />
+    <None Include="ABB.node" />
+    <None Include="ABB.tokens" />
+    <None Include="FIRST-FOLLOW.md" />
+    <None Include="LALR%281%29SyntaxMachine.md" />
+    <None Include="LexicalAnalyzer\readme.md" />
+    <None Include="LL%281%29SyntaxMachine.md" />
+    <None Include="LR%280%29SytnaxMachine.md" />
+    <None Include="LR%281%29SyntaxMachine.md" />
+    <None Include="readme.manual.md" />
+    <None Include="readme-full.md" />
+    <None Include="readme.md" />
+    <None Include="SLR%281%29SyntaxMachine.md" />
+    <None Include="SyntaxParser\readme.md" />
+    <None Include="TExtracter\readme.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\bitzhuwei.Compiler\bitzhuwei.Compiler.csproj">
+      <Project>{ac6957ab-e76b-4c08-9aa6-7eff02175a92}</Project>
+      <Name>bitzhuwei.Compiler</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SyntaxParser\LALR%281%29SyntaxMachine.png" />
+    <Content Include="SyntaxParser\LR%280%29SyntaxMachine.png" />
+    <Content Include="SyntaxParser\LR%281%29SyntaxMachine.png" />
+    <Content Include="SyntaxParser\SLRSyntaxMachine.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,10 @@
+stateDiagram-v2
+[*] --> state2_1 : c （ { '0' - '9' }
+state2_1 --> state2_1 : c （ { '0' - '9' }
+state2_1 --> state2_2 : c == '.'
+state2_1 --> [*] : other
+state2_2 --> state2_3 : c （ { '0' - '9' }
+state2_3 --> state2_3 : c （ { '0' - '9' }
+state2_3 --> [*] : other
+
+

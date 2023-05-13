@@ -1,0 +1,27 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using bitzhuwei.Compiler;
+
+namespace bitzhuwei.{GrammarName}Format {
+    partial class Compiler{GrammarName} {
+        // const int VnCount = {VnCount};
+        // NOTE: choose only one from Compiler{GrammarName}.TableLL(1).cs, Compiler{GrammarName}.TableLR(0).cs, Compiler{GrammarName}.TableSLR(1).cs, Compiler{GrammarName}.TableLALR(1).cs, Compiler{GrammarName}.TableLR(1).cs
+        /// <summary>
+        /// {EParsingTable}
+        /// </summary>
+        private static readonly Dictionary<string/*Vn*/, Dictionary<string/*Vt*/, Regulation>> LL1SyntaxParsingTable = new Dictionary<string/*Vn*/, Dictionary<string/*Vt*/, Regulation>>();
+        /// <summary>
+        /// <see cref="Token"/> list to syntax tree(<see cref="Node"/>).
+        /// </summary>
+        private readonly LLSyntaxParser syntaxParser = new LLSyntaxParser(EType.{firstVn}, LL1SyntaxParsingTable, new Token(-1, -1, -1) { type = EType.EndOfTokenList, value = "[EOT]" });
+
+        private static void InitializeSyntaxStates() {
+            var table = Compiler{GrammarName}.LL1SyntaxParsingTable;
+            // {actionCount} actions. {conflicts} conflicts.
+{actionDict.Add.List}
+        }
+    }
+}

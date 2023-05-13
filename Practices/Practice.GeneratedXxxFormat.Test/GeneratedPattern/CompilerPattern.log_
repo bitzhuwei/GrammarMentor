@@ -1,0 +1,12 @@
+2023-05-08 21:31:42 Generating for CompilerPattern started.
+2023-05-08 21:31:42 Generating pre-main..
+2023-05-08 21:31:42 Generating lexical analyzer..
+2023-05-08 21:31:59 Generating syntax parser..
+2023-05-08 21:31:59 Generating nullable + FIRST + FOLLOW..
+2023-05-08 21:31:59 Generating LL(1) syntax info..
+2023-05-08 21:31:59 Generating LR(0) syntax info..
+2023-05-08 21:32:00 Generating SLR(1) syntax info..
+2023-05-08 21:32:00 Generating LALR(1) syntax info..
+2023-05-08 21:32:00 Generating LR(1) syntax info..
+2023-05-08 21:32:01 Generating post-main..
+2023-05-08 21:32:01 Generating for Pattern ended.

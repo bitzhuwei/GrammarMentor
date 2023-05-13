@@ -1,0 +1,31 @@
+StatementList : StatementList Statement ; [0->11]
+ ├─StatementList : Statement ; [0->7]
+ │  └─Statement : SyntaxProduction ; [0->7]
+ │     └─SyntaxProduction : 'Identifier' ':' CandidateList ';' ; [0->7]
+ │        ├─[0]='Identifier' A
+ │        ├─[1]=':' :
+ │        ├─CandidateList : CandidateList '|' Candidate ; [2->6]
+ │        │  ├─CandidateList : Candidate ; [2->4]
+ │        │  │  └─Candidate : Candidate V ; [2->4]
+ │        │  │     ├─Candidate : Candidate V ; [2->3]
+ │        │  │     │  ├─Candidate : V ; [2]
+ │        │  │     │  │  └─V : 'Identifier' ; [2]
+ │        │  │     │  │     └─[2]='Identifier' A
+ │        │  │     │  └─V : 'String' ; [3]
+ │        │  │     │     └─[3]='String' '+'
+ │        │  │     └─V : 'Identifier' ; [4]
+ │        │  │        └─[4]='Identifier' B
+ │        │  ├─[5]='|' |
+ │        │  └─Candidate : V ; [6]
+ │        │     └─V : 'String' ; [6]
+ │        │        └─[6]='String' 'a'
+ │        └─[7]=';' ;
+ └─Statement : SyntaxProduction ; [8->11]
+    └─SyntaxProduction : 'Identifier' ':' CandidateList ';' ; [8->11]
+       ├─[8]='Identifier' B
+       ├─[9]=':' :
+       ├─CandidateList : Candidate ; [10]
+       │  └─Candidate : V ; [10]
+       │     └─V : 'String' ; [10]
+       │        └─[10]='String' 'b'
+       └─[11]=';' ;

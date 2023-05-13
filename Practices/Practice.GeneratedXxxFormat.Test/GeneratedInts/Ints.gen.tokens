@@ -1,0 +1,17 @@
+0 errors:
+15 tokens:
+T[0]='Vn' Ints [ln:3, col:1, i:52, L:4]
+T[1]=':' : [ln:3, col:6, i:57, L:1]
+T[2]='Vn' Ints [ln:3, col:8, i:59, L:4]
+T[3]='Vn' Int [ln:3, col:13, i:64, L:3]
+T[4]='|' | [ln:3, col:17, i:68, L:1]
+T[5]='Vn' Int [ln:3, col:19, i:70, L:3]
+T[6]=';' ; [ln:3, col:23, i:74, L:1]
+T[7]='Vn' Int [ln:4, col:1, i:77, L:3]
+T[8]=':' : [ln:4, col:5, i:81, L:1]
+T[9]='Vt' 'integer' [ln:4, col:7, i:83, L:9]
+T[10]=';' ; [ln:4, col:17, i:93, L:1]
+T[11]='Vt' 'integer' [ln:5, col:1, i:96, L:9]
+T[12]=':' : [ln:5, col:11, i:106, L:1]
+T[13]='pattern' %%[0-9]+%% [ln:5, col:13, i:108, L:10]
+T[14]=';' ; [ln:5, col:24, i:119, L:1]

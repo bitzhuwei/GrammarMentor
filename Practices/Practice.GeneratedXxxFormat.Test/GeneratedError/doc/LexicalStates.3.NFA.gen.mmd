@@ -1,0 +1,52 @@
+flowchart
+classDef c0001 color:#FF0000;
+classDef c0010 stroke-dasharray: 10 10;
+classDef c0011 stroke-dasharray: 10 10,color:#FF0000;
+classDef c0100 fill:#BB66EE;
+classDef c0101 fill:#BB66EE,color:#FF0000;
+classDef c0110 fill:#BB66EE,stroke-dasharray: 10 10;
+classDef c0111 fill:#BB66EE,stroke-dasharray: 10 10,color:#FF0000;
+classDef c1000 stroke:#333,stroke-width:4px;
+classDef c1001 stroke:#333,stroke-width:4px,color:#FF0000;
+classDef c1010 stroke:#333,stroke-width:4px,stroke-dasharray: 10 10;
+classDef c1011 stroke:#333,stroke-width:4px,stroke-dasharray: 10 10,color:#FF0000;
+classDef c1100 stroke:#333,stroke-width:4px,fill:#BB66EE;
+classDef c1101 stroke:#333,stroke-width:4px,fill:#BB66EE,color:#FF0000;
+classDef c1110 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10;
+classDef c1111 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10,color:#FF0000;
+NFA0_0_9521066("NFA0-0 wholeStart")
+class NFA0_0_9521066 c1000;
+NFA1_1_45797138[\"NFA1-1 char[1]
+AcceptToken 'refVt'"/]
+class NFA1_1_45797138 c0101;
+NFA1_5_18580737[\"NFA1-5 scope[1]
+AcceptToken 'refVt'"/]
+class NFA1_5_18580737 c0101;
+NFA1_1_33008913[\"NFA1-1 char[1]
+AcceptToken 'refVt'"/]
+class NFA1_1_33008913 c0101;
+NFA1_5_28644761[\"NFA1-5 scope[1]
+AcceptToken 'refVt'"/]
+class NFA1_5_28644761 c0101;
+NFA0_0_9521066 -->|"#92;
+BeginToken 'refVt'
+ExtendToken 'refVt'"|NFA1_1_45797138
+NFA0_0_9521066 -->|"[Y-#92;]
+BeginToken 'refVt'
+ExtendToken 'refVt'"|NFA1_5_18580737
+NFA1_1_45797138 -->|"#92;
+ExtendToken 'refVt'"|NFA1_1_33008913
+NFA1_1_45797138 -->|"[Y-#92;]
+ExtendToken 'refVt'"|NFA1_5_28644761
+NFA1_5_18580737 -->|"#92;
+ExtendToken 'refVt'"|NFA1_1_33008913
+NFA1_5_18580737 -->|"[Y-#92;]
+ExtendToken 'refVt'"|NFA1_5_28644761
+NFA1_1_33008913 -->|"#92;
+ExtendToken 'refVt'"|NFA1_1_33008913
+NFA1_1_33008913 -->|"[Y-#92;]
+ExtendToken 'refVt'"|NFA1_5_28644761
+NFA1_5_28644761 -->|"#92;
+ExtendToken 'refVt'"|NFA1_1_33008913
+NFA1_5_28644761 -->|"[Y-#92;]
+ExtendToken 'refVt'"|NFA1_5_28644761

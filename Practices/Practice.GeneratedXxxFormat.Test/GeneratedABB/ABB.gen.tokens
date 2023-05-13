@@ -1,0 +1,14 @@
+0 errors:
+12 tokens:
+T[0]='Vn' A [ln:3, col:1, i:51, L:1]
+T[1]=':' : [ln:3, col:3, i:53, L:1]
+T[2]='Vn' A [ln:3, col:5, i:55, L:1]
+T[3]='Vt' '+' [ln:3, col:7, i:57, L:3]
+T[4]='Vn' B [ln:3, col:11, i:61, L:1]
+T[5]='|' | [ln:3, col:13, i:63, L:1]
+T[6]='Vt' 'a' [ln:3, col:15, i:65, L:3]
+T[7]=';' ; [ln:3, col:19, i:69, L:1]
+T[8]='Vn' B [ln:4, col:1, i:72, L:1]
+T[9]=':' : [ln:4, col:3, i:74, L:1]
+T[10]='Vt' 'b' [ln:4, col:5, i:76, L:3]
+T[11]=';' ; [ln:4, col:9, i:80, L:1]

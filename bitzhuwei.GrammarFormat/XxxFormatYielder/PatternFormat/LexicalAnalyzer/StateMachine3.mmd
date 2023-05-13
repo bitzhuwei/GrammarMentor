@@ -1,0 +1,24 @@
+flowchart
+classDef default fill:#C7EDCC,stroke:#993399,stroke-width:0px,text-align:left;
+classDef titlebarStyle fill:gold;
+titlebar>"lexical state(part 3)"]
+class titlebar titlebarStyle
+state0(state0)
+state3_1("state3-1 begin scope")
+state3_2("state3-2 oh! reverse")
+state3_3("state3-3 got ESC")
+state3_4("state3-4 found a char")
+state3_5("state3-5 got ESC")
+state3_6("state3-6 got ESC")
+state0 -->|"["| state3_1
+state3_1 -->|"^"| state3_2
+state3_2 -->|"\"| state3_3
+state3_3 -->|"other"| state3_4
+state3_2 -->|"other"| state3_4
+state3_1 -->|"\"| state3_5
+state3_5 -->|"other"| state3_4
+state3_1 -->|"other"| state3_4
+state3_4 -->|"\"| state3_6
+state3_4 -->|"other"| state3_4
+state3_4 -->|"]"| state0
+state3_6 --->|"other"| state3_4
