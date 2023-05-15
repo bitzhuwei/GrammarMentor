@@ -61,9 +61,9 @@ namespace bitzhuwei.GrammarFormat {
                             if (!result.TryGetValue(refKey, out FIRST refFirst)) { throw new Exception(algorithmError); }
                             foreach (var value in refFirst.Values) {
                                 //if (value != string/*Node.type*/.NullNode)
-                                if (value != CompilerGrammar.keywordEmpty) {
-                                    changed = first.TryInsert(value) || changed;
-                                }
+                                //if (value != CompilerGrammar.keywordEmpty) {
+                                changed = first.TryInsert(value) || changed;
+                                //}
                             }
                         }
                     }
@@ -73,7 +73,11 @@ namespace bitzhuwei.GrammarFormat {
                         // then FIRST( key ) includes empty.
                         if (CanBeEmpty(key, emptyDict)) {
                             //changed = first.TryInsert(string/*Node.type*/.NullNode) || changed;
-                            changed = first.TryInsert(CompilerGrammar.keywordEmpty) || changed;
+                            //changed = first.TryInsert(CompilerGrammar.keywordEmpty) || changed;
+                            if (!first.containsEmpty) {
+                                first.containsEmpty = true;
+                                changed = true;
+                            }
                         }
                     }
                 }
@@ -94,11 +98,11 @@ namespace bitzhuwei.GrammarFormat {
             foreach (var Vn in VnNodes) {
                 if (emptyDict[Vn]) {
                     //var first = new FIRST(Vn, CompilerGrammar.EType.null_);
-                    var first = new FIRST(Vn, CompilerGrammar.keywordEmpty);
+                    var first = new FIRST(key: Vn, containsEmpty: true);
                     result.Add(first.keyString, first);
                 }
                 else {
-                    var first = new FIRST(Vn);
+                    var first = new FIRST(key: Vn);
                     result.Add(first.keyString, first);
                 }
             }
@@ -110,12 +114,12 @@ namespace bitzhuwei.GrammarFormat {
                 result.Add(first.keyString, first);
             }
 
-            // FIRST( empty ) = { empty }
-            {
-                //var first = new FIRST(CompilerGrammar.keywordEmpty);
-                var first = new FIRST(string.Empty);
-                result.Add(first.keyString, first);
-            }
+            //// FIRST( empty ) = { empty }
+            //{
+            //    //var first = new FIRST(CompilerGrammar.keywordEmpty);
+            //    var first = new FIRST(key: string.Empty, containsEmpty: true);
+            //    result.Add(first.keyString, first);
+            //}
 
             bool changed = false;
             do {
@@ -125,23 +129,23 @@ namespace bitzhuwei.GrammarFormat {
                     var right = regulation.Right;
                     // try to collect FIRST( left )
                     int rightLength = right.Count;
-                    for (int checkLength = 0; checkLength < rightLength; checkLength++) {
+                    for (int checkpoint = 0; checkpoint < rightLength; checkpoint++) {
                         // 如果前checkpoint个结点都可为null，
-                        // 就说明 FIRST(left) 包含 FIRST(right[checkCount])，empty除外。
+                        // 就说明 FIRST(left) 包含 FIRST(right[checkpoint])，empty除外。
                         // if regulation.right[(-1)->(checkpoint-1)] can be empty,
                         // then FIRST( left ) includes FIRST( right[checkpoint] )
                         // except for empty.
-                        if (CanBeEmpty(right, 0, checkLength, emptyDict)) {
-                            //string refKey = FIRST.MakeKey(regulation.right[checkCount]);
-                            var refKey = right[checkLength];
+                        if (CanBeEmpty(right, 0, checkpoint, emptyDict)) {
+                            //string refKey = FIRST.MakeKey(regulation.right[checkpoint]);
+                            var refKey = right[checkpoint];
                             if (left != refKey) {
                                 if (!result.TryGetValue(left, out FIRST first)) { throw new Exception(algorithmError); }
                                 if (!result.TryGetValue(refKey, out FIRST refFirst)) { throw new Exception(algorithmError); }
                                 foreach (var value in refFirst.Values) {
                                     //if (value != string/*Node.type*/.NullNode)
-                                    if (value != CompilerGrammar.keywordEmpty) {
-                                        changed = first.TryInsert(value) || changed;
-                                    }
+                                    //if (value != CompilerGrammar.keywordEmpty) {
+                                    changed = first.TryInsert(value) || changed;
+                                    //}
                                 }
                             }
                         }
@@ -151,7 +155,11 @@ namespace bitzhuwei.GrammarFormat {
                         // then regulation.left can be empty.
                         if (CanBeEmpty(right, emptyDict)) {
                             if (!result.TryGetValue(left, out FIRST first)) { throw new Exception(algorithmError); }
-                            changed = first.TryInsert(CompilerGrammar.keywordEmpty) || changed;
+                            //changed = first.TryInsert(CompilerGrammar.keywordEmpty) || changed;
+                            if (!first.containsEmpty) {
+                                first.containsEmpty = true;
+                                changed = true;
+                            }
                         }
                     }
                 }

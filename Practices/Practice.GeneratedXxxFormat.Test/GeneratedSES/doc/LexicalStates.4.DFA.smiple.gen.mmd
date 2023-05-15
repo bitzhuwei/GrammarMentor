@@ -14,41 +14,73 @@ classDef c1100 stroke:#333,stroke-width:4px,fill:#BB66EE;
 classDef c1101 stroke:#333,stroke-width:4px,fill:#BB66EE,color:#FF0000;
 classDef c1110 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10;
 classDef c1111 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10,color:#FF0000;
-DFA0_1716080415{{"DFA0 wholeStart"}}
-class DFA0_1716080415 c1000;
-DFA1_-240143629[\"DFA1 {1}
+DFA0_-1299054439{{"DFA0 wholeStart"}}
+class DFA0_-1299054439 c1000;
+DFA1_1055845689[\"DFA1 {1}
 AcceptToken 's'"/]
-class DFA1_-240143629 c0101;
-DFA2_301028278[\"DFA2 {1}
+class DFA1_1055845689 c0101;
+DFA2_-1917490574[\"DFA2 {1}
 AcceptToken 't'"/]
-class DFA2_301028278 c0101;
-DFA3_-386939718[\"DFA3 {1}
+class DFA2_-1917490574 c0101;
+DFA3_-701376295[\"DFA3 {1}
 AcceptToken 'g'"/]
-class DFA3_-386939718 c0101;
-DFA4_-1306490502[\"DFA4 {1}
+class DFA3_-701376295 c0101;
+DFA4_-681318700[\"DFA4 {1}
 AcceptToken 'w'"/]
-class DFA4_-1306490502 c0101;
-DFA5_-1787280378[\"DFA5 {1}
+class DFA4_-681318700 c0101;
+DFA5_2051529573[\"DFA5 {1}
 AcceptToken 'e'"/]
-class DFA5_-1787280378 c0101;
-DFA6_-1886935679[\"DFA6 {1}
+class DFA5_2051529573 c0101;
+DFA6_-1169595839[\"DFA6 {1}
 AcceptToken 'd'"/]
-class DFA6_-1886935679 c0101;
-DFA0_1716080415 -->|"s
+class DFA6_-1169595839 c0101;
+DFA7_-670766500{{"DFA7 {2}"}}
+DFA8_1306797959{{"DFA8 {1}"}}
+DFA9_-1957368769[\"DFA9 {1}
+AcceptToken 'inlineComment'"/]
+class DFA9_-1957368769 c0101;
+DFA10_-167006945{{"DFA10 {1}"}}
+DFA11_1657803936{{"DFA11 {2}"}}
+DFA12_1950027080[\"DFA12 {1}
+AcceptToken 'inlineComment'"/]
+class DFA12_1950027080 c0101;
+DFA13_-1208762609{{"DFA13 {1}"}}
+DFA14_-560072739[\"DFA14 {1}
+AcceptToken 'blockComment'"/]
+class DFA14_-560072739 c0101;
+DFA0_-1299054439 -->|"s
 BeginToken 's'
-ExtendToken 's'"|DFA1_-240143629
-DFA0_1716080415 -->|"t
+ExtendToken 's'"|DFA1_1055845689
+DFA0_-1299054439 -->|"t
 BeginToken 't'
-ExtendToken 't'"|DFA2_301028278
-DFA0_1716080415 -->|"g
+ExtendToken 't'"|DFA2_-1917490574
+DFA0_-1299054439 -->|"g
 BeginToken 'g'
-ExtendToken 'g'"|DFA3_-386939718
-DFA0_1716080415 -->|"w
+ExtendToken 'g'"|DFA3_-701376295
+DFA0_-1299054439 -->|"w
 BeginToken 'w'
-ExtendToken 'w'"|DFA4_-1306490502
-DFA0_1716080415 -->|"e
+ExtendToken 'w'"|DFA4_-681318700
+DFA0_-1299054439 -->|"e
 BeginToken 'e'
-ExtendToken 'e'"|DFA5_-1787280378
-DFA0_1716080415 -->|"d
+ExtendToken 'e'"|DFA5_2051529573
+DFA0_-1299054439 -->|"d
 BeginToken 'd'
-ExtendToken 'd'"|DFA6_-1886935679
+ExtendToken 'd'"|DFA6_-1169595839
+DFA0_-1299054439 -->|"/
+BeginToken 'blockComment''inlineComment'"|DFA7_-670766500
+DFA7_-670766500 -->|"*"|DFA8_1306797959
+DFA7_-670766500 -->|"/
+ExtendToken 'inlineComment'"|DFA9_-1957368769
+DFA8_1306797959 -->|"[^*]"|DFA10_-167006945
+DFA8_1306797959 -->|"*"|DFA11_1657803936
+DFA9_-1957368769 -->|"[#92;t#92;r#32;-~]
+ExtendToken 'inlineComment'"|DFA12_1950027080
+DFA10_-167006945 -->|"[^*]"|DFA10_-167006945
+DFA10_-167006945 -->|"*"|DFA11_1657803936
+DFA11_1657803936 -->|"[^/]"|DFA13_-1208762609
+DFA11_1657803936 -->|"/
+ExtendToken 'blockComment'"|DFA14_-560072739
+DFA12_1950027080 -->|"[#92;t#92;r#32;-~]
+ExtendToken 'inlineComment'"|DFA12_1950027080
+DFA13_-1208762609 -->|"[^*]"|DFA10_-167006945
+DFA13_-1208762609 -->|"*"|DFA11_1657803936

@@ -51,8 +51,8 @@ namespace bitzhuwei.GrammarFormat {
                     }
                     else {
                         int t = stateList.IndexOf(to);
-                        to = stateList.States[t];
-                        var edge = new SLR1Edge(from, V, to);
+                        var oldTo = stateList.States[t];
+                        var edge = new SLR1Edge(from, V, oldTo);
                         edgeList.TryInsert(edge);
                     }
                 }

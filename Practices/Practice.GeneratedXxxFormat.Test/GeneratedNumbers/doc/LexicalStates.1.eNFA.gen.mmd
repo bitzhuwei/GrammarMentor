@@ -14,58 +14,138 @@ classDef c1100 stroke:#333,stroke-width:4px,fill:#BB66EE;
 classDef c1101 stroke:#333,stroke-width:4px,fill:#BB66EE,color:#FF0000;
 classDef c1110 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10;
 classDef c1111 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10,color:#FF0000;
-eNFA0_0_9499066[["εNFA0-0 wholeStart"]]
-eNFA1_2_34836667[["εNFA1-2 regex start"]]
-class eNFA1_2_34836667 c1000;
-eNFA2_6_18382734[["εNFA2-6 regex start"]]
-class eNFA2_6_18382734 c1000;
-eNFA1_0_50140351[["εNFA1-0 scope{1, ∞}"]]
-eNFA2_0_57690894[["εNFA2-0 scope{1, ∞}"]]
-eNFA1_1_27940771[["εNFA1-1 scope[1]"]]
-eNFA2_1_28779720[["εNFA2-1 scope[1]"]]
-eNFA1_3_48609983[["εNFA1-3 regex end"]]
-class eNFA1_3_48609983 c0100;
-eNFA2_2_49456006[["εNFA2-2 char{1, 1}"]]
-eNFA1_4_45094547[["εNFA1-4 post-regex start"]]
-class eNFA1_4_45094547 c0010;
-eNFA2_3_45742965[["εNFA2-3 char[1]"]]
-eNFA1_5_3197746[\"εNFA1-5 post-regex end"/]
-class eNFA1_5_3197746 c0001;
-eNFA2_4_46513524[["εNFA2-4 scope{1, ∞}"]]
-eNFA0_1_12606476[\"εNFA0-1 wholeEnd"/]
-eNFA2_5_42450871[["εNFA2-5 scope[1]"]]
-eNFA2_7_15968532[["εNFA2-7 regex end"]]
-class eNFA2_7_15968532 c0100;
-eNFA2_8_46349424[["εNFA2-8 post-regex start"]]
-class eNFA2_8_46349424 c0010;
-eNFA2_9_31226881[\"εNFA2-9 post-regex end"/]
-class eNFA2_9_31226881 c0001;
-eNFA0_0_9499066 -.->|"ε"|eNFA1_2_34836667
-eNFA0_0_9499066 -.->|"ε"|eNFA2_6_18382734
-eNFA1_2_34836667 -.->|"ε
-BeginToken 'integer'"|eNFA1_0_50140351
-eNFA2_6_18382734 -.->|"ε
-BeginToken 'float'"|eNFA2_0_57690894
-eNFA1_0_50140351 -->|"[0-9]"|eNFA1_1_27940771
-eNFA2_0_57690894 -->|"[0-9]"|eNFA2_1_28779720
-eNFA1_1_27940771 -->|"[0-9]"|eNFA1_1_27940771
-eNFA1_1_27940771 -.->|"ε
-ExtendToken 'integer'"|eNFA1_3_48609983
-eNFA2_1_28779720 -->|"[0-9]"|eNFA2_1_28779720
-eNFA2_1_28779720 -.->|"ε"|eNFA2_2_49456006
-eNFA1_3_48609983 -.->|"ε"|eNFA1_4_45094547
-eNFA2_2_49456006 -->|"."|eNFA2_3_45742965
-eNFA1_4_45094547 -.->|"ε
+eNFA0_0_53720453[["εNFA0-0 wholeStart"]]
+eNFA1_2_40261524[["εNFA1-2 regex start"]]
+class eNFA1_2_40261524 c1000;
+eNFA2_6_13722030[["εNFA2-6 regex start"]]
+class eNFA2_6_13722030 c1000;
+eNFA3_16_24183370[["εNFA3-16 regex start"]]
+class eNFA3_16_24183370 c1000;
+eNFA4_5_324668[["εNFA4-5 regex start"]]
+class eNFA4_5_324668 c1000;
+eNFA1_0_21209668[["εNFA1-0 scope{1, ∞}"]]
+eNFA2_0_15374270[["εNFA2-0 scope{1, ∞}"]]
+eNFA3_0_12695920[["εNFA3-0 char{1, 1}"]]
+eNFA4_0_26298136[["εNFA4-0 char{1, 1}"]]
+eNFA1_1_17269710[["εNFA1-1 scope[1]"]]
+eNFA2_1_24077873[["εNFA2-1 scope[1]"]]
+eNFA3_1_18826965[["εNFA3-1 char[1]"]]
+eNFA4_1_35224963[["εNFA4-1 char[1]"]]
+eNFA1_3_56669285[["εNFA1-3 regex end"]]
+class eNFA1_3_56669285 c0100;
+eNFA2_2_4150710[["εNFA2-2 char{1, 1}"]]
+eNFA3_2_18974100[["εNFA3-2 char{1, 1}"]]
+eNFA4_2_36549175[["εNFA4-2 char{1, 1}"]]
+eNFA1_4_26809401[["εNFA1-4 post-regex start"]]
+class eNFA1_4_26809401 c0010;
+eNFA2_3_60507121[["εNFA2-3 char[1]"]]
+eNFA3_3_7378398[["εNFA3-3 char[1]"]]
+eNFA4_3_8289053[["εNFA4-3 char[1]"]]
+eNFA1_5_39958021[\"εNFA1-5 post-regex end"/]
+class eNFA1_5_39958021 c0001;
+eNFA2_4_663215[["εNFA2-4 scope{1, ∞}"]]
+eNFA3_6_37253141[["εNFA3-6 regex start"]]
+eNFA4_4_15834086[["εNFA4-4 char{0, ∞}"]]
+eNFA0_1_37742617[\"εNFA0-1 wholeEnd"/]
+eNFA2_5_37356392[["εNFA2-5 scope[1]"]]
+eNFA3_4_64714441[["εNFA3-4 scope{1, 1}"]]
+eNFA3_8_66842817[["εNFA3-8 scope{1, 1}"]]
+eNFA3_7_45559064[["εNFA3-7 regex end"]]
+eNFA4_6_7492614[["εNFA4-6 regex end"]]
+class eNFA4_6_7492614 c0100;
+eNFA2_7_5968939[["εNFA2-7 regex end"]]
+class eNFA2_7_5968939 c0100;
+eNFA3_5_60779388[["εNFA3-5 scope[1]"]]
+eNFA3_9_61695723[["εNFA3-9 scope[1]"]]
+eNFA3_12_66405588[["εNFA3-12 char{1, 1}"]]
+eNFA4_7_35356632[["εNFA4-7 post-regex start"]]
+class eNFA4_7_35356632 c0010;
+eNFA2_8_4139237[["εNFA2-8 post-regex start"]]
+class eNFA2_8_4139237 c0010;
+eNFA3_10_52084342[["εNFA3-10 scope{1, 1}"]]
+eNFA3_13_66105898[["εNFA3-13 char[1]"]]
+eNFA4_8_2922015[\"εNFA4-8 post-regex end"/]
+class eNFA4_8_2922015 c0001;
+eNFA2_9_56389407[\"εNFA2-9 post-regex end"/]
+class eNFA2_9_56389407 c0001;
+eNFA3_11_10143581[["εNFA3-11 scope[1]"]]
+eNFA3_14_58082174[["εNFA3-14 char{1, 1}"]]
+eNFA3_15_47154420[["εNFA3-15 char[1]"]]
+eNFA3_17_21736599[["εNFA3-17 regex end"]]
+class eNFA3_17_21736599 c0100;
+eNFA3_18_61411666[["εNFA3-18 post-regex start"]]
+class eNFA3_18_61411666 c0010;
+eNFA3_19_16323738[\"εNFA3-19 post-regex end"/]
+class eNFA3_19_16323738 c0001;
+eNFA0_0_53720453 -.->|"ε"|eNFA1_2_40261524
+eNFA0_0_53720453 -.->|"ε"|eNFA2_6_13722030
+eNFA0_0_53720453 -.->|"ε"|eNFA3_16_24183370
+eNFA0_0_53720453 -.->|"ε"|eNFA4_5_324668
+eNFA1_2_40261524 -.->|"ε
+BeginToken 'integer'"|eNFA1_0_21209668
+eNFA2_6_13722030 -.->|"ε
+BeginToken 'float'"|eNFA2_0_15374270
+eNFA3_16_24183370 -.->|"ε
+BeginToken 'blockComment'"|eNFA3_0_12695920
+eNFA4_5_324668 -.->|"ε
+BeginToken 'inlineComment'"|eNFA4_0_26298136
+eNFA1_0_21209668 -->|"[0-9]"|eNFA1_1_17269710
+eNFA2_0_15374270 -->|"[0-9]"|eNFA2_1_24077873
+eNFA3_0_12695920 -->|"/"|eNFA3_1_18826965
+eNFA4_0_26298136 -->|"/"|eNFA4_1_35224963
+eNFA1_1_17269710 -->|"[0-9]"|eNFA1_1_17269710
+eNFA1_1_17269710 -.->|"ε
+ExtendToken 'integer'"|eNFA1_3_56669285
+eNFA2_1_24077873 -->|"[0-9]"|eNFA2_1_24077873
+eNFA2_1_24077873 -.->|"ε"|eNFA2_2_4150710
+eNFA3_1_18826965 -.->|"ε"|eNFA3_2_18974100
+eNFA4_1_35224963 -.->|"ε"|eNFA4_2_36549175
+eNFA1_3_56669285 -.->|"ε"|eNFA1_4_26809401
+eNFA2_2_4150710 -->|"."|eNFA2_3_60507121
+eNFA3_2_18974100 -->|"*"|eNFA3_3_7378398
+eNFA4_2_36549175 -->|"/"|eNFA4_3_8289053
+eNFA1_4_26809401 -.->|"ε
 CheckToken 'integer'
-AcceptToken 'integer'"|eNFA1_5_3197746
-eNFA2_3_45742965 -.->|"ε"|eNFA2_4_46513524
-eNFA1_5_3197746 -.->|"ε"|eNFA0_1_12606476
-eNFA2_4_46513524 -->|"[0-9]"|eNFA2_5_42450871
-eNFA2_5_42450871 -->|"[0-9]"|eNFA2_5_42450871
-eNFA2_5_42450871 -.->|"ε
-ExtendToken 'float'"|eNFA2_7_15968532
-eNFA2_7_15968532 -.->|"ε"|eNFA2_8_46349424
-eNFA2_8_46349424 -.->|"ε
+AcceptToken 'integer'"|eNFA1_5_39958021
+eNFA2_3_60507121 -.->|"ε"|eNFA2_4_663215
+eNFA3_3_7378398 -.->|"ε"|eNFA3_6_37253141
+eNFA4_3_8289053 -.->|"ε"|eNFA4_4_15834086
+eNFA1_5_39958021 -.->|"ε"|eNFA0_1_37742617
+eNFA2_4_663215 -->|"[0-9]"|eNFA2_5_37356392
+eNFA3_6_37253141 -.->|"ε"|eNFA3_4_64714441
+eNFA3_6_37253141 -.->|"ε"|eNFA3_8_66842817
+eNFA3_6_37253141 -.->|"ε"|eNFA3_7_45559064
+eNFA4_4_15834086 -->|"[#92;t#92;r#32;-~]"|eNFA4_4_15834086
+eNFA4_4_15834086 -.->|"ε
+ExtendToken 'inlineComment'"|eNFA4_6_7492614
+eNFA2_5_37356392 -->|"[0-9]"|eNFA2_5_37356392
+eNFA2_5_37356392 -.->|"ε
+ExtendToken 'float'"|eNFA2_7_5968939
+eNFA3_4_64714441 -->|"[^*]"|eNFA3_5_60779388
+eNFA3_8_66842817 -->|"[*]"|eNFA3_9_61695723
+eNFA3_7_45559064 -.->|"ε"|eNFA3_6_37253141
+eNFA3_7_45559064 -.->|"ε"|eNFA3_12_66405588
+eNFA4_6_7492614 -.->|"ε"|eNFA4_7_35356632
+eNFA2_7_5968939 -.->|"ε"|eNFA2_8_4139237
+eNFA3_5_60779388 -.->|"ε"|eNFA3_7_45559064
+eNFA3_9_61695723 -.->|"ε"|eNFA3_10_52084342
+eNFA3_12_66405588 -->|"*"|eNFA3_13_66105898
+eNFA4_7_35356632 -.->|"ε
+CheckToken 'inlineComment'
+AcceptToken 'inlineComment'"|eNFA4_8_2922015
+eNFA2_8_4139237 -.->|"ε
 CheckToken 'float'
-AcceptToken 'float'"|eNFA2_9_31226881
-eNFA2_9_31226881 -.->|"ε"|eNFA0_1_12606476
+AcceptToken 'float'"|eNFA2_9_56389407
+eNFA3_10_52084342 -->|"[^/]"|eNFA3_11_10143581
+eNFA3_13_66105898 -.->|"ε"|eNFA3_14_58082174
+eNFA4_8_2922015 -.->|"ε"|eNFA0_1_37742617
+eNFA2_9_56389407 -.->|"ε"|eNFA0_1_37742617
+eNFA3_11_10143581 -.->|"ε"|eNFA3_7_45559064
+eNFA3_14_58082174 -->|"/"|eNFA3_15_47154420
+eNFA3_15_47154420 -.->|"ε
+ExtendToken 'blockComment'"|eNFA3_17_21736599
+eNFA3_17_21736599 -.->|"ε"|eNFA3_18_61411666
+eNFA3_18_61411666 -.->|"ε
+CheckToken 'blockComment'
+AcceptToken 'blockComment'"|eNFA3_19_16323738
+eNFA3_19_16323738 -.->|"ε"|eNFA0_1_37742617

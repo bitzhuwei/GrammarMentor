@@ -1,4 +1,4 @@
-// something(...) between %%...%%
+// something(xxx) between %%xxx%%
 // GrammarName=Pattern
 // ExtractedType=TokenDraft
 // VnRegulations:
@@ -11,7 +11,7 @@ Unit       : 'char' Repeat | '.' Repeat | 'scope' Repeat | '(' Regex ')' Repeat 
 Repeat     : '?' | '+' | '*' | '{' 'min' UpperBound '}' | empty ;
 UpperBound : ',' 'max' | ',' | empty ;
 // VtRegex:
-'refVt'    : %%\<'([ -&]|\\'|[(-~])+'\>%% ; // start with <' and end with '> 
+'refVt'    : %%\<'([ -&]|\\'|[(-\[]|\\\\|[\]-~])+'\>%% ; // start with <' and end with '> 
 'min'      : %%<'{'>[0-9]+%% ;
 'max'      : %%<','>[0-9]+%% ;
 // 'char' is a letter or an escape

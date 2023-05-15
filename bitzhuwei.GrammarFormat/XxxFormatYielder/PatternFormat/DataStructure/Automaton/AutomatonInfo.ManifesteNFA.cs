@@ -29,13 +29,10 @@ namespace bitzhuwei.PatternFormat {
 
             SpreadEnds(copyed);
 
-            //var initialEmptyQueue = FindInitialEmptyEdges(copyed);
-            //CompleteEdges(copyed, initialEmptyQueue);
             CompleteEdges(copyed);
 
             return copyed;
         }
-
 
         /// <summary>
         /// complete edges.
@@ -100,34 +97,6 @@ namespace bitzhuwei.PatternFormat {
                 }
             }
         }
-
-        ///// <summary>
-        ///// find initial(explicit) ε edges.
-        ///// </summary>
-        ///// <param name="eNFA"></param>
-        ///// <returns></returns>
-        //private static Queue<eNFAEdgeDraft> FindInitialEmptyEdges(eNFAInfo eNFA) {
-        //    var initialEmptyQueue = new Queue<eNFAEdgeDraft>();
-        //    var queue = new Queue<eNFAStateDraft>(); queue.Enqueue(eNFA.start);
-        //    var visited = new List<eNFAStateDraft>();
-        //    while (queue.Count > 0) {
-        //        var from = queue.Dequeue();
-        //        if (!visited.Contains(from)) {
-        //            visited.Add(from);
-
-        //            foreach (var edge in from.toEdges) {
-        //                if (edge.IsEmpty()) {
-        //                    if (!initialEmptyQueue.Contains(edge)) { initialEmptyQueue.Enqueue(edge); }
-        //                }
-
-        //                var to = edge.to;
-        //                if (!visited.Contains(to)) { queue.Enqueue(to); }
-        //            }
-        //        }
-        //    }
-
-        //    return initialEmptyQueue;
-        //}
 
         private static void SpreadEnds(eNFAInfo eNFA) {
             var initialEnds = new Queue<eNFAStateDraft>();

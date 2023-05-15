@@ -33,6 +33,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -54,6 +55,7 @@
     <Compile Include="LexicalAnalyzer\TokenErrorInfo.cs" />
     <Compile Include="SyntaxParser\LLSyntaxParser\LLSyntaxContext.cs" />
     <Compile Include="SyntaxParser\LLSyntaxParser\LLSyntaxParser.cs" />
+    <Compile Include="SyntaxParser\LRSyntaxParser\LRParsingScreenshot.cs" />
     <Compile Include="SyntaxParser\ParsingAction.cs" />
     <Compile Include="SyntaxParser\LRSyntaxParser\LRParsingActions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

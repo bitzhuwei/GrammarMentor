@@ -35,9 +35,9 @@ namespace bitzhuwei.GrammarFormat {
                         foreach (var value in refFirst.Values) {
                             //if (value != string/*Node.type*/.NullNode)//旧版
                             //if (value != CompilerGrammar.EType.null_) //错版
-                            if (value != CompilerGrammar.keywordEmpty) {
-                                changed = first.TryInsert(value) || changed;
-                            }
+                            //if (value != CompilerGrammar.keywordEmpty) {
+                            changed = first.TryInsert(value) || changed;
+                            //}
                         }
                     }
                 }
@@ -52,7 +52,11 @@ namespace bitzhuwei.GrammarFormat {
                         //if (!first.Values.Contains(CompilerGrammar.keywordEmpty))
                         {
                             //changed = first.TryInsert(string/*Node.type*/.NullNode) || changed;
-                            changed = first.TryInsert(CompilerGrammar.keywordEmpty) || changed;
+                            //changed = first.TryInsert(CompilerGrammar.keywordEmpty) || changed;
+                            if (!first.containsEmpty) {
+                                first.containsEmpty = true;
+                                changed = true;
+                            }
                         }
                     }
                 }

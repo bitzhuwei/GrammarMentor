@@ -21,17 +21,17 @@ classDef c1100 stroke:#333,stroke-width:4px,fill:#BB66EE;
 classDef c1101 stroke:#333,stroke-width:4px,fill:#BB66EE,color:#FF0000;
 classDef c1110 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10;
 classDef c1111 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10,color:#FF0000;
-eNFA6_2_9437864[["εNFA6-2 regex start"]]
-eNFA6_0_17831918[["εNFA6-0 char{1, 1}"]]
-eNFA6_1_26269542[["εNFA6-1 char[1]"]]
-eNFA6_3_35099287[["εNFA6-3 regex end"]]
-eNFA6_4_47458132[["εNFA6-4 post-regex start"]]
-eNFA6_5_24470004[\"εNFA6-5 post-regex end"/]
-eNFA6_2_9437864 -.->|"ε"|eNFA6_0_17831918
-eNFA6_0_17831918 -->|"d"|eNFA6_1_26269542
-eNFA6_1_26269542 -.->|"ε"|eNFA6_3_35099287
-eNFA6_3_35099287 -.->|"ε"|eNFA6_4_47458132
-eNFA6_4_47458132 -.->|"ε"|eNFA6_5_24470004
+eNFA6_2_40462518[["εNFA6-2 regex start"]]
+eNFA6_0_28618347[["εNFA6-0 char{1, 1}"]]
+eNFA6_1_56238536[["εNFA6-1 char[1]"]]
+eNFA6_3_36384783[["εNFA6-3 regex end"]]
+eNFA6_4_59027591[["εNFA6-4 post-regex start"]]
+eNFA6_5_61486274[\"εNFA6-5 post-regex end"/]
+eNFA6_2_40462518 -.->|"ε"|eNFA6_0_28618347
+eNFA6_0_28618347 -->|"d"|eNFA6_1_56238536
+eNFA6_1_56238536 -.->|"ε"|eNFA6_3_36384783
+eNFA6_3_36384783 -.->|"ε"|eNFA6_4_59027591
+eNFA6_4_59027591 -.->|"ε"|eNFA6_5_61486274
 ```
 -------------------------------
 # 2/5: manifested ε-NFA
@@ -52,21 +52,21 @@ classDef c1100 stroke:#333,stroke-width:4px,fill:#BB66EE;
 classDef c1101 stroke:#333,stroke-width:4px,fill:#BB66EE,color:#FF0000;
 classDef c1110 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10;
 classDef c1111 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10,color:#FF0000;
-eNFA6_2_18903450[["εNFA6-2 regex start"]]
-eNFA6_0_35913326[["εNFA6-0 char{1, 1}"]]
-eNFA6_1_54784481[\"εNFA6-1 char[1]"/]
-eNFA6_3_23298284[\"εNFA6-3 regex end"/]
-eNFA6_4_8357968[\"εNFA6-4 post-regex start"/]
-eNFA6_5_8112855[\"εNFA6-5 post-regex end"/]
-eNFA6_2_18903450 -.->|"ε"|eNFA6_0_35913326
-eNFA6_2_18903450 -->|"d"|eNFA6_1_54784481
-eNFA6_0_35913326 -->|"d"|eNFA6_1_54784481
-eNFA6_1_54784481 -.->|"ε"|eNFA6_3_23298284
-eNFA6_1_54784481 -.->|"ε"|eNFA6_4_8357968
-eNFA6_1_54784481 -.->|"ε"|eNFA6_5_8112855
-eNFA6_3_23298284 -.->|"ε"|eNFA6_4_8357968
-eNFA6_3_23298284 -.->|"ε"|eNFA6_5_8112855
-eNFA6_4_8357968 -.->|"ε"|eNFA6_5_8112855
+eNFA6_2_16505562[["εNFA6-2 regex start"]]
+eNFA6_0_14332335[["εNFA6-0 char{1, 1}"]]
+eNFA6_1_61882154[\"εNFA6-1 char[1]"/]
+eNFA6_3_20068476[\"εNFA6-3 regex end"/]
+eNFA6_4_46398558[\"εNFA6-4 post-regex start"/]
+eNFA6_5_14933841[\"εNFA6-5 post-regex end"/]
+eNFA6_2_16505562 -.->|"ε"|eNFA6_0_14332335
+eNFA6_2_16505562 -->|"d"|eNFA6_1_61882154
+eNFA6_0_14332335 -->|"d"|eNFA6_1_61882154
+eNFA6_1_61882154 -.->|"ε"|eNFA6_3_20068476
+eNFA6_1_61882154 -.->|"ε"|eNFA6_4_46398558
+eNFA6_1_61882154 -.->|"ε"|eNFA6_5_14933841
+eNFA6_3_20068476 -.->|"ε"|eNFA6_4_46398558
+eNFA6_3_20068476 -.->|"ε"|eNFA6_5_14933841
+eNFA6_4_46398558 -.->|"ε"|eNFA6_5_14933841
 ```
 -------------------------------
 # 3/5: NFA
@@ -87,9 +87,9 @@ classDef c1100 stroke:#333,stroke-width:4px,fill:#BB66EE;
 classDef c1101 stroke:#333,stroke-width:4px,fill:#BB66EE,color:#FF0000;
 classDef c1110 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10;
 classDef c1111 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10,color:#FF0000;
-NFA6_2_5906832("NFA6-2 regex start")
-NFA6_1_53161494[\"NFA6-1 char[1]"/]
-NFA6_2_5906832 -->|"d"|NFA6_1_53161494
+NFA6_2_186847("NFA6-2 regex start")
+NFA6_1_1681623[\"NFA6-1 char[1]"/]
+NFA6_2_186847 -->|"d"|NFA6_1_1681623
 ```
 -------------------------------
 # 4/5: DFA
@@ -110,13 +110,13 @@ classDef c1100 stroke:#333,stroke-width:4px,fill:#BB66EE;
 classDef c1101 stroke:#333,stroke-width:4px,fill:#BB66EE,color:#FF0000;
 classDef c1110 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10;
 classDef c1111 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10,color:#FF0000;
-subgraph DFA0_2059075902["DFA0 regex start"]
-NFA6_2_5906832_0("NFA6-2 regex start")
+subgraph DFA0_208195195["DFA0 regex start"]
+NFA6_2_186847_0("NFA6-2 regex start")
 end
-subgraph DFA1_1412801787["DFA1 {1}"]
-NFA6_1_53161494_1[\"NFA6-1 char[1]"/]
+subgraph DFA1_1143169571["DFA1 {1}"]
+NFA6_1_1681623_1[\"NFA6-1 char[1]"/]
 end
-DFA0_2059075902 -->|"d"|DFA1_1412801787
+DFA0_208195195 -->|"d"|DFA1_1143169571
 ```
 -------------------------------
 # 4/5: DFA.simple
@@ -137,9 +137,9 @@ classDef c1100 stroke:#333,stroke-width:4px,fill:#BB66EE;
 classDef c1101 stroke:#333,stroke-width:4px,fill:#BB66EE,color:#FF0000;
 classDef c1110 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10;
 classDef c1111 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10,color:#FF0000;
-DFA0_2059075902{{"DFA0 regex start"}}
-DFA1_1412801787[\"DFA1 {1}"/]
-DFA0_2059075902 -->|"d"|DFA1_1412801787
+DFA0_208195195{{"DFA0 regex start"}}
+DFA1_1143169571[\"DFA1 {1}"/]
+DFA0_208195195 -->|"d"|DFA1_1143169571
 ```
 -------------------------------
 # 5/5: miniDFA
@@ -160,13 +160,13 @@ classDef c1100 stroke:#333,stroke-width:4px,fill:#BB66EE;
 classDef c1101 stroke:#333,stroke-width:4px,fill:#BB66EE,color:#FF0000;
 classDef c1110 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10;
 classDef c1111 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10,color:#FF0000;
-subgraph MiniDFA0_1818737334["MiniDFA0 {1}"]
-DFA0_2059075902_0{{"DFA0 regex start"}}
+subgraph MiniDFA0_404566194["MiniDFA0 {1}"]
+DFA0_208195195_0{{"DFA0 regex start"}}
 end
-subgraph MiniDFA1_1928206021["MiniDFA1 {1}"]
-DFA1_1412801787_1[\"DFA1 {1}"/]
+subgraph MiniDFA1_2130139193["MiniDFA1 {1}"]
+DFA1_1143169571_1[\"DFA1 {1}"/]
 end
-MiniDFA0_1818737334 -->|"d"|MiniDFA1_1928206021
+MiniDFA0_404566194 -->|"d"|MiniDFA1_2130139193
 ```
 -------------------------------
 # 5/5: miniDFA.simple
@@ -187,8 +187,8 @@ classDef c1100 stroke:#333,stroke-width:4px,fill:#BB66EE;
 classDef c1101 stroke:#333,stroke-width:4px,fill:#BB66EE,color:#FF0000;
 classDef c1110 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10;
 classDef c1111 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10,color:#FF0000;
-MiniDFA0_1818737334(["MiniDFA0 {1}"])
-MiniDFA1_1928206021[\"MiniDFA1 {1}"/]
-MiniDFA0_1818737334 -->|"d"|MiniDFA1_1928206021
+MiniDFA0_404566194(["MiniDFA0 {1}"])
+MiniDFA1_2130139193[\"MiniDFA1 {1}"/]
+MiniDFA0_404566194 -->|"d"|MiniDFA1_2130139193
 ```
 -------------------------------

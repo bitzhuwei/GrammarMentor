@@ -33,15 +33,52 @@ classDef c1100 stroke:#333,stroke-width:4px,fill:#BB66EE;
 classDef c1101 stroke:#333,stroke-width:4px,fill:#BB66EE,color:#FF0000;
 classDef c1110 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10;
 classDef c1111 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10,color:#FF0000;
-DFA0_774839393{{"DFA0 wholeStart"}}
-class DFA0_774839393 c1000;
-DFA1_1542509584[\"DFA1 {1}"/]
-class DFA1_1542509584 c0101;
-DFA0_774839393 -->|"[0-9]
+DFA0_879766078{{"DFA0 wholeStart"}}
+class DFA0_879766078 c1000;
+DFA1_-1410976644[\"DFA1 {1}"/]
+class DFA1_-1410976644 c0101;
+DFA2_320235872{{"DFA2 {2}"}}
+DFA3_1968006229{{"DFA3 {1}"}}
+DFA4_-322686605[\"DFA4 {1}"/]
+class DFA4_-322686605 c0101;
+DFA5_-2052777702{{"DFA5 {1}"}}
+DFA6_820711853{{"DFA6 {2}"}}
+DFA7_-2085538696[\"DFA7 {1}"/]
+class DFA7_-2085538696 c0101;
+DFA8_-897030992{{"DFA8 {1}"}}
+DFA9_-122808567[\"DFA9 {1}"/]
+class DFA9_-122808567 c0101;
+DFA0_879766078 -->|"[0-9]
 BeginToken 'integer'
-ExtendToken 'integer'"|DFA1_1542509584
-DFA1_1542509584 -->|"[0-9]
-ExtendToken 'integer'"|DFA1_1542509584
+ExtendToken 'integer'"|DFA1_-1410976644
+DFA0_879766078 -->|"/
+BeginToken 'blockComment''inlineComment'"|DFA2_320235872
+DFA1_-1410976644 -->|"[0-9]
+ExtendToken 'integer'"|DFA1_-1410976644
+DFA2_320235872 -->|"*"|DFA3_1968006229
+DFA2_320235872 -->|"/
+ExtendToken 'inlineComment'"|DFA4_-322686605
+DFA3_1968006229 -->|"[^*]"|DFA5_-2052777702
+DFA3_1968006229 -->|"*"|DFA6_820711853
+DFA4_-322686605 -->|"[#92;t#92;r#32;-~]
+ExtendToken 'inlineComment'"|DFA7_-2085538696
+DFA5_-2052777702 -->|"[^*]"|DFA5_-2052777702
+DFA5_-2052777702 -->|"*"|DFA6_820711853
+DFA6_820711853 -->|"[^/]"|DFA8_-897030992
+DFA6_820711853 -->|"/
+ExtendToken 'blockComment'"|DFA9_-122808567
+DFA7_-2085538696 -->|"[#92;t#92;r#32;-~]
+ExtendToken 'inlineComment'"|DFA7_-2085538696
+DFA8_-897030992 -->|"[^*]"|DFA5_-2052777702
+DFA8_-897030992 -->|"*"|DFA6_820711853
+
+```
+## nullable
+
+```
+[0]: nullable( Ints ) = False
+[1]: nullable( Int ) = False
+[2]: nullable( 'integer' ) = False
 
 ```
 
@@ -51,8 +88,7 @@ ExtendToken 'integer'"|DFA1_1542509584
 [0]: FIRST( Ints ) = { 'integer' }
 [1]: FIRST( Int ) = { 'integer' }
 [2]: FIRST( 'integer' ) = { 'integer' }
-[3]: FIRST(  ) = { empty }
-[4]: FIRST( Ints Int ) = { 'integer' }
+[3]: FIRST( Ints Int ) = { 'integer' }
 
 ```
 

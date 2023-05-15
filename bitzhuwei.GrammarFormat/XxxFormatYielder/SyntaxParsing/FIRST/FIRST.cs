@@ -63,7 +63,19 @@ namespace bitzhuwei.GrammarFormat {
         /// </summary>
         /// <param name="key"><see cref="Node.type"/><see cref="Node.type"/></param>
         /// <param name="values"><see cref="Node.type"/>, <see cref="Node.type"/>, ...</param>
-        public FIRST(string/*Node.type*/ key, params string/*Node.type*/[] values) {
+        public FIRST(string/*Node.type*/ key, params string/*Node.type*/[] values) : this(key, false, values) { }
+
+        /// <summary>
+        /// FIRST( <see cref="Node.type"/> <see cref="Node.type"/> .. ) = { <see cref="Node.type"/>, <see cref="Node.type"/>, ... }
+        /// <para>All possible first Vt nodes in ( .. )</para>
+        /// <para>{ ... } may contains <see cref="CompilerGrammar.keywordEmpty"/></para>
+        /// <para>If ( .. ) can refer to <see cref="CompilerGrammar.keywordEmpty"/>,</para>
+        /// <para>then FIRST( ..) contains <see cref="CompilerGrammar.keywordEmpty"/></para>
+        /// </summary>
+        /// <param name="key"><see cref="Node.type"/><see cref="Node.type"/></param>
+        /// <param name="containsEmpty">contains <see cref="CompilerGrammar.keywordEmpty"/> ?</param>
+        /// <param name="values"><see cref="Node.type"/>, <see cref="Node.type"/>, ...</param>
+        public FIRST(string/*Node.type*/ key, bool containsEmpty, params string/*Node.type*/[] values) {
             this.key = new string[] { key };
             this.keyString = key;// MakeKey(key);
             if (values != null) {
@@ -71,6 +83,7 @@ namespace bitzhuwei.GrammarFormat {
                     this.m_Values.TryInsert(item);
                 }
             }
+            this.containsEmpty = containsEmpty;
         }
 
         /// <summary>
@@ -82,7 +95,19 @@ namespace bitzhuwei.GrammarFormat {
         /// </summary>
         /// <param name="key"><see cref="Node.type"/> <see cref="Node.type"/> ...</param>
         /// <param name="values"><see cref="Node.type"/>, <see cref="Node.type"/>, ...</param>
-        public FIRST(IReadOnlyList<string/*Node.type*/> key, params string/*Node.type*/[] values) {
+        public FIRST(IReadOnlyList<string/*Node.type*/> key, params string/*Node.type*/[] values) : this(key, false, values) { }
+
+        /// <summary>
+        /// FIRST( <see cref="Node.type"/> <see cref="Node.type"/> .. ) = { <see cref="Node.type"/>, <see cref="Node.type"/>, ... }
+        /// <para>All possible first Vt nodes in ( .. )</para>
+        /// <para>{ ... } may contains <see cref="CompilerGrammar.keywordEmpty"/></para>
+        /// <para>If ( .. ) can refer to <see cref="CompilerGrammar.keywordEmpty"/>,</para>
+        /// <para>then FIRST( ..) contains <see cref="CompilerGrammar.keywordEmpty"/></para>
+        /// </summary>
+        /// <param name="key"><see cref="Node.type"/> <see cref="Node.type"/> ...</param>
+        /// <param name="containsEmpty">contains <see cref="CompilerGrammar.keywordEmpty"/> ?</param>
+        /// <param name="values"><see cref="Node.type"/>, <see cref="Node.type"/>, ...</param>
+        public FIRST(IReadOnlyList<string/*Node.type*/> key, bool containsEmpty, params string/*Node.type*/[] values) {
             int count = key.Count; var keyArray = new string[count];
             for (int i = 0; i < count; i++) { keyArray[i] = key[i]; }
             this.key = keyArray;
@@ -92,6 +117,7 @@ namespace bitzhuwei.GrammarFormat {
                     this.m_Values.TryInsert(item);
                 }
             }
+            this.containsEmpty = containsEmpty;
         }
 
         /// <summary>
@@ -106,12 +132,17 @@ namespace bitzhuwei.GrammarFormat {
         //    return this.m_Key[index];
         //}
 
-        //TODO: maybe no need to use CoupleList here. Yes, it does. to make sure not repeated items in it.
+        //TODO: maybe no need to use CoupleList here. Yes, it does. to make sure no repeated items in it.
         private CoupleList<string/*Node.type*/> m_Values = new CoupleList<string/*Node.type*/>();
         /// <summary>
-        /// collection of (Vt or <see cref="CompilerGrammar.keywordEmpty"/>)
+        /// collection of Vt(no <see cref="CompilerGrammar.keywordEmpty"/>)
         /// </summary>
         public IReadOnlyList<string/*Node.type*/> Values { get { return this.m_Values; } }
+
+        /// <summary>
+        /// contains <see cref="CompilerGrammar.keywordEmpty"/> ?
+        /// </summary>
+        public bool containsEmpty;
 
         /// <summary>
         /// 
@@ -124,15 +155,20 @@ namespace bitzhuwei.GrammarFormat {
             return inserted;
         }
 
-        public void Print(System.IO.TextWriter stream) {
-            stream.Write("FIRST( "); stream.Write(this.keyString); stream.Write(" ) = { ");
+        public void Print(System.IO.TextWriter w) {
+            w.Write("FIRST( "); w.Write(this.keyString); w.Write(" ) = { ");
+            if (this.containsEmpty) {
+                w.Write("ε");
+                w.Write(" ");
+            }
             int count = this.m_Values.Count;
             for (int i = 0; i < count; i++) {
-                var value = this.m_Values[i];
-                stream.Write(value);
-                stream.Write(" ");
+                var Vt = this.m_Values[i];
+                w.Write(Vt);
+                w.Write(" ");
             }
-            stream.Write("}");
+
+            w.Write("}");
         }
 
         public override string ToString() {

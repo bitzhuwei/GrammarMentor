@@ -21,6 +21,7 @@ namespace bitzhuwei.GrammarFormat {
             //var now = DateTime.Now.ToString();
             var grammar = context.grammar.Print();
             var LexicalAnalyerStatesDFA = GetLexicalAnalyerStatesDFA(context.automatonInfo.DFA);
+            var nullable = GetNullableList(context.nff.nullableDict);
             var firstList = GetFIRSTList(context.nff.firstDict);
             var followList = GetFOLLOWList(context.nff.followDict);
             var ll1Table = GetSyntaxParsingTableMD(context.ll1SyntaxInfo.table,
@@ -52,6 +53,7 @@ namespace bitzhuwei.GrammarFormat {
                 //template = template.Replace(strnow, now);
                 template = template.Replace(strGrammar, grammar);
                 template = template.Replace(strLexicalAnalyerStatesDFA, LexicalAnalyerStatesDFA);
+                template = template.Replace(strnullable, nullable);
                 template = template.Replace(strFirstList, firstList);
                 template = template.Replace(strFollowList, followList);
                 template = template.Replace(strLL1SyntaxTable, ll1Table);

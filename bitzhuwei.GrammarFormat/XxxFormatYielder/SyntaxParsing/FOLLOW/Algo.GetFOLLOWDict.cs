@@ -58,9 +58,9 @@ namespace bitzhuwei.GrammarFormat {
                                     if (!firstDict.TryGetValue(key, out FIRST first)) { throw new Exception(algorithmError); }
                                     foreach (var value in first.Values) {
                                         //if (value != string/*Node.type*/.NullNode)
-                                        if (value != CompilerGrammar.keywordEmpty) {
-                                            changed = follow.TryInsert(value) || changed;
-                                        }
+                                        //if (value != CompilerGrammar.keywordEmpty) {
+                                        changed = follow.TryInsert(value) || changed;
+                                        //}
                                     }
                                 }
                             }

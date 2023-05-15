@@ -36,7 +36,7 @@ namespace bitzhuwei.GrammarFormat {
                     template2 = template2.Replace(strnewLexicalRuleList, newLexicalRuleList);
                     var eId = Convert.ToString(state.Id, 10);
                     eId = eId.PadLeft(length, '0');
-                    string fullname = Path.Combine(path, $"Compiler{p.GrammarName}.LexcicalState{eId}.gen.cs");
+                    string fullname = Path.Combine(path, $"Compiler{p.GrammarName}.LexicalState{eId}.gen.cs");
                     File.WriteAllText(fullname, template2);
 
                     foreach (var edge in state.toEdges) {

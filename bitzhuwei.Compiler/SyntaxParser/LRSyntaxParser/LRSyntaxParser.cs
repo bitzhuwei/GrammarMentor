@@ -27,23 +27,25 @@ namespace bitzhuwei.Compiler {
         /// <exception cref="ArgumentNullException">The {initialState} cannot be null.</exception>
         /// <exception cref="ArgumentNullException">The {endOfTokenList} cannot be null.</exception>
         public LRSyntaxParser(SyntaxState initialState, Token endOfTokenList) {
-            if (initialState == null) {
-                throw new ArgumentNullException($"The {initialState} cannot be null!");
-            }
-            if (endOfTokenList == null) {
-                throw new ArgumentNullException($"The {endOfTokenList} cannot be null!");
-            }
+            if (initialState == null) { throw new ArgumentNullException($"{nameof(initialState)}"); }
+            if (endOfTokenList == null) { throw new ArgumentNullException($"{nameof(endOfTokenList)}"); }
 
             this.initialState = initialState;
             this.endOfTokenList = endOfTokenList;
         }
 
-        public Node Parse(TokenList tokenList) {
+        private static LRParsingScreenshot screenshot = new LRParsingScreenshot();
+
+        public Node Parse(TokenList tokenList, IReadOnlyList<Regulation> regulations = null) {
             var context = new LRSyntaxContext(tokenList, this.initialState, this.endOfTokenList);
             ParsingAction parsingAction;
             //while (!context.EOT)
             //while (context.stateStack.Count > 0)
             do {
+                if (regulations != null) {
+                    var time = DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss-fff");
+                    screenshot.Screenshot(context, regulations, $"screenshot-{time}.png");
+                }
                 Token currentToken = context.CurrentToken;
                 //ENodeType nodeType = (ENodeType)((int)currentToken.type); // syntax error.
                 //ENodeType nodeType = currentToken.type.Convert(); // extension method.
@@ -55,6 +57,12 @@ namespace bitzhuwei.Compiler {
                 context.SetCursor(nextTokenIndex);
             } while (!(parsingAction is LRAcceptAction));
             //} while (!context.EOT);
+            {
+                if (regulations != null) {
+                    var time = DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss-fff");
+                    screenshot.Screenshot(context, regulations, $"screenshot-{time}.png");
+                }
+            }
 
             var node = context.nodeStack.Pop();
             return node;

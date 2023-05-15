@@ -383,5 +383,17 @@ namespace bitzhuwei.GrammarFormat {
 
             return b.ToString();
         }
+
+        private static string GetNullableList(Dictionary<string, bool> nullableDict) {
+            var b = new StringBuilder();
+            int index = 0;
+            foreach (var item in nullableDict) {
+                var V = item.Key;
+                var nullable = item.Value;
+                b.AppendLine($"[{index++}]: nullable( {V} ) = {nullable}");
+            }
+
+            return b.ToString();
+        }
     }
 }

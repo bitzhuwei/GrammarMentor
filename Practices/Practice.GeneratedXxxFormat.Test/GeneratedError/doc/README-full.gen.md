@@ -31,38 +31,74 @@ classDef c1100 stroke:#333,stroke-width:4px,fill:#BB66EE;
 classDef c1101 stroke:#333,stroke-width:4px,fill:#BB66EE,color:#FF0000;
 classDef c1110 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10;
 classDef c1111 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10,color:#FF0000;
-DFA0_-992434304{{"DFA0 wholeStart"}}
-class DFA0_-992434304 c1000;
-DFA1_1229971353[\"DFA1 {2}"/]
-class DFA1_1229971353 c0101;
-DFA2_2023701841[\"DFA2 {1}"/]
-class DFA2_2023701841 c0101;
-DFA3_-1429252716[\"DFA3 {2}"/]
-class DFA3_-1429252716 c0101;
-DFA4_-548496545[\"DFA4 {1}"/]
-class DFA4_-548496545 c0101;
-DFA0_-992434304 -->|"#92;
+DFA0_909752378{{"DFA0 wholeStart"}}
+class DFA0_909752378 c1000;
+DFA1_1558677976[\"DFA1 {2}"/]
+class DFA1_1558677976 c0101;
+DFA2_-1584841839[\"DFA2 {1}"/]
+class DFA2_-1584841839 c0101;
+DFA3_-8839222{{"DFA3 {2}"}}
+DFA4_2050087193[\"DFA4 {2}"/]
+class DFA4_2050087193 c0101;
+DFA5_-204658626[\"DFA5 {1}"/]
+class DFA5_-204658626 c0101;
+DFA6_-908896648{{"DFA6 {1}"}}
+DFA7_10311414[\"DFA7 {1}"/]
+class DFA7_10311414 c0101;
+DFA8_660092950{{"DFA8 {1}"}}
+DFA9_1664463598{{"DFA9 {2}"}}
+DFA10_-1613046517[\"DFA10 {1}"/]
+class DFA10_-1613046517 c0101;
+DFA11_1311422151{{"DFA11 {1}"}}
+DFA12_889295564[\"DFA12 {1}"/]
+class DFA12_889295564 c0101;
+DFA0_909752378 -->|"#92;
 BeginToken 'refVt'
-ExtendToken 'refVt'"|DFA1_1229971353
-DFA0_-992434304 -->|"[Y-[]
+ExtendToken 'refVt'"|DFA1_1558677976
+DFA0_909752378 -->|"[Y-[]
 BeginToken 'refVt'
-ExtendToken 'refVt'"|DFA2_2023701841
-DFA1_1229971353 -->|"#92;
-ExtendToken 'refVt'"|DFA3_-1429252716
-DFA1_1229971353 -->|"[Y-[]
-ExtendToken 'refVt'"|DFA4_-548496545
-DFA2_2023701841 -->|"#92;
-ExtendToken 'refVt'"|DFA3_-1429252716
-DFA2_2023701841 -->|"[Y-[]
-ExtendToken 'refVt'"|DFA4_-548496545
-DFA3_-1429252716 -->|"#92;
-ExtendToken 'refVt'"|DFA3_-1429252716
-DFA3_-1429252716 -->|"[Y-[]
-ExtendToken 'refVt'"|DFA4_-548496545
-DFA4_-548496545 -->|"#92;
-ExtendToken 'refVt'"|DFA3_-1429252716
-DFA4_-548496545 -->|"[Y-[]
-ExtendToken 'refVt'"|DFA4_-548496545
+ExtendToken 'refVt'"|DFA2_-1584841839
+DFA0_909752378 -->|"/
+BeginToken 'blockComment''inlineComment'"|DFA3_-8839222
+DFA1_1558677976 -->|"#92;
+ExtendToken 'refVt'"|DFA4_2050087193
+DFA1_1558677976 -->|"[Y-[]
+ExtendToken 'refVt'"|DFA5_-204658626
+DFA2_-1584841839 -->|"#92;
+ExtendToken 'refVt'"|DFA4_2050087193
+DFA2_-1584841839 -->|"[Y-[]
+ExtendToken 'refVt'"|DFA5_-204658626
+DFA3_-8839222 -->|"*"|DFA6_-908896648
+DFA3_-8839222 -->|"/
+ExtendToken 'inlineComment'"|DFA7_10311414
+DFA4_2050087193 -->|"#92;
+ExtendToken 'refVt'"|DFA4_2050087193
+DFA4_2050087193 -->|"[Y-[]
+ExtendToken 'refVt'"|DFA5_-204658626
+DFA5_-204658626 -->|"#92;
+ExtendToken 'refVt'"|DFA4_2050087193
+DFA5_-204658626 -->|"[Y-[]
+ExtendToken 'refVt'"|DFA5_-204658626
+DFA6_-908896648 -->|"[^*]"|DFA8_660092950
+DFA6_-908896648 -->|"*"|DFA9_1664463598
+DFA7_10311414 -->|"[#92;t#92;r#32;-~]
+ExtendToken 'inlineComment'"|DFA10_-1613046517
+DFA8_660092950 -->|"[^*]"|DFA8_660092950
+DFA8_660092950 -->|"*"|DFA9_1664463598
+DFA9_1664463598 -->|"[^/]"|DFA11_1311422151
+DFA9_1664463598 -->|"/
+ExtendToken 'blockComment'"|DFA12_889295564
+DFA10_-1613046517 -->|"[#92;t#92;r#32;-~]
+ExtendToken 'inlineComment'"|DFA10_-1613046517
+DFA11_1311422151 -->|"[^*]"|DFA8_660092950
+DFA11_1311422151 -->|"*"|DFA9_1664463598
+
+```
+## nullable
+
+```
+[0]: nullable( PreRegex ) = False
+[1]: nullable( 'refVt' ) = False
 
 ```
 
@@ -71,7 +107,6 @@ ExtendToken 'refVt'"|DFA4_-548496545
 ```
 [0]: FIRST( PreRegex ) = { 'refVt' }
 [1]: FIRST( 'refVt' ) = { 'refVt' }
-[2]: FIRST(  ) = { empty }
 
 ```
 

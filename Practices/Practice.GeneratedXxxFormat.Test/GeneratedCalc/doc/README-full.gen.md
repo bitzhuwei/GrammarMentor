@@ -38,45 +38,86 @@ classDef c1100 stroke:#333,stroke-width:4px,fill:#BB66EE;
 classDef c1101 stroke:#333,stroke-width:4px,fill:#BB66EE,color:#FF0000;
 classDef c1110 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10;
 classDef c1111 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10,color:#FF0000;
-DFA0_1371898302{{"DFA0 wholeStart"}}
-class DFA0_1371898302 c1000;
-DFA1_736285203[\"DFA1 {1}"/]
-class DFA1_736285203 c0101;
-DFA2_24116860[\"DFA2 {1}"/]
-class DFA2_24116860 c0101;
-DFA3_1215392932[\"DFA3 {1}"/]
-class DFA3_1215392932 c0101;
-DFA4_-740876899[\"DFA4 {1}"/]
-class DFA4_-740876899 c0101;
-DFA5_-2132989191[\"DFA5 {1}"/]
-class DFA5_-2132989191 c0101;
-DFA6_-489194620[\"DFA6 {1}"/]
-class DFA6_-489194620 c0101;
-DFA7_431494236[\"DFA7 {1}"/]
-class DFA7_431494236 c0101;
-DFA0_1371898302 -->|"[0-9]
+DFA0_-466580192{{"DFA0 wholeStart"}}
+class DFA0_-466580192 c1000;
+DFA1_-1093464317[\"DFA1 {1}"/]
+class DFA1_-1093464317 c0101;
+DFA2_946815801[\"DFA2 {1}"/]
+class DFA2_946815801 c0101;
+DFA3_-1934379784[\"DFA3 {1}"/]
+class DFA3_-1934379784 c0101;
+DFA4_344512846[\"DFA4 {1}"/]
+class DFA4_344512846 c0101;
+DFA5_-1207796552[\"DFA5 {3}"/]
+class DFA5_-1207796552 c0101;
+DFA6_-1232478392[\"DFA6 {1}"/]
+class DFA6_-1232478392 c0101;
+DFA7_-1911608150[\"DFA7 {1}"/]
+class DFA7_-1911608150 c0101;
+DFA8_-2126796951{{"DFA8 {1}"}}
+DFA9_1544858617[\"DFA9 {1}"/]
+class DFA9_1544858617 c0101;
+DFA10_1709820913{{"DFA10 {1}"}}
+DFA11_816023626{{"DFA11 {2}"}}
+DFA12_1452258063[\"DFA12 {1}"/]
+class DFA12_1452258063 c0101;
+DFA13_546524016{{"DFA13 {1}"}}
+DFA14_-1224855203[\"DFA14 {1}"/]
+class DFA14_-1224855203 c0101;
+DFA0_-466580192 -->|"[0-9]
 BeginToken 'number'
-ExtendToken 'number'"|DFA1_736285203
-DFA0_1371898302 -->|"+
+ExtendToken 'number'"|DFA1_-1093464317
+DFA0_-466580192 -->|"+
 BeginToken '+'
-ExtendToken '+'"|DFA2_24116860
-DFA0_1371898302 -->|"-
+ExtendToken '+'"|DFA2_946815801
+DFA0_-466580192 -->|"-
 BeginToken '-'
-ExtendToken '-'"|DFA3_1215392932
-DFA0_1371898302 -->|"*
+ExtendToken '-'"|DFA3_-1934379784
+DFA0_-466580192 -->|"*
 BeginToken '*'
-ExtendToken '*'"|DFA4_-740876899
-DFA0_1371898302 -->|"/
-BeginToken '/'
-ExtendToken '/'"|DFA5_-2132989191
-DFA0_1371898302 -->|"(
+ExtendToken '*'"|DFA4_344512846
+DFA0_-466580192 -->|"/
+BeginToken '/''blockComment''inlineComment'
+ExtendToken '/'"|DFA5_-1207796552
+DFA0_-466580192 -->|"(
 BeginToken '('
-ExtendToken '('"|DFA6_-489194620
-DFA0_1371898302 -->|")
+ExtendToken '('"|DFA6_-1232478392
+DFA0_-466580192 -->|")
 BeginToken ')'
-ExtendToken ')'"|DFA7_431494236
-DFA1_736285203 -->|"[0-9]
-ExtendToken 'number'"|DFA1_736285203
+ExtendToken ')'"|DFA7_-1911608150
+DFA1_-1093464317 -->|"[0-9]
+ExtendToken 'number'"|DFA1_-1093464317
+DFA5_-1207796552 -->|"*"|DFA8_-2126796951
+DFA5_-1207796552 -->|"/
+ExtendToken 'inlineComment'"|DFA9_1544858617
+DFA8_-2126796951 -->|"[^*]"|DFA10_1709820913
+DFA8_-2126796951 -->|"*"|DFA11_816023626
+DFA9_1544858617 -->|"[#92;t#92;r#32;-~]
+ExtendToken 'inlineComment'"|DFA12_1452258063
+DFA10_1709820913 -->|"[^*]"|DFA10_1709820913
+DFA10_1709820913 -->|"*"|DFA11_816023626
+DFA11_816023626 -->|"[^/]"|DFA13_546524016
+DFA11_816023626 -->|"/
+ExtendToken 'blockComment'"|DFA14_-1224855203
+DFA12_1452258063 -->|"[#92;t#92;r#32;-~]
+ExtendToken 'inlineComment'"|DFA12_1452258063
+DFA13_546524016 -->|"[^*]"|DFA10_1709820913
+DFA13_546524016 -->|"*"|DFA11_816023626
+
+```
+## nullable
+
+```
+[0]: nullable( Additive ) = False
+[1]: nullable( '+' ) = False
+[2]: nullable( Multiplicative ) = False
+[3]: nullable( '-' ) = False
+[4]: nullable( '*' ) = False
+[5]: nullable( Primary ) = False
+[6]: nullable( '/' ) = False
+[7]: nullable( '(' ) = False
+[8]: nullable( ')' ) = False
+[9]: nullable( 'number' ) = False
 
 ```
 
@@ -93,12 +134,11 @@ ExtendToken 'number'"|DFA1_736285203
 [7]: FIRST( '(' ) = { '(' }
 [8]: FIRST( ')' ) = { ')' }
 [9]: FIRST( 'number' ) = { 'number' }
-[10]: FIRST(  ) = { empty }
-[11]: FIRST( Additive '+' Multiplicative ) = { '(' 'number' }
-[12]: FIRST( Additive '-' Multiplicative ) = { '(' 'number' }
-[13]: FIRST( Multiplicative '*' Primary ) = { '(' 'number' }
-[14]: FIRST( Multiplicative '/' Primary ) = { '(' 'number' }
-[15]: FIRST( '(' Additive ')' ) = { '(' }
+[10]: FIRST( Additive '+' Multiplicative ) = { '(' 'number' }
+[11]: FIRST( Additive '-' Multiplicative ) = { '(' 'number' }
+[12]: FIRST( Multiplicative '*' Primary ) = { '(' 'number' }
+[13]: FIRST( Multiplicative '/' Primary ) = { '(' 'number' }
+[14]: FIRST( '(' Additive ')' ) = { '(' }
 
 ```
 

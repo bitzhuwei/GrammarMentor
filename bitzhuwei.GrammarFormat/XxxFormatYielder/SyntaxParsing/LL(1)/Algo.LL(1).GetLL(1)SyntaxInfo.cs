@@ -32,15 +32,13 @@ namespace bitzhuwei.GrammarFormat {
                 for (int index = 0; index < firstCount; index++) {
                     Utility.Rewrite($"LL(1)Regulations[{regulationId}/{regCount}] <-- working on {index + 1}/{firstCount}");
 
-                    var VtOrEmpty = first.Values[index];
-                    if (VtOrEmpty != CompilerGrammar.keywordEmpty) {
-                        table.SetAction(Vn, VtOrEmpty, new LL1ParsingActionDraft(regulationId));
-                    }
-                    else {
-                        var follow = eFOLLOWDict[Vn];
-                        foreach (var Vt in follow.Values) {
-                            table.SetAction(Vn, Vt, new LL1ParsingActionDraft(regulationId));
-                        }
+                    var Vt = first.Values[index];
+                    table.SetAction(Vn, Vt, new LL1ParsingActionDraft(regulationId));
+                }
+                if (first.containsEmpty) {
+                    var follow = eFOLLOWDict[Vn];
+                    foreach (var Vt in follow.Values) {
+                        table.SetAction(Vn, Vt, new LL1ParsingActionDraft(regulationId));
                     }
                 }
             }

@@ -11,11 +11,11 @@ namespace Practice.GeneratedXxxFormat.Test {
         static void Main(string[] args) {
             //Test.Regexes();
 
-            //Test.PrintABB();
-            //Test.PrintSAB();
-            //Test.PrintSES();
-            //Test.PrintInts();
-            //Test.PrintInts2();
+            Test.PrintABB();
+            Test.PrintSAB();
+            Test.PrintSES();
+            Test.PrintInts();
+            Test.PrintInts2();
             Test.PrintCalc();
             Test.PrintNumbers();
             Test.PrintError();

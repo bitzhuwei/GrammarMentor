@@ -47,9 +47,15 @@
     </None>
     <Compile Include="CompilerCalc.cs" />
     <Compile Include="CompilerCalc.EType.cs" />
-    <Compile Include="LexicalAnalyzer\CompilerCalc.LexcicalState2_3.cs" />
-    <Compile Include="LexicalAnalyzer\CompilerCalc.LexcicalState2_2.cs" />
-    <Compile Include="LexicalAnalyzer\CompilerCalc.LexcicalState2_1.cs" />
+    <Compile Include="LexicalAnalyzer\CompilerCalc.LexicalConst.cs" />
+    <Compile Include="LexicalAnalyzer\CompilerCalc.LexicalState0.cs" />
+    <Compile Include="LexicalAnalyzer\CompilerCalc.LexicalState1_1.cs" />
+    <Compile Include="LexicalAnalyzer\CompilerCalc.LexicalState1_2.cs" />
+    <Compile Include="LexicalAnalyzer\CompilerCalc.LexicalState1_3.cs" />
+    <Compile Include="LexicalAnalyzer\CompilerCalc.LexicalState1_4.cs" />
+    <Compile Include="LexicalAnalyzer\CompilerCalc.LexicalState2_1.cs" />
+    <Compile Include="LexicalAnalyzer\CompilerCalc.LexicalState2_2.cs" />
+    <Compile Include="LexicalAnalyzer\CompilerCalc.LexicalState2_3.cs" />
     <Compile Include="Printer\Node.Printer.cs" />
     <Compile Include="SyntaxParser\CompilerCalc.Regulations.cs" />
     <Compile Include="SyntaxParser\CompilerCalc.TableLALR%281%29.cs" />
@@ -68,12 +74,6 @@
     <Compile Include="DataStructure\FinalValue.cs" />
     <Compile Include="DataStructure\Multiplicative.cs" />
     <Compile Include="DataStructure\Primary.cs" />
-    <Compile Include="LexicalAnalyzer\CompilerCalc.LexcicalConst.cs" />
-    <Compile Include="LexicalAnalyzer\CompilerCalc.LexcicalState0.cs" />
-    <Compile Include="LexicalAnalyzer\CompilerCalc.LexcicalState1_1.cs" />
-    <Compile Include="LexicalAnalyzer\CompilerCalc.LexcicalState1_2.cs" />
-    <Compile Include="LexicalAnalyzer\CompilerCalc.LexcicalState1_3.cs" />
-    <Compile Include="LexicalAnalyzer\CompilerCalc.LexcicalState1_4.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <None Include="SyntaxParser\readme.md" />
     <None Include="TExtracter\readme.md" />

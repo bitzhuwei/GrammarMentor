@@ -90,7 +90,7 @@
     <Compile Include="XxxFormatYielder\PatternFormat\DataStructure\TokenScript\TokenScript.IMermaid.cs" />
     <Compile Include="XxxFormatYielder\PatternFormat\DataStructure\TokenScript\TokenScript.Hash.cs" />
     <Compile Include="XxxFormatYielder\ListedDict.cs" />
-    <Compile Include="XxxFormatYielder\GenerateCode\Gen.FIRSTFOLLOW.cs" />
+    <Compile Include="XxxFormatYielder\GenerateCode\Gen.NFF.cs" />
     <Compile Include="XxxFormatYielder\GenerateCode\Gen.LexicalAnalyzer.DFAStates.cs" />
     <Compile Include="XxxFormatYielder\GenerateCode\Gen.LexicalAnalyzer.GetWholeAutomaton.cs" />
     <Compile Include="XxxFormatYielder\GenerateCode\Gen.LexicalAnalyzer.GetTokenDraftDict.cs" />
@@ -147,6 +147,31 @@
     <Compile Include="XxxFormatYielder\Algo.SemanticCheck.cs" />
     <None Include="XxxFormatYielder\Names\readme.md" />
     <Compile Include="XxxFormatYielder\PatternFormat\DataStructure\TokenDraft.ToMermaid.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\LexicalAnalyzer\CompilerPattern.LexicalConst.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\LexicalAnalyzer\CompilerPattern.LexicalState0_0.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\LexicalAnalyzer\CompilerPattern.LexicalState1_1.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\LexicalAnalyzer\CompilerPattern.LexicalState1_2.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\LexicalAnalyzer\CompilerPattern.LexicalState1_3.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\LexicalAnalyzer\CompilerPattern.LexicalState1_4.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\LexicalAnalyzer\CompilerPattern.LexicalState2_1.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\LexicalAnalyzer\CompilerPattern.LexicalState2_2.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\LexicalAnalyzer\CompilerPattern.LexicalState2_3.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\LexicalAnalyzer\CompilerPattern.LexicalState2_4.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\LexicalAnalyzer\CompilerPattern.LexicalState2_5.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\LexicalAnalyzer\CompilerPattern.LexicalState3_1.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\LexicalAnalyzer\CompilerPattern.LexicalState3_2.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\LexicalAnalyzer\CompilerPattern.LexicalState3_3.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\LexicalAnalyzer\CompilerPattern.LexicalState3_4.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\LexicalAnalyzer\CompilerPattern.LexicalState3_5.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\LexicalAnalyzer\CompilerPattern.LexicalState3_6.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\LexicalAnalyzer\CompilerPattern.LexicalState4_1.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\LexicalAnalyzer\CompilerPattern.LexicalState4_2.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\LexicalAnalyzer\CompilerPattern.LexicalState4_3.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\LexicalAnalyzer\CompilerPattern.LexicalState4_4.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\LexicalAnalyzer\CompilerPattern.LexicalState5_1.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\LexicalAnalyzer\CompilerPattern.LexicalState5_2.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\LexicalAnalyzer\CompilerPattern.LexicalState5_3.cs" />
+    <Compile Include="XxxFormatYielder\PatternFormat\LexicalAnalyzer\CompilerPattern.LexicalState5_4.cs" />
     <Compile Include="XxxFormatYielder\PatternFormat\TExtracter\PatternExtracter.Init.cs" />
     <Compile Include="XxxFormatYielder\Names\ToMermaid.cs" />
     <Compile Include="XxxFormatYielder\Names\ToMarkdown.cs" />
@@ -160,10 +185,6 @@
     <Compile Include="XxxFormatYielder\PatternFormat\DataStructure\Pattern.cs" />
     <Compile Include="XxxFormatYielder\PatternFormat\DataStructure\TokenDraft.cs" />
     <Compile Include="XxxFormatYielder\PatternFormat\DataStructure\TokenScript\TokenScript.cs" />
-    <Compile Include="XxxFormatYielder\PatternFormat\LexicalAnalyzer\CompilerPattern.LexcicalState5_4.cs" />
-    <Compile Include="XxxFormatYielder\PatternFormat\LexicalAnalyzer\CompilerPattern.LexcicalState5_3.cs" />
-    <Compile Include="XxxFormatYielder\PatternFormat\LexicalAnalyzer\CompilerPattern.LexcicalState5_2.cs" />
-    <Compile Include="XxxFormatYielder\PatternFormat\LexicalAnalyzer\CompilerPattern.LexcicalState5_1.cs" />
     <Compile Include="XxxFormatYielder\PatternFormat\SyntaxParser\CompilerPattern.Regulations.cs" />
     <Compile Include="XxxFormatYielder\PatternFormat\SyntaxParser\CompilerPattern.TableLALR%281%29.cs" />
     <Compile Include="XxxFormatYielder\PatternFormat\TExtracter\PatternExtracter.Init.UserModified.cs" />
@@ -190,28 +211,7 @@
     <Compile Include="XxxFormatYielder\Names\ToVarName.cs" />
     <Compile Include="XxxFormatYielder\Names\Type2VarName.cs" />
     <Compile Include="XxxFormatYielder\PatternFormat\DataStructure\Repeat.cs" />
-    <Compile Include="XxxFormatYielder\PatternFormat\LexicalAnalyzer\CompilerPattern.LexcicalState4_4.cs" />
-    <Compile Include="XxxFormatYielder\PatternFormat\LexicalAnalyzer\CompilerPattern.LexcicalState4_3.cs" />
-    <Compile Include="XxxFormatYielder\PatternFormat\LexicalAnalyzer\CompilerPattern.LexcicalState4_2.cs" />
-    <Compile Include="XxxFormatYielder\PatternFormat\LexicalAnalyzer\CompilerPattern.LexcicalState4_1.cs" />
     <Compile Include="XxxFormatYielder\PatternFormat\LexicalAnalyzer\CompilerPattern.UserDefined.cs" />
-    <Compile Include="XxxFormatYielder\PatternFormat\LexicalAnalyzer\CompilerPattern.LexcicalConst.cs" />
-    <Compile Include="XxxFormatYielder\PatternFormat\LexicalAnalyzer\CompilerPattern.LexcicalState0_0.cs" />
-    <Compile Include="XxxFormatYielder\PatternFormat\LexicalAnalyzer\CompilerPattern.LexcicalState2_5.cs" />
-    <Compile Include="XxxFormatYielder\PatternFormat\LexicalAnalyzer\CompilerPattern.LexcicalState2_4.cs" />
-    <Compile Include="XxxFormatYielder\PatternFormat\LexicalAnalyzer\CompilerPattern.LexcicalState2_3.cs" />
-    <Compile Include="XxxFormatYielder\PatternFormat\LexicalAnalyzer\CompilerPattern.LexcicalState2_2.cs" />
-    <Compile Include="XxxFormatYielder\PatternFormat\LexicalAnalyzer\CompilerPattern.LexcicalState3_6.cs" />
-    <Compile Include="XxxFormatYielder\PatternFormat\LexicalAnalyzer\CompilerPattern.LexcicalState3_5.cs" />
-    <Compile Include="XxxFormatYielder\PatternFormat\LexicalAnalyzer\CompilerPattern.LexcicalState3_4.cs" />
-    <Compile Include="XxxFormatYielder\PatternFormat\LexicalAnalyzer\CompilerPattern.LexcicalState3_3.cs" />
-    <Compile Include="XxxFormatYielder\PatternFormat\LexicalAnalyzer\CompilerPattern.LexcicalState3_2.cs" />
-    <Compile Include="XxxFormatYielder\PatternFormat\LexicalAnalyzer\CompilerPattern.LexcicalState3_1.cs" />
-    <Compile Include="XxxFormatYielder\PatternFormat\LexicalAnalyzer\CompilerPattern.LexcicalState2_1.cs" />
-    <Compile Include="XxxFormatYielder\PatternFormat\LexicalAnalyzer\CompilerPattern.LexcicalState1_1.cs" />
-    <Compile Include="XxxFormatYielder\PatternFormat\LexicalAnalyzer\CompilerPattern.LexcicalState1_2.cs" />
-    <Compile Include="XxxFormatYielder\PatternFormat\LexicalAnalyzer\CompilerPattern.LexcicalState1_3.cs" />
-    <Compile Include="XxxFormatYielder\PatternFormat\LexicalAnalyzer\CompilerPattern.LexcicalState1_4.cs" />
     <Compile Include="XxxFormatYielder\PatternFormat\TExtracter\PatternExtracter.Init.DraftContext.cs" />
     <Compile Include="XxxFormatYielder\PatternFormat\DataStructure\Automaton\eNFAEdgeDraft.Hash.cs" />
     <Compile Include="XxxFormatYielder\PatternFormat\DataStructure\Automaton\eNFAEdgeDraft.cs" />
@@ -230,7 +230,7 @@
     <Compile Include="XxxFormatYielder\SyntaxParsing\LR%281%29\Algo.LR%281%29.GetLR%281%29SyntaxInfo.cs" />
     <Compile Include="XxxFormatYielder\SyntaxParsing\LR%281%29\Algo.LR%281%29.Goto.cs" />
     <Compile Include="XxxFormatYielder\SyntaxParsing\Nullable\Algo.Nullable.cs" />
-    <Compile Include="XxxFormatYielder\SyntaxParsing\Nullable\Algo.NullableDict.cs" />
+    <Compile Include="XxxFormatYielder\SyntaxParsing\Nullable\Algo.GetNullableDict.cs" />
     <Compile Include="XxxFormatYielder\SyntaxParsing\SLR%281%29\Algo.SLR%281%29.Closure.cs" />
     <Compile Include="XxxFormatYielder\SyntaxParsing\SLR%281%29\Algo.SLR%281%29.GetSLR%281%29SyntaxInfo.cs" />
     <Compile Include="XxxFormatYielder\SyntaxParsing\SLR%281%29\Algo.SLR%281%29.Goto.cs" />
@@ -340,7 +340,7 @@
     <None Include="yieldTemplate\LexicalAnalyzer\README.md">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="yieldTemplate\doc\FIRST-FOLLOW.md">
+    <None Include="yieldTemplate\doc\Nullable-FIRST-FOLLOW.md">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="yieldTemplate\doc\SyntaxMachine.LL%281%29.md">

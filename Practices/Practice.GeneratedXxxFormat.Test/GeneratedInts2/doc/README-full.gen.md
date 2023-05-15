@@ -33,20 +33,58 @@ classDef c1100 stroke:#333,stroke-width:4px,fill:#BB66EE;
 classDef c1101 stroke:#333,stroke-width:4px,fill:#BB66EE,color:#FF0000;
 classDef c1110 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10;
 classDef c1111 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10,color:#FF0000;
-DFA0_585978999{{"DFA0 wholeStart"}}
-class DFA0_585978999 c1000;
-DFA1_1120076600[\"DFA1 {1}"/]
-class DFA1_1120076600 c0101;
-DFA2_-1955808288[\"DFA2 {1}"/]
-class DFA2_-1955808288 c0101;
-DFA0_585978999 -->|"[0-9]
+DFA0_2038251495{{"DFA0 wholeStart"}}
+class DFA0_2038251495 c1000;
+DFA1_1487296350[\"DFA1 {1}"/]
+class DFA1_1487296350 c0101;
+DFA2_-1392431268[\"DFA2 {1}"/]
+class DFA2_-1392431268 c0101;
+DFA3_1205905158{{"DFA3 {2}"}}
+DFA4_1973535163{{"DFA4 {1}"}}
+DFA5_-1142252594[\"DFA5 {1}"/]
+class DFA5_-1142252594 c0101;
+DFA6_-1142954445{{"DFA6 {1}"}}
+DFA7_-1142139582{{"DFA7 {2}"}}
+DFA8_385616071[\"DFA8 {1}"/]
+class DFA8_385616071 c0101;
+DFA9_-521944197{{"DFA9 {1}"}}
+DFA10_75909841[\"DFA10 {1}"/]
+class DFA10_75909841 c0101;
+DFA0_2038251495 -->|"[0-9]
 BeginToken 'integer'
-ExtendToken 'integer'"|DFA1_1120076600
-DFA0_585978999 -->|",
+ExtendToken 'integer'"|DFA1_1487296350
+DFA0_2038251495 -->|",
 BeginToken ','
-ExtendToken ','"|DFA2_-1955808288
-DFA1_1120076600 -->|"[0-9]
-ExtendToken 'integer'"|DFA1_1120076600
+ExtendToken ','"|DFA2_-1392431268
+DFA0_2038251495 -->|"/
+BeginToken 'blockComment''inlineComment'"|DFA3_1205905158
+DFA1_1487296350 -->|"[0-9]
+ExtendToken 'integer'"|DFA1_1487296350
+DFA3_1205905158 -->|"*"|DFA4_1973535163
+DFA3_1205905158 -->|"/
+ExtendToken 'inlineComment'"|DFA5_-1142252594
+DFA4_1973535163 -->|"[^*]"|DFA6_-1142954445
+DFA4_1973535163 -->|"*"|DFA7_-1142139582
+DFA5_-1142252594 -->|"[#92;t#92;r#32;-~]
+ExtendToken 'inlineComment'"|DFA8_385616071
+DFA6_-1142954445 -->|"[^*]"|DFA6_-1142954445
+DFA6_-1142954445 -->|"*"|DFA7_-1142139582
+DFA7_-1142139582 -->|"[^/]"|DFA9_-521944197
+DFA7_-1142139582 -->|"/
+ExtendToken 'blockComment'"|DFA10_75909841
+DFA8_385616071 -->|"[#92;t#92;r#32;-~]
+ExtendToken 'inlineComment'"|DFA8_385616071
+DFA9_-521944197 -->|"[^*]"|DFA6_-1142954445
+DFA9_-521944197 -->|"*"|DFA7_-1142139582
+
+```
+## nullable
+
+```
+[0]: nullable( Ints ) = False
+[1]: nullable( ',' ) = False
+[2]: nullable( Int ) = False
+[3]: nullable( 'integer' ) = False
 
 ```
 
@@ -57,8 +95,7 @@ ExtendToken 'integer'"|DFA1_1120076600
 [1]: FIRST( Int ) = { 'integer' }
 [2]: FIRST( ',' ) = { ',' }
 [3]: FIRST( 'integer' ) = { 'integer' }
-[4]: FIRST(  ) = { empty }
-[5]: FIRST( Ints ',' Int ) = { 'integer' }
+[4]: FIRST( Ints ',' Int ) = { 'integer' }
 
 ```
 

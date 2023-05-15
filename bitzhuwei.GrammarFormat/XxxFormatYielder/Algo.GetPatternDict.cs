@@ -45,13 +45,14 @@ namespace bitzhuwei.GrammarFormat {
                     result.Add(Vt, text);
                 }
             }
-            // TODO: support comments.
-            //if (!result.ContainsKey(CompilerGrammar.keywordMultipleLineComment)) {
-            //    result.Add(CompilerGrammar.keywordMultipleLineComment, @"\/\*([^*]|[*][^\/])*\*\/");
-            //}
-            //if (!result.ContainsKey(CompilerGrammar.keywordSingleLineComment)) {
-            //    result.Add(CompilerGrammar.keywordSingleLineComment, @"\/\/.*");
-            //}
+
+            // support comments.
+            if (!result.ContainsKey(CompilerGrammar.blockCommentkeyword)) {
+                result.Add(CompilerGrammar.blockCommentkeyword, @"\/\*([^*]|[*][^\/])*\*\/");
+            }
+            if (!result.ContainsKey(CompilerGrammar.inlineCommentkeyword)) {
+                result.Add(CompilerGrammar.inlineCommentkeyword, @"\/\/.*");
+            }
 
             return result;
         }

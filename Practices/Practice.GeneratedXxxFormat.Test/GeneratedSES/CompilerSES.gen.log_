@@ -1,12 +1,45 @@
-2023-05-13 15:29:48 Generating for CompilerSES started.
-2023-05-13 15:29:48 Generating pre-main..
-2023-05-13 15:29:48 Generating lexical analyzer..
-2023-05-13 15:29:48 Generating syntax parser..
-2023-05-13 15:29:48 Generating nullable + FIRST + FOLLOW..
-2023-05-13 15:29:48 Generating LL(1) syntax info..
-2023-05-13 15:29:48 Generating LR(0) syntax info..
-2023-05-13 15:29:48 Generating SLR(1) syntax info..
-2023-05-13 15:29:48 Generating LALR(1) syntax info..
-2023-05-13 15:29:48 Generating LR(1) syntax info..
-2023-05-13 15:29:48 Generating post-main..
-2023-05-13 15:29:48 Generating for SES ended.
+2023-05-15 18:40:55 Generating for CompilerSES started.
+2023-05-15 18:40:55 Generating pre-main..
+2023-05-15 18:40:55 Generating lexical analyzer..
+2023-05-15 18:40:55 GetPatternDict..
+2023-05-15 18:40:55 GetTokenDraftDict..
+2023-05-15 18:40:55 GenerateLexicalAnalyzerTokensMD..
+2023-05-15 18:40:55 GetWholeAutomaton..
+2023-05-15 18:40:55 GenerateLexicalAnalyzerKeywords..
+2023-05-15 18:40:55 GenerateLexicalAnalyzerDelegates..
+2023-05-15 18:40:55 GenerateLexicalAnalyzerMermaid..
+2023-05-15 18:40:55 GenerateLexicalAnalyzerREADME..
+2023-05-15 18:40:56 GenerateLexicalAnalyzerDFAStates..
+2023-05-15 18:40:56 GenerateLexicalAnalyzerMiniDFAStates..
+2023-05-15 18:40:56 Generating syntax parser..
+2023-05-15 18:40:56 GetNullableDict..
+2023-05-15 18:40:56 GetFIRSTDict..
+2023-05-15 18:40:56 GetFOLLOWDict..
+2023-05-15 18:40:56 Generating nullable + FIRST + FOLLOW..
+2023-05-15 18:40:56 GetExtendedGrammar..
+2023-05-15 18:40:56 GetNullableDict..
+2023-05-15 18:40:56 GetFIRSTDict..
+2023-05-15 18:40:56 GetFOLLOWDict..
+2023-05-15 18:40:56 GenerateFIRSTFOLLOW..
+2023-05-15 18:40:56 Generating LL(1) syntax info..
+2023-05-15 18:40:56 GetLL1SyntaxInfo..
+2023-05-15 18:40:56 GenerateMainLL1..
+2023-05-15 18:40:56 GenerateSyntaxParserLL1..
+2023-05-15 18:40:56 Generating LR(0) syntax info..
+2023-05-15 18:40:56 GenerateMainLR0..
+2023-05-15 18:40:56 GenerateSyntaxParserLR0..
+2023-05-15 18:40:56 Generating SLR(1) syntax info..
+2023-05-15 18:40:56 GetSLR1SyntaxInfo..
+2023-05-15 18:40:56 GenerateMainSLR1..
+2023-05-15 18:40:56 GenerateSyntaxParserSLR1..
+2023-05-15 18:40:56 Generating LALR(1) syntax info..
+2023-05-15 18:40:56 lalr1SyntaxInfo..
+2023-05-15 18:40:56 GenerateMainLALR1..
+2023-05-15 18:40:56 GenerateSyntaxParserLALR1..
+2023-05-15 18:40:56 Generating LR(1) syntax info..
+2023-05-15 18:40:56 GetLR1SyntaxInfo..
+2023-05-15 18:40:56 GenerateMainLR1..
+2023-05-15 18:40:56 GenerateSyntaxParserLR1..
+2023-05-15 18:40:56 Generating post-main..
+2023-05-15 18:40:56 GenerateMainPost..
+2023-05-15 18:40:56 Generating for SES ended.

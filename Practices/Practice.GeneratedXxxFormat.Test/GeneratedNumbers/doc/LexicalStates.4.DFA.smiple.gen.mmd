@@ -14,22 +14,54 @@ classDef c1100 stroke:#333,stroke-width:4px,fill:#BB66EE;
 classDef c1101 stroke:#333,stroke-width:4px,fill:#BB66EE,color:#FF0000;
 classDef c1110 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10;
 classDef c1111 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10,color:#FF0000;
-DFA0_-719760743{{"DFA0 wholeStart"}}
-class DFA0_-719760743 c1000;
-DFA1_-1749208652[\"DFA1 {2}
+DFA0_-771602367{{"DFA0 wholeStart"}}
+class DFA0_-771602367 c1000;
+DFA1_-1280135935[\"DFA1 {2}
 AcceptToken 'integer'"/]
-class DFA1_-1749208652 c0101;
-DFA2_-646656898{{"DFA2 {1}"}}
-DFA3_-496823011[\"DFA3 {1}
+class DFA1_-1280135935 c0101;
+DFA2_1441873589{{"DFA2 {2}"}}
+DFA3_816773074{{"DFA3 {1}"}}
+DFA4_2093590239{{"DFA4 {1}"}}
+DFA5_648968295[\"DFA5 {1}
+AcceptToken 'inlineComment'"/]
+class DFA5_648968295 c0101;
+DFA6_1463751463[\"DFA6 {1}
 AcceptToken 'float'"/]
-class DFA3_-496823011 c0101;
-DFA0_-719760743 -->|"[0-9]
+class DFA6_1463751463 c0101;
+DFA7_-664238604{{"DFA7 {1}"}}
+DFA8_-1012450386{{"DFA8 {2}"}}
+DFA9_-1308847123[\"DFA9 {1}
+AcceptToken 'inlineComment'"/]
+class DFA9_-1308847123 c0101;
+DFA10_155505367{{"DFA10 {1}"}}
+DFA11_-175018733[\"DFA11 {1}
+AcceptToken 'blockComment'"/]
+class DFA11_-175018733 c0101;
+DFA0_-771602367 -->|"[0-9]
 BeginToken 'integer''float'
-ExtendToken 'integer'"|DFA1_-1749208652
-DFA1_-1749208652 -->|"[0-9]
-ExtendToken 'integer'"|DFA1_-1749208652
-DFA1_-1749208652 -->|"."|DFA2_-646656898
-DFA2_-646656898 -->|"[0-9]
-ExtendToken 'float'"|DFA3_-496823011
-DFA3_-496823011 -->|"[0-9]
-ExtendToken 'float'"|DFA3_-496823011
+ExtendToken 'integer'"|DFA1_-1280135935
+DFA0_-771602367 -->|"/
+BeginToken 'blockComment''inlineComment'"|DFA2_1441873589
+DFA1_-1280135935 -->|"[0-9]
+ExtendToken 'integer'"|DFA1_-1280135935
+DFA1_-1280135935 -->|"."|DFA3_816773074
+DFA2_1441873589 -->|"*"|DFA4_2093590239
+DFA2_1441873589 -->|"/
+ExtendToken 'inlineComment'"|DFA5_648968295
+DFA3_816773074 -->|"[0-9]
+ExtendToken 'float'"|DFA6_1463751463
+DFA4_2093590239 -->|"[^*]"|DFA7_-664238604
+DFA4_2093590239 -->|"*"|DFA8_-1012450386
+DFA5_648968295 -->|"[#92;t#92;r#32;-~]
+ExtendToken 'inlineComment'"|DFA9_-1308847123
+DFA6_1463751463 -->|"[0-9]
+ExtendToken 'float'"|DFA6_1463751463
+DFA7_-664238604 -->|"[^*]"|DFA7_-664238604
+DFA7_-664238604 -->|"*"|DFA8_-1012450386
+DFA8_-1012450386 -->|"[^/]"|DFA10_155505367
+DFA8_-1012450386 -->|"/
+ExtendToken 'blockComment'"|DFA11_-175018733
+DFA9_-1308847123 -->|"[#92;t#92;r#32;-~]
+ExtendToken 'inlineComment'"|DFA9_-1308847123
+DFA10_155505367 -->|"[^*]"|DFA7_-664238604
+DFA10_155505367 -->|"*"|DFA8_-1012450386

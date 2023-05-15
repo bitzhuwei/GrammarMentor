@@ -14,53 +14,96 @@ classDef c1100 stroke:#333,stroke-width:4px,fill:#BB66EE;
 classDef c1101 stroke:#333,stroke-width:4px,fill:#BB66EE,color:#FF0000;
 classDef c1110 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10;
 classDef c1111 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10,color:#FF0000;
-subgraph MiniDFA0_1624780686["MiniDFA0 {1}"]
-DFA0_1923463421_0{{"DFA0 wholeStart"}}
-class DFA0_1923463421_0 c1000;
+subgraph MiniDFA0_266130706["MiniDFA0 {1}"]
+DFA0_-2011742570_0{{"DFA0 wholeStart"}}
+class DFA0_-2011742570_0 c1000;
 end
-class MiniDFA0_1624780686 c1000;
-subgraph MiniDFA1_-194746031["MiniDFA1 {1}"]
-DFA1_-694928352_1[\"DFA1 {1}
+class MiniDFA0_266130706 c1000;
+subgraph MiniDFA4_1173141555["MiniDFA4 {1}"]
+DFA1_965118415_1[\"DFA1 {1}
 AcceptToken 'a'"/]
-class DFA1_-694928352_1 c0101;
+class DFA1_965118415_1 c0101;
 end
-class MiniDFA1_-194746031 c0101;
-subgraph MiniDFA2_1371428703["MiniDFA2 {1}"]
-DFA2_1430363654_2[\"DFA2 {1}
+class MiniDFA4_1173141555 c0101;
+subgraph MiniDFA5_1460028246["MiniDFA5 {1}"]
+DFA2_-1841752797_2[\"DFA2 {1}
 AcceptToken 's'"/]
-class DFA2_1430363654_2 c0101;
+class DFA2_-1841752797_2 c0101;
 end
-class MiniDFA2_1371428703 c0101;
-subgraph MiniDFA3_-2016048439["MiniDFA3 {1}"]
-DFA3_-1559980011_3[\"DFA3 {1}
+class MiniDFA5_1460028246 c0101;
+subgraph MiniDFA6_-2120954286["MiniDFA6 {1}"]
+DFA3_1913146111_3[\"DFA3 {1}
 AcceptToken 'b'"/]
-class DFA3_-1559980011_3 c0101;
+class DFA3_1913146111_3 c0101;
 end
-class MiniDFA3_-2016048439 c0101;
-subgraph MiniDFA4_-7959560["MiniDFA4 {1}"]
-DFA4_1206467762_4[\"DFA4 {1}
+class MiniDFA6_-2120954286 c0101;
+subgraph MiniDFA7_-329204845["MiniDFA7 {1}"]
+DFA4_1623093623_4[\"DFA4 {1}
 AcceptToken 'd'"/]
-class DFA4_1206467762_4 c0101;
+class DFA4_1623093623_4 c0101;
 end
-class MiniDFA4_-7959560 c0101;
-subgraph MiniDFA5_1506712241["MiniDFA5 {1}"]
-DFA5_-1793880414_5[\"DFA5 {1}
+class MiniDFA7_-329204845 c0101;
+subgraph MiniDFA8_2134578056["MiniDFA8 {1}"]
+DFA5_1525692439_5[\"DFA5 {1}
 AcceptToken 'c'"/]
-class DFA5_-1793880414_5 c0101;
+class DFA5_1525692439_5 c0101;
 end
-class MiniDFA5_1506712241 c0101;
-MiniDFA0_1624780686 -->|"a
+class MiniDFA8_2134578056 c0101;
+subgraph MiniDFA1_1733509379["MiniDFA1 {1}"]
+DFA6_1862687141_6{{"DFA6 {2}"}}
+end
+subgraph MiniDFA2_-340209735["MiniDFA2 {3}"]
+DFA7_1742648909_7{{"DFA7 {1}"}}
+DFA9_-354726560_8{{"DFA9 {1}"}}
+DFA12_-1735644823_9{{"DFA12 {1}"}}
+end
+subgraph MiniDFA9_52617251["MiniDFA9 {1}"]
+DFA8_-988443997_10[\"DFA8 {1}
+AcceptToken 'inlineComment'"/]
+class DFA8_-988443997_10 c0101;
+end
+class MiniDFA9_52617251 c0101;
+subgraph MiniDFA3_736710712["MiniDFA3 {1}"]
+DFA10_323920158_11{{"DFA10 {2}"}}
+end
+subgraph MiniDFA10_1666738974["MiniDFA10 {1}"]
+DFA11_-378200846_12[\"DFA11 {1}
+AcceptToken 'inlineComment'"/]
+class DFA11_-378200846_12 c0101;
+end
+class MiniDFA10_1666738974 c0101;
+subgraph MiniDFA11_821581297["MiniDFA11 {1}"]
+DFA13_1233218362_13[\"DFA13 {1}
+AcceptToken 'blockComment'"/]
+class DFA13_1233218362_13 c0101;
+end
+class MiniDFA11_821581297 c0101;
+MiniDFA0_266130706 -->|"a
 BeginToken 'a'
-ExtendToken 'a'"|MiniDFA1_-194746031
-MiniDFA0_1624780686 -->|"s
+ExtendToken 'a'"|MiniDFA4_1173141555
+MiniDFA0_266130706 -->|"s
 BeginToken 's'
-ExtendToken 's'"|MiniDFA2_1371428703
-MiniDFA0_1624780686 -->|"b
+ExtendToken 's'"|MiniDFA5_1460028246
+MiniDFA0_266130706 -->|"b
 BeginToken 'b'
-ExtendToken 'b'"|MiniDFA3_-2016048439
-MiniDFA0_1624780686 -->|"d
+ExtendToken 'b'"|MiniDFA6_-2120954286
+MiniDFA0_266130706 -->|"d
 BeginToken 'd'
-ExtendToken 'd'"|MiniDFA4_-7959560
-MiniDFA0_1624780686 -->|"c
+ExtendToken 'd'"|MiniDFA7_-329204845
+MiniDFA0_266130706 -->|"c
 BeginToken 'c'
-ExtendToken 'c'"|MiniDFA5_1506712241
+ExtendToken 'c'"|MiniDFA8_2134578056
+MiniDFA0_266130706 -->|"/
+BeginToken 'blockComment''inlineComment'"|MiniDFA1_1733509379
+MiniDFA1_1733509379 -->|"*"|MiniDFA2_-340209735
+MiniDFA1_1733509379 -->|"/
+ExtendToken 'inlineComment'"|MiniDFA9_52617251
+MiniDFA2_-340209735 -->|"[^*]"|MiniDFA2_-340209735
+MiniDFA2_-340209735 -->|"*"|MiniDFA3_736710712
+MiniDFA9_52617251 -->|"[#92;t#92;r#32;-~]
+ExtendToken 'inlineComment'"|MiniDFA10_1666738974
+MiniDFA3_736710712 -->|"[^/]"|MiniDFA2_-340209735
+MiniDFA3_736710712 -->|"/
+ExtendToken 'blockComment'"|MiniDFA11_821581297
+MiniDFA10_1666738974 -->|"[#92;t#92;r#32;-~]
+ExtendToken 'inlineComment'"|MiniDFA10_1666738974

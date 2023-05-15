@@ -14,24 +14,56 @@ classDef c1100 stroke:#333,stroke-width:4px,fill:#BB66EE;
 classDef c1101 stroke:#333,stroke-width:4px,fill:#BB66EE,color:#FF0000;
 classDef c1110 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10;
 classDef c1111 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10,color:#FF0000;
-DFA0_-1191917276{{"DFA0 wholeStart"}}
-class DFA0_-1191917276 c1000;
-DFA1_635551321[\"DFA1 {2}
+DFA0_1257045888{{"DFA0 wholeStart"}}
+class DFA0_1257045888 c1000;
+DFA1_1892905281[\"DFA1 {2}
 AcceptToken 'refEntity'"/]
-class DFA1_635551321 c0111;
-DFA2_-740525413[\"DFA2 {1}
+class DFA1_1892905281 c0111;
+DFA2_-1400778774[\"DFA2 {1}
 AcceptToken '='"/]
-class DFA2_-740525413 c0101;
-DFA3_-374645365[\"DFA3 {1}
+class DFA2_-1400778774 c0101;
+DFA3_1164797663{{"DFA3 {2}"}}
+DFA4_-561999181[\"DFA4 {1}
 AcceptToken 'entityId'"/]
-class DFA3_-374645365 c0001;
-DFA0_-1191917276 -->|"[0-9]
+class DFA4_-561999181 c0001;
+DFA5_1214651240{{"DFA5 {1}"}}
+DFA6_14562357[\"DFA6 {1}
+AcceptToken 'inlineComment'"/]
+class DFA6_14562357 c0101;
+DFA7_392280436{{"DFA7 {1}"}}
+DFA8_1257315080{{"DFA8 {2}"}}
+DFA9_-1363874881[\"DFA9 {1}
+AcceptToken 'inlineComment'"/]
+class DFA9_-1363874881 c0101;
+DFA10_-721149647{{"DFA10 {1}"}}
+DFA11_1533316750[\"DFA11 {1}
+AcceptToken 'blockComment'"/]
+class DFA11_1533316750 c0101;
+DFA0_1257045888 -->|"[0-9]
 BeginToken 'entityId''refEntity'
-ExtendToken 'entityId''refEntity'"|DFA1_635551321
-DFA0_-1191917276 -->|"=
+ExtendToken 'entityId''refEntity'"|DFA1_1892905281
+DFA0_1257045888 -->|"=
 BeginToken '='
-ExtendToken '='"|DFA2_-740525413
-DFA1_635551321 -->|"[0-9]
-ExtendToken 'entityId''refEntity'"|DFA1_635551321
-DFA1_635551321 -->|"=
-CheckToken 'entityId'"|DFA3_-374645365
+ExtendToken '='"|DFA2_-1400778774
+DFA0_1257045888 -->|"/
+BeginToken 'blockComment''inlineComment'"|DFA3_1164797663
+DFA1_1892905281 -->|"[0-9]
+ExtendToken 'entityId''refEntity'"|DFA1_1892905281
+DFA1_1892905281 -->|"=
+CheckToken 'entityId'"|DFA4_-561999181
+DFA3_1164797663 -->|"*"|DFA5_1214651240
+DFA3_1164797663 -->|"/
+ExtendToken 'inlineComment'"|DFA6_14562357
+DFA5_1214651240 -->|"[^*]"|DFA7_392280436
+DFA5_1214651240 -->|"*"|DFA8_1257315080
+DFA6_14562357 -->|"[#92;t#92;r#32;-~]
+ExtendToken 'inlineComment'"|DFA9_-1363874881
+DFA7_392280436 -->|"[^*]"|DFA7_392280436
+DFA7_392280436 -->|"*"|DFA8_1257315080
+DFA8_1257315080 -->|"[^/]"|DFA10_-721149647
+DFA8_1257315080 -->|"/
+ExtendToken 'blockComment'"|DFA11_1533316750
+DFA9_-1363874881 -->|"[#92;t#92;r#32;-~]
+ExtendToken 'inlineComment'"|DFA9_-1363874881
+DFA10_-721149647 -->|"[^*]"|DFA7_392280436
+DFA10_-721149647 -->|"*"|DFA8_1257315080

@@ -15,8 +15,8 @@ namespace bitzhuwei.GrammarFormat {
             @"yieldTemplate\doc\readme-full.md";
         const string templateREADME =
             @"yieldTemplate\README.md";
-        const string templateFIRSTFOLLOW =
-            @"yieldTemplate\doc\FIRST-FOLLOW.md";
+        const string templateNFF =
+            @"yieldTemplate\doc\Nullable-FIRST-FOLLOW.md";
         const string templateSyntaxMachineLL1 =
             @"yieldTemplate\doc\SyntaxMachine.LL(1).md";
         const string templateSytnaxMachineLR0 =
@@ -113,6 +113,7 @@ namespace bitzhuwei.GrammarFormat {
         //const string strnow = @"{now}";
         const string strGrammar = @"{Grammar}";
         const string strLexicalAnalyerStatesDFA = @"{LexicalAnalyerStates(DFA)}";
+        const string strnullable = @"{nullable}";
         const string strFirstList = @"{FirstList}";
         const string strFollowList = @"{FollowList}";
 

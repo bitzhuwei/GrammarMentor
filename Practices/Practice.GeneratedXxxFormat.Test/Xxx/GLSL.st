@@ -1,4 +1,6 @@
-﻿translation_unit : external_declaration ;
+﻿// GrammarName=GLSL
+// ExtractedType=ShaderModel
+translation_unit : external_declaration ;
 translation_unit : translation_unit external_declaration ;
 external_declaration : function_definition ;
 external_declaration : declaration ;

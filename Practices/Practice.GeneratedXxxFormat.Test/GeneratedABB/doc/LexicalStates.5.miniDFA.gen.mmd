@@ -14,35 +14,78 @@ classDef c1100 stroke:#333,stroke-width:4px,fill:#BB66EE;
 classDef c1101 stroke:#333,stroke-width:4px,fill:#BB66EE,color:#FF0000;
 classDef c1110 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10;
 classDef c1111 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10,color:#FF0000;
-subgraph MiniDFA0_-1862349481["MiniDFA0 {1}"]
-DFA0_1303046169_0{{"DFA0 wholeStart"}}
-class DFA0_1303046169_0 c1000;
+subgraph MiniDFA0_1649433290["MiniDFA0 {1}"]
+DFA0_-145138233_0{{"DFA0 wholeStart"}}
+class DFA0_-145138233_0 c1000;
 end
-class MiniDFA0_-1862349481 c1000;
-subgraph MiniDFA1_1915724728["MiniDFA1 {1}"]
-DFA1_642929875_1[\"DFA1 {1}
+class MiniDFA0_1649433290 c1000;
+subgraph MiniDFA4_1318974021["MiniDFA4 {1}"]
+DFA1_858262531_1[\"DFA1 {1}
 AcceptToken '+'"/]
-class DFA1_642929875_1 c0101;
+class DFA1_858262531_1 c0101;
 end
-class MiniDFA1_1915724728 c0101;
-subgraph MiniDFA2_1654973960["MiniDFA2 {1}"]
-DFA2_1083584447_2[\"DFA2 {1}
+class MiniDFA4_1318974021 c0101;
+subgraph MiniDFA5_947620026["MiniDFA5 {1}"]
+DFA2_-1456802818_2[\"DFA2 {1}
 AcceptToken 'a'"/]
-class DFA2_1083584447_2 c0101;
+class DFA2_-1456802818_2 c0101;
 end
-class MiniDFA2_1654973960 c0101;
-subgraph MiniDFA3_2024588932["MiniDFA3 {1}"]
-DFA3_924445311_3[\"DFA3 {1}
+class MiniDFA5_947620026 c0101;
+subgraph MiniDFA6_2049842652["MiniDFA6 {1}"]
+DFA3_-1846132672_3[\"DFA3 {1}
 AcceptToken 'b'"/]
-class DFA3_924445311_3 c0101;
+class DFA3_-1846132672_3 c0101;
 end
-class MiniDFA3_2024588932 c0101;
-MiniDFA0_-1862349481 -->|"+
+class MiniDFA6_2049842652 c0101;
+subgraph MiniDFA1_-290412782["MiniDFA1 {1}"]
+DFA4_1647248238_4{{"DFA4 {2}"}}
+end
+subgraph MiniDFA2_383063715["MiniDFA2 {3}"]
+DFA5_-1056910773_5{{"DFA5 {1}"}}
+DFA7_-1533072777_6{{"DFA7 {1}"}}
+DFA10_249229384_7{{"DFA10 {1}"}}
+end
+subgraph MiniDFA7_1691174574["MiniDFA7 {1}"]
+DFA6_1888404948_8[\"DFA6 {1}
+AcceptToken 'inlineComment'"/]
+class DFA6_1888404948_8 c0101;
+end
+class MiniDFA7_1691174574 c0101;
+subgraph MiniDFA3_-1850936065["MiniDFA3 {1}"]
+DFA8_608653625_9{{"DFA8 {2}"}}
+end
+subgraph MiniDFA8_882993668["MiniDFA8 {1}"]
+DFA9_-1539186643_10[\"DFA9 {1}
+AcceptToken 'inlineComment'"/]
+class DFA9_-1539186643_10 c0101;
+end
+class MiniDFA8_882993668 c0101;
+subgraph MiniDFA9_-1869296671["MiniDFA9 {1}"]
+DFA11_-1148494017_11[\"DFA11 {1}
+AcceptToken 'blockComment'"/]
+class DFA11_-1148494017_11 c0101;
+end
+class MiniDFA9_-1869296671 c0101;
+MiniDFA0_1649433290 -->|"+
 BeginToken '+'
-ExtendToken '+'"|MiniDFA1_1915724728
-MiniDFA0_-1862349481 -->|"a
+ExtendToken '+'"|MiniDFA4_1318974021
+MiniDFA0_1649433290 -->|"a
 BeginToken 'a'
-ExtendToken 'a'"|MiniDFA2_1654973960
-MiniDFA0_-1862349481 -->|"b
+ExtendToken 'a'"|MiniDFA5_947620026
+MiniDFA0_1649433290 -->|"b
 BeginToken 'b'
-ExtendToken 'b'"|MiniDFA3_2024588932
+ExtendToken 'b'"|MiniDFA6_2049842652
+MiniDFA0_1649433290 -->|"/
+BeginToken 'blockComment''inlineComment'"|MiniDFA1_-290412782
+MiniDFA1_-290412782 -->|"*"|MiniDFA2_383063715
+MiniDFA1_-290412782 -->|"/
+ExtendToken 'inlineComment'"|MiniDFA7_1691174574
+MiniDFA2_383063715 -->|"[^*]"|MiniDFA2_383063715
+MiniDFA2_383063715 -->|"*"|MiniDFA3_-1850936065
+MiniDFA7_1691174574 -->|"[#92;t#92;r#32;-~]
+ExtendToken 'inlineComment'"|MiniDFA8_882993668
+MiniDFA3_-1850936065 -->|"[^/]"|MiniDFA2_383063715
+MiniDFA3_-1850936065 -->|"/
+ExtendToken 'blockComment'"|MiniDFA9_-1869296671
+MiniDFA8_882993668 -->|"[#92;t#92;r#32;-~]
+ExtendToken 'inlineComment'"|MiniDFA8_882993668

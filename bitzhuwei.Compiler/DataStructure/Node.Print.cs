@@ -20,6 +20,9 @@ namespace bitzhuwei.Compiler {
         /// <param name="tokens"></param>
         /// <param name="regulations"></param>
         public void Print(System.IO.TextWriter w, TokenList tokens, IReadOnlyList<Regulation> regulations) {
+            if (tokens == null) { throw new ArgumentNullException($"{nameof(tokens)}"); }
+            if (regulations == null) { throw new ArgumentNullException($"{nameof(regulations)}"); }
+
             var stack = new Stack<Node>(); stack.Push(this);
             while (stack.Count > 0) {
                 var node = stack.Pop();

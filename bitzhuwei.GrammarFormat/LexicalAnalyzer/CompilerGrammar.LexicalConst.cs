@@ -26,7 +26,7 @@ namespace bitzhuwei.GrammarFormat {
         /// </summary>
         public const string keywordEmpty = "empty";
 
-        public const string keywordMultipleLineComment = "'multipleLineComment'";
-        public const string keywordSingleLineComment = "'singleLineComment'";
+        public const string @blockCommentkeyword = "'blockComment'";
+        public const string @inlineCommentkeyword = "'inlineComment'";
     }
 }

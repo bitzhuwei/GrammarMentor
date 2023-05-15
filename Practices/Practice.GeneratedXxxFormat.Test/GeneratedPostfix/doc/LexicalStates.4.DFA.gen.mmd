@@ -14,38 +14,91 @@ classDef c1100 stroke:#333,stroke-width:4px,fill:#BB66EE;
 classDef c1101 stroke:#333,stroke-width:4px,fill:#BB66EE,color:#FF0000;
 classDef c1110 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10;
 classDef c1111 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10,color:#FF0000;
-subgraph DFA0_-1191917276["DFA0 wholeStart"]
-NFA0_0_63287211_0("NFA0-0 wholeStart")
-class NFA0_0_63287211_0 c1000;
+subgraph DFA0_1257045888["DFA0 wholeStart"]
+NFA0_0_44657822_0("NFA0-0 wholeStart")
+class NFA0_0_44657822_0 c1000;
 end
-class DFA0_-1191917276 c1000;
-subgraph DFA1_635551321["DFA1 {2}"]
-NFA1_1_32713991_1("NFA1-1 scope[1]")
-class NFA1_1_32713991_1 c0110;
-NFA2_1_25990465_2[\"NFA2-1 scope[1]
+class DFA0_1257045888 c1000;
+subgraph DFA1_1892905281["DFA1 {2}"]
+NFA1_1_66376082_1("NFA1-1 scope[1]")
+class NFA1_1_66376082_1 c0110;
+NFA2_1_60513834_2[\"NFA2-1 scope[1]
 AcceptToken 'refEntity'"/]
-class NFA2_1_25990465_2 c0101;
+class NFA2_1_60513834_2 c0101;
 end
-class DFA1_635551321 c0111;
-subgraph DFA2_-740525413["DFA2 {1}"]
-NFA3_1_32587594_3[\"NFA3-1 char[1]
+class DFA1_1892905281 c0111;
+subgraph DFA2_-1400778774["DFA2 {1}"]
+NFA3_1_7753598_3[\"NFA3-1 char[1]
 AcceptToken '='"/]
-class NFA3_1_32587594_3 c0101;
+class NFA3_1_7753598_3 c0101;
 end
-class DFA2_-740525413 c0101;
-subgraph DFA3_-374645365["DFA3 {1}"]
-NFA1_5_24852891_4[\"NFA1-5 char[1]
+class DFA2_-1400778774 c0101;
+subgraph DFA3_1164797663["DFA3 {2}"]
+NFA4_1_2673518_4("NFA4-1 char[1]")
+NFA5_1_24061669_5("NFA5-1 char[1]")
+end
+subgraph DFA4_-561999181["DFA4 {1}"]
+NFA1_5_15228435_6[\"NFA1-5 char[1]
 AcceptToken 'entityId'"/]
-class NFA1_5_24852891_4 c0001;
+class NFA1_5_15228435_6 c0001;
 end
-class DFA3_-374645365 c0001;
-DFA0_-1191917276 -->|"[0-9]
+class DFA4_-561999181 c0001;
+subgraph DFA5_1214651240["DFA5 {1}"]
+NFA4_3_25543745_7("NFA4-3 char[1]")
+end
+subgraph DFA6_14562357["DFA6 {1}"]
+NFA5_3_2838193_8[\"NFA5-3 char[1]
+AcceptToken 'inlineComment'"/]
+class NFA5_3_2838193_8 c0101;
+end
+class DFA6_14562357 c0101;
+subgraph DFA7_392280436["DFA7 {1}"]
+NFA4_5_55777439_9("NFA4-5 scope[1]")
+end
+subgraph DFA8_1257315080["DFA8 {2}"]
+NFA4_9_28567114_10("NFA4-9 scope[1]")
+NFA4_13_32234903_11("NFA4-13 char[1]")
+end
+subgraph DFA9_-1363874881["DFA9 {1}"]
+NFA5_4_21678677_12[\"NFA5-4 char{0, ∞}
+AcceptToken 'inlineComment'"/]
+class NFA5_4_21678677_12 c0101;
+end
+class DFA9_-1363874881 c0101;
+subgraph DFA10_-721149647["DFA10 {1}"]
+NFA4_11_11142412_13("NFA4-11 scope[1]")
+end
+subgraph DFA11_1533316750["DFA11 {1}"]
+NFA4_15_60890369_14[\"NFA4-15 char[1]
+AcceptToken 'blockComment'"/]
+class NFA4_15_60890369_14 c0101;
+end
+class DFA11_1533316750 c0101;
+DFA0_1257045888 -->|"[0-9]
 BeginToken 'entityId''refEntity'
-ExtendToken 'entityId''refEntity'"|DFA1_635551321
-DFA0_-1191917276 -->|"=
+ExtendToken 'entityId''refEntity'"|DFA1_1892905281
+DFA0_1257045888 -->|"=
 BeginToken '='
-ExtendToken '='"|DFA2_-740525413
-DFA1_635551321 -->|"[0-9]
-ExtendToken 'entityId''refEntity'"|DFA1_635551321
-DFA1_635551321 -->|"=
-CheckToken 'entityId'"|DFA3_-374645365
+ExtendToken '='"|DFA2_-1400778774
+DFA0_1257045888 -->|"/
+BeginToken 'blockComment''inlineComment'"|DFA3_1164797663
+DFA1_1892905281 -->|"[0-9]
+ExtendToken 'entityId''refEntity'"|DFA1_1892905281
+DFA1_1892905281 -->|"=
+CheckToken 'entityId'"|DFA4_-561999181
+DFA3_1164797663 -->|"*"|DFA5_1214651240
+DFA3_1164797663 -->|"/
+ExtendToken 'inlineComment'"|DFA6_14562357
+DFA5_1214651240 -->|"[^*]"|DFA7_392280436
+DFA5_1214651240 -->|"*"|DFA8_1257315080
+DFA6_14562357 -->|"[#92;t#92;r#32;-~]
+ExtendToken 'inlineComment'"|DFA9_-1363874881
+DFA7_392280436 -->|"[^*]"|DFA7_392280436
+DFA7_392280436 -->|"*"|DFA8_1257315080
+DFA8_1257315080 -->|"[^/]"|DFA10_-721149647
+DFA8_1257315080 -->|"/
+ExtendToken 'blockComment'"|DFA11_1533316750
+DFA9_-1363874881 -->|"[#92;t#92;r#32;-~]
+ExtendToken 'inlineComment'"|DFA9_-1363874881
+DFA10_-721149647 -->|"[^*]"|DFA7_392280436
+DFA10_-721149647 -->|"*"|DFA8_1257315080

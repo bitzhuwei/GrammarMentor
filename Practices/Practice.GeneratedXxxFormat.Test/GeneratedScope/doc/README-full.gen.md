@@ -39,218 +39,263 @@ classDef c1100 stroke:#333,stroke-width:4px,fill:#BB66EE;
 classDef c1101 stroke:#333,stroke-width:4px,fill:#BB66EE,color:#FF0000;
 classDef c1110 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10;
 classDef c1111 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10,color:#FF0000;
-DFA0_178694530{{"DFA0 wholeStart"}}
-class DFA0_178694530 c1000;
-DFA1_-772889398{{"DFA1 {9}"}}
-DFA2_-183236595[\"DFA2 {1}"/]
-class DFA2_-183236595 c0101;
-DFA3_987753403[\"DFA3 {1}"/]
-class DFA3_987753403 c0101;
-DFA4_-678760965[\"DFA4 {1}"/]
-class DFA4_-678760965 c0101;
-DFA5_-55324813[\"DFA5 {2}"/]
-class DFA5_-55324813 c1101;
-DFA6_1405897005[\"DFA6 {1}"/]
-class DFA6_1405897005 c0101;
-DFA7_-526014914{{"DFA7 {1}"}}
-DFA8_-77729058[\"DFA8 {1}"/]
-class DFA8_-77729058 c0101;
-DFA9_-1969299243[\"DFA9 {1}"/]
-class DFA9_-1969299243 c0101;
-DFA10_1210241937[\"DFA10 {1}"/]
-class DFA10_1210241937 c0101;
-DFA11_757152697[\"DFA11 {1}"/]
-class DFA11_757152697 c0101;
-DFA12_-598210763[\"DFA12 {1}"/]
-class DFA12_-598210763 c0101;
-DFA13_288695511[\"DFA13 {1}"/]
-class DFA13_288695511 c0101;
-DFA14_1527739253[\"DFA14 {1}"/]
-class DFA14_1527739253 c0101;
-DFA15_690638386[\"DFA15 {1}"/]
-class DFA15_690638386 c0101;
-DFA16_695270034{{"DFA16 {7}"}}
-DFA17_-1125009235[\"DFA17 {1}"/]
-class DFA17_-1125009235 c0101;
-DFA18_-1824766574[\"DFA18 {1}"/]
-class DFA18_-1824766574 c0101;
-DFA19_-346729537[\"DFA19 {1}"/]
-class DFA19_-346729537 c0101;
-DFA20_832646392[\"DFA20 {1}"/]
-class DFA20_832646392 c0101;
-DFA21_348735340[\"DFA21 {1}"/]
-class DFA21_348735340 c1101;
-DFA22_1623355910{{"DFA22 {1}"}}
-DFA23_-966956886{{"DFA23 {1}"}}
-DFA24_-1306082567[\"DFA24 {1}"/]
-class DFA24_-1306082567 c0101;
-DFA25_-1931548102[\"DFA25 {1}"/]
-class DFA25_-1931548102 c0101;
-DFA26_481872213[\"DFA26 {1}"/]
-class DFA26_481872213 c0101;
-DFA27_-113939776[\"DFA27 {1}"/]
-class DFA27_-113939776 c0101;
-DFA28_1197184386[\"DFA28 {1}"/]
-class DFA28_1197184386 c0101;
-DFA29_1158683928[\"DFA29 {1}"/]
-class DFA29_1158683928 c0101;
-DFA30_1122838131{{"DFA30 {7}"}}
-DFA31_-380737881[\"DFA31 {1}"/]
-class DFA31_-380737881 c0101;
-DFA32_1297990935[\"DFA32 {1}"/]
-class DFA32_1297990935 c0101;
-DFA33_314935890[\"DFA33 {1}"/]
-class DFA33_314935890 c0101;
-DFA34_656572424[\"DFA34 {1}"/]
-class DFA34_656572424 c0101;
-DFA35_-1581529229[\"DFA35 {1}"/]
-class DFA35_-1581529229 c0101;
-DFA36_88598524{{"DFA36 {1}"}}
-DFA37_-697564398{{"DFA37 {1}"}}
-DFA38_1602077691{{"DFA38 {1}"}}
-DFA39_-1400035845[\"DFA39 {1}"/]
-class DFA39_-1400035845 c0101;
-DFA40_-309823494[\"DFA40 {1}"/]
-class DFA40_-309823494 c0101;
-DFA41_-1920122602[\"DFA41 {1}"/]
-class DFA41_-1920122602 c0101;
-DFA42_-367677254[\"DFA42 {1}"/]
-class DFA42_-367677254 c0101;
-DFA43_-24807432[\"DFA43 {1}"/]
-class DFA43_-24807432 c0101;
-DFA44_533188336[\"DFA44 {1}"/]
-class DFA44_533188336 c0101;
-DFA45_-1262852157{{"DFA45 {1}"}}
-DFA46_-428432942{{"DFA46 {1}"}}
-DFA47_-1789142534{{"DFA47 {1}"}}
-DFA48_334064317[\"DFA48 {1}"/]
-class DFA48_334064317 c0101;
-DFA49_-2137454313{{"DFA49 {1}"}}
-DFA50_1290846263{{"DFA50 {1}"}}
-DFA51_-851077430[\"DFA51 {1}"/]
-class DFA51_-851077430 c0101;
-DFA52_-1969594929{{"DFA52 {1}"}}
-DFA53_1051069287[\"DFA53 {1}"/]
-class DFA53_1051069287 c0101;
-DFA0_178694530 -->|"#92;
-BeginToken 'char'"|DFA1_-772889398
-DFA0_178694530 -->|"[#32;-Z]
+DFA0_959717059{{"DFA0 wholeStart"}}
+class DFA0_959717059 c1000;
+DFA1_1108858292{{"DFA1 {9}"}}
+DFA2_-1682253378[\"DFA2 {1}"/]
+class DFA2_-1682253378 c0101;
+DFA3_1901332768[\"DFA3 {3}"/]
+class DFA3_1901332768 c0101;
+DFA4_-783341220[\"DFA4 {1}"/]
+class DFA4_-783341220 c0101;
+DFA5_-1289131532[\"DFA5 {1}"/]
+class DFA5_-1289131532 c0101;
+DFA6_-618929247[\"DFA6 {2}"/]
+class DFA6_-618929247 c1101;
+DFA7_-1961732557[\"DFA7 {1}"/]
+class DFA7_-1961732557 c0101;
+DFA8_1569233356{{"DFA8 {1}"}}
+DFA9_-1344796577[\"DFA9 {1}"/]
+class DFA9_-1344796577 c0101;
+DFA10_2034109769[\"DFA10 {1}"/]
+class DFA10_2034109769 c0101;
+DFA11_1608650861[\"DFA11 {1}"/]
+class DFA11_1608650861 c0101;
+DFA12_1146874116[\"DFA12 {1}"/]
+class DFA12_1146874116 c0101;
+DFA13_1999389059[\"DFA13 {1}"/]
+class DFA13_1999389059 c0101;
+DFA14_307894127[\"DFA14 {1}"/]
+class DFA14_307894127 c0101;
+DFA15_849971840[\"DFA15 {1}"/]
+class DFA15_849971840 c0101;
+DFA16_1913010798[\"DFA16 {1}"/]
+class DFA16_1913010798 c0101;
+DFA17_1590941627{{"DFA17 {1}"}}
+DFA18_1658321644[\"DFA18 {1}"/]
+class DFA18_1658321644 c0101;
+DFA19_1320486412{{"DFA19 {7}"}}
+DFA20_485462897[\"DFA20 {1}"/]
+class DFA20_485462897 c0101;
+DFA21_992789378[\"DFA21 {1}"/]
+class DFA21_992789378 c0101;
+DFA22_-805790856[\"DFA22 {1}"/]
+class DFA22_-805790856 c0101;
+DFA23_-1072474476[\"DFA23 {1}"/]
+class DFA23_-1072474476 c0101;
+DFA24_-463280789[\"DFA24 {1}"/]
+class DFA24_-463280789 c1101;
+DFA25_1756501868{{"DFA25 {1}"}}
+DFA26_12329540{{"DFA26 {1}"}}
+DFA27_747149639{{"DFA27 {2}"}}
+DFA28_-1765574440[\"DFA28 {1}"/]
+class DFA28_-1765574440 c0101;
+DFA29_-1646634684{{"DFA29 {1}"}}
+DFA30_-878426081[\"DFA30 {1}"/]
+class DFA30_-878426081 c0101;
+DFA31_480366072[\"DFA31 {1}"/]
+class DFA31_480366072 c0101;
+DFA32_-310690225[\"DFA32 {1}"/]
+class DFA32_-310690225 c0101;
+DFA33_2143711214[\"DFA33 {1}"/]
+class DFA33_2143711214 c0101;
+DFA34_-817145312[\"DFA34 {1}"/]
+class DFA34_-817145312 c0101;
+DFA35_-765141552[\"DFA35 {1}"/]
+class DFA35_-765141552 c0101;
+DFA36_179686296{{"DFA36 {7}"}}
+DFA37_-1055837632[\"DFA37 {1}"/]
+class DFA37_-1055837632 c0101;
+DFA38_858719256[\"DFA38 {1}"/]
+class DFA38_858719256 c0101;
+DFA39_-1097942182[\"DFA39 {1}"/]
+class DFA39_-1097942182 c0101;
+DFA40_1969019325[\"DFA40 {1}"/]
+class DFA40_1969019325 c0101;
+DFA41_-683148455[\"DFA41 {1}"/]
+class DFA41_-683148455 c0101;
+DFA42_-2119505283{{"DFA42 {1}"}}
+DFA43_-749309628{{"DFA43 {1}"}}
+DFA44_-985280593[\"DFA44 {1}"/]
+class DFA44_-985280593 c0101;
+DFA45_-1520087334{{"DFA45 {1}"}}
+DFA46_1586969767{{"DFA46 {1}"}}
+DFA47_37479767[\"DFA47 {1}"/]
+class DFA47_37479767 c0101;
+DFA48_-1494279640[\"DFA48 {1}"/]
+class DFA48_-1494279640 c0101;
+DFA49_-1099556351[\"DFA49 {1}"/]
+class DFA49_-1099556351 c0101;
+DFA50_-1561269722[\"DFA50 {1}"/]
+class DFA50_-1561269722 c0101;
+DFA51_804655689[\"DFA51 {1}"/]
+class DFA51_804655689 c0101;
+DFA52_-1738388977[\"DFA52 {1}"/]
+class DFA52_-1738388977 c0101;
+DFA53_701415575{{"DFA53 {1}"}}
+DFA54_891763813{{"DFA54 {1}"}}
+DFA55_-703828649{{"DFA55 {1}"}}
+DFA56_624096528[\"DFA56 {1}"/]
+class DFA56_624096528 c0101;
+DFA57_-1468880640{{"DFA57 {1}"}}
+DFA58_-180427778{{"DFA58 {1}"}}
+DFA59_-574655011[\"DFA59 {1}"/]
+class DFA59_-574655011 c0101;
+DFA60_1044473259{{"DFA60 {1}"}}
+DFA61_690348051[\"DFA61 {1}"/]
+class DFA61_690348051 c0101;
+DFA0_959717059 -->|"#92;
+BeginToken 'char'"|DFA1_1108858292
+DFA0_959717059 -->|"[#32;-.0-Z]
 BeginToken 'char'
-ExtendToken 'char'"|DFA2_-183236595
-DFA0_178694530 -->|"^
+ExtendToken 'char'"|DFA2_-1682253378
+DFA0_959717059 -->|"/
+BeginToken 'char''blockComment''inlineComment'
+ExtendToken 'char'"|DFA3_1901332768
+DFA0_959717059 -->|"^
 BeginToken 'char'
-ExtendToken 'char'"|DFA3_987753403
-DFA0_178694530 -->|"[_-~]
+ExtendToken 'char'"|DFA4_-783341220
+DFA0_959717059 -->|"[_-~]
 BeginToken 'char'
-ExtendToken 'char'"|DFA4_-678760965
-DFA0_178694530 -->|"[
+ExtendToken 'char'"|DFA5_-1289131532
+DFA0_959717059 -->|"[
 BeginToken '[''[^'
-ExtendToken '['"|DFA5_-55324813
-DFA0_178694530 -->|"]
+ExtendToken '['"|DFA6_-618929247
+DFA0_959717059 -->|"]
 BeginToken ']'
-ExtendToken ']'"|DFA6_1405897005
-DFA1_-772889398 -->|"u"|DFA7_-526014914
-DFA1_-772889398 -->|"t
-ExtendToken 'char'"|DFA8_-77729058
-DFA1_-772889398 -->|"n
-ExtendToken 'char'"|DFA9_-1969299243
-DFA1_-772889398 -->|"r
-ExtendToken 'char'"|DFA10_1210241937
-DFA1_-772889398 -->|"-
-ExtendToken 'char'"|DFA11_757152697
-DFA1_-772889398 -->|"[
-ExtendToken 'char'"|DFA12_-598210763
-DFA1_-772889398 -->|"#92;
-ExtendToken 'char'"|DFA13_288695511
-DFA1_-772889398 -->|"]
-ExtendToken 'char'"|DFA14_1527739253
-DFA1_-772889398 -->|"^
-ExtendToken 'char'"|DFA15_690638386
-DFA5_-55324813 -->|"#92;
+ExtendToken ']'"|DFA7_-1961732557
+DFA1_1108858292 -->|"u"|DFA8_1569233356
+DFA1_1108858292 -->|"t
+ExtendToken 'char'"|DFA9_-1344796577
+DFA1_1108858292 -->|"n
+ExtendToken 'char'"|DFA10_2034109769
+DFA1_1108858292 -->|"r
+ExtendToken 'char'"|DFA11_1608650861
+DFA1_1108858292 -->|"-
+ExtendToken 'char'"|DFA12_1146874116
+DFA1_1108858292 -->|"[
+ExtendToken 'char'"|DFA13_1999389059
+DFA1_1108858292 -->|"#92;
+ExtendToken 'char'"|DFA14_307894127
+DFA1_1108858292 -->|"]
+ExtendToken 'char'"|DFA15_849971840
+DFA1_1108858292 -->|"^
+ExtendToken 'char'"|DFA16_1913010798
+DFA3_1901332768 -->|"*"|DFA17_1590941627
+DFA3_1901332768 -->|"/
+ExtendToken 'inlineComment'"|DFA18_1658321644
+DFA6_-618929247 -->|"#92;
 AcceptPrevious '['
-BeginToken 'firstItem1'"|DFA16_695270034
-DFA5_-55324813 -->|"[#32;-Z]
-AcceptPrevious '['
-BeginToken 'firstItem1'
-ExtendToken 'firstItem1'"|DFA17_-1125009235
-DFA5_-55324813 -->|"[
-AcceptPrevious '['
-BeginToken 'firstItem1'
-ExtendToken 'firstItem1'"|DFA18_-1824766574
-DFA5_-55324813 -->|"]
+BeginToken 'firstItem1'"|DFA19_1320486412
+DFA6_-618929247 -->|"[#32;-Z]
 AcceptPrevious '['
 BeginToken 'firstItem1'
-ExtendToken 'firstItem1'"|DFA19_-346729537
-DFA5_-55324813 -->|"[_-~]
+ExtendToken 'firstItem1'"|DFA20_485462897
+DFA6_-618929247 -->|"[
 AcceptPrevious '['
 BeginToken 'firstItem1'
-ExtendToken 'firstItem1'"|DFA20_832646392
-DFA5_-55324813 -->|"^
-ExtendToken '[^'"|DFA21_348735340
-DFA7_-526014914 -->|"[0-9]"|DFA22_1623355910
-DFA16_695270034 -->|"u"|DFA23_-966956886
-DFA16_695270034 -->|"t
-ExtendToken 'firstItem1'"|DFA24_-1306082567
-DFA16_695270034 -->|"n
-ExtendToken 'firstItem1'"|DFA25_-1931548102
-DFA16_695270034 -->|"r
-ExtendToken 'firstItem1'"|DFA26_481872213
-DFA16_695270034 -->|"-
-ExtendToken 'firstItem1'"|DFA27_-113939776
-DFA16_695270034 -->|"#92;
-ExtendToken 'firstItem1'"|DFA28_1197184386
-DFA16_695270034 -->|"^
-ExtendToken 'firstItem1'"|DFA29_1158683928
-DFA21_348735340 -->|"#92;
+ExtendToken 'firstItem1'"|DFA21_992789378
+DFA6_-618929247 -->|"]
+AcceptPrevious '['
+BeginToken 'firstItem1'
+ExtendToken 'firstItem1'"|DFA22_-805790856
+DFA6_-618929247 -->|"[_-~]
+AcceptPrevious '['
+BeginToken 'firstItem1'
+ExtendToken 'firstItem1'"|DFA23_-1072474476
+DFA6_-618929247 -->|"^
+ExtendToken '[^'"|DFA24_-463280789
+DFA8_1569233356 -->|"[0-9]"|DFA25_1756501868
+DFA17_1590941627 -->|"[^*]"|DFA26_12329540
+DFA17_1590941627 -->|"*"|DFA27_747149639
+DFA18_1658321644 -->|"[#92;t#92;r#32;-~]
+ExtendToken 'inlineComment'"|DFA28_-1765574440
+DFA19_1320486412 -->|"u"|DFA29_-1646634684
+DFA19_1320486412 -->|"t
+ExtendToken 'firstItem1'"|DFA30_-878426081
+DFA19_1320486412 -->|"n
+ExtendToken 'firstItem1'"|DFA31_480366072
+DFA19_1320486412 -->|"r
+ExtendToken 'firstItem1'"|DFA32_-310690225
+DFA19_1320486412 -->|"-
+ExtendToken 'firstItem1'"|DFA33_2143711214
+DFA19_1320486412 -->|"#92;
+ExtendToken 'firstItem1'"|DFA34_-817145312
+DFA19_1320486412 -->|"^
+ExtendToken 'firstItem1'"|DFA35_-765141552
+DFA24_-463280789 -->|"#92;
 AcceptPrevious '[^'
-BeginToken 'firstItem2'"|DFA30_1122838131
-DFA21_348735340 -->|"[#32;-Z]
-AcceptPrevious '[^'
-BeginToken 'firstItem2'
-ExtendToken 'firstItem2'"|DFA31_-380737881
-DFA21_348735340 -->|"[
-AcceptPrevious '[^'
-BeginToken 'firstItem2'
-ExtendToken 'firstItem2'"|DFA32_1297990935
-DFA21_348735340 -->|"]
-AcceptPrevious '[^'
-BeginToken 'firstItem2'
-ExtendToken 'firstItem2'"|DFA33_314935890
-DFA21_348735340 -->|"^
-AcceptPrevious '[^'
-BeginToken 'firstItem2'
-ExtendToken 'firstItem2'"|DFA34_656572424
-DFA21_348735340 -->|"[_-~]
+BeginToken 'firstItem2'"|DFA36_179686296
+DFA24_-463280789 -->|"[#32;-Z]
 AcceptPrevious '[^'
 BeginToken 'firstItem2'
-ExtendToken 'firstItem2'"|DFA35_-1581529229
-DFA22_1623355910 -->|"[0-9]"|DFA36_88598524
-DFA23_-966956886 -->|"[0-9]"|DFA37_-697564398
-DFA30_1122838131 -->|"u"|DFA38_1602077691
-DFA30_1122838131 -->|"t
-ExtendToken 'firstItem2'"|DFA39_-1400035845
-DFA30_1122838131 -->|"n
-ExtendToken 'firstItem2'"|DFA40_-309823494
-DFA30_1122838131 -->|"r
-ExtendToken 'firstItem2'"|DFA41_-1920122602
-DFA30_1122838131 -->|"-
-ExtendToken 'firstItem2'"|DFA42_-367677254
-DFA30_1122838131 -->|"#92;
-ExtendToken 'firstItem2'"|DFA43_-24807432
-DFA30_1122838131 -->|"^
-ExtendToken 'firstItem2'"|DFA44_533188336
-DFA36_88598524 -->|"[0-9]"|DFA45_-1262852157
-DFA37_-697564398 -->|"[0-9]"|DFA46_-428432942
-DFA38_1602077691 -->|"[0-9]"|DFA47_-1789142534
-DFA45_-1262852157 -->|"[0-9]
-ExtendToken 'char'"|DFA48_334064317
-DFA46_-428432942 -->|"[0-9]"|DFA49_-2137454313
-DFA47_-1789142534 -->|"[0-9]"|DFA50_1290846263
-DFA49_-2137454313 -->|"[0-9]
-ExtendToken 'firstItem1'"|DFA51_-851077430
-DFA50_1290846263 -->|"[0-9]"|DFA52_-1969594929
-DFA52_-1969594929 -->|"[0-9]
-ExtendToken 'firstItem2'"|DFA53_1051069287
+ExtendToken 'firstItem2'"|DFA37_-1055837632
+DFA24_-463280789 -->|"[
+AcceptPrevious '[^'
+BeginToken 'firstItem2'
+ExtendToken 'firstItem2'"|DFA38_858719256
+DFA24_-463280789 -->|"]
+AcceptPrevious '[^'
+BeginToken 'firstItem2'
+ExtendToken 'firstItem2'"|DFA39_-1097942182
+DFA24_-463280789 -->|"^
+AcceptPrevious '[^'
+BeginToken 'firstItem2'
+ExtendToken 'firstItem2'"|DFA40_1969019325
+DFA24_-463280789 -->|"[_-~]
+AcceptPrevious '[^'
+BeginToken 'firstItem2'
+ExtendToken 'firstItem2'"|DFA41_-683148455
+DFA25_1756501868 -->|"[0-9]"|DFA42_-2119505283
+DFA26_12329540 -->|"[^*]"|DFA26_12329540
+DFA26_12329540 -->|"*"|DFA27_747149639
+DFA27_747149639 -->|"[^/]"|DFA43_-749309628
+DFA27_747149639 -->|"/
+ExtendToken 'blockComment'"|DFA44_-985280593
+DFA28_-1765574440 -->|"[#92;t#92;r#32;-~]
+ExtendToken 'inlineComment'"|DFA28_-1765574440
+DFA29_-1646634684 -->|"[0-9]"|DFA45_-1520087334
+DFA36_179686296 -->|"u"|DFA46_1586969767
+DFA36_179686296 -->|"t
+ExtendToken 'firstItem2'"|DFA47_37479767
+DFA36_179686296 -->|"n
+ExtendToken 'firstItem2'"|DFA48_-1494279640
+DFA36_179686296 -->|"r
+ExtendToken 'firstItem2'"|DFA49_-1099556351
+DFA36_179686296 -->|"-
+ExtendToken 'firstItem2'"|DFA50_-1561269722
+DFA36_179686296 -->|"#92;
+ExtendToken 'firstItem2'"|DFA51_804655689
+DFA36_179686296 -->|"^
+ExtendToken 'firstItem2'"|DFA52_-1738388977
+DFA42_-2119505283 -->|"[0-9]"|DFA53_701415575
+DFA43_-749309628 -->|"[^*]"|DFA26_12329540
+DFA43_-749309628 -->|"*"|DFA27_747149639
+DFA45_-1520087334 -->|"[0-9]"|DFA54_891763813
+DFA46_1586969767 -->|"[0-9]"|DFA55_-703828649
+DFA53_701415575 -->|"[0-9]
+ExtendToken 'char'"|DFA56_624096528
+DFA54_891763813 -->|"[0-9]"|DFA57_-1468880640
+DFA55_-703828649 -->|"[0-9]"|DFA58_-180427778
+DFA57_-1468880640 -->|"[0-9]
+ExtendToken 'firstItem1'"|DFA59_-574655011
+DFA58_-180427778 -->|"[0-9]"|DFA60_1044473259
+DFA60_1044473259 -->|"[0-9]
+ExtendToken 'firstItem2'"|DFA61_690348051
+
+```
+## nullable
+
+```
+[0]: nullable( Scope ) = False
+[1]: nullable( '[' ) = False
+[2]: nullable( 'firstItem1' ) = False
+[3]: nullable( RangeItems ) = False
+[4]: nullable( ']' ) = False
+[5]: nullable( '[^' ) = False
+[6]: nullable( 'firstItem2' ) = False
+[7]: nullable( RangeItem ) = False
+[8]: nullable( 'char' ) = False
 
 ```
 
@@ -266,12 +311,11 @@ ExtendToken 'firstItem2'"|DFA53_1051069287
 [6]: FIRST( '[^' ) = { '[^' }
 [7]: FIRST( 'firstItem2' ) = { 'firstItem2' }
 [8]: FIRST( 'char' ) = { 'char' }
-[9]: FIRST(  ) = { empty }
-[10]: FIRST( '[' 'firstItem1' RangeItems ']' ) = { '[' }
-[11]: FIRST( '[^' 'firstItem2' RangeItems ']' ) = { '[^' }
-[12]: FIRST( '[' 'firstItem1' ']' ) = { '[' }
-[13]: FIRST( '[^' 'firstItem2' ']' ) = { '[^' }
-[14]: FIRST( RangeItems RangeItem ) = { 'char' }
+[9]: FIRST( '[' 'firstItem1' RangeItems ']' ) = { '[' }
+[10]: FIRST( '[^' 'firstItem2' RangeItems ']' ) = { '[^' }
+[11]: FIRST( '[' 'firstItem1' ']' ) = { '[' }
+[12]: FIRST( '[^' 'firstItem2' ']' ) = { '[^' }
+[13]: FIRST( RangeItems RangeItem ) = { 'char' }
 
 ```
 

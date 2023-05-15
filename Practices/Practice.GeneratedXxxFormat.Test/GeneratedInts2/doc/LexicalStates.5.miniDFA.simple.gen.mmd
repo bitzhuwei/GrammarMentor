@@ -14,19 +14,45 @@ classDef c1100 stroke:#333,stroke-width:4px,fill:#BB66EE;
 classDef c1101 stroke:#333,stroke-width:4px,fill:#BB66EE,color:#FF0000;
 classDef c1110 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10;
 classDef c1111 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10,color:#FF0000;
-MiniDFA0_96068073(["MiniDFA0 {1}"])
-class MiniDFA0_96068073 c1000;
-MiniDFA1_310322936[\"MiniDFA1 {1}
+MiniDFA0_-1927124090(["MiniDFA0 {1}"])
+class MiniDFA0_-1927124090 c1000;
+MiniDFA4_197586790[\"MiniDFA4 {1}
 AcceptToken 'integer'"/]
-class MiniDFA1_310322936 c0101;
-MiniDFA2_-1741180269[\"MiniDFA2 {1}
+class MiniDFA4_197586790 c0101;
+MiniDFA5_-1818913402[\"MiniDFA5 {1}
 AcceptToken ','"/]
-class MiniDFA2_-1741180269 c0101;
-MiniDFA0_96068073 -->|"[0-9]
+class MiniDFA5_-1818913402 c0101;
+MiniDFA1_-1621108429(["MiniDFA1 {1}"])
+MiniDFA2_729083013(["MiniDFA2 {3}"])
+MiniDFA6_1259046490[\"MiniDFA6 {1}
+AcceptToken 'inlineComment'"/]
+class MiniDFA6_1259046490 c0101;
+MiniDFA3_1123870596(["MiniDFA3 {1}"])
+MiniDFA7_-1447067160[\"MiniDFA7 {1}
+AcceptToken 'inlineComment'"/]
+class MiniDFA7_-1447067160 c0101;
+MiniDFA8_-60327706[\"MiniDFA8 {1}
+AcceptToken 'blockComment'"/]
+class MiniDFA8_-60327706 c0101;
+MiniDFA0_-1927124090 -->|"[0-9]
 BeginToken 'integer'
-ExtendToken 'integer'"|MiniDFA1_310322936
-MiniDFA0_96068073 -->|",
+ExtendToken 'integer'"|MiniDFA4_197586790
+MiniDFA0_-1927124090 -->|",
 BeginToken ','
-ExtendToken ','"|MiniDFA2_-1741180269
-MiniDFA1_310322936 -->|"[0-9]
-ExtendToken 'integer'"|MiniDFA1_310322936
+ExtendToken ','"|MiniDFA5_-1818913402
+MiniDFA0_-1927124090 -->|"/
+BeginToken 'blockComment''inlineComment'"|MiniDFA1_-1621108429
+MiniDFA4_197586790 -->|"[0-9]
+ExtendToken 'integer'"|MiniDFA4_197586790
+MiniDFA1_-1621108429 -->|"*"|MiniDFA2_729083013
+MiniDFA1_-1621108429 -->|"/
+ExtendToken 'inlineComment'"|MiniDFA6_1259046490
+MiniDFA2_729083013 -->|"[^*]"|MiniDFA2_729083013
+MiniDFA2_729083013 -->|"*"|MiniDFA3_1123870596
+MiniDFA6_1259046490 -->|"[#92;t#92;r#32;-~]
+ExtendToken 'inlineComment'"|MiniDFA7_-1447067160
+MiniDFA3_1123870596 -->|"[^/]"|MiniDFA2_729083013
+MiniDFA3_1123870596 -->|"/
+ExtendToken 'blockComment'"|MiniDFA8_-60327706
+MiniDFA7_-1447067160 -->|"[#92;t#92;r#32;-~]
+ExtendToken 'inlineComment'"|MiniDFA7_-1447067160

@@ -32,23 +32,62 @@ classDef c1100 stroke:#333,stroke-width:4px,fill:#BB66EE;
 classDef c1101 stroke:#333,stroke-width:4px,fill:#BB66EE,color:#FF0000;
 classDef c1110 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10;
 classDef c1111 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10,color:#FF0000;
-DFA0_1303046169{{"DFA0 wholeStart"}}
-class DFA0_1303046169 c1000;
-DFA1_642929875[\"DFA1 {1}"/]
-class DFA1_642929875 c0101;
-DFA2_1083584447[\"DFA2 {1}"/]
-class DFA2_1083584447 c0101;
-DFA3_924445311[\"DFA3 {1}"/]
-class DFA3_924445311 c0101;
-DFA0_1303046169 -->|"+
+DFA0_-145138233{{"DFA0 wholeStart"}}
+class DFA0_-145138233 c1000;
+DFA1_858262531[\"DFA1 {1}"/]
+class DFA1_858262531 c0101;
+DFA2_-1456802818[\"DFA2 {1}"/]
+class DFA2_-1456802818 c0101;
+DFA3_-1846132672[\"DFA3 {1}"/]
+class DFA3_-1846132672 c0101;
+DFA4_1647248238{{"DFA4 {2}"}}
+DFA5_-1056910773{{"DFA5 {1}"}}
+DFA6_1888404948[\"DFA6 {1}"/]
+class DFA6_1888404948 c0101;
+DFA7_-1533072777{{"DFA7 {1}"}}
+DFA8_608653625{{"DFA8 {2}"}}
+DFA9_-1539186643[\"DFA9 {1}"/]
+class DFA9_-1539186643 c0101;
+DFA10_249229384{{"DFA10 {1}"}}
+DFA11_-1148494017[\"DFA11 {1}"/]
+class DFA11_-1148494017 c0101;
+DFA0_-145138233 -->|"+
 BeginToken '+'
-ExtendToken '+'"|DFA1_642929875
-DFA0_1303046169 -->|"a
+ExtendToken '+'"|DFA1_858262531
+DFA0_-145138233 -->|"a
 BeginToken 'a'
-ExtendToken 'a'"|DFA2_1083584447
-DFA0_1303046169 -->|"b
+ExtendToken 'a'"|DFA2_-1456802818
+DFA0_-145138233 -->|"b
 BeginToken 'b'
-ExtendToken 'b'"|DFA3_924445311
+ExtendToken 'b'"|DFA3_-1846132672
+DFA0_-145138233 -->|"/
+BeginToken 'blockComment''inlineComment'"|DFA4_1647248238
+DFA4_1647248238 -->|"*"|DFA5_-1056910773
+DFA4_1647248238 -->|"/
+ExtendToken 'inlineComment'"|DFA6_1888404948
+DFA5_-1056910773 -->|"[^*]"|DFA7_-1533072777
+DFA5_-1056910773 -->|"*"|DFA8_608653625
+DFA6_1888404948 -->|"[#92;t#92;r#32;-~]
+ExtendToken 'inlineComment'"|DFA9_-1539186643
+DFA7_-1533072777 -->|"[^*]"|DFA7_-1533072777
+DFA7_-1533072777 -->|"*"|DFA8_608653625
+DFA8_608653625 -->|"[^/]"|DFA10_249229384
+DFA8_608653625 -->|"/
+ExtendToken 'blockComment'"|DFA11_-1148494017
+DFA9_-1539186643 -->|"[#92;t#92;r#32;-~]
+ExtendToken 'inlineComment'"|DFA9_-1539186643
+DFA10_249229384 -->|"[^*]"|DFA7_-1533072777
+DFA10_249229384 -->|"*"|DFA8_608653625
+
+```
+## nullable
+
+```
+[0]: nullable( A ) = False
+[1]: nullable( '+' ) = False
+[2]: nullable( B ) = False
+[3]: nullable( 'a' ) = False
+[4]: nullable( 'b' ) = False
 
 ```
 
@@ -60,8 +99,7 @@ ExtendToken 'b'"|DFA3_924445311
 [2]: FIRST( '+' ) = { '+' }
 [3]: FIRST( 'a' ) = { 'a' }
 [4]: FIRST( 'b' ) = { 'b' }
-[5]: FIRST(  ) = { empty }
-[6]: FIRST( A '+' B ) = { 'a' }
+[5]: FIRST( A '+' B ) = { 'a' }
 
 ```
 

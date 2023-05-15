@@ -14,23 +14,49 @@ classDef c1100 stroke:#333,stroke-width:4px,fill:#BB66EE;
 classDef c1101 stroke:#333,stroke-width:4px,fill:#BB66EE,color:#FF0000;
 classDef c1110 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10;
 classDef c1111 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10,color:#FF0000;
-MiniDFA0_-1862349481(["MiniDFA0 {1}"])
-class MiniDFA0_-1862349481 c1000;
-MiniDFA1_1915724728[\"MiniDFA1 {1}
+MiniDFA0_1649433290(["MiniDFA0 {1}"])
+class MiniDFA0_1649433290 c1000;
+MiniDFA4_1318974021[\"MiniDFA4 {1}
 AcceptToken '+'"/]
-class MiniDFA1_1915724728 c0101;
-MiniDFA2_1654973960[\"MiniDFA2 {1}
+class MiniDFA4_1318974021 c0101;
+MiniDFA5_947620026[\"MiniDFA5 {1}
 AcceptToken 'a'"/]
-class MiniDFA2_1654973960 c0101;
-MiniDFA3_2024588932[\"MiniDFA3 {1}
+class MiniDFA5_947620026 c0101;
+MiniDFA6_2049842652[\"MiniDFA6 {1}
 AcceptToken 'b'"/]
-class MiniDFA3_2024588932 c0101;
-MiniDFA0_-1862349481 -->|"+
+class MiniDFA6_2049842652 c0101;
+MiniDFA1_-290412782(["MiniDFA1 {1}"])
+MiniDFA2_383063715(["MiniDFA2 {3}"])
+MiniDFA7_1691174574[\"MiniDFA7 {1}
+AcceptToken 'inlineComment'"/]
+class MiniDFA7_1691174574 c0101;
+MiniDFA3_-1850936065(["MiniDFA3 {1}"])
+MiniDFA8_882993668[\"MiniDFA8 {1}
+AcceptToken 'inlineComment'"/]
+class MiniDFA8_882993668 c0101;
+MiniDFA9_-1869296671[\"MiniDFA9 {1}
+AcceptToken 'blockComment'"/]
+class MiniDFA9_-1869296671 c0101;
+MiniDFA0_1649433290 -->|"+
 BeginToken '+'
-ExtendToken '+'"|MiniDFA1_1915724728
-MiniDFA0_-1862349481 -->|"a
+ExtendToken '+'"|MiniDFA4_1318974021
+MiniDFA0_1649433290 -->|"a
 BeginToken 'a'
-ExtendToken 'a'"|MiniDFA2_1654973960
-MiniDFA0_-1862349481 -->|"b
+ExtendToken 'a'"|MiniDFA5_947620026
+MiniDFA0_1649433290 -->|"b
 BeginToken 'b'
-ExtendToken 'b'"|MiniDFA3_2024588932
+ExtendToken 'b'"|MiniDFA6_2049842652
+MiniDFA0_1649433290 -->|"/
+BeginToken 'blockComment''inlineComment'"|MiniDFA1_-290412782
+MiniDFA1_-290412782 -->|"*"|MiniDFA2_383063715
+MiniDFA1_-290412782 -->|"/
+ExtendToken 'inlineComment'"|MiniDFA7_1691174574
+MiniDFA2_383063715 -->|"[^*]"|MiniDFA2_383063715
+MiniDFA2_383063715 -->|"*"|MiniDFA3_-1850936065
+MiniDFA7_1691174574 -->|"[#92;t#92;r#32;-~]
+ExtendToken 'inlineComment'"|MiniDFA8_882993668
+MiniDFA3_-1850936065 -->|"[^/]"|MiniDFA2_383063715
+MiniDFA3_-1850936065 -->|"/
+ExtendToken 'blockComment'"|MiniDFA9_-1869296671
+MiniDFA8_882993668 -->|"[#92;t#92;r#32;-~]
+ExtendToken 'inlineComment'"|MiniDFA8_882993668

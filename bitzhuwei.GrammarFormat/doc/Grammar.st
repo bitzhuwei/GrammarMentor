@@ -10,7 +10,7 @@ V                     : 'Vn' | 'Vt' | 'empty' ; // V is Vn or Vt or the keyword(
 LexiProduction        : 'Vt' ':' 'pattern' ';' ;
 //--------------Lexi Statements------------------
 'Vn'                  : %%[a-zA-Z_][a-zA-Z0-9_]*%% ;
-'Vt'                  : %%'([ -&]|\\'|[(-~])+'%% ; // any char or \'
+'Vt'                  : %%'([ -&]|\\'|[(-\[]|\\\\|[\]-~])+'%% ; // any char or \'
 'pattern'             : %%[%]{2}[ -~]+[%]{2}%% ;
 'MultipleLineComment' : %%\/\*.*\*\/%% ; // omissible
 'SingleLineComment'   : %%//.*%% ; // omissible
@@ -28,7 +28,7 @@ Unit          : 'char' Repeat | 'scope' Repeat | '(' Regex ')' Repeat ;
 Repeat        : '?' | '+' | '*' | '{' 'min' UpperBound '}' | empty ;
 UpperBound    : ',' 'max' | ',' | empty ;
 // VtRegex:
-'refVt'       : %%\<'[a-zA-Z_][a-zA-Z0-9_]*'\>%% // start with <' and end with '> 
+'refVt'       : %%\<'([ -&]|\\'|[(-\[]|\\\\|[\]-~])+'\>%% // start with <' and end with '> 
 // 'char' is a letter or an escape
 // letter:  !"# %&'   ,-   0..9:;<=>   @A..Z _`a..z   ~
 // escape: content:    $()*+./?[\]^{|}

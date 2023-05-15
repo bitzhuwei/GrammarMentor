@@ -34,28 +34,67 @@ classDef c1100 stroke:#333,stroke-width:4px,fill:#BB66EE;
 classDef c1101 stroke:#333,stroke-width:4px,fill:#BB66EE,color:#FF0000;
 classDef c1110 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10;
 classDef c1111 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10,color:#FF0000;
-DFA0_1011348769{{"DFA0 wholeStart"}}
-class DFA0_1011348769 c1000;
-DFA1_1532792217[\"DFA1 {1}"/]
-class DFA1_1532792217 c0101;
-DFA2_-348809668[\"DFA2 {1}"/]
-class DFA2_-348809668 c1101;
-DFA3_1100400324[\"DFA3 {1}"/]
-class DFA3_1100400324 c0101;
-DFA0_1011348769 -->|"[0-9]
+DFA0_-1247633812{{"DFA0 wholeStart"}}
+class DFA0_-1247633812 c1000;
+DFA1_1778675542[\"DFA1 {1}"/]
+class DFA1_1778675542 c0101;
+DFA2_1260656262[\"DFA2 {1}"/]
+class DFA2_1260656262 c1101;
+DFA3_-1481152672{{"DFA3 {2}"}}
+DFA4_1905852967[\"DFA4 {1}"/]
+class DFA4_1905852967 c0101;
+DFA5_-8675653{{"DFA5 {1}"}}
+DFA6_-512962250[\"DFA6 {1}"/]
+class DFA6_-512962250 c0101;
+DFA7_157542378{{"DFA7 {1}"}}
+DFA8_-271251562{{"DFA8 {2}"}}
+DFA9_-1647430205[\"DFA9 {1}"/]
+class DFA9_-1647430205 c0101;
+DFA10_-1871932841{{"DFA10 {1}"}}
+DFA11_1927963297[\"DFA11 {1}"/]
+class DFA11_1927963297 c0101;
+DFA0_-1247633812 -->|"[0-9]
 BeginToken 'entityId'
-ExtendToken 'entityId'"|DFA1_1532792217
-DFA0_1011348769 -->|"=
+ExtendToken 'entityId'"|DFA1_1778675542
+DFA0_-1247633812 -->|"=
 BeginToken '='
-ExtendToken '='"|DFA2_-348809668
-DFA1_1532792217 -->|"[0-9]
-ExtendToken 'entityId'"|DFA1_1532792217
-DFA2_-348809668 -->|"[0-9]
+ExtendToken '='"|DFA2_1260656262
+DFA0_-1247633812 -->|"/
+BeginToken 'blockComment''inlineComment'"|DFA3_-1481152672
+DFA1_1778675542 -->|"[0-9]
+ExtendToken 'entityId'"|DFA1_1778675542
+DFA2_1260656262 -->|"[0-9]
 AcceptPrevious '='
 BeginToken 'refEntity'
-ExtendToken 'refEntity'"|DFA3_1100400324
-DFA3_1100400324 -->|"[0-9]
-ExtendToken 'refEntity'"|DFA3_1100400324
+ExtendToken 'refEntity'"|DFA4_1905852967
+DFA3_-1481152672 -->|"*"|DFA5_-8675653
+DFA3_-1481152672 -->|"/
+ExtendToken 'inlineComment'"|DFA6_-512962250
+DFA4_1905852967 -->|"[0-9]
+ExtendToken 'refEntity'"|DFA4_1905852967
+DFA5_-8675653 -->|"[^*]"|DFA7_157542378
+DFA5_-8675653 -->|"*"|DFA8_-271251562
+DFA6_-512962250 -->|"[#92;t#92;r#32;-~]
+ExtendToken 'inlineComment'"|DFA9_-1647430205
+DFA7_157542378 -->|"[^*]"|DFA7_157542378
+DFA7_157542378 -->|"*"|DFA8_-271251562
+DFA8_-271251562 -->|"[^/]"|DFA10_-1871932841
+DFA8_-271251562 -->|"/
+ExtendToken 'blockComment'"|DFA11_1927963297
+DFA9_-1647430205 -->|"[#92;t#92;r#32;-~]
+ExtendToken 'inlineComment'"|DFA9_-1647430205
+DFA10_-1871932841 -->|"[^*]"|DFA7_157542378
+DFA10_-1871932841 -->|"*"|DFA8_-271251562
+
+```
+## nullable
+
+```
+[0]: nullable( Items ) = False
+[1]: nullable( Item ) = False
+[2]: nullable( 'entityId' ) = False
+[3]: nullable( '=' ) = False
+[4]: nullable( 'refEntity' ) = False
 
 ```
 
@@ -67,9 +106,8 @@ ExtendToken 'refEntity'"|DFA3_1100400324
 [2]: FIRST( 'entityId' ) = { 'entityId' }
 [3]: FIRST( '=' ) = { '=' }
 [4]: FIRST( 'refEntity' ) = { 'refEntity' }
-[5]: FIRST(  ) = { empty }
-[6]: FIRST( Items Item ) = { 'entityId' }
-[7]: FIRST( 'entityId' '=' 'refEntity' ) = { 'entityId' }
+[5]: FIRST( Items Item ) = { 'entityId' }
+[6]: FIRST( 'entityId' '=' 'refEntity' ) = { 'entityId' }
 
 ```
 

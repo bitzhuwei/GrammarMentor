@@ -31,8 +31,8 @@ namespace bitzhuwei.Compiler {
         /// <summary>
         /// token list from source code like C, C++, C#, Java, Xml, etc.
         /// </summary>
-        private readonly TokenList tokenList;
-        private readonly Token endOfTokenList;
+        internal readonly TokenList tokenList;
+        internal readonly Token endOfTokenList;
 
         /// <summary>
         /// It's an internal context. You can find anything you need for syntax parsing.

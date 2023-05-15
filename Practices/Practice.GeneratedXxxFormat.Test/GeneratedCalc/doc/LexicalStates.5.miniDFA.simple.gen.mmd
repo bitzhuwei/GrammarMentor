@@ -14,49 +14,72 @@ classDef c1100 stroke:#333,stroke-width:4px,fill:#BB66EE;
 classDef c1101 stroke:#333,stroke-width:4px,fill:#BB66EE,color:#FF0000;
 classDef c1110 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10;
 classDef c1111 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10,color:#FF0000;
-MiniDFA0_-1091152074(["MiniDFA0 {1}"])
-class MiniDFA0_-1091152074 c1000;
-MiniDFA1_-535935755[\"MiniDFA1 {1}
+MiniDFA0_1938844696(["MiniDFA0 {1}"])
+class MiniDFA0_1938844696 c1000;
+MiniDFA3_-536073564[\"MiniDFA3 {1}
 AcceptToken 'number'"/]
-class MiniDFA1_-535935755 c0101;
-MiniDFA2_1414120990[\"MiniDFA2 {1}
+class MiniDFA3_-536073564 c0101;
+MiniDFA4_-1334831830[\"MiniDFA4 {1}
 AcceptToken '+'"/]
-class MiniDFA2_1414120990 c0101;
-MiniDFA3_43568831[\"MiniDFA3 {1}
+class MiniDFA4_-1334831830 c0101;
+MiniDFA5_935629358[\"MiniDFA5 {1}
 AcceptToken '-'"/]
-class MiniDFA3_43568831 c0101;
-MiniDFA4_1354508476[\"MiniDFA4 {1}
+class MiniDFA5_935629358 c0101;
+MiniDFA6_-115108059[\"MiniDFA6 {1}
 AcceptToken '*'"/]
-class MiniDFA4_1354508476 c0101;
-MiniDFA5_1421150537[\"MiniDFA5 {1}
+class MiniDFA6_-115108059 c0101;
+MiniDFA7_264045022[\"MiniDFA7 {1}
 AcceptToken '/'"/]
-class MiniDFA5_1421150537 c0101;
-MiniDFA6_481334329[\"MiniDFA6 {1}
+class MiniDFA7_264045022 c0101;
+MiniDFA8_2053636133[\"MiniDFA8 {1}
 AcceptToken '('"/]
-class MiniDFA6_481334329 c0101;
-MiniDFA7_1635294136[\"MiniDFA7 {1}
+class MiniDFA8_2053636133 c0101;
+MiniDFA9_521877951[\"MiniDFA9 {1}
 AcceptToken ')'"/]
-class MiniDFA7_1635294136 c0101;
-MiniDFA0_-1091152074 -->|"[0-9]
+class MiniDFA9_521877951 c0101;
+MiniDFA1_-1908093477(["MiniDFA1 {3}"])
+MiniDFA10_1096893112[\"MiniDFA10 {1}
+AcceptToken 'inlineComment'"/]
+class MiniDFA10_1096893112 c0101;
+MiniDFA2_-1226756194(["MiniDFA2 {1}"])
+MiniDFA11_-1136834600[\"MiniDFA11 {1}
+AcceptToken 'inlineComment'"/]
+class MiniDFA11_-1136834600 c0101;
+MiniDFA12_1170201576[\"MiniDFA12 {1}
+AcceptToken 'blockComment'"/]
+class MiniDFA12_1170201576 c0101;
+MiniDFA0_1938844696 -->|"[0-9]
 BeginToken 'number'
-ExtendToken 'number'"|MiniDFA1_-535935755
-MiniDFA0_-1091152074 -->|"+
+ExtendToken 'number'"|MiniDFA3_-536073564
+MiniDFA0_1938844696 -->|"+
 BeginToken '+'
-ExtendToken '+'"|MiniDFA2_1414120990
-MiniDFA0_-1091152074 -->|"-
+ExtendToken '+'"|MiniDFA4_-1334831830
+MiniDFA0_1938844696 -->|"-
 BeginToken '-'
-ExtendToken '-'"|MiniDFA3_43568831
-MiniDFA0_-1091152074 -->|"*
+ExtendToken '-'"|MiniDFA5_935629358
+MiniDFA0_1938844696 -->|"*
 BeginToken '*'
-ExtendToken '*'"|MiniDFA4_1354508476
-MiniDFA0_-1091152074 -->|"/
-BeginToken '/'
-ExtendToken '/'"|MiniDFA5_1421150537
-MiniDFA0_-1091152074 -->|"(
+ExtendToken '*'"|MiniDFA6_-115108059
+MiniDFA0_1938844696 -->|"/
+BeginToken '/''blockComment''inlineComment'
+ExtendToken '/'"|MiniDFA7_264045022
+MiniDFA0_1938844696 -->|"(
 BeginToken '('
-ExtendToken '('"|MiniDFA6_481334329
-MiniDFA0_-1091152074 -->|")
+ExtendToken '('"|MiniDFA8_2053636133
+MiniDFA0_1938844696 -->|")
 BeginToken ')'
-ExtendToken ')'"|MiniDFA7_1635294136
-MiniDFA1_-535935755 -->|"[0-9]
-ExtendToken 'number'"|MiniDFA1_-535935755
+ExtendToken ')'"|MiniDFA9_521877951
+MiniDFA3_-536073564 -->|"[0-9]
+ExtendToken 'number'"|MiniDFA3_-536073564
+MiniDFA7_264045022 -->|"*"|MiniDFA1_-1908093477
+MiniDFA7_264045022 -->|"/
+ExtendToken 'inlineComment'"|MiniDFA10_1096893112
+MiniDFA1_-1908093477 -->|"[^*]"|MiniDFA1_-1908093477
+MiniDFA1_-1908093477 -->|"*"|MiniDFA2_-1226756194
+MiniDFA10_1096893112 -->|"[#92;t#92;r#32;-~]
+ExtendToken 'inlineComment'"|MiniDFA11_-1136834600
+MiniDFA2_-1226756194 -->|"[^/]"|MiniDFA1_-1908093477
+MiniDFA2_-1226756194 -->|"/
+ExtendToken 'blockComment'"|MiniDFA12_1170201576
+MiniDFA11_-1136834600 -->|"[#92;t#92;r#32;-~]
+ExtendToken 'inlineComment'"|MiniDFA11_-1136834600

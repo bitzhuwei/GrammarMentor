@@ -8,7 +8,7 @@
 
 词法分析的作用可以和计算机网络7层协议里的数据链路层的作用类比。数据链路层把可能出错的物理层的数据打包成一个个不会有错的`数据报`，供上层协议继续分析。词法分析器将纯字符串的源代码变成一个个具有顺序、类型和内容的`Token`，减轻了语法分析的复杂性。
 
-下面各图是状态机的各个部分。它们合在一起就是Analyzer的核心——总状态机（15个State）。
+下面各图是状态机的各个部分。它们合在一起就是Analyzer的核心——总状态机（23个State）。
 
 ## 'Vt'
 1/3: pre-regex `'@Initial'`
@@ -31,91 +31,91 @@ classDef c1100 stroke:#333,stroke-width:4px,fill:#BB66EE;
 classDef c1101 stroke:#333,stroke-width:4px,fill:#BB66EE,color:#FF0000;
 classDef c1110 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10;
 classDef c1111 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10,color:#FF0000;
-eNFA0_20_24824424[["εNFA0-20 regex start"]]
-eNFA0_0_22093227[["εNFA0-0 char{1, 1}"]]
-eNFA0_1_64621318[["εNFA0-1 char[1]"]]
-eNFA0_4_12752320[["εNFA0-4 regex start"]]
-eNFA0_2_26304962[["εNFA0-2 scope{1, 1}"]]
-eNFA0_6_47662016[["εNFA0-6 char{1, 1}"]]
-eNFA0_10_49970861[["εNFA0-10 scope{1, 1}"]]
-eNFA0_12_21107941[["εNFA0-12 char{1, 1}"]]
-eNFA0_16_32021674[["εNFA0-16 scope{1, 1}"]]
-eNFA0_3_50291560[["εNFA0-3 scope[1]"]]
-eNFA0_7_1120473[["εNFA0-7 char[1]"]]
-eNFA0_11_47084569[["εNFA0-11 scope[1]"]]
-eNFA0_13_10084265[["εNFA0-13 char[1]"]]
-eNFA0_17_19759612[["εNFA0-17 scope[1]"]]
-eNFA0_5_50327193[["εNFA0-5 regex end"]]
-eNFA0_8_23649525[["εNFA0-8 char{1, 1}"]]
-eNFA0_14_8840584[["εNFA0-14 char{1, 1}"]]
-eNFA0_4_43618787[["εNFA0-4 regex start"]]
-eNFA0_9_35418072[["εNFA0-9 char[1]"]]
-eNFA0_15_55753746[["εNFA0-15 char[1]"]]
-eNFA0_2_43460857[["εNFA0-2 scope{1, 1}"]]
-eNFA0_6_57024767[["εNFA0-6 char{1, 1}"]]
-eNFA0_10_55603394[["εNFA0-10 scope{1, 1}"]]
-eNFA0_12_30668499[["εNFA0-12 char{1, 1}"]]
-eNFA0_16_7581037[["εNFA0-16 scope{1, 1}"]]
-eNFA0_5_36563340[["εNFA0-5 regex end"]]
-eNFA0_3_60634610[["εNFA0-3 scope[1]"]]
-eNFA0_7_62938891[["εNFA0-7 char[1]"]]
-eNFA0_11_11519133[["εNFA0-11 scope[1]"]]
-eNFA0_13_29579112[["εNFA0-13 char[1]"]]
-eNFA0_17_12456400[["εNFA0-17 scope[1]"]]
-eNFA0_18_21019086[["εNFA0-18 char{1, 1}"]]
-eNFA0_8_21227567[["εNFA0-8 char{1, 1}"]]
-eNFA0_14_41711360[["εNFA0-14 char{1, 1}"]]
-eNFA0_19_23176965[["εNFA0-19 char[1]"]]
-eNFA0_9_44998737[["εNFA0-9 char[1]"]]
-eNFA0_15_2335454[["εNFA0-15 char[1]"]]
-eNFA0_21_7266094[["εNFA0-21 regex end"]]
-eNFA0_20_24824424 -.->|"ε"|eNFA0_0_22093227
-eNFA0_0_22093227 -->|"'"|eNFA0_1_64621318
-eNFA0_1_64621318 -.->|"ε"|eNFA0_4_12752320
-eNFA0_4_12752320 -.->|"ε"|eNFA0_2_26304962
-eNFA0_4_12752320 -.->|"ε"|eNFA0_6_47662016
-eNFA0_4_12752320 -.->|"ε"|eNFA0_10_49970861
-eNFA0_4_12752320 -.->|"ε"|eNFA0_12_21107941
-eNFA0_4_12752320 -.->|"ε"|eNFA0_16_32021674
-eNFA0_2_26304962 -->|"[#32;-&]"|eNFA0_3_50291560
-eNFA0_6_47662016 -->|"#92;"|eNFA0_7_1120473
-eNFA0_10_49970861 -->|"[(-[]"|eNFA0_11_47084569
-eNFA0_12_21107941 -->|"#92;"|eNFA0_13_10084265
-eNFA0_16_32021674 -->|"[]-~]"|eNFA0_17_19759612
-eNFA0_3_50291560 -.->|"ε"|eNFA0_5_50327193
-eNFA0_7_1120473 -.->|"ε"|eNFA0_8_23649525
-eNFA0_11_47084569 -.->|"ε"|eNFA0_5_50327193
-eNFA0_13_10084265 -.->|"ε"|eNFA0_14_8840584
-eNFA0_17_19759612 -.->|"ε"|eNFA0_5_50327193
-eNFA0_5_50327193 -.->|"ε"|eNFA0_4_43618787
-eNFA0_8_23649525 -->|"'"|eNFA0_9_35418072
-eNFA0_14_8840584 -->|"#92;"|eNFA0_15_55753746
-eNFA0_4_43618787 -.->|"ε"|eNFA0_2_43460857
-eNFA0_4_43618787 -.->|"ε"|eNFA0_6_57024767
-eNFA0_4_43618787 -.->|"ε"|eNFA0_10_55603394
-eNFA0_4_43618787 -.->|"ε"|eNFA0_12_30668499
-eNFA0_4_43618787 -.->|"ε"|eNFA0_16_7581037
-eNFA0_4_43618787 -.->|"ε"|eNFA0_5_36563340
-eNFA0_9_35418072 -.->|"ε"|eNFA0_5_50327193
-eNFA0_15_55753746 -.->|"ε"|eNFA0_5_50327193
-eNFA0_2_43460857 -->|"[#32;-&]"|eNFA0_3_60634610
-eNFA0_6_57024767 -->|"#92;"|eNFA0_7_62938891
-eNFA0_10_55603394 -->|"[(-[]"|eNFA0_11_11519133
-eNFA0_12_30668499 -->|"#92;"|eNFA0_13_29579112
-eNFA0_16_7581037 -->|"[]-~]"|eNFA0_17_12456400
-eNFA0_5_36563340 -.->|"ε"|eNFA0_4_43618787
-eNFA0_5_36563340 -.->|"ε"|eNFA0_18_21019086
-eNFA0_3_60634610 -.->|"ε"|eNFA0_5_36563340
-eNFA0_7_62938891 -.->|"ε"|eNFA0_8_21227567
-eNFA0_11_11519133 -.->|"ε"|eNFA0_5_36563340
-eNFA0_13_29579112 -.->|"ε"|eNFA0_14_41711360
-eNFA0_17_12456400 -.->|"ε"|eNFA0_5_36563340
-eNFA0_18_21019086 -->|"'"|eNFA0_19_23176965
-eNFA0_8_21227567 -->|"'"|eNFA0_9_44998737
-eNFA0_14_41711360 -->|"#92;"|eNFA0_15_2335454
-eNFA0_19_23176965 -.->|"ε"|eNFA0_21_7266094
-eNFA0_9_44998737 -.->|"ε"|eNFA0_5_36563340
-eNFA0_15_2335454 -.->|"ε"|eNFA0_5_36563340
+eNFA0_20_14439320[["εNFA0-20 regex start"]]
+eNFA0_0_62845019[["εNFA0-0 char{1, 1}"]]
+eNFA0_1_28734262[["εNFA0-1 char[1]"]]
+eNFA0_4_11931350[["εNFA0-4 regex start"]]
+eNFA0_2_26915331[["εNFA0-2 scope{1, 1}"]]
+eNFA0_6_40273294[["εNFA0-6 char{1, 1}"]]
+eNFA0_10_28067877[["εNFA0-10 scope{1, 1}"]]
+eNFA0_12_58905579[["εNFA0-12 char{1, 1}"]]
+eNFA0_16_6622601[["εNFA0-16 scope{1, 1}"]]
+eNFA0_3_25488274[["εNFA0-3 scope[1]"]]
+eNFA0_7_27155224[["εNFA0-7 char[1]"]]
+eNFA0_11_51284307[["εNFA0-11 scope[1]"]]
+eNFA0_13_43070429[["εNFA0-13 char[1]"]]
+eNFA0_17_59603417[["εNFA0-17 scope[1]"]]
+eNFA0_5_32658192[["εNFA0-5 regex end"]]
+eNFA0_8_52089545[["εNFA0-8 char{1, 1}"]]
+eNFA0_14_41172652[["εNFA0-14 char{1, 1}"]]
+eNFA0_4_66668712[["εNFA0-4 regex start"]]
+eNFA0_9_40911390[["εNFA0-9 char[1]"]]
+eNFA0_15_60388168[["εNFA0-15 char[1]"]]
+eNFA0_2_31456624[["εNFA0-2 scope{1, 1}"]]
+eNFA0_6_63147504[["εNFA0-6 char{1, 1}"]]
+eNFA0_10_14674162[["εNFA0-10 scope{1, 1}"]]
+eNFA0_12_64958600[["εNFA0-12 char{1, 1}"]]
+eNFA0_16_47756489[["εNFA0-16 scope{1, 1}"]]
+eNFA0_5_58503618[["εNFA0-5 regex end"]]
+eNFA0_3_56770522[["εNFA0-3 scope[1]"]]
+eNFA0_7_23416123[["εNFA0-7 char[1]"]]
+eNFA0_11_66152725[["εNFA0-11 scope[1]"]]
+eNFA0_13_9418520[["εNFA0-13 char[1]"]]
+eNFA0_17_35009555[["εNFA0-17 scope[1]"]]
+eNFA0_18_20597618[["εNFA0-18 char{1, 1}"]]
+eNFA0_8_20997215[["εNFA0-8 char{1, 1}"]]
+eNFA0_14_23052848[["εNFA0-14 char{1, 1}"]]
+eNFA0_19_55341365[["εNFA0-19 char[1]"]]
+eNFA0_9_46650543[["εNFA0-9 char[1]"]]
+eNFA0_15_17201705[["εNFA0-15 char[1]"]]
+eNFA0_21_28310238[["εNFA0-21 regex end"]]
+eNFA0_20_14439320 -.->|"ε"|eNFA0_0_62845019
+eNFA0_0_62845019 -->|"'"|eNFA0_1_28734262
+eNFA0_1_28734262 -.->|"ε"|eNFA0_4_11931350
+eNFA0_4_11931350 -.->|"ε"|eNFA0_2_26915331
+eNFA0_4_11931350 -.->|"ε"|eNFA0_6_40273294
+eNFA0_4_11931350 -.->|"ε"|eNFA0_10_28067877
+eNFA0_4_11931350 -.->|"ε"|eNFA0_12_58905579
+eNFA0_4_11931350 -.->|"ε"|eNFA0_16_6622601
+eNFA0_2_26915331 -->|"[#32;-&]"|eNFA0_3_25488274
+eNFA0_6_40273294 -->|"#92;"|eNFA0_7_27155224
+eNFA0_10_28067877 -->|"[(-[]"|eNFA0_11_51284307
+eNFA0_12_58905579 -->|"#92;"|eNFA0_13_43070429
+eNFA0_16_6622601 -->|"[]-~]"|eNFA0_17_59603417
+eNFA0_3_25488274 -.->|"ε"|eNFA0_5_32658192
+eNFA0_7_27155224 -.->|"ε"|eNFA0_8_52089545
+eNFA0_11_51284307 -.->|"ε"|eNFA0_5_32658192
+eNFA0_13_43070429 -.->|"ε"|eNFA0_14_41172652
+eNFA0_17_59603417 -.->|"ε"|eNFA0_5_32658192
+eNFA0_5_32658192 -.->|"ε"|eNFA0_4_66668712
+eNFA0_8_52089545 -->|"'"|eNFA0_9_40911390
+eNFA0_14_41172652 -->|"#92;"|eNFA0_15_60388168
+eNFA0_4_66668712 -.->|"ε"|eNFA0_2_31456624
+eNFA0_4_66668712 -.->|"ε"|eNFA0_6_63147504
+eNFA0_4_66668712 -.->|"ε"|eNFA0_10_14674162
+eNFA0_4_66668712 -.->|"ε"|eNFA0_12_64958600
+eNFA0_4_66668712 -.->|"ε"|eNFA0_16_47756489
+eNFA0_4_66668712 -.->|"ε"|eNFA0_5_58503618
+eNFA0_9_40911390 -.->|"ε"|eNFA0_5_32658192
+eNFA0_15_60388168 -.->|"ε"|eNFA0_5_32658192
+eNFA0_2_31456624 -->|"[#32;-&]"|eNFA0_3_56770522
+eNFA0_6_63147504 -->|"#92;"|eNFA0_7_23416123
+eNFA0_10_14674162 -->|"[(-[]"|eNFA0_11_66152725
+eNFA0_12_64958600 -->|"#92;"|eNFA0_13_9418520
+eNFA0_16_47756489 -->|"[]-~]"|eNFA0_17_35009555
+eNFA0_5_58503618 -.->|"ε"|eNFA0_4_66668712
+eNFA0_5_58503618 -.->|"ε"|eNFA0_18_20597618
+eNFA0_3_56770522 -.->|"ε"|eNFA0_5_58503618
+eNFA0_7_23416123 -.->|"ε"|eNFA0_8_20997215
+eNFA0_11_66152725 -.->|"ε"|eNFA0_5_58503618
+eNFA0_13_9418520 -.->|"ε"|eNFA0_14_23052848
+eNFA0_17_35009555 -.->|"ε"|eNFA0_5_58503618
+eNFA0_18_20597618 -->|"'"|eNFA0_19_55341365
+eNFA0_8_20997215 -->|"'"|eNFA0_9_46650543
+eNFA0_14_23052848 -->|"#92;"|eNFA0_15_17201705
+eNFA0_19_55341365 -.->|"ε"|eNFA0_21_28310238
+eNFA0_9_46650543 -.->|"ε"|eNFA0_5_58503618
+eNFA0_15_17201705 -.->|"ε"|eNFA0_5_58503618
 ```
 
 3/3: post-regex
@@ -136,9 +136,155 @@ classDef c1100 stroke:#333,stroke-width:4px,fill:#BB66EE;
 classDef c1101 stroke:#333,stroke-width:4px,fill:#BB66EE,color:#FF0000;
 classDef c1110 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10;
 classDef c1111 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10,color:#FF0000;
-eNFA0_22_62491853[["εNFA0-22 post-regex start"]]
-eNFA0_23_25555765[\"εNFA0-23 post-regex end"/]
-eNFA0_22_62491853 -.->|"ε"|eNFA0_23_25555765
+eNFA0_22_35742973[["εNFA0-22 post-regex start"]]
+eNFA0_23_53251301[\"εNFA0-23 post-regex end"/]
+eNFA0_22_35742973 -.->|"ε"|eNFA0_23_53251301
+```
+
+
+## 'blockComment'
+1/3: pre-regex `'@Initial'`
+
+2/3: regex
+```Mermaid
+flowchart
+classDef c0001 color:#FF0000;
+classDef c0010 stroke-dasharray: 10 10;
+classDef c0011 stroke-dasharray: 10 10,color:#FF0000;
+classDef c0100 fill:#BB66EE;
+classDef c0101 fill:#BB66EE,color:#FF0000;
+classDef c0110 fill:#BB66EE,stroke-dasharray: 10 10;
+classDef c0111 fill:#BB66EE,stroke-dasharray: 10 10,color:#FF0000;
+classDef c1000 stroke:#333,stroke-width:4px;
+classDef c1001 stroke:#333,stroke-width:4px,color:#FF0000;
+classDef c1010 stroke:#333,stroke-width:4px,stroke-dasharray: 10 10;
+classDef c1011 stroke:#333,stroke-width:4px,stroke-dasharray: 10 10,color:#FF0000;
+classDef c1100 stroke:#333,stroke-width:4px,fill:#BB66EE;
+classDef c1101 stroke:#333,stroke-width:4px,fill:#BB66EE,color:#FF0000;
+classDef c1110 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10;
+classDef c1111 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10,color:#FF0000;
+eNFA0_16_14740628[["εNFA0-16 regex start"]]
+eNFA0_0_65556790[["εNFA0-0 char{1, 1}"]]
+eNFA0_1_53140205[["εNFA0-1 char[1]"]]
+eNFA0_2_8499801[["εNFA0-2 char{1, 1}"]]
+eNFA0_3_27757730[["εNFA0-3 char[1]"]]
+eNFA0_6_57794333[["εNFA0-6 regex start"]]
+eNFA0_4_50829401[["εNFA0-4 scope{1, 1}"]]
+eNFA0_8_50386953[["εNFA0-8 scope{1, 1}"]]
+eNFA0_7_23540813[["εNFA0-7 regex end"]]
+eNFA0_5_10540732[["εNFA0-5 scope[1]"]]
+eNFA0_9_64678211[["εNFA0-9 scope[1]"]]
+eNFA0_12_48492984[["εNFA0-12 char{1, 1}"]]
+eNFA0_10_24401462[["εNFA0-10 scope{1, 1}"]]
+eNFA0_13_18286572[["εNFA0-13 char[1]"]]
+eNFA0_11_54811429[["εNFA0-11 scope[1]"]]
+eNFA0_14_30361426[["εNFA0-14 char{1, 1}"]]
+eNFA0_15_43356475[["εNFA0-15 char[1]"]]
+eNFA0_17_54663960[["εNFA0-17 regex end"]]
+eNFA0_16_14740628 -.->|"ε"|eNFA0_0_65556790
+eNFA0_0_65556790 -->|"/"|eNFA0_1_53140205
+eNFA0_1_53140205 -.->|"ε"|eNFA0_2_8499801
+eNFA0_2_8499801 -->|"*"|eNFA0_3_27757730
+eNFA0_3_27757730 -.->|"ε"|eNFA0_6_57794333
+eNFA0_6_57794333 -.->|"ε"|eNFA0_4_50829401
+eNFA0_6_57794333 -.->|"ε"|eNFA0_8_50386953
+eNFA0_6_57794333 -.->|"ε"|eNFA0_7_23540813
+eNFA0_4_50829401 -->|"[^*]"|eNFA0_5_10540732
+eNFA0_8_50386953 -->|"[*]"|eNFA0_9_64678211
+eNFA0_7_23540813 -.->|"ε"|eNFA0_6_57794333
+eNFA0_7_23540813 -.->|"ε"|eNFA0_12_48492984
+eNFA0_5_10540732 -.->|"ε"|eNFA0_7_23540813
+eNFA0_9_64678211 -.->|"ε"|eNFA0_10_24401462
+eNFA0_12_48492984 -->|"*"|eNFA0_13_18286572
+eNFA0_10_24401462 -->|"[^/]"|eNFA0_11_54811429
+eNFA0_13_18286572 -.->|"ε"|eNFA0_14_30361426
+eNFA0_11_54811429 -.->|"ε"|eNFA0_7_23540813
+eNFA0_14_30361426 -->|"/"|eNFA0_15_43356475
+eNFA0_15_43356475 -.->|"ε"|eNFA0_17_54663960
+```
+
+3/3: post-regex
+```Mermaid
+flowchart
+classDef c0001 color:#FF0000;
+classDef c0010 stroke-dasharray: 10 10;
+classDef c0011 stroke-dasharray: 10 10,color:#FF0000;
+classDef c0100 fill:#BB66EE;
+classDef c0101 fill:#BB66EE,color:#FF0000;
+classDef c0110 fill:#BB66EE,stroke-dasharray: 10 10;
+classDef c0111 fill:#BB66EE,stroke-dasharray: 10 10,color:#FF0000;
+classDef c1000 stroke:#333,stroke-width:4px;
+classDef c1001 stroke:#333,stroke-width:4px,color:#FF0000;
+classDef c1010 stroke:#333,stroke-width:4px,stroke-dasharray: 10 10;
+classDef c1011 stroke:#333,stroke-width:4px,stroke-dasharray: 10 10,color:#FF0000;
+classDef c1100 stroke:#333,stroke-width:4px,fill:#BB66EE;
+classDef c1101 stroke:#333,stroke-width:4px,fill:#BB66EE,color:#FF0000;
+classDef c1110 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10;
+classDef c1111 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10,color:#FF0000;
+eNFA0_18_22213592[["εNFA0-18 post-regex start"]]
+eNFA0_19_65704606[\"εNFA0-19 post-regex end"/]
+eNFA0_18_22213592 -.->|"ε"|eNFA0_19_65704606
+```
+
+
+## 'inlineComment'
+1/3: pre-regex `'@Initial'`
+
+2/3: regex
+```Mermaid
+flowchart
+classDef c0001 color:#FF0000;
+classDef c0010 stroke-dasharray: 10 10;
+classDef c0011 stroke-dasharray: 10 10,color:#FF0000;
+classDef c0100 fill:#BB66EE;
+classDef c0101 fill:#BB66EE,color:#FF0000;
+classDef c0110 fill:#BB66EE,stroke-dasharray: 10 10;
+classDef c0111 fill:#BB66EE,stroke-dasharray: 10 10,color:#FF0000;
+classDef c1000 stroke:#333,stroke-width:4px;
+classDef c1001 stroke:#333,stroke-width:4px,color:#FF0000;
+classDef c1010 stroke:#333,stroke-width:4px,stroke-dasharray: 10 10;
+classDef c1011 stroke:#333,stroke-width:4px,stroke-dasharray: 10 10,color:#FF0000;
+classDef c1100 stroke:#333,stroke-width:4px,fill:#BB66EE;
+classDef c1101 stroke:#333,stroke-width:4px,fill:#BB66EE,color:#FF0000;
+classDef c1110 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10;
+classDef c1111 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10,color:#FF0000;
+eNFA0_5_46915732[["εNFA0-5 regex start"]]
+eNFA0_0_19588408[["εNFA0-0 char{1, 1}"]]
+eNFA0_1_42077948[["εNFA0-1 char[1]"]]
+eNFA0_2_43157217[["εNFA0-2 char{1, 1}"]]
+eNFA0_3_35617665[["εNFA0-3 char[1]"]]
+eNFA0_4_52123534[["εNFA0-4 char{0, ∞}"]]
+eNFA0_6_66458622[["εNFA0-6 regex end"]]
+eNFA0_5_46915732 -.->|"ε"|eNFA0_0_19588408
+eNFA0_0_19588408 -->|"/"|eNFA0_1_42077948
+eNFA0_1_42077948 -.->|"ε"|eNFA0_2_43157217
+eNFA0_2_43157217 -->|"/"|eNFA0_3_35617665
+eNFA0_3_35617665 -.->|"ε"|eNFA0_4_52123534
+eNFA0_4_52123534 -->|"[#92;t#92;r#32;-~]"|eNFA0_4_52123534
+eNFA0_4_52123534 -.->|"ε"|eNFA0_6_66458622
+```
+
+3/3: post-regex
+```Mermaid
+flowchart
+classDef c0001 color:#FF0000;
+classDef c0010 stroke-dasharray: 10 10;
+classDef c0011 stroke-dasharray: 10 10,color:#FF0000;
+classDef c0100 fill:#BB66EE;
+classDef c0101 fill:#BB66EE,color:#FF0000;
+classDef c0110 fill:#BB66EE,stroke-dasharray: 10 10;
+classDef c0111 fill:#BB66EE,stroke-dasharray: 10 10,color:#FF0000;
+classDef c1000 stroke:#333,stroke-width:4px;
+classDef c1001 stroke:#333,stroke-width:4px,color:#FF0000;
+classDef c1010 stroke:#333,stroke-width:4px,stroke-dasharray: 10 10;
+classDef c1011 stroke:#333,stroke-width:4px,stroke-dasharray: 10 10,color:#FF0000;
+classDef c1100 stroke:#333,stroke-width:4px,fill:#BB66EE;
+classDef c1101 stroke:#333,stroke-width:4px,fill:#BB66EE,color:#FF0000;
+classDef c1110 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10;
+classDef c1111 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10,color:#FF0000;
+eNFA0_7_22209582[["εNFA0-7 post-regex start"]]
+eNFA0_8_65668512[\"εNFA0-8 post-regex end"/]
+eNFA0_7_22209582 -.->|"ε"|eNFA0_8_65668512
 ```
 
 
@@ -165,107 +311,187 @@ classDef c1100 stroke:#333,stroke-width:4px,fill:#BB66EE;
 classDef c1101 stroke:#333,stroke-width:4px,fill:#BB66EE,color:#FF0000;
 classDef c1110 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10;
 classDef c1111 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10,color:#FF0000;
-eNFA0_0_60997399[["εNFA0-0 wholeStart"]]
-eNFA1_20_3289508[["εNFA1-20 regex start"]]
-class eNFA1_20_3289508 c1000;
-eNFA1_0_29605578[["εNFA1-0 char{1, 1}"]]
-eNFA1_1_12105682[["εNFA1-1 char[1]"]]
-eNFA1_4_48073060[["εNFA1-4 regex start"]]
-eNFA1_2_1603773[["εNFA1-2 scope{1, 1}"]]
-eNFA1_6_30004358[["εNFA1-6 char{1, 1}"]]
-eNFA1_10_14433961[["εNFA1-10 scope{1, 1}"]]
-eNFA1_12_62796787[["εNFA1-12 char{1, 1}"]]
-eNFA1_16_28300172[["εNFA1-16 scope{1, 1}"]]
-eNFA1_3_28404243[["εNFA1-3 scope[1]"]]
-eNFA1_7_47528210[["εNFA1-7 char[1]"]]
-eNFA1_11_53374957[["εNFA1-11 scope[1]"]]
-eNFA1_13_25100706[["εNFA1-13 char[1]"]]
-eNFA1_17_54311603[["εNFA1-17 scope[1]"]]
-eNFA1_5_10612567[["εNFA1-5 regex end"]]
-eNFA1_8_24579765[["εNFA1-8 char{1, 1}"]]
-eNFA1_14_5244239[["εNFA1-14 char{1, 1}"]]
-eNFA1_4_19042383[["εNFA1-4 regex start"]]
-eNFA1_9_51553896[["εNFA1-9 char[1]"]]
-eNFA1_15_61331880[["εNFA1-15 char[1]"]]
-eNFA1_2_66038022[["εNFA1-2 scope{1, 1}"]]
-eNFA1_6_37163719[["εNFA1-6 char{1, 1}"]]
-eNFA1_10_57471292[["εNFA1-10 scope{1, 1}"]]
-eNFA1_12_47479586[["εNFA1-12 char{1, 1}"]]
-eNFA1_16_24663098[["εNFA1-16 scope{1, 1}"]]
-eNFA1_5_20641291[["εNFA1-5 regex end"]]
-eNFA1_3_1826402[["εNFA1-3 scope[1]"]]
-eNFA1_7_54483225[["εNFA1-7 char[1]"]]
-eNFA1_11_16437621[["εNFA1-11 scope[1]"]]
-eNFA1_13_20586983[["εNFA1-13 char[1]"]]
-eNFA1_17_13720864[["εNFA1-17 scope[1]"]]
-eNFA1_18_15116014[["εNFA1-18 char{1, 1}"]]
-eNFA1_8_42634084[["εNFA1-8 char{1, 1}"]]
-eNFA1_14_30808780[["εNFA1-14 char{1, 1}"]]
-eNFA1_19_65123613[["εNFA1-19 char[1]"]]
-eNFA1_9_56378916[["εNFA1-9 char[1]"]]
-eNFA1_15_37648203[["εNFA1-15 char[1]"]]
-eNFA1_21_49241606[["εNFA1-21 regex end"]]
-class eNFA1_21_49241606 c0100;
-eNFA1_22_40521270[["εNFA1-22 post-regex start"]]
-class eNFA1_22_40521270 c0010;
-eNFA1_23_29147110[\"εNFA1-23 post-regex end"/]
-class eNFA1_23_29147110 c0001;
-eNFA0_1_4511530[\"εNFA0-1 wholeEnd"/]
-eNFA0_0_60997399 -.->|"ε"|eNFA1_20_3289508
-eNFA1_20_3289508 -.->|"ε
-BeginToken 'Vt'"|eNFA1_0_29605578
-eNFA1_0_29605578 -->|"'"|eNFA1_1_12105682
-eNFA1_1_12105682 -.->|"ε"|eNFA1_4_48073060
-eNFA1_4_48073060 -.->|"ε"|eNFA1_2_1603773
-eNFA1_4_48073060 -.->|"ε"|eNFA1_6_30004358
-eNFA1_4_48073060 -.->|"ε"|eNFA1_10_14433961
-eNFA1_4_48073060 -.->|"ε"|eNFA1_12_62796787
-eNFA1_4_48073060 -.->|"ε"|eNFA1_16_28300172
-eNFA1_2_1603773 -->|"[#32;-&]"|eNFA1_3_28404243
-eNFA1_6_30004358 -->|"#92;"|eNFA1_7_47528210
-eNFA1_10_14433961 -->|"[(-[]"|eNFA1_11_53374957
-eNFA1_12_62796787 -->|"#92;"|eNFA1_13_25100706
-eNFA1_16_28300172 -->|"[]-~]"|eNFA1_17_54311603
-eNFA1_3_28404243 -.->|"ε"|eNFA1_5_10612567
-eNFA1_7_47528210 -.->|"ε"|eNFA1_8_24579765
-eNFA1_11_53374957 -.->|"ε"|eNFA1_5_10612567
-eNFA1_13_25100706 -.->|"ε"|eNFA1_14_5244239
-eNFA1_17_54311603 -.->|"ε"|eNFA1_5_10612567
-eNFA1_5_10612567 -.->|"ε"|eNFA1_4_19042383
-eNFA1_8_24579765 -->|"'"|eNFA1_9_51553896
-eNFA1_14_5244239 -->|"#92;"|eNFA1_15_61331880
-eNFA1_4_19042383 -.->|"ε"|eNFA1_2_66038022
-eNFA1_4_19042383 -.->|"ε"|eNFA1_6_37163719
-eNFA1_4_19042383 -.->|"ε"|eNFA1_10_57471292
-eNFA1_4_19042383 -.->|"ε"|eNFA1_12_47479586
-eNFA1_4_19042383 -.->|"ε"|eNFA1_16_24663098
-eNFA1_4_19042383 -.->|"ε"|eNFA1_5_20641291
-eNFA1_9_51553896 -.->|"ε"|eNFA1_5_10612567
-eNFA1_15_61331880 -.->|"ε"|eNFA1_5_10612567
-eNFA1_2_66038022 -->|"[#32;-&]"|eNFA1_3_1826402
-eNFA1_6_37163719 -->|"#92;"|eNFA1_7_54483225
-eNFA1_10_57471292 -->|"[(-[]"|eNFA1_11_16437621
-eNFA1_12_47479586 -->|"#92;"|eNFA1_13_20586983
-eNFA1_16_24663098 -->|"[]-~]"|eNFA1_17_13720864
-eNFA1_5_20641291 -.->|"ε"|eNFA1_4_19042383
-eNFA1_5_20641291 -.->|"ε"|eNFA1_18_15116014
-eNFA1_3_1826402 -.->|"ε"|eNFA1_5_20641291
-eNFA1_7_54483225 -.->|"ε"|eNFA1_8_42634084
-eNFA1_11_16437621 -.->|"ε"|eNFA1_5_20641291
-eNFA1_13_20586983 -.->|"ε"|eNFA1_14_30808780
-eNFA1_17_13720864 -.->|"ε"|eNFA1_5_20641291
-eNFA1_18_15116014 -->|"'"|eNFA1_19_65123613
-eNFA1_8_42634084 -->|"'"|eNFA1_9_56378916
-eNFA1_14_30808780 -->|"#92;"|eNFA1_15_37648203
-eNFA1_19_65123613 -.->|"ε
-ExtendToken 'Vt'"|eNFA1_21_49241606
-eNFA1_9_56378916 -.->|"ε"|eNFA1_5_20641291
-eNFA1_15_37648203 -.->|"ε"|eNFA1_5_20641291
-eNFA1_21_49241606 -.->|"ε"|eNFA1_22_40521270
-eNFA1_22_40521270 -.->|"ε
+eNFA0_0_51969174[["εNFA0-0 wholeStart"]]
+eNFA1_20_63577855[["εNFA1-20 regex start"]]
+class eNFA1_20_63577855 c1000;
+eNFA2_16_65069390[["εNFA2-16 regex start"]]
+class eNFA2_16_65069390 c1000;
+eNFA3_5_34933209[["εNFA3-5 regex start"]]
+class eNFA3_5_34933209 c1000;
+eNFA1_0_35329788[["εNFA1-0 char{1, 1}"]]
+eNFA2_0_56727555[["εNFA2-0 char{1, 1}"]]
+eNFA3_0_11017648[["εNFA3-0 char{1, 1}"]]
+eNFA1_1_48995250[["εNFA1-1 char[1]"]]
+eNFA2_1_38304072[["εNFA2-1 char[1]"]]
+eNFA3_1_9192332[["εNFA3-1 char[1]"]]
+eNFA1_4_47990424[["εNFA1-4 regex start"]]
+eNFA2_2_15622127[["εNFA2-2 char{1, 1}"]]
+eNFA3_2_6381418[["εNFA3-2 char{1, 1}"]]
+eNFA1_2_62019111[["εNFA1-2 scope{1, 1}"]]
+eNFA1_6_29260633[["εNFA1-6 char{1, 1}"]]
+eNFA1_10_21301090[["εNFA1-10 scope{1, 1}"]]
+eNFA1_12_57492083[["εNFA1-12 char{1, 1}"]]
+eNFA1_16_47666699[["εNFA1-16 scope{1, 1}"]]
+eNFA2_3_58391916[["εNFA2-3 char[1]"]]
+eNFA3_3_33571453[["εNFA3-3 char[1]"]]
+eNFA1_3_53740895[["εNFA1-3 scope[1]"]]
+eNFA1_7_9040176[["εNFA1-7 char[1]"]]
+eNFA1_11_26347107[["εNFA1-11 scope[1]"]]
+eNFA1_13_14252720[["εNFA1-13 char[1]"]]
+eNFA1_17_13906014[["εNFA1-17 scope[1]"]]
+eNFA2_6_42518340[["εNFA2-6 regex start"]]
+eNFA3_4_3730161[["εNFA3-4 char{0, ∞}"]]
+eNFA1_5_35797372[["εNFA1-5 regex end"]]
+eNFA1_8_61165617[["εNFA1-8 char{1, 1}"]]
+eNFA1_14_63718061[["εNFA1-14 char{1, 1}"]]
+eNFA2_4_21433500[["εNFA2-4 scope{1, 1}"]]
+eNFA2_8_47120742[["εNFA2-8 scope{1, 1}"]]
+eNFA2_7_58683773[["εNFA2-7 regex end"]]
+eNFA3_6_33707629[["εNFA3-6 regex end"]]
+class eNFA3_6_33707629 c0100;
+eNFA1_4_58045264[["εNFA1-4 regex start"]]
+eNFA1_9_3672298[["εNFA1-9 char[1]"]]
+eNFA1_15_33050690[["εNFA1-15 char[1]"]]
+eNFA2_5_32124765[["εNFA2-5 scope[1]"]]
+eNFA2_9_9362127[["εNFA2-9 scope[1]"]]
+eNFA2_12_55765201[["εNFA2-12 char{1, 1}"]]
+eNFA3_7_32049974[["εNFA3-7 post-regex start"]]
+class eNFA3_7_32049974 c0010;
+eNFA1_2_4045982[["εNFA1-2 scope{1, 1}"]]
+eNFA1_6_52645336[["εNFA1-6 char{1, 1}"]]
+eNFA1_10_36413843[["εNFA1-10 scope{1, 1}"]]
+eNFA1_12_59289136[["εNFA1-12 char{1, 1}"]]
+eNFA1_16_63840183[["εNFA1-16 scope{1, 1}"]]
+eNFA1_5_37690735[["εNFA1-5 regex end"]]
+eNFA2_10_64616609[["εNFA2-10 scope{1, 1}"]]
+eNFA2_13_44678570[["εNFA2-13 char[1]"]]
+eNFA3_8_45963425[\"εNFA3-8 post-regex end"/]
+class eNFA3_8_45963425 c0001;
+eNFA1_3_59860242[["εNFA1-3 scope[1]"]]
+eNFA1_7_66562817[["εNFA1-7 char[1]"]]
+eNFA1_11_1871268[["εNFA1-11 scope[1]"]]
+eNFA1_13_62194446[["εNFA1-13 char[1]"]]
+eNFA1_17_16841414[["εNFA1-17 scope[1]"]]
+eNFA1_18_29020759[["εNFA1-18 char{1, 1}"]]
+eNFA2_11_20687433[["εNFA2-11 scope[1]"]]
+eNFA2_14_4585366[["εNFA2-14 char{1, 1}"]]
+eNFA0_1_36129223[\"εNFA0-1 wholeEnd"/]
+eNFA1_8_35870379[["εNFA1-8 char{1, 1}"]]
+eNFA1_14_19819572[["εNFA1-14 char{1, 1}"]]
+eNFA1_19_49532637[["εNFA1-19 char[1]"]]
+eNFA2_15_40785949[["εNFA2-15 char[1]"]]
+eNFA1_9_17355001[["εNFA1-9 char[1]"]]
+eNFA1_15_21977287[["εNFA1-15 char[1]"]]
+eNFA1_21_43140557[["εNFA1-21 regex end"]]
+class eNFA1_21_43140557 c0100;
+eNFA2_17_31529222[["εNFA2-17 regex end"]]
+class eNFA2_17_31529222 c0100;
+eNFA1_22_52720700[["εNFA1-22 post-regex start"]]
+class eNFA1_22_52720700 c0010;
+eNFA2_18_15327543[["εNFA2-18 post-regex start"]]
+class eNFA2_18_15327543 c0010;
+eNFA1_23_4724260[\"εNFA1-23 post-regex end"/]
+class eNFA1_23_4724260 c0001;
+eNFA2_19_48753600[\"εNFA2-19 post-regex end"/]
+class eNFA2_19_48753600 c0001;
+eNFA0_0_51969174 -.->|"ε"|eNFA1_20_63577855
+eNFA0_0_51969174 -.->|"ε"|eNFA2_16_65069390
+eNFA0_0_51969174 -.->|"ε"|eNFA3_5_34933209
+eNFA1_20_63577855 -.->|"ε
+BeginToken 'Vt'"|eNFA1_0_35329788
+eNFA2_16_65069390 -.->|"ε
+BeginToken 'blockComment'"|eNFA2_0_56727555
+eNFA3_5_34933209 -.->|"ε
+BeginToken 'inlineComment'"|eNFA3_0_11017648
+eNFA1_0_35329788 -->|"'"|eNFA1_1_48995250
+eNFA2_0_56727555 -->|"/"|eNFA2_1_38304072
+eNFA3_0_11017648 -->|"/"|eNFA3_1_9192332
+eNFA1_1_48995250 -.->|"ε"|eNFA1_4_47990424
+eNFA2_1_38304072 -.->|"ε"|eNFA2_2_15622127
+eNFA3_1_9192332 -.->|"ε"|eNFA3_2_6381418
+eNFA1_4_47990424 -.->|"ε"|eNFA1_2_62019111
+eNFA1_4_47990424 -.->|"ε"|eNFA1_6_29260633
+eNFA1_4_47990424 -.->|"ε"|eNFA1_10_21301090
+eNFA1_4_47990424 -.->|"ε"|eNFA1_12_57492083
+eNFA1_4_47990424 -.->|"ε"|eNFA1_16_47666699
+eNFA2_2_15622127 -->|"*"|eNFA2_3_58391916
+eNFA3_2_6381418 -->|"/"|eNFA3_3_33571453
+eNFA1_2_62019111 -->|"[#32;-&]"|eNFA1_3_53740895
+eNFA1_6_29260633 -->|"#92;"|eNFA1_7_9040176
+eNFA1_10_21301090 -->|"[(-[]"|eNFA1_11_26347107
+eNFA1_12_57492083 -->|"#92;"|eNFA1_13_14252720
+eNFA1_16_47666699 -->|"[]-~]"|eNFA1_17_13906014
+eNFA2_3_58391916 -.->|"ε"|eNFA2_6_42518340
+eNFA3_3_33571453 -.->|"ε"|eNFA3_4_3730161
+eNFA1_3_53740895 -.->|"ε"|eNFA1_5_35797372
+eNFA1_7_9040176 -.->|"ε"|eNFA1_8_61165617
+eNFA1_11_26347107 -.->|"ε"|eNFA1_5_35797372
+eNFA1_13_14252720 -.->|"ε"|eNFA1_14_63718061
+eNFA1_17_13906014 -.->|"ε"|eNFA1_5_35797372
+eNFA2_6_42518340 -.->|"ε"|eNFA2_4_21433500
+eNFA2_6_42518340 -.->|"ε"|eNFA2_8_47120742
+eNFA2_6_42518340 -.->|"ε"|eNFA2_7_58683773
+eNFA3_4_3730161 -->|"[#92;t#92;r#32;-~]"|eNFA3_4_3730161
+eNFA3_4_3730161 -.->|"ε
+ExtendToken 'inlineComment'"|eNFA3_6_33707629
+eNFA1_5_35797372 -.->|"ε"|eNFA1_4_58045264
+eNFA1_8_61165617 -->|"'"|eNFA1_9_3672298
+eNFA1_14_63718061 -->|"#92;"|eNFA1_15_33050690
+eNFA2_4_21433500 -->|"[^*]"|eNFA2_5_32124765
+eNFA2_8_47120742 -->|"[*]"|eNFA2_9_9362127
+eNFA2_7_58683773 -.->|"ε"|eNFA2_6_42518340
+eNFA2_7_58683773 -.->|"ε"|eNFA2_12_55765201
+eNFA3_6_33707629 -.->|"ε"|eNFA3_7_32049974
+eNFA1_4_58045264 -.->|"ε"|eNFA1_2_4045982
+eNFA1_4_58045264 -.->|"ε"|eNFA1_6_52645336
+eNFA1_4_58045264 -.->|"ε"|eNFA1_10_36413843
+eNFA1_4_58045264 -.->|"ε"|eNFA1_12_59289136
+eNFA1_4_58045264 -.->|"ε"|eNFA1_16_63840183
+eNFA1_4_58045264 -.->|"ε"|eNFA1_5_37690735
+eNFA1_9_3672298 -.->|"ε"|eNFA1_5_35797372
+eNFA1_15_33050690 -.->|"ε"|eNFA1_5_35797372
+eNFA2_5_32124765 -.->|"ε"|eNFA2_7_58683773
+eNFA2_9_9362127 -.->|"ε"|eNFA2_10_64616609
+eNFA2_12_55765201 -->|"*"|eNFA2_13_44678570
+eNFA3_7_32049974 -.->|"ε
+CheckToken 'inlineComment'
+AcceptToken 'inlineComment'"|eNFA3_8_45963425
+eNFA1_2_4045982 -->|"[#32;-&]"|eNFA1_3_59860242
+eNFA1_6_52645336 -->|"#92;"|eNFA1_7_66562817
+eNFA1_10_36413843 -->|"[(-[]"|eNFA1_11_1871268
+eNFA1_12_59289136 -->|"#92;"|eNFA1_13_62194446
+eNFA1_16_63840183 -->|"[]-~]"|eNFA1_17_16841414
+eNFA1_5_37690735 -.->|"ε"|eNFA1_4_58045264
+eNFA1_5_37690735 -.->|"ε"|eNFA1_18_29020759
+eNFA2_10_64616609 -->|"[^/]"|eNFA2_11_20687433
+eNFA2_13_44678570 -.->|"ε"|eNFA2_14_4585366
+eNFA3_8_45963425 -.->|"ε"|eNFA0_1_36129223
+eNFA1_3_59860242 -.->|"ε"|eNFA1_5_37690735
+eNFA1_7_66562817 -.->|"ε"|eNFA1_8_35870379
+eNFA1_11_1871268 -.->|"ε"|eNFA1_5_37690735
+eNFA1_13_62194446 -.->|"ε"|eNFA1_14_19819572
+eNFA1_17_16841414 -.->|"ε"|eNFA1_5_37690735
+eNFA1_18_29020759 -->|"'"|eNFA1_19_49532637
+eNFA2_11_20687433 -.->|"ε"|eNFA2_7_58683773
+eNFA2_14_4585366 -->|"/"|eNFA2_15_40785949
+eNFA1_8_35870379 -->|"'"|eNFA1_9_17355001
+eNFA1_14_19819572 -->|"#92;"|eNFA1_15_21977287
+eNFA1_19_49532637 -.->|"ε
+ExtendToken 'Vt'"|eNFA1_21_43140557
+eNFA2_15_40785949 -.->|"ε
+ExtendToken 'blockComment'"|eNFA2_17_31529222
+eNFA1_9_17355001 -.->|"ε"|eNFA1_5_37690735
+eNFA1_15_21977287 -.->|"ε"|eNFA1_5_37690735
+eNFA1_21_43140557 -.->|"ε"|eNFA1_22_52720700
+eNFA2_17_31529222 -.->|"ε"|eNFA2_18_15327543
+eNFA1_22_52720700 -.->|"ε
 CheckToken 'Vt'
-AcceptToken 'Vt'"|eNFA1_23_29147110
-eNFA1_23_29147110 -.->|"ε"|eNFA0_1_4511530
+AcceptToken 'Vt'"|eNFA1_23_4724260
+eNFA2_18_15327543 -.->|"ε
+CheckToken 'blockComment'
+AcceptToken 'blockComment'"|eNFA2_19_48753600
+eNFA1_23_4724260 -.->|"ε"|eNFA0_1_36129223
+eNFA2_19_48753600 -.->|"ε"|eNFA0_1_36129223
 
 ```
 
@@ -288,335 +514,521 @@ classDef c1100 stroke:#333,stroke-width:4px,fill:#BB66EE;
 classDef c1101 stroke:#333,stroke-width:4px,fill:#BB66EE,color:#FF0000;
 classDef c1110 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10;
 classDef c1111 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10,color:#FF0000;
-eNFA0_0_52739292[["εNFA0-0 wholeStart"]]
-class eNFA0_0_52739292 c1000;
-eNFA1_20_40603774[["εNFA1-20 regex start"]]
-class eNFA1_20_40603774 c1000;
-eNFA1_0_29889648[["εNFA1-0 char{1, 1}"]]
-class eNFA1_0_29889648 c1000;
-eNFA1_1_57817912[["εNFA1-1 char[1]"]]
-eNFA1_4_41842281[["εNFA1-4 regex start"]]
-eNFA1_2_33781587[["εNFA1-2 scope{1, 1}"]]
-eNFA1_6_41036211[["εNFA1-6 char{1, 1}"]]
-eNFA1_10_35598833[["εNFA1-10 scope{1, 1}"]]
-eNFA1_12_51954046[["εNFA1-12 char{1, 1}"]]
-eNFA1_16_64933235[["εNFA1-16 scope{1, 1}"]]
-eNFA1_3_582693[["εNFA1-3 scope[1]"]]
-eNFA1_7_4891587[["εNFA1-7 char[1]"]]
-eNFA1_11_19891301[["εNFA1-11 scope[1]"]]
-eNFA1_13_60674287[["εNFA1-13 char[1]"]]
-eNFA1_17_47198153[["εNFA1-17 scope[1]"]]
-eNFA1_5_44803986[["εNFA1-5 regex end"]]
-eNFA1_4_22130196[["εNFA1-4 regex start"]]
-eNFA1_2_47715466[["εNFA1-2 scope{1, 1}"]]
-eNFA1_6_64954042[["εNFA1-6 char{1, 1}"]]
-eNFA1_10_26786015[["εNFA1-10 scope{1, 1}"]]
-eNFA1_12_39747544[["εNFA1-12 char{1, 1}"]]
-eNFA1_16_22183584[["εNFA1-16 scope{1, 1}"]]
-eNFA1_5_65434535[["εNFA1-5 regex end"]]
-eNFA1_3_56932903[["εNFA1-3 scope[1]"]]
-eNFA1_7_15670248[["εNFA1-7 char[1]"]]
-eNFA1_11_48162440[["εNFA1-11 scope[1]"]]
-eNFA1_13_61330581[["εNFA1-13 char[1]"]]
-eNFA1_17_8843569[["εNFA1-17 scope[1]"]]
-eNFA1_18_51065120[["εNFA1-18 char{1, 1}"]]
-eNFA1_19_571377[\"εNFA1-19 char[1]
+eNFA0_0_20014316[["εNFA0-0 wholeStart"]]
+class eNFA0_0_20014316 c1000;
+eNFA1_20_10546933[["εNFA1-20 regex start"]]
+class eNFA1_20_10546933 c1000;
+eNFA2_16_45911124[["εNFA2-16 regex start"]]
+class eNFA2_16_45911124 c1000;
+eNFA3_5_27813538[["εNFA3-5 regex start"]]
+class eNFA3_5_27813538 c1000;
+eNFA1_0_17884854[["εNFA1-0 char{1, 1}"]]
+class eNFA1_0_17884854 c1000;
+eNFA2_0_36238473[["εNFA2-0 char{1, 1}"]]
+class eNFA2_0_36238473 c1000;
+eNFA3_0_61026205[["εNFA3-0 char{1, 1}"]]
+class eNFA3_0_61026205 c1000;
+eNFA1_1_44175572[["εNFA1-1 char[1]"]]
+eNFA2_1_62035831[["εNFA2-1 char[1]"]]
+eNFA3_1_58846418[["εNFA3-1 char[1]"]]
+eNFA1_4_57432766[["εNFA1-4 regex start"]]
+eNFA1_2_21542494[["εNFA1-2 scope{1, 1}"]]
+eNFA1_6_47132853[["εNFA1-6 char{1, 1}"]]
+eNFA1_10_59664724[["εNFA1-10 scope{1, 1}"]]
+eNFA1_12_111607[["εNFA1-12 char{1, 1}"]]
+eNFA1_16_1004464[["εNFA1-16 scope{1, 1}"]]
+eNFA1_3_29449405[["εNFA1-3 scope[1]"]]
+eNFA1_7_16474764[["εNFA1-7 char[1]"]]
+eNFA1_11_13619644[["εNFA1-11 scope[1]"]]
+eNFA1_13_59387477[["εNFA1-13 char[1]"]]
+eNFA1_17_36591643[["εNFA1-17 scope[1]"]]
+eNFA2_2_1830529[["εNFA2-2 char{1, 1}"]]
+eNFA2_3_17150281[["εNFA2-3 char[1]"]]
+eNFA3_2_59855715[["εNFA3-2 char{1, 1}"]]
+eNFA3_3_29941743[\"εNFA3-3 char[1]
+AcceptToken 'inlineComment'"/]
+class eNFA3_3_29941743 c0111;
+eNFA1_5_55467939[["εNFA1-5 regex end"]]
+eNFA1_4_46995502[["εNFA1-4 regex start"]]
+eNFA1_2_48539332[["εNFA1-2 scope{1, 1}"]]
+eNFA1_6_20306340[["εNFA1-6 char{1, 1}"]]
+eNFA1_10_34200809[["εNFA1-10 scope{1, 1}"]]
+eNFA1_12_39371826[["εNFA1-12 char{1, 1}"]]
+eNFA1_16_18802122[["εNFA1-16 scope{1, 1}"]]
+eNFA1_5_35001377[["εNFA1-5 regex end"]]
+eNFA1_3_41268299[["εNFA1-3 scope[1]"]]
+eNFA1_7_64550954[["εNFA1-7 char[1]"]]
+eNFA1_11_54397957[["εNFA1-11 scope[1]"]]
+eNFA1_13_61244824[["εNFA1-13 char[1]"]]
+eNFA1_17_44158424[["εNFA1-17 scope[1]"]]
+eNFA1_18_22879106[["εNFA1-18 char{1, 1}"]]
+eNFA1_19_26745965[\"εNFA1-19 char[1]
 AcceptToken 'Vt'"/]
-class eNFA1_19_571377 c0111;
-eNFA1_8_44024289[["εNFA1-8 char{1, 1}"]]
-eNFA1_9_52039911[["εNFA1-9 char[1]"]]
-eNFA1_14_9197679[["εNFA1-14 char{1, 1}"]]
-eNFA1_15_65706015[["εNFA1-15 char[1]"]]
-eNFA1_8_6814509[["εNFA1-8 char{1, 1}"]]
-eNFA1_9_12483265[["εNFA1-9 char[1]"]]
-eNFA1_14_15104323[["εNFA1-14 char{1, 1}"]]
-eNFA1_15_45240523[["εNFA1-15 char[1]"]]
-eNFA1_21_5142394[\"εNFA1-21 regex end
+class eNFA1_19_26745965 c0111;
+eNFA1_8_14055149[["εNFA1-8 char{1, 1}"]]
+eNFA1_9_46576945[["εNFA1-9 char[1]"]]
+eNFA1_14_64725245[["εNFA1-14 char{1, 1}"]]
+eNFA1_15_16539321[["εNFA1-15 char[1]"]]
+eNFA2_6_60889336[["εNFA2-6 regex start"]]
+eNFA2_4_33089196[["εNFA2-4 scope{1, 1}"]]
+eNFA2_8_11133117[["εNFA2-8 scope{1, 1}"]]
+eNFA2_7_29367308[["εNFA2-7 regex end"]]
+eNFA2_5_14636163[["εNFA2-5 scope[1]"]]
+eNFA2_9_45656294[["εNFA2-9 scope[1]"]]
+eNFA2_12_20134803[["εNFA2-12 char{1, 1}"]]
+eNFA2_13_7172328[["εNFA2-13 char[1]"]]
+eNFA3_4_62979183[\"εNFA3-4 char{0, ∞}
+AcceptToken 'inlineComment'"/]
+class eNFA3_4_62979183 c0111;
+eNFA3_6_1040236[\"εNFA3-6 regex end
+AcceptToken 'inlineComment'"/]
+class eNFA3_6_1040236 c0111;
+eNFA3_7_12364937[\"εNFA3-7 post-regex start
+AcceptToken 'inlineComment'"/]
+class eNFA3_7_12364937 c0011;
+eNFA3_8_30046962[\"εNFA3-8 post-regex end"/]
+class eNFA3_8_30046962 c0011;
+eNFA0_1_62990874[\"εNFA0-1 wholeEnd"/]
+eNFA1_8_44087682[["εNFA1-8 char{1, 1}"]]
+eNFA1_9_20062571[["εNFA1-9 char[1]"]]
+eNFA1_14_14332509[["εNFA1-14 char{1, 1}"]]
+eNFA1_15_46345412[["εNFA1-15 char[1]"]]
+eNFA1_21_39387099[\"εNFA1-21 regex end
 AcceptToken 'Vt'"/]
-class eNFA1_21_5142394 c0111;
-eNFA1_22_46281548[\"εNFA1-22 post-regex start
+class eNFA1_21_39387099 c0111;
+eNFA1_22_18939577[\"εNFA1-22 post-regex start
 AcceptToken 'Vt'"/]
-class eNFA1_22_46281548 c0011;
-eNFA1_23_13880752[\"εNFA1-23 post-regex end"/]
-class eNFA1_23_13880752 c0011;
-eNFA0_1_50599164[\"εNFA0-1 wholeEnd"/]
-eNFA0_0_52739292 -.->|"ε"|eNFA1_20_40603774
-eNFA0_0_52739292 -.->|"ε
-BeginToken 'Vt'"|eNFA1_0_29889648
-eNFA0_0_52739292 -->|"'
-BeginToken 'Vt'"|eNFA1_1_57817912
-eNFA1_20_40603774 -.->|"ε
-BeginToken 'Vt'"|eNFA1_0_29889648
-eNFA1_20_40603774 -->|"'
-BeginToken 'Vt'"|eNFA1_1_57817912
-eNFA1_0_29889648 -->|"'
-BeginToken 'Vt'"|eNFA1_1_57817912
-eNFA1_1_57817912 -.->|"ε"|eNFA1_4_41842281
-eNFA1_1_57817912 -.->|"ε"|eNFA1_2_33781587
-eNFA1_1_57817912 -.->|"ε"|eNFA1_6_41036211
-eNFA1_1_57817912 -.->|"ε"|eNFA1_10_35598833
-eNFA1_1_57817912 -.->|"ε"|eNFA1_12_51954046
-eNFA1_1_57817912 -.->|"ε"|eNFA1_16_64933235
-eNFA1_1_57817912 -->|"[#32;-&]"|eNFA1_3_582693
-eNFA1_1_57817912 -->|"#92;"|eNFA1_7_4891587
-eNFA1_1_57817912 -->|"[(-[]"|eNFA1_11_19891301
-eNFA1_1_57817912 -->|"#92;"|eNFA1_13_60674287
-eNFA1_1_57817912 -->|"[]-~]"|eNFA1_17_47198153
-eNFA1_4_41842281 -.->|"ε"|eNFA1_2_33781587
-eNFA1_4_41842281 -.->|"ε"|eNFA1_6_41036211
-eNFA1_4_41842281 -.->|"ε"|eNFA1_10_35598833
-eNFA1_4_41842281 -.->|"ε"|eNFA1_12_51954046
-eNFA1_4_41842281 -.->|"ε"|eNFA1_16_64933235
-eNFA1_4_41842281 -->|"[#32;-&]"|eNFA1_3_582693
-eNFA1_4_41842281 -->|"#92;"|eNFA1_7_4891587
-eNFA1_4_41842281 -->|"[(-[]"|eNFA1_11_19891301
-eNFA1_4_41842281 -->|"#92;"|eNFA1_13_60674287
-eNFA1_4_41842281 -->|"[]-~]"|eNFA1_17_47198153
-eNFA1_2_33781587 -->|"[#32;-&]"|eNFA1_3_582693
-eNFA1_6_41036211 -->|"#92;"|eNFA1_7_4891587
-eNFA1_10_35598833 -->|"[(-[]"|eNFA1_11_19891301
-eNFA1_12_51954046 -->|"#92;"|eNFA1_13_60674287
-eNFA1_16_64933235 -->|"[]-~]"|eNFA1_17_47198153
-eNFA1_3_582693 -.->|"ε"|eNFA1_5_44803986
-eNFA1_3_582693 -.->|"ε"|eNFA1_4_22130196
-eNFA1_3_582693 -.->|"ε"|eNFA1_2_47715466
-eNFA1_3_582693 -.->|"ε"|eNFA1_6_64954042
-eNFA1_3_582693 -.->|"ε"|eNFA1_10_26786015
-eNFA1_3_582693 -.->|"ε"|eNFA1_12_39747544
-eNFA1_3_582693 -.->|"ε"|eNFA1_16_22183584
-eNFA1_3_582693 -.->|"ε"|eNFA1_5_65434535
-eNFA1_3_582693 -->|"[#32;-&]"|eNFA1_3_56932903
-eNFA1_3_582693 -->|"#92;"|eNFA1_7_15670248
-eNFA1_3_582693 -->|"[(-[]"|eNFA1_11_48162440
-eNFA1_3_582693 -->|"#92;"|eNFA1_13_61330581
-eNFA1_3_582693 -->|"[]-~]"|eNFA1_17_8843569
-eNFA1_3_582693 -.->|"ε"|eNFA1_18_51065120
-eNFA1_3_582693 -->|"'
-ExtendToken 'Vt'"|eNFA1_19_571377
-eNFA1_7_4891587 -.->|"ε"|eNFA1_8_44024289
-eNFA1_7_4891587 -->|"'"|eNFA1_9_52039911
-eNFA1_11_19891301 -.->|"ε"|eNFA1_5_44803986
-eNFA1_11_19891301 -.->|"ε"|eNFA1_4_22130196
-eNFA1_11_19891301 -.->|"ε"|eNFA1_2_47715466
-eNFA1_11_19891301 -.->|"ε"|eNFA1_6_64954042
-eNFA1_11_19891301 -.->|"ε"|eNFA1_10_26786015
-eNFA1_11_19891301 -.->|"ε"|eNFA1_12_39747544
-eNFA1_11_19891301 -.->|"ε"|eNFA1_16_22183584
-eNFA1_11_19891301 -.->|"ε"|eNFA1_5_65434535
-eNFA1_11_19891301 -->|"[#32;-&]"|eNFA1_3_56932903
-eNFA1_11_19891301 -->|"#92;"|eNFA1_7_15670248
-eNFA1_11_19891301 -->|"[(-[]"|eNFA1_11_48162440
-eNFA1_11_19891301 -->|"#92;"|eNFA1_13_61330581
-eNFA1_11_19891301 -->|"[]-~]"|eNFA1_17_8843569
-eNFA1_11_19891301 -.->|"ε"|eNFA1_18_51065120
-eNFA1_11_19891301 -->|"'
-ExtendToken 'Vt'"|eNFA1_19_571377
-eNFA1_13_60674287 -.->|"ε"|eNFA1_14_9197679
-eNFA1_13_60674287 -->|"#92;"|eNFA1_15_65706015
-eNFA1_17_47198153 -.->|"ε"|eNFA1_5_44803986
-eNFA1_17_47198153 -.->|"ε"|eNFA1_4_22130196
-eNFA1_17_47198153 -.->|"ε"|eNFA1_2_47715466
-eNFA1_17_47198153 -.->|"ε"|eNFA1_6_64954042
-eNFA1_17_47198153 -.->|"ε"|eNFA1_10_26786015
-eNFA1_17_47198153 -.->|"ε"|eNFA1_12_39747544
-eNFA1_17_47198153 -.->|"ε"|eNFA1_16_22183584
-eNFA1_17_47198153 -.->|"ε"|eNFA1_5_65434535
-eNFA1_17_47198153 -->|"[#32;-&]"|eNFA1_3_56932903
-eNFA1_17_47198153 -->|"#92;"|eNFA1_7_15670248
-eNFA1_17_47198153 -->|"[(-[]"|eNFA1_11_48162440
-eNFA1_17_47198153 -->|"#92;"|eNFA1_13_61330581
-eNFA1_17_47198153 -->|"[]-~]"|eNFA1_17_8843569
-eNFA1_17_47198153 -.->|"ε"|eNFA1_18_51065120
-eNFA1_17_47198153 -->|"'
-ExtendToken 'Vt'"|eNFA1_19_571377
-eNFA1_5_44803986 -.->|"ε"|eNFA1_4_22130196
-eNFA1_5_44803986 -.->|"ε"|eNFA1_2_47715466
-eNFA1_5_44803986 -.->|"ε"|eNFA1_6_64954042
-eNFA1_5_44803986 -.->|"ε"|eNFA1_10_26786015
-eNFA1_5_44803986 -.->|"ε"|eNFA1_12_39747544
-eNFA1_5_44803986 -.->|"ε"|eNFA1_16_22183584
-eNFA1_5_44803986 -.->|"ε"|eNFA1_5_65434535
-eNFA1_5_44803986 -->|"[#32;-&]"|eNFA1_3_56932903
-eNFA1_5_44803986 -->|"#92;"|eNFA1_7_15670248
-eNFA1_5_44803986 -->|"[(-[]"|eNFA1_11_48162440
-eNFA1_5_44803986 -->|"#92;"|eNFA1_13_61330581
-eNFA1_5_44803986 -->|"[]-~]"|eNFA1_17_8843569
-eNFA1_5_44803986 -.->|"ε"|eNFA1_18_51065120
-eNFA1_5_44803986 -->|"'
-ExtendToken 'Vt'"|eNFA1_19_571377
-eNFA1_4_22130196 -.->|"ε"|eNFA1_2_47715466
-eNFA1_4_22130196 -.->|"ε"|eNFA1_6_64954042
-eNFA1_4_22130196 -.->|"ε"|eNFA1_10_26786015
-eNFA1_4_22130196 -.->|"ε"|eNFA1_12_39747544
-eNFA1_4_22130196 -.->|"ε"|eNFA1_16_22183584
-eNFA1_4_22130196 -.->|"ε"|eNFA1_5_65434535
-eNFA1_4_22130196 -->|"[#32;-&]"|eNFA1_3_56932903
-eNFA1_4_22130196 -->|"#92;"|eNFA1_7_15670248
-eNFA1_4_22130196 -->|"[(-[]"|eNFA1_11_48162440
-eNFA1_4_22130196 -->|"#92;"|eNFA1_13_61330581
-eNFA1_4_22130196 -->|"[]-~]"|eNFA1_17_8843569
-eNFA1_4_22130196 -.->|"ε"|eNFA1_4_22130196
-eNFA1_4_22130196 -.->|"ε"|eNFA1_18_51065120
-eNFA1_4_22130196 -->|"'
-ExtendToken 'Vt'"|eNFA1_19_571377
-eNFA1_2_47715466 -->|"[#32;-&]"|eNFA1_3_56932903
-eNFA1_6_64954042 -->|"#92;"|eNFA1_7_15670248
-eNFA1_10_26786015 -->|"[(-[]"|eNFA1_11_48162440
-eNFA1_12_39747544 -->|"#92;"|eNFA1_13_61330581
-eNFA1_16_22183584 -->|"[]-~]"|eNFA1_17_8843569
-eNFA1_5_65434535 -.->|"ε"|eNFA1_4_22130196
-eNFA1_5_65434535 -.->|"ε"|eNFA1_18_51065120
-eNFA1_5_65434535 -.->|"ε"|eNFA1_2_47715466
-eNFA1_5_65434535 -.->|"ε"|eNFA1_6_64954042
-eNFA1_5_65434535 -.->|"ε"|eNFA1_10_26786015
-eNFA1_5_65434535 -.->|"ε"|eNFA1_12_39747544
-eNFA1_5_65434535 -.->|"ε"|eNFA1_16_22183584
-eNFA1_5_65434535 -.->|"ε"|eNFA1_5_65434535
-eNFA1_5_65434535 -->|"[#32;-&]"|eNFA1_3_56932903
-eNFA1_5_65434535 -->|"#92;"|eNFA1_7_15670248
-eNFA1_5_65434535 -->|"[(-[]"|eNFA1_11_48162440
-eNFA1_5_65434535 -->|"#92;"|eNFA1_13_61330581
-eNFA1_5_65434535 -->|"[]-~]"|eNFA1_17_8843569
-eNFA1_5_65434535 -->|"'
-ExtendToken 'Vt'"|eNFA1_19_571377
-eNFA1_3_56932903 -.->|"ε"|eNFA1_5_65434535
-eNFA1_3_56932903 -.->|"ε"|eNFA1_4_22130196
-eNFA1_3_56932903 -.->|"ε"|eNFA1_18_51065120
-eNFA1_3_56932903 -.->|"ε"|eNFA1_2_47715466
-eNFA1_3_56932903 -.->|"ε"|eNFA1_6_64954042
-eNFA1_3_56932903 -.->|"ε"|eNFA1_10_26786015
-eNFA1_3_56932903 -.->|"ε"|eNFA1_12_39747544
-eNFA1_3_56932903 -.->|"ε"|eNFA1_16_22183584
-eNFA1_3_56932903 -->|"[#32;-&]"|eNFA1_3_56932903
-eNFA1_3_56932903 -->|"#92;"|eNFA1_7_15670248
-eNFA1_3_56932903 -->|"[(-[]"|eNFA1_11_48162440
-eNFA1_3_56932903 -->|"#92;"|eNFA1_13_61330581
-eNFA1_3_56932903 -->|"[]-~]"|eNFA1_17_8843569
-eNFA1_3_56932903 -->|"'
-ExtendToken 'Vt'"|eNFA1_19_571377
-eNFA1_7_15670248 -.->|"ε"|eNFA1_8_6814509
-eNFA1_7_15670248 -->|"'"|eNFA1_9_12483265
-eNFA1_11_48162440 -.->|"ε"|eNFA1_5_65434535
-eNFA1_11_48162440 -.->|"ε"|eNFA1_4_22130196
-eNFA1_11_48162440 -.->|"ε"|eNFA1_18_51065120
-eNFA1_11_48162440 -.->|"ε"|eNFA1_2_47715466
-eNFA1_11_48162440 -.->|"ε"|eNFA1_6_64954042
-eNFA1_11_48162440 -.->|"ε"|eNFA1_10_26786015
-eNFA1_11_48162440 -.->|"ε"|eNFA1_12_39747544
-eNFA1_11_48162440 -.->|"ε"|eNFA1_16_22183584
-eNFA1_11_48162440 -->|"[#32;-&]"|eNFA1_3_56932903
-eNFA1_11_48162440 -->|"#92;"|eNFA1_7_15670248
-eNFA1_11_48162440 -->|"[(-[]"|eNFA1_11_48162440
-eNFA1_11_48162440 -->|"#92;"|eNFA1_13_61330581
-eNFA1_11_48162440 -->|"[]-~]"|eNFA1_17_8843569
-eNFA1_11_48162440 -->|"'
-ExtendToken 'Vt'"|eNFA1_19_571377
-eNFA1_13_61330581 -.->|"ε"|eNFA1_14_15104323
-eNFA1_13_61330581 -->|"#92;"|eNFA1_15_45240523
-eNFA1_17_8843569 -.->|"ε"|eNFA1_5_65434535
-eNFA1_17_8843569 -.->|"ε"|eNFA1_4_22130196
-eNFA1_17_8843569 -.->|"ε"|eNFA1_18_51065120
-eNFA1_17_8843569 -.->|"ε"|eNFA1_2_47715466
-eNFA1_17_8843569 -.->|"ε"|eNFA1_6_64954042
-eNFA1_17_8843569 -.->|"ε"|eNFA1_10_26786015
-eNFA1_17_8843569 -.->|"ε"|eNFA1_12_39747544
-eNFA1_17_8843569 -.->|"ε"|eNFA1_16_22183584
-eNFA1_17_8843569 -->|"[#32;-&]"|eNFA1_3_56932903
-eNFA1_17_8843569 -->|"#92;"|eNFA1_7_15670248
-eNFA1_17_8843569 -->|"[(-[]"|eNFA1_11_48162440
-eNFA1_17_8843569 -->|"#92;"|eNFA1_13_61330581
-eNFA1_17_8843569 -->|"[]-~]"|eNFA1_17_8843569
-eNFA1_17_8843569 -->|"'
-ExtendToken 'Vt'"|eNFA1_19_571377
-eNFA1_18_51065120 -->|"'
-ExtendToken 'Vt'"|eNFA1_19_571377
-eNFA1_19_571377 -.->|"ε
-ExtendToken 'Vt'"|eNFA1_21_5142394
-eNFA1_19_571377 -.->|"ε"|eNFA1_22_46281548
-eNFA1_19_571377 -.->|"ε
+class eNFA1_22_18939577 c0011;
+eNFA1_23_14455526[\"εNFA1-23 post-regex end"/]
+class eNFA1_23_14455526 c0011;
+eNFA2_10_8253465[["εNFA2-10 scope{1, 1}"]]
+eNFA2_11_61881498[["εNFA2-11 scope[1]"]]
+eNFA2_14_21451571[["εNFA2-14 char{1, 1}"]]
+eNFA2_15_57710802[\"εNFA2-15 char[1]
+AcceptToken 'blockComment'"/]
+class eNFA2_15_57710802 c0111;
+eNFA2_17_49635175[\"εNFA2-17 regex end
+AcceptToken 'blockComment'"/]
+class eNFA2_17_49635175 c0111;
+eNFA2_18_44063391[\"εNFA2-18 post-regex start
+AcceptToken 'blockComment'"/]
+class eNFA2_18_44063391 c0011;
+eNFA2_19_1987206[\"εNFA2-19 post-regex end"/]
+class eNFA2_19_1987206 c0011;
+eNFA0_0_20014316 -.->|"ε"|eNFA1_20_10546933
+eNFA0_0_20014316 -.->|"ε"|eNFA2_16_45911124
+eNFA0_0_20014316 -.->|"ε"|eNFA3_5_27813538
+eNFA0_0_20014316 -.->|"ε
+BeginToken 'Vt'"|eNFA1_0_17884854
+eNFA0_0_20014316 -.->|"ε
+BeginToken 'blockComment'"|eNFA2_0_36238473
+eNFA0_0_20014316 -.->|"ε
+BeginToken 'inlineComment'"|eNFA3_0_61026205
+eNFA0_0_20014316 -->|"'
+BeginToken 'Vt'"|eNFA1_1_44175572
+eNFA0_0_20014316 -->|"/
+BeginToken 'blockComment'"|eNFA2_1_62035831
+eNFA0_0_20014316 -->|"/
+BeginToken 'inlineComment'"|eNFA3_1_58846418
+eNFA1_20_10546933 -.->|"ε
+BeginToken 'Vt'"|eNFA1_0_17884854
+eNFA1_20_10546933 -->|"'
+BeginToken 'Vt'"|eNFA1_1_44175572
+eNFA2_16_45911124 -.->|"ε
+BeginToken 'blockComment'"|eNFA2_0_36238473
+eNFA2_16_45911124 -->|"/
+BeginToken 'blockComment'"|eNFA2_1_62035831
+eNFA3_5_27813538 -.->|"ε
+BeginToken 'inlineComment'"|eNFA3_0_61026205
+eNFA3_5_27813538 -->|"/
+BeginToken 'inlineComment'"|eNFA3_1_58846418
+eNFA1_0_17884854 -->|"'
+BeginToken 'Vt'"|eNFA1_1_44175572
+eNFA2_0_36238473 -->|"/
+BeginToken 'blockComment'"|eNFA2_1_62035831
+eNFA3_0_61026205 -->|"/
+BeginToken 'inlineComment'"|eNFA3_1_58846418
+eNFA1_1_44175572 -.->|"ε"|eNFA1_4_57432766
+eNFA1_1_44175572 -.->|"ε"|eNFA1_2_21542494
+eNFA1_1_44175572 -.->|"ε"|eNFA1_6_47132853
+eNFA1_1_44175572 -.->|"ε"|eNFA1_10_59664724
+eNFA1_1_44175572 -.->|"ε"|eNFA1_12_111607
+eNFA1_1_44175572 -.->|"ε"|eNFA1_16_1004464
+eNFA1_1_44175572 -->|"[#32;-&]"|eNFA1_3_29449405
+eNFA1_1_44175572 -->|"#92;"|eNFA1_7_16474764
+eNFA1_1_44175572 -->|"[(-[]"|eNFA1_11_13619644
+eNFA1_1_44175572 -->|"#92;"|eNFA1_13_59387477
+eNFA1_1_44175572 -->|"[]-~]"|eNFA1_17_36591643
+eNFA2_1_62035831 -.->|"ε"|eNFA2_2_1830529
+eNFA2_1_62035831 -->|"*"|eNFA2_3_17150281
+eNFA3_1_58846418 -.->|"ε"|eNFA3_2_59855715
+eNFA3_1_58846418 -->|"/
+ExtendToken 'inlineComment'"|eNFA3_3_29941743
+eNFA1_4_57432766 -.->|"ε"|eNFA1_2_21542494
+eNFA1_4_57432766 -.->|"ε"|eNFA1_6_47132853
+eNFA1_4_57432766 -.->|"ε"|eNFA1_10_59664724
+eNFA1_4_57432766 -.->|"ε"|eNFA1_12_111607
+eNFA1_4_57432766 -.->|"ε"|eNFA1_16_1004464
+eNFA1_4_57432766 -->|"[#32;-&]"|eNFA1_3_29449405
+eNFA1_4_57432766 -->|"#92;"|eNFA1_7_16474764
+eNFA1_4_57432766 -->|"[(-[]"|eNFA1_11_13619644
+eNFA1_4_57432766 -->|"#92;"|eNFA1_13_59387477
+eNFA1_4_57432766 -->|"[]-~]"|eNFA1_17_36591643
+eNFA1_2_21542494 -->|"[#32;-&]"|eNFA1_3_29449405
+eNFA1_6_47132853 -->|"#92;"|eNFA1_7_16474764
+eNFA1_10_59664724 -->|"[(-[]"|eNFA1_11_13619644
+eNFA1_12_111607 -->|"#92;"|eNFA1_13_59387477
+eNFA1_16_1004464 -->|"[]-~]"|eNFA1_17_36591643
+eNFA1_3_29449405 -.->|"ε"|eNFA1_5_55467939
+eNFA1_3_29449405 -.->|"ε"|eNFA1_4_46995502
+eNFA1_3_29449405 -.->|"ε"|eNFA1_2_48539332
+eNFA1_3_29449405 -.->|"ε"|eNFA1_6_20306340
+eNFA1_3_29449405 -.->|"ε"|eNFA1_10_34200809
+eNFA1_3_29449405 -.->|"ε"|eNFA1_12_39371826
+eNFA1_3_29449405 -.->|"ε"|eNFA1_16_18802122
+eNFA1_3_29449405 -.->|"ε"|eNFA1_5_35001377
+eNFA1_3_29449405 -->|"[#32;-&]"|eNFA1_3_41268299
+eNFA1_3_29449405 -->|"#92;"|eNFA1_7_64550954
+eNFA1_3_29449405 -->|"[(-[]"|eNFA1_11_54397957
+eNFA1_3_29449405 -->|"#92;"|eNFA1_13_61244824
+eNFA1_3_29449405 -->|"[]-~]"|eNFA1_17_44158424
+eNFA1_3_29449405 -.->|"ε"|eNFA1_18_22879106
+eNFA1_3_29449405 -->|"'
+ExtendToken 'Vt'"|eNFA1_19_26745965
+eNFA1_7_16474764 -.->|"ε"|eNFA1_8_14055149
+eNFA1_7_16474764 -->|"'"|eNFA1_9_46576945
+eNFA1_11_13619644 -.->|"ε"|eNFA1_5_55467939
+eNFA1_11_13619644 -.->|"ε"|eNFA1_4_46995502
+eNFA1_11_13619644 -.->|"ε"|eNFA1_2_48539332
+eNFA1_11_13619644 -.->|"ε"|eNFA1_6_20306340
+eNFA1_11_13619644 -.->|"ε"|eNFA1_10_34200809
+eNFA1_11_13619644 -.->|"ε"|eNFA1_12_39371826
+eNFA1_11_13619644 -.->|"ε"|eNFA1_16_18802122
+eNFA1_11_13619644 -.->|"ε"|eNFA1_5_35001377
+eNFA1_11_13619644 -->|"[#32;-&]"|eNFA1_3_41268299
+eNFA1_11_13619644 -->|"#92;"|eNFA1_7_64550954
+eNFA1_11_13619644 -->|"[(-[]"|eNFA1_11_54397957
+eNFA1_11_13619644 -->|"#92;"|eNFA1_13_61244824
+eNFA1_11_13619644 -->|"[]-~]"|eNFA1_17_44158424
+eNFA1_11_13619644 -.->|"ε"|eNFA1_18_22879106
+eNFA1_11_13619644 -->|"'
+ExtendToken 'Vt'"|eNFA1_19_26745965
+eNFA1_13_59387477 -.->|"ε"|eNFA1_14_64725245
+eNFA1_13_59387477 -->|"#92;"|eNFA1_15_16539321
+eNFA1_17_36591643 -.->|"ε"|eNFA1_5_55467939
+eNFA1_17_36591643 -.->|"ε"|eNFA1_4_46995502
+eNFA1_17_36591643 -.->|"ε"|eNFA1_2_48539332
+eNFA1_17_36591643 -.->|"ε"|eNFA1_6_20306340
+eNFA1_17_36591643 -.->|"ε"|eNFA1_10_34200809
+eNFA1_17_36591643 -.->|"ε"|eNFA1_12_39371826
+eNFA1_17_36591643 -.->|"ε"|eNFA1_16_18802122
+eNFA1_17_36591643 -.->|"ε"|eNFA1_5_35001377
+eNFA1_17_36591643 -->|"[#32;-&]"|eNFA1_3_41268299
+eNFA1_17_36591643 -->|"#92;"|eNFA1_7_64550954
+eNFA1_17_36591643 -->|"[(-[]"|eNFA1_11_54397957
+eNFA1_17_36591643 -->|"#92;"|eNFA1_13_61244824
+eNFA1_17_36591643 -->|"[]-~]"|eNFA1_17_44158424
+eNFA1_17_36591643 -.->|"ε"|eNFA1_18_22879106
+eNFA1_17_36591643 -->|"'
+ExtendToken 'Vt'"|eNFA1_19_26745965
+eNFA2_2_1830529 -->|"*"|eNFA2_3_17150281
+eNFA2_3_17150281 -.->|"ε"|eNFA2_6_60889336
+eNFA2_3_17150281 -.->|"ε"|eNFA2_4_33089196
+eNFA2_3_17150281 -.->|"ε"|eNFA2_8_11133117
+eNFA2_3_17150281 -.->|"ε"|eNFA2_7_29367308
+eNFA2_3_17150281 -->|"[^*]"|eNFA2_5_14636163
+eNFA2_3_17150281 -->|"[*]"|eNFA2_9_45656294
+eNFA2_3_17150281 -.->|"ε"|eNFA2_12_20134803
+eNFA2_3_17150281 -->|"*"|eNFA2_13_7172328
+eNFA3_2_59855715 -->|"/
+ExtendToken 'inlineComment'"|eNFA3_3_29941743
+eNFA3_3_29941743 -.->|"ε
+ExtendToken 'inlineComment'"|eNFA3_4_62979183
+eNFA3_3_29941743 -->|"[#92;t#92;r#32;-~]
+ExtendToken 'inlineComment'"|eNFA3_4_62979183
+eNFA3_3_29941743 -.->|"ε
+ExtendToken 'inlineComment'"|eNFA3_6_1040236
+eNFA3_3_29941743 -.->|"ε"|eNFA3_7_12364937
+eNFA3_3_29941743 -.->|"ε
+CheckToken 'inlineComment'
+AcceptToken 'inlineComment'"|eNFA3_8_30046962
+eNFA3_3_29941743 -.->|"ε
+CheckToken 'inlineComment'"|eNFA0_1_62990874
+eNFA1_5_55467939 -.->|"ε"|eNFA1_4_46995502
+eNFA1_5_55467939 -.->|"ε"|eNFA1_2_48539332
+eNFA1_5_55467939 -.->|"ε"|eNFA1_6_20306340
+eNFA1_5_55467939 -.->|"ε"|eNFA1_10_34200809
+eNFA1_5_55467939 -.->|"ε"|eNFA1_12_39371826
+eNFA1_5_55467939 -.->|"ε"|eNFA1_16_18802122
+eNFA1_5_55467939 -.->|"ε"|eNFA1_5_35001377
+eNFA1_5_55467939 -->|"[#32;-&]"|eNFA1_3_41268299
+eNFA1_5_55467939 -->|"#92;"|eNFA1_7_64550954
+eNFA1_5_55467939 -->|"[(-[]"|eNFA1_11_54397957
+eNFA1_5_55467939 -->|"#92;"|eNFA1_13_61244824
+eNFA1_5_55467939 -->|"[]-~]"|eNFA1_17_44158424
+eNFA1_5_55467939 -.->|"ε"|eNFA1_18_22879106
+eNFA1_5_55467939 -->|"'
+ExtendToken 'Vt'"|eNFA1_19_26745965
+eNFA1_4_46995502 -.->|"ε"|eNFA1_2_48539332
+eNFA1_4_46995502 -.->|"ε"|eNFA1_6_20306340
+eNFA1_4_46995502 -.->|"ε"|eNFA1_10_34200809
+eNFA1_4_46995502 -.->|"ε"|eNFA1_12_39371826
+eNFA1_4_46995502 -.->|"ε"|eNFA1_16_18802122
+eNFA1_4_46995502 -.->|"ε"|eNFA1_5_35001377
+eNFA1_4_46995502 -->|"[#32;-&]"|eNFA1_3_41268299
+eNFA1_4_46995502 -->|"#92;"|eNFA1_7_64550954
+eNFA1_4_46995502 -->|"[(-[]"|eNFA1_11_54397957
+eNFA1_4_46995502 -->|"#92;"|eNFA1_13_61244824
+eNFA1_4_46995502 -->|"[]-~]"|eNFA1_17_44158424
+eNFA1_4_46995502 -.->|"ε"|eNFA1_4_46995502
+eNFA1_4_46995502 -.->|"ε"|eNFA1_18_22879106
+eNFA1_4_46995502 -->|"'
+ExtendToken 'Vt'"|eNFA1_19_26745965
+eNFA1_2_48539332 -->|"[#32;-&]"|eNFA1_3_41268299
+eNFA1_6_20306340 -->|"#92;"|eNFA1_7_64550954
+eNFA1_10_34200809 -->|"[(-[]"|eNFA1_11_54397957
+eNFA1_12_39371826 -->|"#92;"|eNFA1_13_61244824
+eNFA1_16_18802122 -->|"[]-~]"|eNFA1_17_44158424
+eNFA1_5_35001377 -.->|"ε"|eNFA1_4_46995502
+eNFA1_5_35001377 -.->|"ε"|eNFA1_18_22879106
+eNFA1_5_35001377 -.->|"ε"|eNFA1_2_48539332
+eNFA1_5_35001377 -.->|"ε"|eNFA1_6_20306340
+eNFA1_5_35001377 -.->|"ε"|eNFA1_10_34200809
+eNFA1_5_35001377 -.->|"ε"|eNFA1_12_39371826
+eNFA1_5_35001377 -.->|"ε"|eNFA1_16_18802122
+eNFA1_5_35001377 -.->|"ε"|eNFA1_5_35001377
+eNFA1_5_35001377 -->|"[#32;-&]"|eNFA1_3_41268299
+eNFA1_5_35001377 -->|"#92;"|eNFA1_7_64550954
+eNFA1_5_35001377 -->|"[(-[]"|eNFA1_11_54397957
+eNFA1_5_35001377 -->|"#92;"|eNFA1_13_61244824
+eNFA1_5_35001377 -->|"[]-~]"|eNFA1_17_44158424
+eNFA1_5_35001377 -->|"'
+ExtendToken 'Vt'"|eNFA1_19_26745965
+eNFA1_3_41268299 -.->|"ε"|eNFA1_5_35001377
+eNFA1_3_41268299 -.->|"ε"|eNFA1_4_46995502
+eNFA1_3_41268299 -.->|"ε"|eNFA1_18_22879106
+eNFA1_3_41268299 -.->|"ε"|eNFA1_2_48539332
+eNFA1_3_41268299 -.->|"ε"|eNFA1_6_20306340
+eNFA1_3_41268299 -.->|"ε"|eNFA1_10_34200809
+eNFA1_3_41268299 -.->|"ε"|eNFA1_12_39371826
+eNFA1_3_41268299 -.->|"ε"|eNFA1_16_18802122
+eNFA1_3_41268299 -->|"[#32;-&]"|eNFA1_3_41268299
+eNFA1_3_41268299 -->|"#92;"|eNFA1_7_64550954
+eNFA1_3_41268299 -->|"[(-[]"|eNFA1_11_54397957
+eNFA1_3_41268299 -->|"#92;"|eNFA1_13_61244824
+eNFA1_3_41268299 -->|"[]-~]"|eNFA1_17_44158424
+eNFA1_3_41268299 -->|"'
+ExtendToken 'Vt'"|eNFA1_19_26745965
+eNFA1_7_64550954 -.->|"ε"|eNFA1_8_44087682
+eNFA1_7_64550954 -->|"'"|eNFA1_9_20062571
+eNFA1_11_54397957 -.->|"ε"|eNFA1_5_35001377
+eNFA1_11_54397957 -.->|"ε"|eNFA1_4_46995502
+eNFA1_11_54397957 -.->|"ε"|eNFA1_18_22879106
+eNFA1_11_54397957 -.->|"ε"|eNFA1_2_48539332
+eNFA1_11_54397957 -.->|"ε"|eNFA1_6_20306340
+eNFA1_11_54397957 -.->|"ε"|eNFA1_10_34200809
+eNFA1_11_54397957 -.->|"ε"|eNFA1_12_39371826
+eNFA1_11_54397957 -.->|"ε"|eNFA1_16_18802122
+eNFA1_11_54397957 -->|"[#32;-&]"|eNFA1_3_41268299
+eNFA1_11_54397957 -->|"#92;"|eNFA1_7_64550954
+eNFA1_11_54397957 -->|"[(-[]"|eNFA1_11_54397957
+eNFA1_11_54397957 -->|"#92;"|eNFA1_13_61244824
+eNFA1_11_54397957 -->|"[]-~]"|eNFA1_17_44158424
+eNFA1_11_54397957 -->|"'
+ExtendToken 'Vt'"|eNFA1_19_26745965
+eNFA1_13_61244824 -.->|"ε"|eNFA1_14_14332509
+eNFA1_13_61244824 -->|"#92;"|eNFA1_15_46345412
+eNFA1_17_44158424 -.->|"ε"|eNFA1_5_35001377
+eNFA1_17_44158424 -.->|"ε"|eNFA1_4_46995502
+eNFA1_17_44158424 -.->|"ε"|eNFA1_18_22879106
+eNFA1_17_44158424 -.->|"ε"|eNFA1_2_48539332
+eNFA1_17_44158424 -.->|"ε"|eNFA1_6_20306340
+eNFA1_17_44158424 -.->|"ε"|eNFA1_10_34200809
+eNFA1_17_44158424 -.->|"ε"|eNFA1_12_39371826
+eNFA1_17_44158424 -.->|"ε"|eNFA1_16_18802122
+eNFA1_17_44158424 -->|"[#32;-&]"|eNFA1_3_41268299
+eNFA1_17_44158424 -->|"#92;"|eNFA1_7_64550954
+eNFA1_17_44158424 -->|"[(-[]"|eNFA1_11_54397957
+eNFA1_17_44158424 -->|"#92;"|eNFA1_13_61244824
+eNFA1_17_44158424 -->|"[]-~]"|eNFA1_17_44158424
+eNFA1_17_44158424 -->|"'
+ExtendToken 'Vt'"|eNFA1_19_26745965
+eNFA1_18_22879106 -->|"'
+ExtendToken 'Vt'"|eNFA1_19_26745965
+eNFA1_19_26745965 -.->|"ε
+ExtendToken 'Vt'"|eNFA1_21_39387099
+eNFA1_19_26745965 -.->|"ε"|eNFA1_22_18939577
+eNFA1_19_26745965 -.->|"ε
 CheckToken 'Vt'
-AcceptToken 'Vt'"|eNFA1_23_13880752
-eNFA1_19_571377 -.->|"ε
-CheckToken 'Vt'"|eNFA0_1_50599164
-eNFA1_8_44024289 -->|"'"|eNFA1_9_52039911
-eNFA1_9_52039911 -.->|"ε"|eNFA1_5_44803986
-eNFA1_9_52039911 -.->|"ε"|eNFA1_4_22130196
-eNFA1_9_52039911 -.->|"ε"|eNFA1_2_47715466
-eNFA1_9_52039911 -.->|"ε"|eNFA1_6_64954042
-eNFA1_9_52039911 -.->|"ε"|eNFA1_10_26786015
-eNFA1_9_52039911 -.->|"ε"|eNFA1_12_39747544
-eNFA1_9_52039911 -.->|"ε"|eNFA1_16_22183584
-eNFA1_9_52039911 -.->|"ε"|eNFA1_5_65434535
-eNFA1_9_52039911 -->|"[#32;-&]"|eNFA1_3_56932903
-eNFA1_9_52039911 -->|"#92;"|eNFA1_7_15670248
-eNFA1_9_52039911 -->|"[(-[]"|eNFA1_11_48162440
-eNFA1_9_52039911 -->|"#92;"|eNFA1_13_61330581
-eNFA1_9_52039911 -->|"[]-~]"|eNFA1_17_8843569
-eNFA1_9_52039911 -.->|"ε"|eNFA1_18_51065120
-eNFA1_9_52039911 -->|"'
-ExtendToken 'Vt'"|eNFA1_19_571377
-eNFA1_14_9197679 -->|"#92;"|eNFA1_15_65706015
-eNFA1_15_65706015 -.->|"ε"|eNFA1_5_44803986
-eNFA1_15_65706015 -.->|"ε"|eNFA1_4_22130196
-eNFA1_15_65706015 -.->|"ε"|eNFA1_2_47715466
-eNFA1_15_65706015 -.->|"ε"|eNFA1_6_64954042
-eNFA1_15_65706015 -.->|"ε"|eNFA1_10_26786015
-eNFA1_15_65706015 -.->|"ε"|eNFA1_12_39747544
-eNFA1_15_65706015 -.->|"ε"|eNFA1_16_22183584
-eNFA1_15_65706015 -.->|"ε"|eNFA1_5_65434535
-eNFA1_15_65706015 -->|"[#32;-&]"|eNFA1_3_56932903
-eNFA1_15_65706015 -->|"#92;"|eNFA1_7_15670248
-eNFA1_15_65706015 -->|"[(-[]"|eNFA1_11_48162440
-eNFA1_15_65706015 -->|"#92;"|eNFA1_13_61330581
-eNFA1_15_65706015 -->|"[]-~]"|eNFA1_17_8843569
-eNFA1_15_65706015 -.->|"ε"|eNFA1_18_51065120
-eNFA1_15_65706015 -->|"'
-ExtendToken 'Vt'"|eNFA1_19_571377
-eNFA1_8_6814509 -->|"'"|eNFA1_9_12483265
-eNFA1_9_12483265 -.->|"ε"|eNFA1_5_65434535
-eNFA1_9_12483265 -.->|"ε"|eNFA1_4_22130196
-eNFA1_9_12483265 -.->|"ε"|eNFA1_18_51065120
-eNFA1_9_12483265 -.->|"ε"|eNFA1_2_47715466
-eNFA1_9_12483265 -.->|"ε"|eNFA1_6_64954042
-eNFA1_9_12483265 -.->|"ε"|eNFA1_10_26786015
-eNFA1_9_12483265 -.->|"ε"|eNFA1_12_39747544
-eNFA1_9_12483265 -.->|"ε"|eNFA1_16_22183584
-eNFA1_9_12483265 -->|"[#32;-&]"|eNFA1_3_56932903
-eNFA1_9_12483265 -->|"#92;"|eNFA1_7_15670248
-eNFA1_9_12483265 -->|"[(-[]"|eNFA1_11_48162440
-eNFA1_9_12483265 -->|"#92;"|eNFA1_13_61330581
-eNFA1_9_12483265 -->|"[]-~]"|eNFA1_17_8843569
-eNFA1_9_12483265 -->|"'
-ExtendToken 'Vt'"|eNFA1_19_571377
-eNFA1_14_15104323 -->|"#92;"|eNFA1_15_45240523
-eNFA1_15_45240523 -.->|"ε"|eNFA1_5_65434535
-eNFA1_15_45240523 -.->|"ε"|eNFA1_4_22130196
-eNFA1_15_45240523 -.->|"ε"|eNFA1_18_51065120
-eNFA1_15_45240523 -.->|"ε"|eNFA1_2_47715466
-eNFA1_15_45240523 -.->|"ε"|eNFA1_6_64954042
-eNFA1_15_45240523 -.->|"ε"|eNFA1_10_26786015
-eNFA1_15_45240523 -.->|"ε"|eNFA1_12_39747544
-eNFA1_15_45240523 -.->|"ε"|eNFA1_16_22183584
-eNFA1_15_45240523 -->|"[#32;-&]"|eNFA1_3_56932903
-eNFA1_15_45240523 -->|"#92;"|eNFA1_7_15670248
-eNFA1_15_45240523 -->|"[(-[]"|eNFA1_11_48162440
-eNFA1_15_45240523 -->|"#92;"|eNFA1_13_61330581
-eNFA1_15_45240523 -->|"[]-~]"|eNFA1_17_8843569
-eNFA1_15_45240523 -->|"'
-ExtendToken 'Vt'"|eNFA1_19_571377
-eNFA1_21_5142394 -.->|"ε"|eNFA1_22_46281548
-eNFA1_21_5142394 -.->|"ε
+AcceptToken 'Vt'"|eNFA1_23_14455526
+eNFA1_19_26745965 -.->|"ε
+CheckToken 'Vt'"|eNFA0_1_62990874
+eNFA1_8_14055149 -->|"'"|eNFA1_9_46576945
+eNFA1_9_46576945 -.->|"ε"|eNFA1_5_55467939
+eNFA1_9_46576945 -.->|"ε"|eNFA1_4_46995502
+eNFA1_9_46576945 -.->|"ε"|eNFA1_2_48539332
+eNFA1_9_46576945 -.->|"ε"|eNFA1_6_20306340
+eNFA1_9_46576945 -.->|"ε"|eNFA1_10_34200809
+eNFA1_9_46576945 -.->|"ε"|eNFA1_12_39371826
+eNFA1_9_46576945 -.->|"ε"|eNFA1_16_18802122
+eNFA1_9_46576945 -.->|"ε"|eNFA1_5_35001377
+eNFA1_9_46576945 -->|"[#32;-&]"|eNFA1_3_41268299
+eNFA1_9_46576945 -->|"#92;"|eNFA1_7_64550954
+eNFA1_9_46576945 -->|"[(-[]"|eNFA1_11_54397957
+eNFA1_9_46576945 -->|"#92;"|eNFA1_13_61244824
+eNFA1_9_46576945 -->|"[]-~]"|eNFA1_17_44158424
+eNFA1_9_46576945 -.->|"ε"|eNFA1_18_22879106
+eNFA1_9_46576945 -->|"'
+ExtendToken 'Vt'"|eNFA1_19_26745965
+eNFA1_14_64725245 -->|"#92;"|eNFA1_15_16539321
+eNFA1_15_16539321 -.->|"ε"|eNFA1_5_55467939
+eNFA1_15_16539321 -.->|"ε"|eNFA1_4_46995502
+eNFA1_15_16539321 -.->|"ε"|eNFA1_2_48539332
+eNFA1_15_16539321 -.->|"ε"|eNFA1_6_20306340
+eNFA1_15_16539321 -.->|"ε"|eNFA1_10_34200809
+eNFA1_15_16539321 -.->|"ε"|eNFA1_12_39371826
+eNFA1_15_16539321 -.->|"ε"|eNFA1_16_18802122
+eNFA1_15_16539321 -.->|"ε"|eNFA1_5_35001377
+eNFA1_15_16539321 -->|"[#32;-&]"|eNFA1_3_41268299
+eNFA1_15_16539321 -->|"#92;"|eNFA1_7_64550954
+eNFA1_15_16539321 -->|"[(-[]"|eNFA1_11_54397957
+eNFA1_15_16539321 -->|"#92;"|eNFA1_13_61244824
+eNFA1_15_16539321 -->|"[]-~]"|eNFA1_17_44158424
+eNFA1_15_16539321 -.->|"ε"|eNFA1_18_22879106
+eNFA1_15_16539321 -->|"'
+ExtendToken 'Vt'"|eNFA1_19_26745965
+eNFA2_6_60889336 -.->|"ε"|eNFA2_4_33089196
+eNFA2_6_60889336 -.->|"ε"|eNFA2_8_11133117
+eNFA2_6_60889336 -.->|"ε"|eNFA2_7_29367308
+eNFA2_6_60889336 -->|"[^*]"|eNFA2_5_14636163
+eNFA2_6_60889336 -->|"[*]"|eNFA2_9_45656294
+eNFA2_6_60889336 -.->|"ε"|eNFA2_6_60889336
+eNFA2_6_60889336 -.->|"ε"|eNFA2_12_20134803
+eNFA2_6_60889336 -->|"*"|eNFA2_13_7172328
+eNFA2_4_33089196 -->|"[^*]"|eNFA2_5_14636163
+eNFA2_8_11133117 -->|"[*]"|eNFA2_9_45656294
+eNFA2_7_29367308 -.->|"ε"|eNFA2_6_60889336
+eNFA2_7_29367308 -.->|"ε"|eNFA2_12_20134803
+eNFA2_7_29367308 -.->|"ε"|eNFA2_4_33089196
+eNFA2_7_29367308 -.->|"ε"|eNFA2_8_11133117
+eNFA2_7_29367308 -.->|"ε"|eNFA2_7_29367308
+eNFA2_7_29367308 -->|"[^*]"|eNFA2_5_14636163
+eNFA2_7_29367308 -->|"[*]"|eNFA2_9_45656294
+eNFA2_7_29367308 -->|"*"|eNFA2_13_7172328
+eNFA2_5_14636163 -.->|"ε"|eNFA2_7_29367308
+eNFA2_5_14636163 -.->|"ε"|eNFA2_6_60889336
+eNFA2_5_14636163 -.->|"ε"|eNFA2_12_20134803
+eNFA2_5_14636163 -.->|"ε"|eNFA2_4_33089196
+eNFA2_5_14636163 -.->|"ε"|eNFA2_8_11133117
+eNFA2_5_14636163 -->|"[^*]"|eNFA2_5_14636163
+eNFA2_5_14636163 -->|"[*]"|eNFA2_9_45656294
+eNFA2_5_14636163 -->|"*"|eNFA2_13_7172328
+eNFA2_9_45656294 -.->|"ε"|eNFA2_10_8253465
+eNFA2_9_45656294 -->|"[^/]"|eNFA2_11_61881498
+eNFA2_12_20134803 -->|"*"|eNFA2_13_7172328
+eNFA2_13_7172328 -.->|"ε"|eNFA2_14_21451571
+eNFA2_13_7172328 -->|"/
+ExtendToken 'blockComment'"|eNFA2_15_57710802
+eNFA3_4_62979183 -->|"[#92;t#92;r#32;-~]
+ExtendToken 'inlineComment'"|eNFA3_4_62979183
+eNFA3_4_62979183 -.->|"ε
+ExtendToken 'inlineComment'"|eNFA3_6_1040236
+eNFA3_4_62979183 -.->|"ε"|eNFA3_7_12364937
+eNFA3_4_62979183 -.->|"ε
+CheckToken 'inlineComment'
+AcceptToken 'inlineComment'"|eNFA3_8_30046962
+eNFA3_4_62979183 -.->|"ε
+CheckToken 'inlineComment'"|eNFA0_1_62990874
+eNFA3_6_1040236 -.->|"ε"|eNFA3_7_12364937
+eNFA3_6_1040236 -.->|"ε
+CheckToken 'inlineComment'
+AcceptToken 'inlineComment'"|eNFA3_8_30046962
+eNFA3_6_1040236 -.->|"ε
+CheckToken 'inlineComment'"|eNFA0_1_62990874
+eNFA3_7_12364937 -.->|"ε
+CheckToken 'inlineComment'
+AcceptToken 'inlineComment'"|eNFA3_8_30046962
+eNFA3_7_12364937 -.->|"ε
+CheckToken 'inlineComment'"|eNFA0_1_62990874
+eNFA3_8_30046962 -.->|"ε
+CheckToken 'inlineComment'"|eNFA0_1_62990874
+eNFA1_8_44087682 -->|"'"|eNFA1_9_20062571
+eNFA1_9_20062571 -.->|"ε"|eNFA1_5_35001377
+eNFA1_9_20062571 -.->|"ε"|eNFA1_4_46995502
+eNFA1_9_20062571 -.->|"ε"|eNFA1_18_22879106
+eNFA1_9_20062571 -.->|"ε"|eNFA1_2_48539332
+eNFA1_9_20062571 -.->|"ε"|eNFA1_6_20306340
+eNFA1_9_20062571 -.->|"ε"|eNFA1_10_34200809
+eNFA1_9_20062571 -.->|"ε"|eNFA1_12_39371826
+eNFA1_9_20062571 -.->|"ε"|eNFA1_16_18802122
+eNFA1_9_20062571 -->|"[#32;-&]"|eNFA1_3_41268299
+eNFA1_9_20062571 -->|"#92;"|eNFA1_7_64550954
+eNFA1_9_20062571 -->|"[(-[]"|eNFA1_11_54397957
+eNFA1_9_20062571 -->|"#92;"|eNFA1_13_61244824
+eNFA1_9_20062571 -->|"[]-~]"|eNFA1_17_44158424
+eNFA1_9_20062571 -->|"'
+ExtendToken 'Vt'"|eNFA1_19_26745965
+eNFA1_14_14332509 -->|"#92;"|eNFA1_15_46345412
+eNFA1_15_46345412 -.->|"ε"|eNFA1_5_35001377
+eNFA1_15_46345412 -.->|"ε"|eNFA1_4_46995502
+eNFA1_15_46345412 -.->|"ε"|eNFA1_18_22879106
+eNFA1_15_46345412 -.->|"ε"|eNFA1_2_48539332
+eNFA1_15_46345412 -.->|"ε"|eNFA1_6_20306340
+eNFA1_15_46345412 -.->|"ε"|eNFA1_10_34200809
+eNFA1_15_46345412 -.->|"ε"|eNFA1_12_39371826
+eNFA1_15_46345412 -.->|"ε"|eNFA1_16_18802122
+eNFA1_15_46345412 -->|"[#32;-&]"|eNFA1_3_41268299
+eNFA1_15_46345412 -->|"#92;"|eNFA1_7_64550954
+eNFA1_15_46345412 -->|"[(-[]"|eNFA1_11_54397957
+eNFA1_15_46345412 -->|"#92;"|eNFA1_13_61244824
+eNFA1_15_46345412 -->|"[]-~]"|eNFA1_17_44158424
+eNFA1_15_46345412 -->|"'
+ExtendToken 'Vt'"|eNFA1_19_26745965
+eNFA1_21_39387099 -.->|"ε"|eNFA1_22_18939577
+eNFA1_21_39387099 -.->|"ε
 CheckToken 'Vt'
-AcceptToken 'Vt'"|eNFA1_23_13880752
-eNFA1_21_5142394 -.->|"ε
-CheckToken 'Vt'"|eNFA0_1_50599164
-eNFA1_22_46281548 -.->|"ε
+AcceptToken 'Vt'"|eNFA1_23_14455526
+eNFA1_21_39387099 -.->|"ε
+CheckToken 'Vt'"|eNFA0_1_62990874
+eNFA1_22_18939577 -.->|"ε
 CheckToken 'Vt'
-AcceptToken 'Vt'"|eNFA1_23_13880752
-eNFA1_22_46281548 -.->|"ε
-CheckToken 'Vt'"|eNFA0_1_50599164
-eNFA1_23_13880752 -.->|"ε
-CheckToken 'Vt'"|eNFA0_1_50599164
+AcceptToken 'Vt'"|eNFA1_23_14455526
+eNFA1_22_18939577 -.->|"ε
+CheckToken 'Vt'"|eNFA0_1_62990874
+eNFA1_23_14455526 -.->|"ε
+CheckToken 'Vt'"|eNFA0_1_62990874
+eNFA2_10_8253465 -->|"[^/]"|eNFA2_11_61881498
+eNFA2_11_61881498 -.->|"ε"|eNFA2_7_29367308
+eNFA2_11_61881498 -.->|"ε"|eNFA2_6_60889336
+eNFA2_11_61881498 -.->|"ε"|eNFA2_12_20134803
+eNFA2_11_61881498 -.->|"ε"|eNFA2_4_33089196
+eNFA2_11_61881498 -.->|"ε"|eNFA2_8_11133117
+eNFA2_11_61881498 -->|"[^*]"|eNFA2_5_14636163
+eNFA2_11_61881498 -->|"[*]"|eNFA2_9_45656294
+eNFA2_11_61881498 -->|"*"|eNFA2_13_7172328
+eNFA2_14_21451571 -->|"/
+ExtendToken 'blockComment'"|eNFA2_15_57710802
+eNFA2_15_57710802 -.->|"ε
+ExtendToken 'blockComment'"|eNFA2_17_49635175
+eNFA2_15_57710802 -.->|"ε"|eNFA2_18_44063391
+eNFA2_15_57710802 -.->|"ε
+CheckToken 'blockComment'
+AcceptToken 'blockComment'"|eNFA2_19_1987206
+eNFA2_15_57710802 -.->|"ε
+CheckToken 'blockComment'"|eNFA0_1_62990874
+eNFA2_17_49635175 -.->|"ε"|eNFA2_18_44063391
+eNFA2_17_49635175 -.->|"ε
+CheckToken 'blockComment'
+AcceptToken 'blockComment'"|eNFA2_19_1987206
+eNFA2_17_49635175 -.->|"ε
+CheckToken 'blockComment'"|eNFA0_1_62990874
+eNFA2_18_44063391 -.->|"ε
+CheckToken 'blockComment'
+AcceptToken 'blockComment'"|eNFA2_19_1987206
+eNFA2_18_44063391 -.->|"ε
+CheckToken 'blockComment'"|eNFA0_1_62990874
+eNFA2_19_1987206 -.->|"ε
+CheckToken 'blockComment'"|eNFA0_1_62990874
 
 ```
 
@@ -639,107 +1051,146 @@ classDef c1100 stroke:#333,stroke-width:4px,fill:#BB66EE;
 classDef c1101 stroke:#333,stroke-width:4px,fill:#BB66EE,color:#FF0000;
 classDef c1110 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10;
 classDef c1111 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10,color:#FF0000;
-NFA0_0_1721183("NFA0-0 wholeStart")
-class NFA0_0_1721183 c1000;
-NFA1_1_15490650("NFA1-1 char[1]")
-NFA1_3_46783129("NFA1-3 scope[1]")
-NFA1_7_5198125("NFA1-7 char[1]")
-NFA1_11_18394984("NFA1-11 scope[1]")
-NFA1_13_31337129("NFA1-13 char[1]")
-NFA1_17_13598711("NFA1-17 scope[1]")
-NFA1_3_27753795("NFA1-3 scope[1]")
-NFA1_7_55279538("NFA1-7 char[1]")
-NFA1_11_48457563("NFA1-11 scope[1]")
-NFA1_13_33464883("NFA1-13 char[1]")
-NFA1_17_32748492("NFA1-17 scope[1]")
-NFA1_19_26300975[\"NFA1-19 char[1]
+NFA0_0_61883722("NFA0-0 wholeStart")
+class NFA0_0_61883722 c1000;
+NFA1_1_20082593("NFA1-1 char[1]")
+NFA2_1_46525609("NFA2-1 char[1]")
+NFA3_1_16077300("NFA3-1 char[1]")
+NFA1_3_27192961("NFA1-3 scope[1]")
+NFA1_7_10477980("NFA1-7 char[1]")
+NFA1_11_43410060("NFA1-11 scope[1]")
+NFA1_13_55146222("NFA1-13 char[1]")
+NFA1_17_26553952("NFA1-17 scope[1]")
+NFA2_3_64980542("NFA2-3 char[1]")
+NFA3_3_37658979[\"NFA3-3 char[1]
+AcceptToken 'inlineComment'"/]
+class NFA3_3_37658979 c0101;
+NFA1_3_30478473("NFA1-3 scope[1]")
+NFA1_7_3386497("NFA1-7 char[1]")
+NFA1_11_5870806("NFA1-11 scope[1]")
+NFA1_13_52837255("NFA1-13 char[1]")
+NFA1_17_5773255("NFA1-17 scope[1]")
+NFA1_19_51959302[\"NFA1-19 char[1]
 AcceptToken 'Vt'"/]
-class NFA1_19_26300975 c0101;
-NFA1_9_35382190("NFA1-9 char[1]")
-NFA1_15_50004256("NFA1-15 char[1]")
-NFA1_9_47385128("NFA1-9 char[1]")
-NFA1_15_23812974("NFA1-15 char[1]")
-NFA0_0_1721183 -->|"'
-BeginToken 'Vt'"|NFA1_1_15490650
-NFA1_1_15490650 -->|"[#32;-&]"|NFA1_3_46783129
-NFA1_1_15490650 -->|"#92;"|NFA1_7_5198125
-NFA1_1_15490650 -->|"[(-[]"|NFA1_11_18394984
-NFA1_1_15490650 -->|"#92;"|NFA1_13_31337129
-NFA1_1_15490650 -->|"[]-~]"|NFA1_17_13598711
-NFA1_3_46783129 -->|"[#32;-&]"|NFA1_3_27753795
-NFA1_3_46783129 -->|"#92;"|NFA1_7_55279538
-NFA1_3_46783129 -->|"[(-[]"|NFA1_11_48457563
-NFA1_3_46783129 -->|"#92;"|NFA1_13_33464883
-NFA1_3_46783129 -->|"[]-~]"|NFA1_17_32748492
-NFA1_3_46783129 -->|"'
-ExtendToken 'Vt'"|NFA1_19_26300975
-NFA1_7_5198125 -->|"'"|NFA1_9_35382190
-NFA1_11_18394984 -->|"[#32;-&]"|NFA1_3_27753795
-NFA1_11_18394984 -->|"#92;"|NFA1_7_55279538
-NFA1_11_18394984 -->|"[(-[]"|NFA1_11_48457563
-NFA1_11_18394984 -->|"#92;"|NFA1_13_33464883
-NFA1_11_18394984 -->|"[]-~]"|NFA1_17_32748492
-NFA1_11_18394984 -->|"'
-ExtendToken 'Vt'"|NFA1_19_26300975
-NFA1_13_31337129 -->|"#92;"|NFA1_15_50004256
-NFA1_17_13598711 -->|"[#32;-&]"|NFA1_3_27753795
-NFA1_17_13598711 -->|"#92;"|NFA1_7_55279538
-NFA1_17_13598711 -->|"[(-[]"|NFA1_11_48457563
-NFA1_17_13598711 -->|"#92;"|NFA1_13_33464883
-NFA1_17_13598711 -->|"[]-~]"|NFA1_17_32748492
-NFA1_17_13598711 -->|"'
-ExtendToken 'Vt'"|NFA1_19_26300975
-NFA1_3_27753795 -->|"[#32;-&]"|NFA1_3_27753795
-NFA1_3_27753795 -->|"#92;"|NFA1_7_55279538
-NFA1_3_27753795 -->|"[(-[]"|NFA1_11_48457563
-NFA1_3_27753795 -->|"#92;"|NFA1_13_33464883
-NFA1_3_27753795 -->|"[]-~]"|NFA1_17_32748492
-NFA1_3_27753795 -->|"'
-ExtendToken 'Vt'"|NFA1_19_26300975
-NFA1_7_55279538 -->|"'"|NFA1_9_47385128
-NFA1_11_48457563 -->|"[#32;-&]"|NFA1_3_27753795
-NFA1_11_48457563 -->|"#92;"|NFA1_7_55279538
-NFA1_11_48457563 -->|"[(-[]"|NFA1_11_48457563
-NFA1_11_48457563 -->|"#92;"|NFA1_13_33464883
-NFA1_11_48457563 -->|"[]-~]"|NFA1_17_32748492
-NFA1_11_48457563 -->|"'
-ExtendToken 'Vt'"|NFA1_19_26300975
-NFA1_13_33464883 -->|"#92;"|NFA1_15_23812974
-NFA1_17_32748492 -->|"[#32;-&]"|NFA1_3_27753795
-NFA1_17_32748492 -->|"#92;"|NFA1_7_55279538
-NFA1_17_32748492 -->|"[(-[]"|NFA1_11_48457563
-NFA1_17_32748492 -->|"#92;"|NFA1_13_33464883
-NFA1_17_32748492 -->|"[]-~]"|NFA1_17_32748492
-NFA1_17_32748492 -->|"'
-ExtendToken 'Vt'"|NFA1_19_26300975
-NFA1_9_35382190 -->|"[#32;-&]"|NFA1_3_27753795
-NFA1_9_35382190 -->|"#92;"|NFA1_7_55279538
-NFA1_9_35382190 -->|"[(-[]"|NFA1_11_48457563
-NFA1_9_35382190 -->|"#92;"|NFA1_13_33464883
-NFA1_9_35382190 -->|"[]-~]"|NFA1_17_32748492
-NFA1_9_35382190 -->|"'
-ExtendToken 'Vt'"|NFA1_19_26300975
-NFA1_15_50004256 -->|"[#32;-&]"|NFA1_3_27753795
-NFA1_15_50004256 -->|"#92;"|NFA1_7_55279538
-NFA1_15_50004256 -->|"[(-[]"|NFA1_11_48457563
-NFA1_15_50004256 -->|"#92;"|NFA1_13_33464883
-NFA1_15_50004256 -->|"[]-~]"|NFA1_17_32748492
-NFA1_15_50004256 -->|"'
-ExtendToken 'Vt'"|NFA1_19_26300975
-NFA1_9_47385128 -->|"[#32;-&]"|NFA1_3_27753795
-NFA1_9_47385128 -->|"#92;"|NFA1_7_55279538
-NFA1_9_47385128 -->|"[(-[]"|NFA1_11_48457563
-NFA1_9_47385128 -->|"#92;"|NFA1_13_33464883
-NFA1_9_47385128 -->|"[]-~]"|NFA1_17_32748492
-NFA1_9_47385128 -->|"'
-ExtendToken 'Vt'"|NFA1_19_26300975
-NFA1_15_23812974 -->|"[#32;-&]"|NFA1_3_27753795
-NFA1_15_23812974 -->|"#92;"|NFA1_7_55279538
-NFA1_15_23812974 -->|"[(-[]"|NFA1_11_48457563
-NFA1_15_23812974 -->|"#92;"|NFA1_13_33464883
-NFA1_15_23812974 -->|"[]-~]"|NFA1_17_32748492
-NFA1_15_23812974 -->|"'
-ExtendToken 'Vt'"|NFA1_19_26300975
+class NFA1_19_51959302 c0101;
+NFA1_9_19618454("NFA1-9 char[1]")
+NFA1_15_42348363("NFA1-15 char[1]")
+NFA2_5_28932512("NFA2-5 scope[1]")
+NFA2_9_47953966("NFA2-9 scope[1]")
+NFA2_13_59066022("NFA2-13 char[1]")
+NFA3_4_61832151[\"NFA3-4 char{0, ∞}
+AcceptToken 'inlineComment'"/]
+class NFA3_4_61832151 c0101;
+NFA1_9_7665379("NFA1-9 char[1]")
+NFA1_15_1879552("NFA1-15 char[1]")
+NFA2_11_16915976("NFA2-11 scope[1]")
+NFA2_15_45590951[\"NFA2-15 char[1]
+AcceptToken 'blockComment'"/]
+class NFA2_15_45590951 c0101;
+NFA0_0_61883722 -->|"'
+BeginToken 'Vt'"|NFA1_1_20082593
+NFA0_0_61883722 -->|"/
+BeginToken 'blockComment'"|NFA2_1_46525609
+NFA0_0_61883722 -->|"/
+BeginToken 'inlineComment'"|NFA3_1_16077300
+NFA1_1_20082593 -->|"[#32;-&]"|NFA1_3_27192961
+NFA1_1_20082593 -->|"#92;"|NFA1_7_10477980
+NFA1_1_20082593 -->|"[(-[]"|NFA1_11_43410060
+NFA1_1_20082593 -->|"#92;"|NFA1_13_55146222
+NFA1_1_20082593 -->|"[]-~]"|NFA1_17_26553952
+NFA2_1_46525609 -->|"*"|NFA2_3_64980542
+NFA3_1_16077300 -->|"/
+ExtendToken 'inlineComment'"|NFA3_3_37658979
+NFA1_3_27192961 -->|"[#32;-&]"|NFA1_3_30478473
+NFA1_3_27192961 -->|"#92;"|NFA1_7_3386497
+NFA1_3_27192961 -->|"[(-[]"|NFA1_11_5870806
+NFA1_3_27192961 -->|"#92;"|NFA1_13_52837255
+NFA1_3_27192961 -->|"[]-~]"|NFA1_17_5773255
+NFA1_3_27192961 -->|"'
+ExtendToken 'Vt'"|NFA1_19_51959302
+NFA1_7_10477980 -->|"'"|NFA1_9_19618454
+NFA1_11_43410060 -->|"[#32;-&]"|NFA1_3_30478473
+NFA1_11_43410060 -->|"#92;"|NFA1_7_3386497
+NFA1_11_43410060 -->|"[(-[]"|NFA1_11_5870806
+NFA1_11_43410060 -->|"#92;"|NFA1_13_52837255
+NFA1_11_43410060 -->|"[]-~]"|NFA1_17_5773255
+NFA1_11_43410060 -->|"'
+ExtendToken 'Vt'"|NFA1_19_51959302
+NFA1_13_55146222 -->|"#92;"|NFA1_15_42348363
+NFA1_17_26553952 -->|"[#32;-&]"|NFA1_3_30478473
+NFA1_17_26553952 -->|"#92;"|NFA1_7_3386497
+NFA1_17_26553952 -->|"[(-[]"|NFA1_11_5870806
+NFA1_17_26553952 -->|"#92;"|NFA1_13_52837255
+NFA1_17_26553952 -->|"[]-~]"|NFA1_17_5773255
+NFA1_17_26553952 -->|"'
+ExtendToken 'Vt'"|NFA1_19_51959302
+NFA2_3_64980542 -->|"[^*]"|NFA2_5_28932512
+NFA2_3_64980542 -->|"[*]"|NFA2_9_47953966
+NFA2_3_64980542 -->|"*"|NFA2_13_59066022
+NFA3_3_37658979 -->|"[#92;t#92;r#32;-~]
+ExtendToken 'inlineComment'"|NFA3_4_61832151
+NFA1_3_30478473 -->|"[#32;-&]"|NFA1_3_30478473
+NFA1_3_30478473 -->|"#92;"|NFA1_7_3386497
+NFA1_3_30478473 -->|"[(-[]"|NFA1_11_5870806
+NFA1_3_30478473 -->|"#92;"|NFA1_13_52837255
+NFA1_3_30478473 -->|"[]-~]"|NFA1_17_5773255
+NFA1_3_30478473 -->|"'
+ExtendToken 'Vt'"|NFA1_19_51959302
+NFA1_7_3386497 -->|"'"|NFA1_9_7665379
+NFA1_11_5870806 -->|"[#32;-&]"|NFA1_3_30478473
+NFA1_11_5870806 -->|"#92;"|NFA1_7_3386497
+NFA1_11_5870806 -->|"[(-[]"|NFA1_11_5870806
+NFA1_11_5870806 -->|"#92;"|NFA1_13_52837255
+NFA1_11_5870806 -->|"[]-~]"|NFA1_17_5773255
+NFA1_11_5870806 -->|"'
+ExtendToken 'Vt'"|NFA1_19_51959302
+NFA1_13_52837255 -->|"#92;"|NFA1_15_1879552
+NFA1_17_5773255 -->|"[#32;-&]"|NFA1_3_30478473
+NFA1_17_5773255 -->|"#92;"|NFA1_7_3386497
+NFA1_17_5773255 -->|"[(-[]"|NFA1_11_5870806
+NFA1_17_5773255 -->|"#92;"|NFA1_13_52837255
+NFA1_17_5773255 -->|"[]-~]"|NFA1_17_5773255
+NFA1_17_5773255 -->|"'
+ExtendToken 'Vt'"|NFA1_19_51959302
+NFA1_9_19618454 -->|"[#32;-&]"|NFA1_3_30478473
+NFA1_9_19618454 -->|"#92;"|NFA1_7_3386497
+NFA1_9_19618454 -->|"[(-[]"|NFA1_11_5870806
+NFA1_9_19618454 -->|"#92;"|NFA1_13_52837255
+NFA1_9_19618454 -->|"[]-~]"|NFA1_17_5773255
+NFA1_9_19618454 -->|"'
+ExtendToken 'Vt'"|NFA1_19_51959302
+NFA1_15_42348363 -->|"[#32;-&]"|NFA1_3_30478473
+NFA1_15_42348363 -->|"#92;"|NFA1_7_3386497
+NFA1_15_42348363 -->|"[(-[]"|NFA1_11_5870806
+NFA1_15_42348363 -->|"#92;"|NFA1_13_52837255
+NFA1_15_42348363 -->|"[]-~]"|NFA1_17_5773255
+NFA1_15_42348363 -->|"'
+ExtendToken 'Vt'"|NFA1_19_51959302
+NFA2_5_28932512 -->|"[^*]"|NFA2_5_28932512
+NFA2_5_28932512 -->|"[*]"|NFA2_9_47953966
+NFA2_5_28932512 -->|"*"|NFA2_13_59066022
+NFA2_9_47953966 -->|"[^/]"|NFA2_11_16915976
+NFA2_13_59066022 -->|"/
+ExtendToken 'blockComment'"|NFA2_15_45590951
+NFA3_4_61832151 -->|"[#92;t#92;r#32;-~]
+ExtendToken 'inlineComment'"|NFA3_4_61832151
+NFA1_9_7665379 -->|"[#32;-&]"|NFA1_3_30478473
+NFA1_9_7665379 -->|"#92;"|NFA1_7_3386497
+NFA1_9_7665379 -->|"[(-[]"|NFA1_11_5870806
+NFA1_9_7665379 -->|"#92;"|NFA1_13_52837255
+NFA1_9_7665379 -->|"[]-~]"|NFA1_17_5773255
+NFA1_9_7665379 -->|"'
+ExtendToken 'Vt'"|NFA1_19_51959302
+NFA1_15_1879552 -->|"[#32;-&]"|NFA1_3_30478473
+NFA1_15_1879552 -->|"#92;"|NFA1_7_3386497
+NFA1_15_1879552 -->|"[(-[]"|NFA1_11_5870806
+NFA1_15_1879552 -->|"#92;"|NFA1_13_52837255
+NFA1_15_1879552 -->|"[]-~]"|NFA1_17_5773255
+NFA1_15_1879552 -->|"'
+ExtendToken 'Vt'"|NFA1_19_51959302
+NFA2_11_16915976 -->|"[^*]"|NFA2_5_28932512
+NFA2_11_16915976 -->|"[*]"|NFA2_9_47953966
+NFA2_11_16915976 -->|"*"|NFA2_13_59066022
 
 ```
 
@@ -762,128 +1213,181 @@ classDef c1100 stroke:#333,stroke-width:4px,fill:#BB66EE;
 classDef c1101 stroke:#333,stroke-width:4px,fill:#BB66EE,color:#FF0000;
 classDef c1110 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10;
 classDef c1111 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10,color:#FF0000;
-subgraph DFA0_880640543["DFA0 wholeStart"]
-NFA0_0_1721183_0("NFA0-0 wholeStart")
-class NFA0_0_1721183_0 c1000;
+subgraph DFA0_-1886755368["DFA0 wholeStart"]
+NFA0_0_61883722_0("NFA0-0 wholeStart")
+class NFA0_0_61883722_0 c1000;
 end
-class DFA0_880640543 c1000;
-subgraph DFA1_1523233858["DFA1 {1}"]
-NFA1_1_15490650_1("NFA1-1 char[1]")
+class DFA0_-1886755368 c1000;
+subgraph DFA1_1956429315["DFA1 {1}"]
+NFA1_1_20082593_1("NFA1-1 char[1]")
 end
-subgraph DFA2_863108597["DFA2 {1}"]
-NFA1_3_46783129_2("NFA1-3 scope[1]")
+subgraph DFA2_1421118946["DFA2 {2}"]
+NFA2_1_46525609_2("NFA2-1 char[1]")
+NFA3_1_16077300_3("NFA3-1 char[1]")
 end
-subgraph DFA3_2006524493["DFA3 {2}"]
-NFA1_7_5198125_3("NFA1-7 char[1]")
-NFA1_13_31337129_4("NFA1-13 char[1]")
+subgraph DFA3_-415452416["DFA3 {1}"]
+NFA1_3_27192961_4("NFA1-3 scope[1]")
 end
-subgraph DFA4_-1947019538["DFA4 {1}"]
-NFA1_11_18394984_5("NFA1-11 scope[1]")
+subgraph DFA4_95198903["DFA4 {2}"]
+NFA1_7_10477980_5("NFA1-7 char[1]")
+NFA1_13_55146222_6("NFA1-13 char[1]")
 end
-subgraph DFA5_146184848["DFA5 {1}"]
-NFA1_17_13598711_6("NFA1-17 scope[1]")
+subgraph DFA5_1948330881["DFA5 {1}"]
+NFA1_11_43410060_7("NFA1-11 scope[1]")
 end
-subgraph DFA6_-15333616["DFA6 {1}"]
-NFA1_3_27753795_7("NFA1-3 scope[1]")
+subgraph DFA6_905451214["DFA6 {1}"]
+NFA1_17_26553952_8("NFA1-17 scope[1]")
 end
-subgraph DFA7_-364187339["DFA7 {2}"]
-NFA1_7_55279538_8("NFA1-7 char[1]")
-NFA1_13_33464883_9("NFA1-13 char[1]")
+subgraph DFA7_-538425657["DFA7 {1}"]
+NFA2_3_64980542_9("NFA2-3 char[1]")
 end
-subgraph DFA8_-989826483["DFA8 {1}"]
-NFA1_11_48457563_10("NFA1-11 scope[1]")
+subgraph DFA8_-1701333853["DFA8 {1}"]
+NFA3_3_37658979_10[\"NFA3-3 char[1]
+AcceptToken 'inlineComment'"/]
+class NFA3_3_37658979_10 c0101;
 end
-subgraph DFA9_54963488["DFA9 {1}"]
-NFA1_17_32748492_11("NFA1-17 scope[1]")
+class DFA8_-1701333853 c0101;
+subgraph DFA9_-1311747221["DFA9 {1}"]
+NFA1_3_30478473_11("NFA1-3 scope[1]")
 end
-subgraph DFA10_-559874385["DFA10 {1}"]
-NFA1_19_26300975_12[\"NFA1-19 char[1]
+subgraph DFA10_-254751849["DFA10 {2}"]
+NFA1_7_3386497_12("NFA1-7 char[1]")
+NFA1_13_52837255_13("NFA1-13 char[1]")
+end
+subgraph DFA11_-449682177["DFA11 {1}"]
+NFA1_11_5870806_14("NFA1-11 scope[1]")
+end
+subgraph DFA12_-1033233929["DFA12 {1}"]
+NFA1_17_5773255_15("NFA1-17 scope[1]")
+end
+subgraph DFA13_690596106["DFA13 {1}"]
+NFA1_19_51959302_16[\"NFA1-19 char[1]
 AcceptToken 'Vt'"/]
-class NFA1_19_26300975_12 c0101;
+class NFA1_19_51959302_16 c0101;
 end
-class DFA10_-559874385 c0101;
-subgraph DFA11_299906633["DFA11 {1}"]
-NFA1_9_35382190_13("NFA1-9 char[1]")
+class DFA13_690596106 c0101;
+subgraph DFA14_1430090931["DFA14 {1}"]
+NFA1_9_19618454_17("NFA1-9 char[1]")
 end
-subgraph DFA12_-1677726303["DFA12 {1}"]
-NFA1_15_50004256_14("NFA1-15 char[1]")
+subgraph DFA15_-648423267["DFA15 {1}"]
+NFA1_15_42348363_18("NFA1-15 char[1]")
 end
-subgraph DFA13_-1586424458["DFA13 {1}"]
-NFA1_9_47385128_15("NFA1-9 char[1]")
+subgraph DFA16_1342029314["DFA16 {1}"]
+NFA2_5_28932512_19("NFA2-5 scope[1]")
 end
-subgraph DFA14_232032254["DFA14 {1}"]
-NFA1_15_23812974_16("NFA1-15 char[1]")
+subgraph DFA17_1146355159["DFA17 {2}"]
+NFA2_9_47953966_20("NFA2-9 scope[1]")
+NFA2_13_59066022_21("NFA2-13 char[1]")
 end
-DFA0_880640543 -->|"'
-BeginToken 'Vt'"|DFA1_1523233858
-DFA1_1523233858 -->|"[#32;-&]"|DFA2_863108597
-DFA1_1523233858 -->|"#92;"|DFA3_2006524493
-DFA1_1523233858 -->|"[(-[]"|DFA4_-1947019538
-DFA1_1523233858 -->|"[]-~]"|DFA5_146184848
-DFA2_863108597 -->|"[#32;-&]"|DFA6_-15333616
-DFA2_863108597 -->|"#92;"|DFA7_-364187339
-DFA2_863108597 -->|"[(-[]"|DFA8_-989826483
-DFA2_863108597 -->|"[]-~]"|DFA9_54963488
-DFA2_863108597 -->|"'
-ExtendToken 'Vt'"|DFA10_-559874385
-DFA3_2006524493 -->|"'"|DFA11_299906633
-DFA3_2006524493 -->|"#92;"|DFA12_-1677726303
-DFA4_-1947019538 -->|"[#32;-&]"|DFA6_-15333616
-DFA4_-1947019538 -->|"#92;"|DFA7_-364187339
-DFA4_-1947019538 -->|"[(-[]"|DFA8_-989826483
-DFA4_-1947019538 -->|"[]-~]"|DFA9_54963488
-DFA4_-1947019538 -->|"'
-ExtendToken 'Vt'"|DFA10_-559874385
-DFA5_146184848 -->|"[#32;-&]"|DFA6_-15333616
-DFA5_146184848 -->|"#92;"|DFA7_-364187339
-DFA5_146184848 -->|"[(-[]"|DFA8_-989826483
-DFA5_146184848 -->|"[]-~]"|DFA9_54963488
-DFA5_146184848 -->|"'
-ExtendToken 'Vt'"|DFA10_-559874385
-DFA6_-15333616 -->|"[#32;-&]"|DFA6_-15333616
-DFA6_-15333616 -->|"#92;"|DFA7_-364187339
-DFA6_-15333616 -->|"[(-[]"|DFA8_-989826483
-DFA6_-15333616 -->|"[]-~]"|DFA9_54963488
-DFA6_-15333616 -->|"'
-ExtendToken 'Vt'"|DFA10_-559874385
-DFA7_-364187339 -->|"'"|DFA13_-1586424458
-DFA7_-364187339 -->|"#92;"|DFA14_232032254
-DFA8_-989826483 -->|"[#32;-&]"|DFA6_-15333616
-DFA8_-989826483 -->|"#92;"|DFA7_-364187339
-DFA8_-989826483 -->|"[(-[]"|DFA8_-989826483
-DFA8_-989826483 -->|"[]-~]"|DFA9_54963488
-DFA8_-989826483 -->|"'
-ExtendToken 'Vt'"|DFA10_-559874385
-DFA9_54963488 -->|"[#32;-&]"|DFA6_-15333616
-DFA9_54963488 -->|"#92;"|DFA7_-364187339
-DFA9_54963488 -->|"[(-[]"|DFA8_-989826483
-DFA9_54963488 -->|"[]-~]"|DFA9_54963488
-DFA9_54963488 -->|"'
-ExtendToken 'Vt'"|DFA10_-559874385
-DFA11_299906633 -->|"[#32;-&]"|DFA6_-15333616
-DFA11_299906633 -->|"#92;"|DFA7_-364187339
-DFA11_299906633 -->|"[(-[]"|DFA8_-989826483
-DFA11_299906633 -->|"[]-~]"|DFA9_54963488
-DFA11_299906633 -->|"'
-ExtendToken 'Vt'"|DFA10_-559874385
-DFA12_-1677726303 -->|"[#32;-&]"|DFA6_-15333616
-DFA12_-1677726303 -->|"#92;"|DFA7_-364187339
-DFA12_-1677726303 -->|"[(-[]"|DFA8_-989826483
-DFA12_-1677726303 -->|"[]-~]"|DFA9_54963488
-DFA12_-1677726303 -->|"'
-ExtendToken 'Vt'"|DFA10_-559874385
-DFA13_-1586424458 -->|"[#32;-&]"|DFA6_-15333616
-DFA13_-1586424458 -->|"#92;"|DFA7_-364187339
-DFA13_-1586424458 -->|"[(-[]"|DFA8_-989826483
-DFA13_-1586424458 -->|"[]-~]"|DFA9_54963488
-DFA13_-1586424458 -->|"'
-ExtendToken 'Vt'"|DFA10_-559874385
-DFA14_232032254 -->|"[#32;-&]"|DFA6_-15333616
-DFA14_232032254 -->|"#92;"|DFA7_-364187339
-DFA14_232032254 -->|"[(-[]"|DFA8_-989826483
-DFA14_232032254 -->|"[]-~]"|DFA9_54963488
-DFA14_232032254 -->|"'
-ExtendToken 'Vt'"|DFA10_-559874385
+subgraph DFA18_1669777229["DFA18 {1}"]
+NFA3_4_61832151_22[\"NFA3-4 char{0, ∞}
+AcceptToken 'inlineComment'"/]
+class NFA3_4_61832151_22 c0101;
+end
+class DFA18_1669777229 c0101;
+subgraph DFA19_-2073531689["DFA19 {1}"]
+NFA1_9_7665379_23("NFA1-9 char[1]")
+end
+subgraph DFA20_1157014439["DFA20 {1}"]
+NFA1_15_1879552_24("NFA1-15 char[1]")
+end
+subgraph DFA21_244242361["DFA21 {1}"]
+NFA2_11_16915976_25("NFA2-11 scope[1]")
+end
+subgraph DFA22_1486256129["DFA22 {1}"]
+NFA2_15_45590951_26[\"NFA2-15 char[1]
+AcceptToken 'blockComment'"/]
+class NFA2_15_45590951_26 c0101;
+end
+class DFA22_1486256129 c0101;
+DFA0_-1886755368 -->|"'
+BeginToken 'Vt'"|DFA1_1956429315
+DFA0_-1886755368 -->|"/
+BeginToken 'blockComment''inlineComment'"|DFA2_1421118946
+DFA1_1956429315 -->|"[#32;-&]"|DFA3_-415452416
+DFA1_1956429315 -->|"#92;"|DFA4_95198903
+DFA1_1956429315 -->|"[(-[]"|DFA5_1948330881
+DFA1_1956429315 -->|"[]-~]"|DFA6_905451214
+DFA2_1421118946 -->|"*"|DFA7_-538425657
+DFA2_1421118946 -->|"/
+ExtendToken 'inlineComment'"|DFA8_-1701333853
+DFA3_-415452416 -->|"[#32;-&]"|DFA9_-1311747221
+DFA3_-415452416 -->|"#92;"|DFA10_-254751849
+DFA3_-415452416 -->|"[(-[]"|DFA11_-449682177
+DFA3_-415452416 -->|"[]-~]"|DFA12_-1033233929
+DFA3_-415452416 -->|"'
+ExtendToken 'Vt'"|DFA13_690596106
+DFA4_95198903 -->|"'"|DFA14_1430090931
+DFA4_95198903 -->|"#92;"|DFA15_-648423267
+DFA5_1948330881 -->|"[#32;-&]"|DFA9_-1311747221
+DFA5_1948330881 -->|"#92;"|DFA10_-254751849
+DFA5_1948330881 -->|"[(-[]"|DFA11_-449682177
+DFA5_1948330881 -->|"[]-~]"|DFA12_-1033233929
+DFA5_1948330881 -->|"'
+ExtendToken 'Vt'"|DFA13_690596106
+DFA6_905451214 -->|"[#32;-&]"|DFA9_-1311747221
+DFA6_905451214 -->|"#92;"|DFA10_-254751849
+DFA6_905451214 -->|"[(-[]"|DFA11_-449682177
+DFA6_905451214 -->|"[]-~]"|DFA12_-1033233929
+DFA6_905451214 -->|"'
+ExtendToken 'Vt'"|DFA13_690596106
+DFA7_-538425657 -->|"[^*]"|DFA16_1342029314
+DFA7_-538425657 -->|"*"|DFA17_1146355159
+DFA8_-1701333853 -->|"[#92;t#92;r#32;-~]
+ExtendToken 'inlineComment'"|DFA18_1669777229
+DFA9_-1311747221 -->|"[#32;-&]"|DFA9_-1311747221
+DFA9_-1311747221 -->|"#92;"|DFA10_-254751849
+DFA9_-1311747221 -->|"[(-[]"|DFA11_-449682177
+DFA9_-1311747221 -->|"[]-~]"|DFA12_-1033233929
+DFA9_-1311747221 -->|"'
+ExtendToken 'Vt'"|DFA13_690596106
+DFA10_-254751849 -->|"'"|DFA19_-2073531689
+DFA10_-254751849 -->|"#92;"|DFA20_1157014439
+DFA11_-449682177 -->|"[#32;-&]"|DFA9_-1311747221
+DFA11_-449682177 -->|"#92;"|DFA10_-254751849
+DFA11_-449682177 -->|"[(-[]"|DFA11_-449682177
+DFA11_-449682177 -->|"[]-~]"|DFA12_-1033233929
+DFA11_-449682177 -->|"'
+ExtendToken 'Vt'"|DFA13_690596106
+DFA12_-1033233929 -->|"[#32;-&]"|DFA9_-1311747221
+DFA12_-1033233929 -->|"#92;"|DFA10_-254751849
+DFA12_-1033233929 -->|"[(-[]"|DFA11_-449682177
+DFA12_-1033233929 -->|"[]-~]"|DFA12_-1033233929
+DFA12_-1033233929 -->|"'
+ExtendToken 'Vt'"|DFA13_690596106
+DFA14_1430090931 -->|"[#32;-&]"|DFA9_-1311747221
+DFA14_1430090931 -->|"#92;"|DFA10_-254751849
+DFA14_1430090931 -->|"[(-[]"|DFA11_-449682177
+DFA14_1430090931 -->|"[]-~]"|DFA12_-1033233929
+DFA14_1430090931 -->|"'
+ExtendToken 'Vt'"|DFA13_690596106
+DFA15_-648423267 -->|"[#32;-&]"|DFA9_-1311747221
+DFA15_-648423267 -->|"#92;"|DFA10_-254751849
+DFA15_-648423267 -->|"[(-[]"|DFA11_-449682177
+DFA15_-648423267 -->|"[]-~]"|DFA12_-1033233929
+DFA15_-648423267 -->|"'
+ExtendToken 'Vt'"|DFA13_690596106
+DFA16_1342029314 -->|"[^*]"|DFA16_1342029314
+DFA16_1342029314 -->|"*"|DFA17_1146355159
+DFA17_1146355159 -->|"[^/]"|DFA21_244242361
+DFA17_1146355159 -->|"/
+ExtendToken 'blockComment'"|DFA22_1486256129
+DFA18_1669777229 -->|"[#92;t#92;r#32;-~]
+ExtendToken 'inlineComment'"|DFA18_1669777229
+DFA19_-2073531689 -->|"[#32;-&]"|DFA9_-1311747221
+DFA19_-2073531689 -->|"#92;"|DFA10_-254751849
+DFA19_-2073531689 -->|"[(-[]"|DFA11_-449682177
+DFA19_-2073531689 -->|"[]-~]"|DFA12_-1033233929
+DFA19_-2073531689 -->|"'
+ExtendToken 'Vt'"|DFA13_690596106
+DFA20_1157014439 -->|"[#32;-&]"|DFA9_-1311747221
+DFA20_1157014439 -->|"#92;"|DFA10_-254751849
+DFA20_1157014439 -->|"[(-[]"|DFA11_-449682177
+DFA20_1157014439 -->|"[]-~]"|DFA12_-1033233929
+DFA20_1157014439 -->|"'
+ExtendToken 'Vt'"|DFA13_690596106
+DFA21_244242361 -->|"[^*]"|DFA16_1342029314
+DFA21_244242361 -->|"*"|DFA17_1146355159
 
 ```
 
@@ -906,94 +1410,126 @@ classDef c1100 stroke:#333,stroke-width:4px,fill:#BB66EE;
 classDef c1101 stroke:#333,stroke-width:4px,fill:#BB66EE,color:#FF0000;
 classDef c1110 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10;
 classDef c1111 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10,color:#FF0000;
-DFA0_880640543{{"DFA0 wholeStart"}}
-class DFA0_880640543 c1000;
-DFA1_1523233858{{"DFA1 {1}"}}
-DFA2_863108597{{"DFA2 {1}"}}
-DFA3_2006524493{{"DFA3 {2}"}}
-DFA4_-1947019538{{"DFA4 {1}"}}
-DFA5_146184848{{"DFA5 {1}"}}
-DFA6_-15333616{{"DFA6 {1}"}}
-DFA7_-364187339{{"DFA7 {2}"}}
-DFA8_-989826483{{"DFA8 {1}"}}
-DFA9_54963488{{"DFA9 {1}"}}
-DFA10_-559874385[\"DFA10 {1}
+DFA0_-1886755368{{"DFA0 wholeStart"}}
+class DFA0_-1886755368 c1000;
+DFA1_1956429315{{"DFA1 {1}"}}
+DFA2_1421118946{{"DFA2 {2}"}}
+DFA3_-415452416{{"DFA3 {1}"}}
+DFA4_95198903{{"DFA4 {2}"}}
+DFA5_1948330881{{"DFA5 {1}"}}
+DFA6_905451214{{"DFA6 {1}"}}
+DFA7_-538425657{{"DFA7 {1}"}}
+DFA8_-1701333853[\"DFA8 {1}
+AcceptToken 'inlineComment'"/]
+class DFA8_-1701333853 c0101;
+DFA9_-1311747221{{"DFA9 {1}"}}
+DFA10_-254751849{{"DFA10 {2}"}}
+DFA11_-449682177{{"DFA11 {1}"}}
+DFA12_-1033233929{{"DFA12 {1}"}}
+DFA13_690596106[\"DFA13 {1}
 AcceptToken 'Vt'"/]
-class DFA10_-559874385 c0101;
-DFA11_299906633{{"DFA11 {1}"}}
-DFA12_-1677726303{{"DFA12 {1}"}}
-DFA13_-1586424458{{"DFA13 {1}"}}
-DFA14_232032254{{"DFA14 {1}"}}
-DFA0_880640543 -->|"'
-BeginToken 'Vt'"|DFA1_1523233858
-DFA1_1523233858 -->|"[#32;-&]"|DFA2_863108597
-DFA1_1523233858 -->|"#92;"|DFA3_2006524493
-DFA1_1523233858 -->|"[(-[]"|DFA4_-1947019538
-DFA1_1523233858 -->|"[]-~]"|DFA5_146184848
-DFA2_863108597 -->|"[#32;-&]"|DFA6_-15333616
-DFA2_863108597 -->|"#92;"|DFA7_-364187339
-DFA2_863108597 -->|"[(-[]"|DFA8_-989826483
-DFA2_863108597 -->|"[]-~]"|DFA9_54963488
-DFA2_863108597 -->|"'
-ExtendToken 'Vt'"|DFA10_-559874385
-DFA3_2006524493 -->|"'"|DFA11_299906633
-DFA3_2006524493 -->|"#92;"|DFA12_-1677726303
-DFA4_-1947019538 -->|"[#32;-&]"|DFA6_-15333616
-DFA4_-1947019538 -->|"#92;"|DFA7_-364187339
-DFA4_-1947019538 -->|"[(-[]"|DFA8_-989826483
-DFA4_-1947019538 -->|"[]-~]"|DFA9_54963488
-DFA4_-1947019538 -->|"'
-ExtendToken 'Vt'"|DFA10_-559874385
-DFA5_146184848 -->|"[#32;-&]"|DFA6_-15333616
-DFA5_146184848 -->|"#92;"|DFA7_-364187339
-DFA5_146184848 -->|"[(-[]"|DFA8_-989826483
-DFA5_146184848 -->|"[]-~]"|DFA9_54963488
-DFA5_146184848 -->|"'
-ExtendToken 'Vt'"|DFA10_-559874385
-DFA6_-15333616 -->|"[#32;-&]"|DFA6_-15333616
-DFA6_-15333616 -->|"#92;"|DFA7_-364187339
-DFA6_-15333616 -->|"[(-[]"|DFA8_-989826483
-DFA6_-15333616 -->|"[]-~]"|DFA9_54963488
-DFA6_-15333616 -->|"'
-ExtendToken 'Vt'"|DFA10_-559874385
-DFA7_-364187339 -->|"'"|DFA13_-1586424458
-DFA7_-364187339 -->|"#92;"|DFA14_232032254
-DFA8_-989826483 -->|"[#32;-&]"|DFA6_-15333616
-DFA8_-989826483 -->|"#92;"|DFA7_-364187339
-DFA8_-989826483 -->|"[(-[]"|DFA8_-989826483
-DFA8_-989826483 -->|"[]-~]"|DFA9_54963488
-DFA8_-989826483 -->|"'
-ExtendToken 'Vt'"|DFA10_-559874385
-DFA9_54963488 -->|"[#32;-&]"|DFA6_-15333616
-DFA9_54963488 -->|"#92;"|DFA7_-364187339
-DFA9_54963488 -->|"[(-[]"|DFA8_-989826483
-DFA9_54963488 -->|"[]-~]"|DFA9_54963488
-DFA9_54963488 -->|"'
-ExtendToken 'Vt'"|DFA10_-559874385
-DFA11_299906633 -->|"[#32;-&]"|DFA6_-15333616
-DFA11_299906633 -->|"#92;"|DFA7_-364187339
-DFA11_299906633 -->|"[(-[]"|DFA8_-989826483
-DFA11_299906633 -->|"[]-~]"|DFA9_54963488
-DFA11_299906633 -->|"'
-ExtendToken 'Vt'"|DFA10_-559874385
-DFA12_-1677726303 -->|"[#32;-&]"|DFA6_-15333616
-DFA12_-1677726303 -->|"#92;"|DFA7_-364187339
-DFA12_-1677726303 -->|"[(-[]"|DFA8_-989826483
-DFA12_-1677726303 -->|"[]-~]"|DFA9_54963488
-DFA12_-1677726303 -->|"'
-ExtendToken 'Vt'"|DFA10_-559874385
-DFA13_-1586424458 -->|"[#32;-&]"|DFA6_-15333616
-DFA13_-1586424458 -->|"#92;"|DFA7_-364187339
-DFA13_-1586424458 -->|"[(-[]"|DFA8_-989826483
-DFA13_-1586424458 -->|"[]-~]"|DFA9_54963488
-DFA13_-1586424458 -->|"'
-ExtendToken 'Vt'"|DFA10_-559874385
-DFA14_232032254 -->|"[#32;-&]"|DFA6_-15333616
-DFA14_232032254 -->|"#92;"|DFA7_-364187339
-DFA14_232032254 -->|"[(-[]"|DFA8_-989826483
-DFA14_232032254 -->|"[]-~]"|DFA9_54963488
-DFA14_232032254 -->|"'
-ExtendToken 'Vt'"|DFA10_-559874385
+class DFA13_690596106 c0101;
+DFA14_1430090931{{"DFA14 {1}"}}
+DFA15_-648423267{{"DFA15 {1}"}}
+DFA16_1342029314{{"DFA16 {1}"}}
+DFA17_1146355159{{"DFA17 {2}"}}
+DFA18_1669777229[\"DFA18 {1}
+AcceptToken 'inlineComment'"/]
+class DFA18_1669777229 c0101;
+DFA19_-2073531689{{"DFA19 {1}"}}
+DFA20_1157014439{{"DFA20 {1}"}}
+DFA21_244242361{{"DFA21 {1}"}}
+DFA22_1486256129[\"DFA22 {1}
+AcceptToken 'blockComment'"/]
+class DFA22_1486256129 c0101;
+DFA0_-1886755368 -->|"'
+BeginToken 'Vt'"|DFA1_1956429315
+DFA0_-1886755368 -->|"/
+BeginToken 'blockComment''inlineComment'"|DFA2_1421118946
+DFA1_1956429315 -->|"[#32;-&]"|DFA3_-415452416
+DFA1_1956429315 -->|"#92;"|DFA4_95198903
+DFA1_1956429315 -->|"[(-[]"|DFA5_1948330881
+DFA1_1956429315 -->|"[]-~]"|DFA6_905451214
+DFA2_1421118946 -->|"*"|DFA7_-538425657
+DFA2_1421118946 -->|"/
+ExtendToken 'inlineComment'"|DFA8_-1701333853
+DFA3_-415452416 -->|"[#32;-&]"|DFA9_-1311747221
+DFA3_-415452416 -->|"#92;"|DFA10_-254751849
+DFA3_-415452416 -->|"[(-[]"|DFA11_-449682177
+DFA3_-415452416 -->|"[]-~]"|DFA12_-1033233929
+DFA3_-415452416 -->|"'
+ExtendToken 'Vt'"|DFA13_690596106
+DFA4_95198903 -->|"'"|DFA14_1430090931
+DFA4_95198903 -->|"#92;"|DFA15_-648423267
+DFA5_1948330881 -->|"[#32;-&]"|DFA9_-1311747221
+DFA5_1948330881 -->|"#92;"|DFA10_-254751849
+DFA5_1948330881 -->|"[(-[]"|DFA11_-449682177
+DFA5_1948330881 -->|"[]-~]"|DFA12_-1033233929
+DFA5_1948330881 -->|"'
+ExtendToken 'Vt'"|DFA13_690596106
+DFA6_905451214 -->|"[#32;-&]"|DFA9_-1311747221
+DFA6_905451214 -->|"#92;"|DFA10_-254751849
+DFA6_905451214 -->|"[(-[]"|DFA11_-449682177
+DFA6_905451214 -->|"[]-~]"|DFA12_-1033233929
+DFA6_905451214 -->|"'
+ExtendToken 'Vt'"|DFA13_690596106
+DFA7_-538425657 -->|"[^*]"|DFA16_1342029314
+DFA7_-538425657 -->|"*"|DFA17_1146355159
+DFA8_-1701333853 -->|"[#92;t#92;r#32;-~]
+ExtendToken 'inlineComment'"|DFA18_1669777229
+DFA9_-1311747221 -->|"[#32;-&]"|DFA9_-1311747221
+DFA9_-1311747221 -->|"#92;"|DFA10_-254751849
+DFA9_-1311747221 -->|"[(-[]"|DFA11_-449682177
+DFA9_-1311747221 -->|"[]-~]"|DFA12_-1033233929
+DFA9_-1311747221 -->|"'
+ExtendToken 'Vt'"|DFA13_690596106
+DFA10_-254751849 -->|"'"|DFA19_-2073531689
+DFA10_-254751849 -->|"#92;"|DFA20_1157014439
+DFA11_-449682177 -->|"[#32;-&]"|DFA9_-1311747221
+DFA11_-449682177 -->|"#92;"|DFA10_-254751849
+DFA11_-449682177 -->|"[(-[]"|DFA11_-449682177
+DFA11_-449682177 -->|"[]-~]"|DFA12_-1033233929
+DFA11_-449682177 -->|"'
+ExtendToken 'Vt'"|DFA13_690596106
+DFA12_-1033233929 -->|"[#32;-&]"|DFA9_-1311747221
+DFA12_-1033233929 -->|"#92;"|DFA10_-254751849
+DFA12_-1033233929 -->|"[(-[]"|DFA11_-449682177
+DFA12_-1033233929 -->|"[]-~]"|DFA12_-1033233929
+DFA12_-1033233929 -->|"'
+ExtendToken 'Vt'"|DFA13_690596106
+DFA14_1430090931 -->|"[#32;-&]"|DFA9_-1311747221
+DFA14_1430090931 -->|"#92;"|DFA10_-254751849
+DFA14_1430090931 -->|"[(-[]"|DFA11_-449682177
+DFA14_1430090931 -->|"[]-~]"|DFA12_-1033233929
+DFA14_1430090931 -->|"'
+ExtendToken 'Vt'"|DFA13_690596106
+DFA15_-648423267 -->|"[#32;-&]"|DFA9_-1311747221
+DFA15_-648423267 -->|"#92;"|DFA10_-254751849
+DFA15_-648423267 -->|"[(-[]"|DFA11_-449682177
+DFA15_-648423267 -->|"[]-~]"|DFA12_-1033233929
+DFA15_-648423267 -->|"'
+ExtendToken 'Vt'"|DFA13_690596106
+DFA16_1342029314 -->|"[^*]"|DFA16_1342029314
+DFA16_1342029314 -->|"*"|DFA17_1146355159
+DFA17_1146355159 -->|"[^/]"|DFA21_244242361
+DFA17_1146355159 -->|"/
+ExtendToken 'blockComment'"|DFA22_1486256129
+DFA18_1669777229 -->|"[#92;t#92;r#32;-~]
+ExtendToken 'inlineComment'"|DFA18_1669777229
+DFA19_-2073531689 -->|"[#32;-&]"|DFA9_-1311747221
+DFA19_-2073531689 -->|"#92;"|DFA10_-254751849
+DFA19_-2073531689 -->|"[(-[]"|DFA11_-449682177
+DFA19_-2073531689 -->|"[]-~]"|DFA12_-1033233929
+DFA19_-2073531689 -->|"'
+ExtendToken 'Vt'"|DFA13_690596106
+DFA20_1157014439 -->|"[#32;-&]"|DFA9_-1311747221
+DFA20_1157014439 -->|"#92;"|DFA10_-254751849
+DFA20_1157014439 -->|"[(-[]"|DFA11_-449682177
+DFA20_1157014439 -->|"[]-~]"|DFA12_-1033233929
+DFA20_1157014439 -->|"'
+ExtendToken 'Vt'"|DFA13_690596106
+DFA21_244242361 -->|"[^*]"|DFA16_1342029314
+DFA21_244242361 -->|"*"|DFA17_1146355159
 
 ```
 
@@ -1016,50 +1552,93 @@ classDef c1100 stroke:#333,stroke-width:4px,fill:#BB66EE;
 classDef c1101 stroke:#333,stroke-width:4px,fill:#BB66EE,color:#FF0000;
 classDef c1110 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10;
 classDef c1111 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10,color:#FF0000;
-subgraph MiniDFA0_1740461546["MiniDFA0 {1}"]
-DFA0_880640543_0{{"DFA0 wholeStart"}}
-class DFA0_880640543_0 c1000;
+subgraph MiniDFA0_-167276511["MiniDFA0 {1}"]
+DFA0_-1886755368_0{{"DFA0 wholeStart"}}
+class DFA0_-1886755368_0 c1000;
 end
-class MiniDFA0_1740461546 c1000;
-subgraph MiniDFA1_-1385219186["MiniDFA1 {1}"]
-DFA1_1523233858_1{{"DFA1 {1}"}}
+class MiniDFA0_-167276511 c1000;
+subgraph MiniDFA1_-1726103805["MiniDFA1 {1}"]
+DFA1_1956429315_1{{"DFA1 {1}"}}
 end
-subgraph MiniDFA2_-2007315536["MiniDFA2 {10}"]
-DFA2_863108597_2{{"DFA2 {1}"}}
-DFA4_-1947019538_3{{"DFA4 {1}"}}
-DFA5_146184848_4{{"DFA5 {1}"}}
-DFA6_-15333616_5{{"DFA6 {1}"}}
-DFA8_-989826483_6{{"DFA8 {1}"}}
-DFA9_54963488_7{{"DFA9 {1}"}}
-DFA11_299906633_8{{"DFA11 {1}"}}
-DFA12_-1677726303_9{{"DFA12 {1}"}}
-DFA13_-1586424458_10{{"DFA13 {1}"}}
-DFA14_232032254_11{{"DFA14 {1}"}}
+subgraph MiniDFA2_-455443324["MiniDFA2 {1}"]
+DFA2_1421118946_2{{"DFA2 {2}"}}
 end
-subgraph MiniDFA3_-252344200["MiniDFA3 {2}"]
-DFA3_2006524493_12{{"DFA3 {2}"}}
-DFA7_-364187339_13{{"DFA7 {2}"}}
+subgraph MiniDFA3_233301716["MiniDFA3 {10}"]
+DFA3_-415452416_3{{"DFA3 {1}"}}
+DFA5_1948330881_4{{"DFA5 {1}"}}
+DFA6_905451214_5{{"DFA6 {1}"}}
+DFA9_-1311747221_6{{"DFA9 {1}"}}
+DFA11_-449682177_7{{"DFA11 {1}"}}
+DFA12_-1033233929_8{{"DFA12 {1}"}}
+DFA14_1430090931_9{{"DFA14 {1}"}}
+DFA15_-648423267_10{{"DFA15 {1}"}}
+DFA19_-2073531689_11{{"DFA19 {1}"}}
+DFA20_1157014439_12{{"DFA20 {1}"}}
 end
-subgraph MiniDFA4_-1507456198["MiniDFA4 {1}"]
-DFA10_-559874385_14[\"DFA10 {1}
+subgraph MiniDFA4_130157675["MiniDFA4 {2}"]
+DFA4_95198903_13{{"DFA4 {2}"}}
+DFA10_-254751849_14{{"DFA10 {2}"}}
+end
+subgraph MiniDFA5_2143378522["MiniDFA5 {3}"]
+DFA7_-538425657_15{{"DFA7 {1}"}}
+DFA16_1342029314_16{{"DFA16 {1}"}}
+DFA21_244242361_17{{"DFA21 {1}"}}
+end
+subgraph MiniDFA7_-1098229020["MiniDFA7 {1}"]
+DFA8_-1701333853_18[\"DFA8 {1}
+AcceptToken 'inlineComment'"/]
+class DFA8_-1701333853_18 c0101;
+end
+class MiniDFA7_-1098229020 c0101;
+subgraph MiniDFA8_-1042464762["MiniDFA8 {1}"]
+DFA13_690596106_19[\"DFA13 {1}
 AcceptToken 'Vt'"/]
-class DFA10_-559874385_14 c0101;
+class DFA13_690596106_19 c0101;
 end
-class MiniDFA4_-1507456198 c0101;
-MiniDFA0_1740461546 -->|"'
-BeginToken 'Vt'"|MiniDFA1_-1385219186
-MiniDFA1_-1385219186 -->|"[#32;-&]"|MiniDFA2_-2007315536
-MiniDFA1_-1385219186 -->|"#92;"|MiniDFA3_-252344200
-MiniDFA1_-1385219186 -->|"[(-[]"|MiniDFA2_-2007315536
-MiniDFA1_-1385219186 -->|"[]-~]"|MiniDFA2_-2007315536
-MiniDFA2_-2007315536 -->|"[#32;-&]"|MiniDFA2_-2007315536
-MiniDFA2_-2007315536 -->|"#92;"|MiniDFA3_-252344200
-MiniDFA2_-2007315536 -->|"[(-[]"|MiniDFA2_-2007315536
-MiniDFA2_-2007315536 -->|"[]-~]"|MiniDFA2_-2007315536
-MiniDFA2_-2007315536 -->|"'
-ExtendToken 'Vt'"|MiniDFA4_-1507456198
-MiniDFA3_-252344200 -->|"'"|MiniDFA2_-2007315536
-MiniDFA3_-252344200 -->|"#92;"|MiniDFA2_-2007315536
+class MiniDFA8_-1042464762 c0101;
+subgraph MiniDFA6_-1206441414["MiniDFA6 {1}"]
+DFA17_1146355159_20{{"DFA17 {2}"}}
+end
+subgraph MiniDFA9_-1517473471["MiniDFA9 {1}"]
+DFA18_1669777229_21[\"DFA18 {1}
+AcceptToken 'inlineComment'"/]
+class DFA18_1669777229_21 c0101;
+end
+class MiniDFA9_-1517473471 c0101;
+subgraph MiniDFA10_632201962["MiniDFA10 {1}"]
+DFA22_1486256129_22[\"DFA22 {1}
+AcceptToken 'blockComment'"/]
+class DFA22_1486256129_22 c0101;
+end
+class MiniDFA10_632201962 c0101;
+MiniDFA0_-167276511 -->|"'
+BeginToken 'Vt'"|MiniDFA1_-1726103805
+MiniDFA0_-167276511 -->|"/
+BeginToken 'blockComment''inlineComment'"|MiniDFA2_-455443324
+MiniDFA1_-1726103805 -->|"[#32;-&]"|MiniDFA3_233301716
+MiniDFA1_-1726103805 -->|"#92;"|MiniDFA4_130157675
+MiniDFA1_-1726103805 -->|"[(-[]"|MiniDFA3_233301716
+MiniDFA1_-1726103805 -->|"[]-~]"|MiniDFA3_233301716
+MiniDFA2_-455443324 -->|"*"|MiniDFA5_2143378522
+MiniDFA2_-455443324 -->|"/
+ExtendToken 'inlineComment'"|MiniDFA7_-1098229020
+MiniDFA3_233301716 -->|"[#32;-&]"|MiniDFA3_233301716
+MiniDFA3_233301716 -->|"#92;"|MiniDFA4_130157675
+MiniDFA3_233301716 -->|"[(-[]"|MiniDFA3_233301716
+MiniDFA3_233301716 -->|"[]-~]"|MiniDFA3_233301716
+MiniDFA3_233301716 -->|"'
+ExtendToken 'Vt'"|MiniDFA8_-1042464762
+MiniDFA4_130157675 -->|"'"|MiniDFA3_233301716
+MiniDFA4_130157675 -->|"#92;"|MiniDFA3_233301716
+MiniDFA5_2143378522 -->|"[^*]"|MiniDFA5_2143378522
+MiniDFA5_2143378522 -->|"*"|MiniDFA6_-1206441414
+MiniDFA7_-1098229020 -->|"[#92;t#92;r#32;-~]
+ExtendToken 'inlineComment'"|MiniDFA9_-1517473471
+MiniDFA6_-1206441414 -->|"[^/]"|MiniDFA5_2143378522
+MiniDFA6_-1206441414 -->|"/
+ExtendToken 'blockComment'"|MiniDFA10_632201962
+MiniDFA9_-1517473471 -->|"[#92;t#92;r#32;-~]
+ExtendToken 'inlineComment'"|MiniDFA9_-1517473471
 
 ```
 ## 5/5: miniDFA.simple
@@ -1081,28 +1660,54 @@ classDef c1100 stroke:#333,stroke-width:4px,fill:#BB66EE;
 classDef c1101 stroke:#333,stroke-width:4px,fill:#BB66EE,color:#FF0000;
 classDef c1110 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10;
 classDef c1111 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10,color:#FF0000;
-MiniDFA0_1740461546(["MiniDFA0 {1}"])
-class MiniDFA0_1740461546 c1000;
-MiniDFA1_-1385219186(["MiniDFA1 {1}"])
-MiniDFA2_-2007315536(["MiniDFA2 {10}"])
-MiniDFA3_-252344200(["MiniDFA3 {2}"])
-MiniDFA4_-1507456198[\"MiniDFA4 {1}
+MiniDFA0_-167276511(["MiniDFA0 {1}"])
+class MiniDFA0_-167276511 c1000;
+MiniDFA1_-1726103805(["MiniDFA1 {1}"])
+MiniDFA2_-455443324(["MiniDFA2 {1}"])
+MiniDFA3_233301716(["MiniDFA3 {10}"])
+MiniDFA4_130157675(["MiniDFA4 {2}"])
+MiniDFA5_2143378522(["MiniDFA5 {3}"])
+MiniDFA7_-1098229020[\"MiniDFA7 {1}
+AcceptToken 'inlineComment'"/]
+class MiniDFA7_-1098229020 c0101;
+MiniDFA8_-1042464762[\"MiniDFA8 {1}
 AcceptToken 'Vt'"/]
-class MiniDFA4_-1507456198 c0101;
-MiniDFA0_1740461546 -->|"'
-BeginToken 'Vt'"|MiniDFA1_-1385219186
-MiniDFA1_-1385219186 -->|"[#32;-&]"|MiniDFA2_-2007315536
-MiniDFA1_-1385219186 -->|"#92;"|MiniDFA3_-252344200
-MiniDFA1_-1385219186 -->|"[(-[]"|MiniDFA2_-2007315536
-MiniDFA1_-1385219186 -->|"[]-~]"|MiniDFA2_-2007315536
-MiniDFA2_-2007315536 -->|"[#32;-&]"|MiniDFA2_-2007315536
-MiniDFA2_-2007315536 -->|"#92;"|MiniDFA3_-252344200
-MiniDFA2_-2007315536 -->|"[(-[]"|MiniDFA2_-2007315536
-MiniDFA2_-2007315536 -->|"[]-~]"|MiniDFA2_-2007315536
-MiniDFA2_-2007315536 -->|"'
-ExtendToken 'Vt'"|MiniDFA4_-1507456198
-MiniDFA3_-252344200 -->|"'"|MiniDFA2_-2007315536
-MiniDFA3_-252344200 -->|"#92;"|MiniDFA2_-2007315536
+class MiniDFA8_-1042464762 c0101;
+MiniDFA6_-1206441414(["MiniDFA6 {1}"])
+MiniDFA9_-1517473471[\"MiniDFA9 {1}
+AcceptToken 'inlineComment'"/]
+class MiniDFA9_-1517473471 c0101;
+MiniDFA10_632201962[\"MiniDFA10 {1}
+AcceptToken 'blockComment'"/]
+class MiniDFA10_632201962 c0101;
+MiniDFA0_-167276511 -->|"'
+BeginToken 'Vt'"|MiniDFA1_-1726103805
+MiniDFA0_-167276511 -->|"/
+BeginToken 'blockComment''inlineComment'"|MiniDFA2_-455443324
+MiniDFA1_-1726103805 -->|"[#32;-&]"|MiniDFA3_233301716
+MiniDFA1_-1726103805 -->|"#92;"|MiniDFA4_130157675
+MiniDFA1_-1726103805 -->|"[(-[]"|MiniDFA3_233301716
+MiniDFA1_-1726103805 -->|"[]-~]"|MiniDFA3_233301716
+MiniDFA2_-455443324 -->|"*"|MiniDFA5_2143378522
+MiniDFA2_-455443324 -->|"/
+ExtendToken 'inlineComment'"|MiniDFA7_-1098229020
+MiniDFA3_233301716 -->|"[#32;-&]"|MiniDFA3_233301716
+MiniDFA3_233301716 -->|"#92;"|MiniDFA4_130157675
+MiniDFA3_233301716 -->|"[(-[]"|MiniDFA3_233301716
+MiniDFA3_233301716 -->|"[]-~]"|MiniDFA3_233301716
+MiniDFA3_233301716 -->|"'
+ExtendToken 'Vt'"|MiniDFA8_-1042464762
+MiniDFA4_130157675 -->|"'"|MiniDFA3_233301716
+MiniDFA4_130157675 -->|"#92;"|MiniDFA3_233301716
+MiniDFA5_2143378522 -->|"[^*]"|MiniDFA5_2143378522
+MiniDFA5_2143378522 -->|"*"|MiniDFA6_-1206441414
+MiniDFA7_-1098229020 -->|"[#92;t#92;r#32;-~]
+ExtendToken 'inlineComment'"|MiniDFA9_-1517473471
+MiniDFA6_-1206441414 -->|"[^/]"|MiniDFA5_2143378522
+MiniDFA6_-1206441414 -->|"/
+ExtendToken 'blockComment'"|MiniDFA10_632201962
+MiniDFA9_-1517473471 -->|"[#92;t#92;r#32;-~]
+ExtendToken 'inlineComment'"|MiniDFA9_-1517473471
 
 ```
 

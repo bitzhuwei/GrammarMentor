@@ -14,22 +14,48 @@ classDef c1100 stroke:#333,stroke-width:4px,fill:#BB66EE;
 classDef c1101 stroke:#333,stroke-width:4px,fill:#BB66EE,color:#FF0000;
 classDef c1110 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10;
 classDef c1111 stroke:#333,stroke-width:4px,fill:#BB66EE,stroke-dasharray: 10 10,color:#FF0000;
-MiniDFA0_569336601(["MiniDFA0 {1}"])
-class MiniDFA0_569336601 c1000;
-MiniDFA2_-164932217[\"MiniDFA2 {1}
+MiniDFA0_-525307974(["MiniDFA0 {1}"])
+class MiniDFA0_-525307974 c1000;
+MiniDFA5_-1569637513[\"MiniDFA5 {1}
 AcceptToken 'integer'"/]
-class MiniDFA2_-164932217 c0101;
-MiniDFA1_-292777981(["MiniDFA1 {1}"])
-MiniDFA3_-406947756[\"MiniDFA3 {1}
+class MiniDFA5_-1569637513 c0101;
+MiniDFA1_-1850694947(["MiniDFA1 {1}"])
+MiniDFA2_-1722998101(["MiniDFA2 {1}"])
+MiniDFA3_-1677745688(["MiniDFA3 {3}"])
+MiniDFA6_-9237331[\"MiniDFA6 {1}
+AcceptToken 'inlineComment'"/]
+class MiniDFA6_-9237331 c0101;
+MiniDFA7_-2114836410[\"MiniDFA7 {1}
 AcceptToken 'float'"/]
-class MiniDFA3_-406947756 c0101;
-MiniDFA0_569336601 -->|"[0-9]
+class MiniDFA7_-2114836410 c0101;
+MiniDFA4_758297002(["MiniDFA4 {1}"])
+MiniDFA8_1937419997[\"MiniDFA8 {1}
+AcceptToken 'inlineComment'"/]
+class MiniDFA8_1937419997 c0101;
+MiniDFA9_-2008467491[\"MiniDFA9 {1}
+AcceptToken 'blockComment'"/]
+class MiniDFA9_-2008467491 c0101;
+MiniDFA0_-525307974 -->|"[0-9]
 BeginToken 'integer''float'
-ExtendToken 'integer'"|MiniDFA2_-164932217
-MiniDFA2_-164932217 -->|"[0-9]
-ExtendToken 'integer'"|MiniDFA2_-164932217
-MiniDFA2_-164932217 -->|"."|MiniDFA1_-292777981
-MiniDFA1_-292777981 -->|"[0-9]
-ExtendToken 'float'"|MiniDFA3_-406947756
-MiniDFA3_-406947756 -->|"[0-9]
-ExtendToken 'float'"|MiniDFA3_-406947756
+ExtendToken 'integer'"|MiniDFA5_-1569637513
+MiniDFA0_-525307974 -->|"/
+BeginToken 'blockComment''inlineComment'"|MiniDFA1_-1850694947
+MiniDFA5_-1569637513 -->|"[0-9]
+ExtendToken 'integer'"|MiniDFA5_-1569637513
+MiniDFA5_-1569637513 -->|"."|MiniDFA2_-1722998101
+MiniDFA1_-1850694947 -->|"*"|MiniDFA3_-1677745688
+MiniDFA1_-1850694947 -->|"/
+ExtendToken 'inlineComment'"|MiniDFA6_-9237331
+MiniDFA2_-1722998101 -->|"[0-9]
+ExtendToken 'float'"|MiniDFA7_-2114836410
+MiniDFA3_-1677745688 -->|"[^*]"|MiniDFA3_-1677745688
+MiniDFA3_-1677745688 -->|"*"|MiniDFA4_758297002
+MiniDFA6_-9237331 -->|"[#92;t#92;r#32;-~]
+ExtendToken 'inlineComment'"|MiniDFA8_1937419997
+MiniDFA7_-2114836410 -->|"[0-9]
+ExtendToken 'float'"|MiniDFA7_-2114836410
+MiniDFA4_758297002 -->|"[^/]"|MiniDFA3_-1677745688
+MiniDFA4_758297002 -->|"/
+ExtendToken 'blockComment'"|MiniDFA9_-2008467491
+MiniDFA8_1937419997 -->|"[#92;t#92;r#32;-~]
+ExtendToken 'inlineComment'"|MiniDFA8_1937419997

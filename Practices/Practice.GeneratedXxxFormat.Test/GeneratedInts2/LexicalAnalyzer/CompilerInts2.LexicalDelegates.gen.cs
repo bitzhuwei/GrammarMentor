@@ -35,6 +35,11 @@ namespace bitzhuwei.Ints2Format {
 
             var backStep = context.Cursor - context.checkpoint - 1;
             if (backStep > 0) { context.MoveBack(backStep); }
+
+            if (context.analyzingToken.type == EType.blockComment
+                || context.analyzingToken.type == EType.inlineComment) {
+                context.result.Remove(context.analyzingToken);
+            }
         }
 
         /// <summary>
@@ -64,6 +69,11 @@ namespace bitzhuwei.Ints2Format {
 
             var backStep = context.Cursor - context.checkpoint - 1;
             if (backStep > 0) { context.MoveBack(backStep); }
+
+            if (context.analyzingToken.type == EType.blockComment
+                || context.analyzingToken.type == EType.inlineComment) {
+                context.result.Remove(context.analyzingToken);
+            }
         }
 
         /// <summary>
@@ -157,6 +167,11 @@ namespace bitzhuwei.Ints2Format {
 
             var backStep = context.Cursor - context.checkpoint;
             if (backStep > 0) { context.MoveBack(backStep); }
+
+            if (context.analyzingToken.type == EType.blockComment
+                || context.analyzingToken.type == EType.inlineComment) {
+                context.result.Remove(context.analyzingToken);
+            }
         }
 
         /// <summary>
@@ -186,6 +201,11 @@ namespace bitzhuwei.Ints2Format {
 
             var backStep = context.Cursor - context.checkpoint;
             if (backStep > 0) { context.MoveBack(backStep); }
+
+            if (context.analyzingToken.type == EType.blockComment
+                || context.analyzingToken.type == EType.inlineComment) {
+                context.result.Remove(context.analyzingToken);
+            }
         }
     }
 }

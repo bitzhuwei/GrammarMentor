@@ -29,7 +29,7 @@ namespace bitzhuwei.GrammarFormat {
                 }
             }
             {
-                string fullname = Path.Combine(path, $"LexicalStates.2.eNFACompleted.gen.mmd");
+                string fullname = Path.Combine(path, $"LexicalStates.2.ManifestedeNFA.gen.mmd");
                 using (var w = new StreamWriter(fullname)) {
                     w.WriteLine("flowchart");
                     context.automatonInfo.eNFAManifested.ToMermaid(w);
