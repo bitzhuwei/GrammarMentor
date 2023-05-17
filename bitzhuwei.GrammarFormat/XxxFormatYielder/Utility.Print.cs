@@ -31,7 +31,7 @@ namespace bitzhuwei.GrammarFormat {
 
         public static void PrintLine(this TextWriter w, int tab, string value) {
             if (tab > 0) { Tab(w, tab); }
-            w.Write(value); w.WriteLine();
+            w.WriteLine(value);
         }
 
         public static void Print(this TextWriter w, int tab, string value) {
@@ -41,7 +41,7 @@ namespace bitzhuwei.GrammarFormat {
 
         public static void PrintLine(this StringBuilder w, int tab, string value) {
             if (tab > 0) { Tab(w, tab); }
-            w.Append(value); w.AppendLine();
+            w.AppendLine(value);
         }
 
         public static void Print(this StringBuilder w, int tab, string value) {

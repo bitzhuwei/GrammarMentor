@@ -81,21 +81,23 @@ namespace bitzhuwei.GrammarFormat {
         /// </summary>
         public readonly string/*Node.type*/nodeNext2Dot;
 
-        public void Print(System.IO.TextWriter stream) {
-            stream.Write(this.VnRegulation.left); stream.Write(" : ");
+        public void Print(System.IO.TextWriter w, VnRegulationDraft[] regulations = null) {
+            if (regulations != null) { w.Write($"[{Array.IndexOf(regulations, this.VnRegulation)}] "); }
+
+            w.Write(this.VnRegulation.left); w.Write(" : ");
 
             var right = this.VnRegulation.Right;
             var count = right.Count;
             for (int i = 0; i < count; i++) {
-                if (i == this.dotPosition) { stream.Write(Utility.dot); stream.Write(' '); }
+                if (i == this.dotPosition) { w.Write(Utility.dot); w.Write(' '); }
 
                 var item = right[i];
-                stream.Write(item); stream.Write(' ');
+                w.Write(item); w.Write(' ');
             }
 
-            if (this.dotPosition == count) { stream.Write(Utility.dot); stream.Write(' '); }
+            if (this.dotPosition == count) { w.Write(Utility.dot); w.Write(' '); }
 
-            stream.Write(';');
+            w.Write(';');
         }
 
         public override string ToString() {
@@ -107,8 +109,9 @@ namespace bitzhuwei.GrammarFormat {
             return b.ToString();
         }
 
-        public void ToMermaid(TextWriter w, VnRegulationDraft[] regulations) {
+        public void ToMermaid(TextWriter w, VnRegulationDraft[] regulations = null) {
             if (regulations != null) { w.Write($"[{Array.IndexOf(regulations, this.VnRegulation)}] "); }
+
             w.Write(this.VnRegulation.left); w.Write(" : ");
 
             var right = this.VnRegulation.Right;

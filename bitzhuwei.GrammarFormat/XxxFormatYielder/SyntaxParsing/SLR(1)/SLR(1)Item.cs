@@ -81,7 +81,9 @@ namespace bitzhuwei.GrammarFormat {
         /// </summary>
         public readonly string/*Node.type*/nodeNext2Dot;
 
-        public void Print(System.IO.TextWriter w) {
+        public void Print(System.IO.TextWriter w, VnRegulationDraft[] regulations = null) {
+            if (regulations != null) { w.Write($"[{Array.IndexOf(regulations, this.VnRegulation)}] "); }
+
             w.Write(this.VnRegulation.left); w.Write(" : ");
 
             var right = this.VnRegulation.Right;
@@ -109,6 +111,7 @@ namespace bitzhuwei.GrammarFormat {
 
         public void ToMermaid(TextWriter w, VnRegulationDraft[] regulations) {
             if (regulations != null) { w.Write($"[{Array.IndexOf(regulations, this.VnRegulation)}] "); }
+
             w.Write(this.VnRegulation.left);
             w.Write(" : ");
 

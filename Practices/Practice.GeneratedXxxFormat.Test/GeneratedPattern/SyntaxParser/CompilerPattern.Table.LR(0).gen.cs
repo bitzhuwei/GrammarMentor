@@ -24,7 +24,11 @@ namespace bitzhuwei.PatternFormat {
                 list[i] = new SyntaxState($"{nameof(CompilerPattern)}.syntaxStates[{i}]");
             }
             // 480 actions. 30 conflicts.
-            // list[0]
+            // syntaxStates[0]:
+            // [-1] TokenDraft> : ⏳ Pattern ;
+            // [0] Pattern : ⏳ PreRegex Regex PostRegex ;
+            // [1] PreRegex : ⏳ 'refVt' ;
+            // [2] PreRegex : ⏳ ;
             //@refVt repeated 2 times
             list[0].actionDict.Add(EType.Pattern, new LRGotoAction(syntaxStates[1]));/*Actions[0]*/
             list[0].actionDict.Add(EType.PreRegex, new LRGotoAction(syntaxStates[2]));/*Actions[1]*/
@@ -46,9 +50,19 @@ namespace bitzhuwei.PatternFormat {
             list[0].actionDict.Add(EType.@Comma, new LRReducitonAction(regulations[2]));/*Actions[17]*/
             list[0].actionDict.Add(EType.@max, new LRReducitonAction(regulations[2]));/*Actions[18]*/
             list[0].actionDict.Add(EType.@EndOfTokenList, new LRReducitonAction(regulations[2]));/*Actions[19]*/
-            // list[1]
+            // syntaxStates[1]:
+            // [-1] TokenDraft> : Pattern ⏳ ;
             list[1].actionDict.Add(EType.@EndOfTokenList, new LRAcceptAction(/*no param*/));/*Actions[20]*/
-            // list[2]
+            // syntaxStates[2]:
+            // [0] Pattern : PreRegex ⏳ Regex PostRegex ;
+            // [5] Regex : ⏳ Regex '|' Bunch ;
+            // [6] Regex : ⏳ Bunch ;
+            // [7] Bunch : ⏳ Bunch Unit ;
+            // [8] Bunch : ⏳ Unit ;
+            // [9] Unit : ⏳ 'char' Repeat ;
+            // [10] Unit : ⏳ '.' Repeat ;
+            // [11] Unit : ⏳ 'scope' Repeat ;
+            // [12] Unit : ⏳ '(' Regex ')' Repeat ;
             list[2].actionDict.Add(EType.Regex, new LRGotoAction(syntaxStates[4]));/*Actions[21]*/
             list[2].actionDict.Add(EType.Bunch, new LRGotoAction(syntaxStates[5]));/*Actions[22]*/
             list[2].actionDict.Add(EType.Unit, new LRGotoAction(syntaxStates[6]));/*Actions[23]*/
@@ -56,7 +70,8 @@ namespace bitzhuwei.PatternFormat {
             list[2].actionDict.Add(EType.@Dot, new LRShiftInAction(syntaxStates[8]));/*Actions[25]*/
             list[2].actionDict.Add(EType.@scope, new LRShiftInAction(syntaxStates[9]));/*Actions[26]*/
             list[2].actionDict.Add(EType.@LeftParenthesis, new LRShiftInAction(syntaxStates[10]));/*Actions[27]*/
-            // list[3]
+            // syntaxStates[3]:
+            // [1] PreRegex : 'refVt' ⏳ ;
             list[3].actionDict.Add(EType.@refVt, new LRReducitonAction(regulations[1]));/*Actions[28]*/
             list[3].actionDict.Add(EType.@Slash, new LRReducitonAction(regulations[1]));/*Actions[29]*/
             list[3].actionDict.Add(EType.@Pipe, new LRReducitonAction(regulations[1]));/*Actions[30]*/
@@ -74,7 +89,11 @@ namespace bitzhuwei.PatternFormat {
             list[3].actionDict.Add(EType.@Comma, new LRReducitonAction(regulations[1]));/*Actions[42]*/
             list[3].actionDict.Add(EType.@max, new LRReducitonAction(regulations[1]));/*Actions[43]*/
             list[3].actionDict.Add(EType.@EndOfTokenList, new LRReducitonAction(regulations[1]));/*Actions[44]*/
-            // list[4]
+            // syntaxStates[4]:
+            // [0] Pattern : PreRegex Regex ⏳ PostRegex ;
+            // [5] Regex : Regex ⏳ '|' Bunch ;
+            // [3] PostRegex : ⏳ '/' Regex ;
+            // [4] PostRegex : ⏳ ;
             //@Pipe repeated 2 times
             //@Slash repeated 2 times
             list[4].actionDict.Add(EType.PostRegex, new LRGotoAction(syntaxStates[11]));/*Actions[45]*/
@@ -97,7 +116,13 @@ namespace bitzhuwei.PatternFormat {
             list[4].actionDict.Add(EType.@Comma, new LRReducitonAction(regulations[4]));/*Actions[62]*/
             list[4].actionDict.Add(EType.@max, new LRReducitonAction(regulations[4]));/*Actions[63]*/
             list[4].actionDict.Add(EType.@EndOfTokenList, new LRReducitonAction(regulations[4]));/*Actions[64]*/
-            // list[5]
+            // syntaxStates[5]:
+            // [6] Regex : Bunch ⏳ ;
+            // [7] Bunch : Bunch ⏳ Unit ;
+            // [9] Unit : ⏳ 'char' Repeat ;
+            // [10] Unit : ⏳ '.' Repeat ;
+            // [11] Unit : ⏳ 'scope' Repeat ;
+            // [12] Unit : ⏳ '(' Regex ')' Repeat ;
             //@char repeated 2 times
             //@Dot repeated 2 times
             //@scope repeated 2 times
@@ -124,7 +149,8 @@ namespace bitzhuwei.PatternFormat {
             list[5].actionDict.Add(EType.@Comma, new LRReducitonAction(regulations[6]));/*Actions[84]*/
             list[5].actionDict.Add(EType.@max, new LRReducitonAction(regulations[6]));/*Actions[85]*/
             list[5].actionDict.Add(EType.@EndOfTokenList, new LRReducitonAction(regulations[6]));/*Actions[86]*/
-            // list[6]
+            // syntaxStates[6]:
+            // [8] Bunch : Unit ⏳ ;
             list[6].actionDict.Add(EType.@refVt, new LRReducitonAction(regulations[8]));/*Actions[87]*/
             list[6].actionDict.Add(EType.@Slash, new LRReducitonAction(regulations[8]));/*Actions[88]*/
             list[6].actionDict.Add(EType.@Pipe, new LRReducitonAction(regulations[8]));/*Actions[89]*/
@@ -142,7 +168,13 @@ namespace bitzhuwei.PatternFormat {
             list[6].actionDict.Add(EType.@Comma, new LRReducitonAction(regulations[8]));/*Actions[101]*/
             list[6].actionDict.Add(EType.@max, new LRReducitonAction(regulations[8]));/*Actions[102]*/
             list[6].actionDict.Add(EType.@EndOfTokenList, new LRReducitonAction(regulations[8]));/*Actions[103]*/
-            // list[7]
+            // syntaxStates[7]:
+            // [9] Unit : 'char' ⏳ Repeat ;
+            // [13] Repeat : ⏳ '?' ;
+            // [14] Repeat : ⏳ '+' ;
+            // [15] Repeat : ⏳ '*' ;
+            // [16] Repeat : ⏳ '{' 'min' UpperBound '}' ;
+            // [17] Repeat : ⏳ ;
             //@Question repeated 2 times
             //@Plus repeated 2 times
             //@Asterisk repeated 2 times
@@ -169,7 +201,13 @@ namespace bitzhuwei.PatternFormat {
             list[7].actionDict.Add(EType.@Comma, new LRReducitonAction(regulations[17]));/*Actions[123]*/
             list[7].actionDict.Add(EType.@max, new LRReducitonAction(regulations[17]));/*Actions[124]*/
             list[7].actionDict.Add(EType.@EndOfTokenList, new LRReducitonAction(regulations[17]));/*Actions[125]*/
-            // list[8]
+            // syntaxStates[8]:
+            // [10] Unit : '.' ⏳ Repeat ;
+            // [13] Repeat : ⏳ '?' ;
+            // [14] Repeat : ⏳ '+' ;
+            // [15] Repeat : ⏳ '*' ;
+            // [16] Repeat : ⏳ '{' 'min' UpperBound '}' ;
+            // [17] Repeat : ⏳ ;
             //@Question repeated 2 times
             //@Plus repeated 2 times
             //@Asterisk repeated 2 times
@@ -196,7 +234,13 @@ namespace bitzhuwei.PatternFormat {
             list[8].actionDict.Add(EType.@Comma, new LRReducitonAction(regulations[17]));/*Actions[145]*/
             list[8].actionDict.Add(EType.@max, new LRReducitonAction(regulations[17]));/*Actions[146]*/
             list[8].actionDict.Add(EType.@EndOfTokenList, new LRReducitonAction(regulations[17]));/*Actions[147]*/
-            // list[9]
+            // syntaxStates[9]:
+            // [11] Unit : 'scope' ⏳ Repeat ;
+            // [13] Repeat : ⏳ '?' ;
+            // [14] Repeat : ⏳ '+' ;
+            // [15] Repeat : ⏳ '*' ;
+            // [16] Repeat : ⏳ '{' 'min' UpperBound '}' ;
+            // [17] Repeat : ⏳ ;
             //@Question repeated 2 times
             //@Plus repeated 2 times
             //@Asterisk repeated 2 times
@@ -223,7 +267,16 @@ namespace bitzhuwei.PatternFormat {
             list[9].actionDict.Add(EType.@Comma, new LRReducitonAction(regulations[17]));/*Actions[167]*/
             list[9].actionDict.Add(EType.@max, new LRReducitonAction(regulations[17]));/*Actions[168]*/
             list[9].actionDict.Add(EType.@EndOfTokenList, new LRReducitonAction(regulations[17]));/*Actions[169]*/
-            // list[10]
+            // syntaxStates[10]:
+            // [12] Unit : '(' ⏳ Regex ')' Repeat ;
+            // [5] Regex : ⏳ Regex '|' Bunch ;
+            // [6] Regex : ⏳ Bunch ;
+            // [7] Bunch : ⏳ Bunch Unit ;
+            // [8] Bunch : ⏳ Unit ;
+            // [9] Unit : ⏳ 'char' Repeat ;
+            // [10] Unit : ⏳ '.' Repeat ;
+            // [11] Unit : ⏳ 'scope' Repeat ;
+            // [12] Unit : ⏳ '(' Regex ')' Repeat ;
             list[10].actionDict.Add(EType.Regex, new LRGotoAction(syntaxStates[22]));/*Actions[170]*/
             list[10].actionDict.Add(EType.Bunch, new LRGotoAction(syntaxStates[5]));/*Actions[171]*/
             list[10].actionDict.Add(EType.Unit, new LRGotoAction(syntaxStates[6]));/*Actions[172]*/
@@ -231,7 +284,8 @@ namespace bitzhuwei.PatternFormat {
             list[10].actionDict.Add(EType.@Dot, new LRShiftInAction(syntaxStates[8]));/*Actions[174]*/
             list[10].actionDict.Add(EType.@scope, new LRShiftInAction(syntaxStates[9]));/*Actions[175]*/
             list[10].actionDict.Add(EType.@LeftParenthesis, new LRShiftInAction(syntaxStates[10]));/*Actions[176]*/
-            // list[11]
+            // syntaxStates[11]:
+            // [0] Pattern : PreRegex Regex PostRegex ⏳ ;
             list[11].actionDict.Add(EType.@refVt, new LRReducitonAction(regulations[0]));/*Actions[177]*/
             list[11].actionDict.Add(EType.@Slash, new LRReducitonAction(regulations[0]));/*Actions[178]*/
             list[11].actionDict.Add(EType.@Pipe, new LRReducitonAction(regulations[0]));/*Actions[179]*/
@@ -249,14 +303,30 @@ namespace bitzhuwei.PatternFormat {
             list[11].actionDict.Add(EType.@Comma, new LRReducitonAction(regulations[0]));/*Actions[191]*/
             list[11].actionDict.Add(EType.@max, new LRReducitonAction(regulations[0]));/*Actions[192]*/
             list[11].actionDict.Add(EType.@EndOfTokenList, new LRReducitonAction(regulations[0]));/*Actions[193]*/
-            // list[12]
+            // syntaxStates[12]:
+            // [5] Regex : Regex '|' ⏳ Bunch ;
+            // [7] Bunch : ⏳ Bunch Unit ;
+            // [8] Bunch : ⏳ Unit ;
+            // [9] Unit : ⏳ 'char' Repeat ;
+            // [10] Unit : ⏳ '.' Repeat ;
+            // [11] Unit : ⏳ 'scope' Repeat ;
+            // [12] Unit : ⏳ '(' Regex ')' Repeat ;
             list[12].actionDict.Add(EType.Bunch, new LRGotoAction(syntaxStates[23]));/*Actions[194]*/
             list[12].actionDict.Add(EType.Unit, new LRGotoAction(syntaxStates[6]));/*Actions[195]*/
             list[12].actionDict.Add(EType.@char, new LRShiftInAction(syntaxStates[7]));/*Actions[196]*/
             list[12].actionDict.Add(EType.@Dot, new LRShiftInAction(syntaxStates[8]));/*Actions[197]*/
             list[12].actionDict.Add(EType.@scope, new LRShiftInAction(syntaxStates[9]));/*Actions[198]*/
             list[12].actionDict.Add(EType.@LeftParenthesis, new LRShiftInAction(syntaxStates[10]));/*Actions[199]*/
-            // list[13]
+            // syntaxStates[13]:
+            // [3] PostRegex : '/' ⏳ Regex ;
+            // [5] Regex : ⏳ Regex '|' Bunch ;
+            // [6] Regex : ⏳ Bunch ;
+            // [7] Bunch : ⏳ Bunch Unit ;
+            // [8] Bunch : ⏳ Unit ;
+            // [9] Unit : ⏳ 'char' Repeat ;
+            // [10] Unit : ⏳ '.' Repeat ;
+            // [11] Unit : ⏳ 'scope' Repeat ;
+            // [12] Unit : ⏳ '(' Regex ')' Repeat ;
             list[13].actionDict.Add(EType.Regex, new LRGotoAction(syntaxStates[24]));/*Actions[200]*/
             list[13].actionDict.Add(EType.Bunch, new LRGotoAction(syntaxStates[5]));/*Actions[201]*/
             list[13].actionDict.Add(EType.Unit, new LRGotoAction(syntaxStates[6]));/*Actions[202]*/
@@ -264,7 +334,8 @@ namespace bitzhuwei.PatternFormat {
             list[13].actionDict.Add(EType.@Dot, new LRShiftInAction(syntaxStates[8]));/*Actions[204]*/
             list[13].actionDict.Add(EType.@scope, new LRShiftInAction(syntaxStates[9]));/*Actions[205]*/
             list[13].actionDict.Add(EType.@LeftParenthesis, new LRShiftInAction(syntaxStates[10]));/*Actions[206]*/
-            // list[14]
+            // syntaxStates[14]:
+            // [7] Bunch : Bunch Unit ⏳ ;
             list[14].actionDict.Add(EType.@refVt, new LRReducitonAction(regulations[7]));/*Actions[207]*/
             list[14].actionDict.Add(EType.@Slash, new LRReducitonAction(regulations[7]));/*Actions[208]*/
             list[14].actionDict.Add(EType.@Pipe, new LRReducitonAction(regulations[7]));/*Actions[209]*/
@@ -282,7 +353,8 @@ namespace bitzhuwei.PatternFormat {
             list[14].actionDict.Add(EType.@Comma, new LRReducitonAction(regulations[7]));/*Actions[221]*/
             list[14].actionDict.Add(EType.@max, new LRReducitonAction(regulations[7]));/*Actions[222]*/
             list[14].actionDict.Add(EType.@EndOfTokenList, new LRReducitonAction(regulations[7]));/*Actions[223]*/
-            // list[15]
+            // syntaxStates[15]:
+            // [9] Unit : 'char' Repeat ⏳ ;
             list[15].actionDict.Add(EType.@refVt, new LRReducitonAction(regulations[9]));/*Actions[224]*/
             list[15].actionDict.Add(EType.@Slash, new LRReducitonAction(regulations[9]));/*Actions[225]*/
             list[15].actionDict.Add(EType.@Pipe, new LRReducitonAction(regulations[9]));/*Actions[226]*/
@@ -300,7 +372,8 @@ namespace bitzhuwei.PatternFormat {
             list[15].actionDict.Add(EType.@Comma, new LRReducitonAction(regulations[9]));/*Actions[238]*/
             list[15].actionDict.Add(EType.@max, new LRReducitonAction(regulations[9]));/*Actions[239]*/
             list[15].actionDict.Add(EType.@EndOfTokenList, new LRReducitonAction(regulations[9]));/*Actions[240]*/
-            // list[16]
+            // syntaxStates[16]:
+            // [13] Repeat : '?' ⏳ ;
             list[16].actionDict.Add(EType.@refVt, new LRReducitonAction(regulations[13]));/*Actions[241]*/
             list[16].actionDict.Add(EType.@Slash, new LRReducitonAction(regulations[13]));/*Actions[242]*/
             list[16].actionDict.Add(EType.@Pipe, new LRReducitonAction(regulations[13]));/*Actions[243]*/
@@ -318,7 +391,8 @@ namespace bitzhuwei.PatternFormat {
             list[16].actionDict.Add(EType.@Comma, new LRReducitonAction(regulations[13]));/*Actions[255]*/
             list[16].actionDict.Add(EType.@max, new LRReducitonAction(regulations[13]));/*Actions[256]*/
             list[16].actionDict.Add(EType.@EndOfTokenList, new LRReducitonAction(regulations[13]));/*Actions[257]*/
-            // list[17]
+            // syntaxStates[17]:
+            // [14] Repeat : '+' ⏳ ;
             list[17].actionDict.Add(EType.@refVt, new LRReducitonAction(regulations[14]));/*Actions[258]*/
             list[17].actionDict.Add(EType.@Slash, new LRReducitonAction(regulations[14]));/*Actions[259]*/
             list[17].actionDict.Add(EType.@Pipe, new LRReducitonAction(regulations[14]));/*Actions[260]*/
@@ -336,7 +410,8 @@ namespace bitzhuwei.PatternFormat {
             list[17].actionDict.Add(EType.@Comma, new LRReducitonAction(regulations[14]));/*Actions[272]*/
             list[17].actionDict.Add(EType.@max, new LRReducitonAction(regulations[14]));/*Actions[273]*/
             list[17].actionDict.Add(EType.@EndOfTokenList, new LRReducitonAction(regulations[14]));/*Actions[274]*/
-            // list[18]
+            // syntaxStates[18]:
+            // [15] Repeat : '*' ⏳ ;
             list[18].actionDict.Add(EType.@refVt, new LRReducitonAction(regulations[15]));/*Actions[275]*/
             list[18].actionDict.Add(EType.@Slash, new LRReducitonAction(regulations[15]));/*Actions[276]*/
             list[18].actionDict.Add(EType.@Pipe, new LRReducitonAction(regulations[15]));/*Actions[277]*/
@@ -354,9 +429,11 @@ namespace bitzhuwei.PatternFormat {
             list[18].actionDict.Add(EType.@Comma, new LRReducitonAction(regulations[15]));/*Actions[289]*/
             list[18].actionDict.Add(EType.@max, new LRReducitonAction(regulations[15]));/*Actions[290]*/
             list[18].actionDict.Add(EType.@EndOfTokenList, new LRReducitonAction(regulations[15]));/*Actions[291]*/
-            // list[19]
+            // syntaxStates[19]:
+            // [16] Repeat : '{' ⏳ 'min' UpperBound '}' ;
             list[19].actionDict.Add(EType.@min, new LRShiftInAction(syntaxStates[25]));/*Actions[292]*/
-            // list[20]
+            // syntaxStates[20]:
+            // [10] Unit : '.' Repeat ⏳ ;
             list[20].actionDict.Add(EType.@refVt, new LRReducitonAction(regulations[10]));/*Actions[293]*/
             list[20].actionDict.Add(EType.@Slash, new LRReducitonAction(regulations[10]));/*Actions[294]*/
             list[20].actionDict.Add(EType.@Pipe, new LRReducitonAction(regulations[10]));/*Actions[295]*/
@@ -374,7 +451,8 @@ namespace bitzhuwei.PatternFormat {
             list[20].actionDict.Add(EType.@Comma, new LRReducitonAction(regulations[10]));/*Actions[307]*/
             list[20].actionDict.Add(EType.@max, new LRReducitonAction(regulations[10]));/*Actions[308]*/
             list[20].actionDict.Add(EType.@EndOfTokenList, new LRReducitonAction(regulations[10]));/*Actions[309]*/
-            // list[21]
+            // syntaxStates[21]:
+            // [11] Unit : 'scope' Repeat ⏳ ;
             list[21].actionDict.Add(EType.@refVt, new LRReducitonAction(regulations[11]));/*Actions[310]*/
             list[21].actionDict.Add(EType.@Slash, new LRReducitonAction(regulations[11]));/*Actions[311]*/
             list[21].actionDict.Add(EType.@Pipe, new LRReducitonAction(regulations[11]));/*Actions[312]*/
@@ -392,10 +470,18 @@ namespace bitzhuwei.PatternFormat {
             list[21].actionDict.Add(EType.@Comma, new LRReducitonAction(regulations[11]));/*Actions[324]*/
             list[21].actionDict.Add(EType.@max, new LRReducitonAction(regulations[11]));/*Actions[325]*/
             list[21].actionDict.Add(EType.@EndOfTokenList, new LRReducitonAction(regulations[11]));/*Actions[326]*/
-            // list[22]
+            // syntaxStates[22]:
+            // [12] Unit : '(' Regex ⏳ ')' Repeat ;
+            // [5] Regex : Regex ⏳ '|' Bunch ;
             list[22].actionDict.Add(EType.@RightParenthesis, new LRShiftInAction(syntaxStates[26]));/*Actions[327]*/
             list[22].actionDict.Add(EType.@Pipe, new LRShiftInAction(syntaxStates[12]));/*Actions[328]*/
-            // list[23]
+            // syntaxStates[23]:
+            // [5] Regex : Regex '|' Bunch ⏳ ;
+            // [7] Bunch : Bunch ⏳ Unit ;
+            // [9] Unit : ⏳ 'char' Repeat ;
+            // [10] Unit : ⏳ '.' Repeat ;
+            // [11] Unit : ⏳ 'scope' Repeat ;
+            // [12] Unit : ⏳ '(' Regex ')' Repeat ;
             //@char repeated 2 times
             //@Dot repeated 2 times
             //@scope repeated 2 times
@@ -422,7 +508,9 @@ namespace bitzhuwei.PatternFormat {
             list[23].actionDict.Add(EType.@Comma, new LRReducitonAction(regulations[5]));/*Actions[348]*/
             list[23].actionDict.Add(EType.@max, new LRReducitonAction(regulations[5]));/*Actions[349]*/
             list[23].actionDict.Add(EType.@EndOfTokenList, new LRReducitonAction(regulations[5]));/*Actions[350]*/
-            // list[24]
+            // syntaxStates[24]:
+            // [3] PostRegex : '/' Regex ⏳ ;
+            // [5] Regex : Regex ⏳ '|' Bunch ;
             //@Pipe repeated 2 times
             list[24].actionDict.Add(EType.@Pipe, new LRShiftInAction(syntaxStates[12]));/*Actions[351]*/
             list[24].actionDict.Add(EType.@Pipe, new LRReducitonAction(regulations[3]));/*Actions[352]*/
@@ -442,7 +530,11 @@ namespace bitzhuwei.PatternFormat {
             list[24].actionDict.Add(EType.@Comma, new LRReducitonAction(regulations[3]));/*Actions[366]*/
             list[24].actionDict.Add(EType.@max, new LRReducitonAction(regulations[3]));/*Actions[367]*/
             list[24].actionDict.Add(EType.@EndOfTokenList, new LRReducitonAction(regulations[3]));/*Actions[368]*/
-            // list[25]
+            // syntaxStates[25]:
+            // [16] Repeat : '{' 'min' ⏳ UpperBound '}' ;
+            // [18] UpperBound : ⏳ ',' 'max' ;
+            // [19] UpperBound : ⏳ ',' ;
+            // [20] UpperBound : ⏳ ;
             //@Comma repeated 2 times
             list[25].actionDict.Add(EType.UpperBound, new LRGotoAction(syntaxStates[27]));/*Actions[369]*/
             list[25].actionDict.Add(EType.@Comma, new LRShiftInAction(syntaxStates[28]));/*Actions[370]*/
@@ -463,7 +555,13 @@ namespace bitzhuwei.PatternFormat {
             list[25].actionDict.Add(EType.@RightBrace, new LRReducitonAction(regulations[20]));/*Actions[385]*/
             list[25].actionDict.Add(EType.@max, new LRReducitonAction(regulations[20]));/*Actions[386]*/
             list[25].actionDict.Add(EType.@EndOfTokenList, new LRReducitonAction(regulations[20]));/*Actions[387]*/
-            // list[26]
+            // syntaxStates[26]:
+            // [12] Unit : '(' Regex ')' ⏳ Repeat ;
+            // [13] Repeat : ⏳ '?' ;
+            // [14] Repeat : ⏳ '+' ;
+            // [15] Repeat : ⏳ '*' ;
+            // [16] Repeat : ⏳ '{' 'min' UpperBound '}' ;
+            // [17] Repeat : ⏳ ;
             //@Question repeated 2 times
             //@Plus repeated 2 times
             //@Asterisk repeated 2 times
@@ -490,9 +588,12 @@ namespace bitzhuwei.PatternFormat {
             list[26].actionDict.Add(EType.@Comma, new LRReducitonAction(regulations[17]));/*Actions[407]*/
             list[26].actionDict.Add(EType.@max, new LRReducitonAction(regulations[17]));/*Actions[408]*/
             list[26].actionDict.Add(EType.@EndOfTokenList, new LRReducitonAction(regulations[17]));/*Actions[409]*/
-            // list[27]
+            // syntaxStates[27]:
+            // [16] Repeat : '{' 'min' UpperBound ⏳ '}' ;
             list[27].actionDict.Add(EType.@RightBrace, new LRShiftInAction(syntaxStates[30]));/*Actions[410]*/
-            // list[28]
+            // syntaxStates[28]:
+            // [18] UpperBound : ',' ⏳ 'max' ;
+            // [19] UpperBound : ',' ⏳ ;
             //@max repeated 2 times
             list[28].actionDict.Add(EType.@max, new LRShiftInAction(syntaxStates[31]));/*Actions[411]*/
             list[28].actionDict.Add(EType.@max, new LRReducitonAction(regulations[19]));/*Actions[412]*/
@@ -512,7 +613,8 @@ namespace bitzhuwei.PatternFormat {
             list[28].actionDict.Add(EType.@RightBrace, new LRReducitonAction(regulations[19]));/*Actions[426]*/
             list[28].actionDict.Add(EType.@Comma, new LRReducitonAction(regulations[19]));/*Actions[427]*/
             list[28].actionDict.Add(EType.@EndOfTokenList, new LRReducitonAction(regulations[19]));/*Actions[428]*/
-            // list[29]
+            // syntaxStates[29]:
+            // [12] Unit : '(' Regex ')' Repeat ⏳ ;
             list[29].actionDict.Add(EType.@refVt, new LRReducitonAction(regulations[12]));/*Actions[429]*/
             list[29].actionDict.Add(EType.@Slash, new LRReducitonAction(regulations[12]));/*Actions[430]*/
             list[29].actionDict.Add(EType.@Pipe, new LRReducitonAction(regulations[12]));/*Actions[431]*/
@@ -530,7 +632,8 @@ namespace bitzhuwei.PatternFormat {
             list[29].actionDict.Add(EType.@Comma, new LRReducitonAction(regulations[12]));/*Actions[443]*/
             list[29].actionDict.Add(EType.@max, new LRReducitonAction(regulations[12]));/*Actions[444]*/
             list[29].actionDict.Add(EType.@EndOfTokenList, new LRReducitonAction(regulations[12]));/*Actions[445]*/
-            // list[30]
+            // syntaxStates[30]:
+            // [16] Repeat : '{' 'min' UpperBound '}' ⏳ ;
             list[30].actionDict.Add(EType.@refVt, new LRReducitonAction(regulations[16]));/*Actions[446]*/
             list[30].actionDict.Add(EType.@Slash, new LRReducitonAction(regulations[16]));/*Actions[447]*/
             list[30].actionDict.Add(EType.@Pipe, new LRReducitonAction(regulations[16]));/*Actions[448]*/
@@ -548,7 +651,8 @@ namespace bitzhuwei.PatternFormat {
             list[30].actionDict.Add(EType.@Comma, new LRReducitonAction(regulations[16]));/*Actions[460]*/
             list[30].actionDict.Add(EType.@max, new LRReducitonAction(regulations[16]));/*Actions[461]*/
             list[30].actionDict.Add(EType.@EndOfTokenList, new LRReducitonAction(regulations[16]));/*Actions[462]*/
-            // list[31]
+            // syntaxStates[31]:
+            // [18] UpperBound : ',' 'max' ⏳ ;
             list[31].actionDict.Add(EType.@refVt, new LRReducitonAction(regulations[18]));/*Actions[463]*/
             list[31].actionDict.Add(EType.@Slash, new LRReducitonAction(regulations[18]));/*Actions[464]*/
             list[31].actionDict.Add(EType.@Pipe, new LRReducitonAction(regulations[18]));/*Actions[465]*/

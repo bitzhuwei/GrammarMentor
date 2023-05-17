@@ -24,17 +24,32 @@ namespace bitzhuwei.CalcFormat {
                 list[i] = new SyntaxState($"{nameof(CompilerCalc)}.syntaxStates[{i}]");
             }
             // 100 actions. 6 conflicts.
-            // list[0]
+            // syntaxStates[0]:
+            // [-1] FinalValue> : ⏳ Additive ;
+            // [0] Additive : ⏳ Additive '+' Multiplicative ;
+            // [1] Additive : ⏳ Additive '-' Multiplicative ;
+            // [2] Additive : ⏳ Multiplicative ;
+            // [3] Multiplicative : ⏳ Multiplicative '*' Primary ;
+            // [4] Multiplicative : ⏳ Multiplicative '/' Primary ;
+            // [5] Multiplicative : ⏳ Primary ;
+            // [6] Primary : ⏳ '(' Additive ')' ;
+            // [7] Primary : ⏳ 'number' ;
             list[0].actionDict.Add(EType.Additive, new LRGotoAction(syntaxStates[1]));/*Actions[0]*/
             list[0].actionDict.Add(EType.Multiplicative, new LRGotoAction(syntaxStates[2]));/*Actions[1]*/
             list[0].actionDict.Add(EType.Primary, new LRGotoAction(syntaxStates[3]));/*Actions[2]*/
             list[0].actionDict.Add(EType.@LeftParenthesis, new LRShiftInAction(syntaxStates[4]));/*Actions[3]*/
             list[0].actionDict.Add(EType.@number, new LRShiftInAction(syntaxStates[5]));/*Actions[4]*/
-            // list[1]
+            // syntaxStates[1]:
+            // [-1] FinalValue> : Additive ⏳ ;
+            // [0] Additive : Additive ⏳ '+' Multiplicative ;
+            // [1] Additive : Additive ⏳ '-' Multiplicative ;
             list[1].actionDict.Add(EType.@Plus, new LRShiftInAction(syntaxStates[6]));/*Actions[5]*/
             list[1].actionDict.Add(EType.@Dash, new LRShiftInAction(syntaxStates[7]));/*Actions[6]*/
             list[1].actionDict.Add(EType.@EndOfTokenList, new LRAcceptAction(/*no param*/));/*Actions[7]*/
-            // list[2]
+            // syntaxStates[2]:
+            // [2] Additive : Multiplicative ⏳ ;
+            // [3] Multiplicative : Multiplicative ⏳ '*' Primary ;
+            // [4] Multiplicative : Multiplicative ⏳ '/' Primary ;
             //@Asterisk repeated 2 times
             //@Slash repeated 2 times
             list[2].actionDict.Add(EType.@Asterisk, new LRShiftInAction(syntaxStates[8]));/*Actions[8]*/
@@ -47,7 +62,8 @@ namespace bitzhuwei.CalcFormat {
             list[2].actionDict.Add(EType.@RightParenthesis, new LRReducitonAction(regulations[2]));/*Actions[15]*/
             list[2].actionDict.Add(EType.@number, new LRReducitonAction(regulations[2]));/*Actions[16]*/
             list[2].actionDict.Add(EType.@EndOfTokenList, new LRReducitonAction(regulations[2]));/*Actions[17]*/
-            // list[3]
+            // syntaxStates[3]:
+            // [5] Multiplicative : Primary ⏳ ;
             list[3].actionDict.Add(EType.@Plus, new LRReducitonAction(regulations[5]));/*Actions[18]*/
             list[3].actionDict.Add(EType.@Dash, new LRReducitonAction(regulations[5]));/*Actions[19]*/
             list[3].actionDict.Add(EType.@Asterisk, new LRReducitonAction(regulations[5]));/*Actions[20]*/
@@ -56,13 +72,23 @@ namespace bitzhuwei.CalcFormat {
             list[3].actionDict.Add(EType.@RightParenthesis, new LRReducitonAction(regulations[5]));/*Actions[23]*/
             list[3].actionDict.Add(EType.@number, new LRReducitonAction(regulations[5]));/*Actions[24]*/
             list[3].actionDict.Add(EType.@EndOfTokenList, new LRReducitonAction(regulations[5]));/*Actions[25]*/
-            // list[4]
+            // syntaxStates[4]:
+            // [6] Primary : '(' ⏳ Additive ')' ;
+            // [0] Additive : ⏳ Additive '+' Multiplicative ;
+            // [1] Additive : ⏳ Additive '-' Multiplicative ;
+            // [2] Additive : ⏳ Multiplicative ;
+            // [3] Multiplicative : ⏳ Multiplicative '*' Primary ;
+            // [4] Multiplicative : ⏳ Multiplicative '/' Primary ;
+            // [5] Multiplicative : ⏳ Primary ;
+            // [6] Primary : ⏳ '(' Additive ')' ;
+            // [7] Primary : ⏳ 'number' ;
             list[4].actionDict.Add(EType.Additive, new LRGotoAction(syntaxStates[10]));/*Actions[26]*/
             list[4].actionDict.Add(EType.Multiplicative, new LRGotoAction(syntaxStates[2]));/*Actions[27]*/
             list[4].actionDict.Add(EType.Primary, new LRGotoAction(syntaxStates[3]));/*Actions[28]*/
             list[4].actionDict.Add(EType.@LeftParenthesis, new LRShiftInAction(syntaxStates[4]));/*Actions[29]*/
             list[4].actionDict.Add(EType.@number, new LRShiftInAction(syntaxStates[5]));/*Actions[30]*/
-            // list[5]
+            // syntaxStates[5]:
+            // [7] Primary : 'number' ⏳ ;
             list[5].actionDict.Add(EType.@Plus, new LRReducitonAction(regulations[7]));/*Actions[31]*/
             list[5].actionDict.Add(EType.@Dash, new LRReducitonAction(regulations[7]));/*Actions[32]*/
             list[5].actionDict.Add(EType.@Asterisk, new LRReducitonAction(regulations[7]));/*Actions[33]*/
@@ -71,29 +97,53 @@ namespace bitzhuwei.CalcFormat {
             list[5].actionDict.Add(EType.@RightParenthesis, new LRReducitonAction(regulations[7]));/*Actions[36]*/
             list[5].actionDict.Add(EType.@number, new LRReducitonAction(regulations[7]));/*Actions[37]*/
             list[5].actionDict.Add(EType.@EndOfTokenList, new LRReducitonAction(regulations[7]));/*Actions[38]*/
-            // list[6]
+            // syntaxStates[6]:
+            // [0] Additive : Additive '+' ⏳ Multiplicative ;
+            // [3] Multiplicative : ⏳ Multiplicative '*' Primary ;
+            // [4] Multiplicative : ⏳ Multiplicative '/' Primary ;
+            // [5] Multiplicative : ⏳ Primary ;
+            // [6] Primary : ⏳ '(' Additive ')' ;
+            // [7] Primary : ⏳ 'number' ;
             list[6].actionDict.Add(EType.Multiplicative, new LRGotoAction(syntaxStates[11]));/*Actions[39]*/
             list[6].actionDict.Add(EType.Primary, new LRGotoAction(syntaxStates[3]));/*Actions[40]*/
             list[6].actionDict.Add(EType.@LeftParenthesis, new LRShiftInAction(syntaxStates[4]));/*Actions[41]*/
             list[6].actionDict.Add(EType.@number, new LRShiftInAction(syntaxStates[5]));/*Actions[42]*/
-            // list[7]
+            // syntaxStates[7]:
+            // [1] Additive : Additive '-' ⏳ Multiplicative ;
+            // [3] Multiplicative : ⏳ Multiplicative '*' Primary ;
+            // [4] Multiplicative : ⏳ Multiplicative '/' Primary ;
+            // [5] Multiplicative : ⏳ Primary ;
+            // [6] Primary : ⏳ '(' Additive ')' ;
+            // [7] Primary : ⏳ 'number' ;
             list[7].actionDict.Add(EType.Multiplicative, new LRGotoAction(syntaxStates[12]));/*Actions[43]*/
             list[7].actionDict.Add(EType.Primary, new LRGotoAction(syntaxStates[3]));/*Actions[44]*/
             list[7].actionDict.Add(EType.@LeftParenthesis, new LRShiftInAction(syntaxStates[4]));/*Actions[45]*/
             list[7].actionDict.Add(EType.@number, new LRShiftInAction(syntaxStates[5]));/*Actions[46]*/
-            // list[8]
+            // syntaxStates[8]:
+            // [3] Multiplicative : Multiplicative '*' ⏳ Primary ;
+            // [6] Primary : ⏳ '(' Additive ')' ;
+            // [7] Primary : ⏳ 'number' ;
             list[8].actionDict.Add(EType.Primary, new LRGotoAction(syntaxStates[13]));/*Actions[47]*/
             list[8].actionDict.Add(EType.@LeftParenthesis, new LRShiftInAction(syntaxStates[4]));/*Actions[48]*/
             list[8].actionDict.Add(EType.@number, new LRShiftInAction(syntaxStates[5]));/*Actions[49]*/
-            // list[9]
+            // syntaxStates[9]:
+            // [4] Multiplicative : Multiplicative '/' ⏳ Primary ;
+            // [6] Primary : ⏳ '(' Additive ')' ;
+            // [7] Primary : ⏳ 'number' ;
             list[9].actionDict.Add(EType.Primary, new LRGotoAction(syntaxStates[14]));/*Actions[50]*/
             list[9].actionDict.Add(EType.@LeftParenthesis, new LRShiftInAction(syntaxStates[4]));/*Actions[51]*/
             list[9].actionDict.Add(EType.@number, new LRShiftInAction(syntaxStates[5]));/*Actions[52]*/
-            // list[10]
+            // syntaxStates[10]:
+            // [6] Primary : '(' Additive ⏳ ')' ;
+            // [0] Additive : Additive ⏳ '+' Multiplicative ;
+            // [1] Additive : Additive ⏳ '-' Multiplicative ;
             list[10].actionDict.Add(EType.@RightParenthesis, new LRShiftInAction(syntaxStates[15]));/*Actions[53]*/
             list[10].actionDict.Add(EType.@Plus, new LRShiftInAction(syntaxStates[6]));/*Actions[54]*/
             list[10].actionDict.Add(EType.@Dash, new LRShiftInAction(syntaxStates[7]));/*Actions[55]*/
-            // list[11]
+            // syntaxStates[11]:
+            // [0] Additive : Additive '+' Multiplicative ⏳ ;
+            // [3] Multiplicative : Multiplicative ⏳ '*' Primary ;
+            // [4] Multiplicative : Multiplicative ⏳ '/' Primary ;
             //@Asterisk repeated 2 times
             //@Slash repeated 2 times
             list[11].actionDict.Add(EType.@Asterisk, new LRShiftInAction(syntaxStates[8]));/*Actions[56]*/
@@ -106,7 +156,10 @@ namespace bitzhuwei.CalcFormat {
             list[11].actionDict.Add(EType.@RightParenthesis, new LRReducitonAction(regulations[0]));/*Actions[63]*/
             list[11].actionDict.Add(EType.@number, new LRReducitonAction(regulations[0]));/*Actions[64]*/
             list[11].actionDict.Add(EType.@EndOfTokenList, new LRReducitonAction(regulations[0]));/*Actions[65]*/
-            // list[12]
+            // syntaxStates[12]:
+            // [1] Additive : Additive '-' Multiplicative ⏳ ;
+            // [3] Multiplicative : Multiplicative ⏳ '*' Primary ;
+            // [4] Multiplicative : Multiplicative ⏳ '/' Primary ;
             //@Asterisk repeated 2 times
             //@Slash repeated 2 times
             list[12].actionDict.Add(EType.@Asterisk, new LRShiftInAction(syntaxStates[8]));/*Actions[66]*/
@@ -119,7 +172,8 @@ namespace bitzhuwei.CalcFormat {
             list[12].actionDict.Add(EType.@RightParenthesis, new LRReducitonAction(regulations[1]));/*Actions[73]*/
             list[12].actionDict.Add(EType.@number, new LRReducitonAction(regulations[1]));/*Actions[74]*/
             list[12].actionDict.Add(EType.@EndOfTokenList, new LRReducitonAction(regulations[1]));/*Actions[75]*/
-            // list[13]
+            // syntaxStates[13]:
+            // [3] Multiplicative : Multiplicative '*' Primary ⏳ ;
             list[13].actionDict.Add(EType.@Plus, new LRReducitonAction(regulations[3]));/*Actions[76]*/
             list[13].actionDict.Add(EType.@Dash, new LRReducitonAction(regulations[3]));/*Actions[77]*/
             list[13].actionDict.Add(EType.@Asterisk, new LRReducitonAction(regulations[3]));/*Actions[78]*/
@@ -128,7 +182,8 @@ namespace bitzhuwei.CalcFormat {
             list[13].actionDict.Add(EType.@RightParenthesis, new LRReducitonAction(regulations[3]));/*Actions[81]*/
             list[13].actionDict.Add(EType.@number, new LRReducitonAction(regulations[3]));/*Actions[82]*/
             list[13].actionDict.Add(EType.@EndOfTokenList, new LRReducitonAction(regulations[3]));/*Actions[83]*/
-            // list[14]
+            // syntaxStates[14]:
+            // [4] Multiplicative : Multiplicative '/' Primary ⏳ ;
             list[14].actionDict.Add(EType.@Plus, new LRReducitonAction(regulations[4]));/*Actions[84]*/
             list[14].actionDict.Add(EType.@Dash, new LRReducitonAction(regulations[4]));/*Actions[85]*/
             list[14].actionDict.Add(EType.@Asterisk, new LRReducitonAction(regulations[4]));/*Actions[86]*/
@@ -137,7 +192,8 @@ namespace bitzhuwei.CalcFormat {
             list[14].actionDict.Add(EType.@RightParenthesis, new LRReducitonAction(regulations[4]));/*Actions[89]*/
             list[14].actionDict.Add(EType.@number, new LRReducitonAction(regulations[4]));/*Actions[90]*/
             list[14].actionDict.Add(EType.@EndOfTokenList, new LRReducitonAction(regulations[4]));/*Actions[91]*/
-            // list[15]
+            // syntaxStates[15]:
+            // [6] Primary : '(' Additive ')' ⏳ ;
             list[15].actionDict.Add(EType.@Plus, new LRReducitonAction(regulations[6]));/*Actions[92]*/
             list[15].actionDict.Add(EType.@Dash, new LRReducitonAction(regulations[6]));/*Actions[93]*/
             list[15].actionDict.Add(EType.@Asterisk, new LRReducitonAction(regulations[6]));/*Actions[94]*/

@@ -64,6 +64,7 @@
     <Compile Include="XxxFormatYielder\GenerateCode\Gen.LexicalAnalyzer.TokensMD.cs" />
     <Compile Include="XxxFormatYielder\GenerateCode\Gen.Main.GrammarInfo.cs" />
     <Compile Include="XxxFormatYielder\GenerateCode\Gen.Main.CompilerXxx.cs" />
+    <Compile Include="XxxFormatYielder\GenerateCode\Gen.SyntaxParser.GetTableSetActionLines.cs" />
     <Compile Include="XxxFormatYielder\PatternFormat\DataStructure\Automaton\ConditionHelper.cs" />
     <Compile Include="XxxFormatYielder\PatternFormat\DataStructure\Automaton\DFAEdgeDraft.ToMermaid.cs" />
     <Compile Include="XxxFormatYielder\PatternFormat\DataStructure\Automaton\DFAStateDraft.ToMermaid.cs" />

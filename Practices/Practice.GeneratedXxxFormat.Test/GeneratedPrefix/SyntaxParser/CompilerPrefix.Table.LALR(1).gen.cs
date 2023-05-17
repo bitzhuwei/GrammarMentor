@@ -24,25 +24,37 @@ namespace bitzhuwei.PrefixFormat {
                 list[i] = new SyntaxState($"{nameof(CompilerPrefix)}.syntaxStates[{i}]");
             }
             // 14 actions. 0 conflicts.
-            // list[0]
+            // syntaxStates[0]:
+            // [-1] Prefix2> : ⏳ Items ; '￥' 
+            // [0] Items : ⏳ Items Item ; '￥' 'entityId' 
+            // [1] Items : ⏳ Item ; '￥' 'entityId' 
+            // [2] Item : ⏳ 'entityId' '=' 'refEntity' ; '￥' 'entityId' 
             list[0].actionDict.Add(EType.Items, new LRGotoAction(syntaxStates[1]));/*Actions[0]*/
             list[0].actionDict.Add(EType.Item, new LRGotoAction(syntaxStates[2]));/*Actions[1]*/
             list[0].actionDict.Add(EType.@entityId, new LRShiftInAction(syntaxStates[3]));/*Actions[2]*/
-            // list[1]
+            // syntaxStates[1]:
+            // [-1] Prefix2> : Items ⏳ ; '￥' 
+            // [0] Items : Items ⏳ Item ; '￥' 'entityId' 
+            // [2] Item : ⏳ 'entityId' '=' 'refEntity' ; '￥' 'entityId' 
             list[1].actionDict.Add(EType.Item, new LRGotoAction(syntaxStates[4]));/*Actions[3]*/
             list[1].actionDict.Add(EType.@entityId, new LRShiftInAction(syntaxStates[3]));/*Actions[4]*/
             list[1].actionDict.Add(EType.@EndOfTokenList, new LRAcceptAction(/*no param*/));/*Actions[5]*/
-            // list[2]
+            // syntaxStates[2]:
+            // [1] Items : Item ⏳ ; '￥' 'entityId' 
             list[2].actionDict.Add(EType.@EndOfTokenList, new LRReducitonAction(regulations[1]));/*Actions[6]*/
             list[2].actionDict.Add(EType.@entityId, new LRReducitonAction(regulations[1]));/*Actions[7]*/
-            // list[3]
+            // syntaxStates[3]:
+            // [2] Item : 'entityId' ⏳ '=' 'refEntity' ; '￥' 'entityId' 
             list[3].actionDict.Add(EType.@Equal, new LRShiftInAction(syntaxStates[5]));/*Actions[8]*/
-            // list[4]
+            // syntaxStates[4]:
+            // [0] Items : Items Item ⏳ ; '￥' 'entityId' 
             list[4].actionDict.Add(EType.@EndOfTokenList, new LRReducitonAction(regulations[0]));/*Actions[9]*/
             list[4].actionDict.Add(EType.@entityId, new LRReducitonAction(regulations[0]));/*Actions[10]*/
-            // list[5]
+            // syntaxStates[5]:
+            // [2] Item : 'entityId' '=' ⏳ 'refEntity' ; '￥' 'entityId' 
             list[5].actionDict.Add(EType.@refEntity, new LRShiftInAction(syntaxStates[6]));/*Actions[11]*/
-            // list[6]
+            // syntaxStates[6]:
+            // [2] Item : 'entityId' '=' 'refEntity' ⏳ ; '￥' 'entityId' 
             list[6].actionDict.Add(EType.@EndOfTokenList, new LRReducitonAction(regulations[2]));/*Actions[12]*/
             list[6].actionDict.Add(EType.@entityId, new LRReducitonAction(regulations[2]));/*Actions[13]*/
 

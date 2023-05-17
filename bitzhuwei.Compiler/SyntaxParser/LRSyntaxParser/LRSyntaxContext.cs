@@ -76,10 +76,10 @@ namespace bitzhuwei.Compiler {
         /// Get action of this state according to specified <paramref name="token"/>
         /// </summary>
         /// <param name="state"></param>
-        /// <param name="nodeType"></param>
+        /// <param name="V"></param>
         /// <returns></returns>
-        public ParsingAction GetAction(SyntaxState state, string nodeType) {
-            var action = state.GetAction(nodeType);
+        public ParsingAction GetAction(SyntaxState state, string V) {
+            var action = state.GetAction(V);
             return action;
         }
 

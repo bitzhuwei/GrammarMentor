@@ -39,7 +39,7 @@ namespace bitzhuwei.GrammarFormat {
                 Directory.CreateDirectory(path);
             }
             {
-                var table = GetTableSetActionLines(context.lr0SyntaxInfo.table);
+                var table = GetTableSetActionLines(context.lr0SyntaxInfo, context.grammar.VnRegulations);
                 string template = File.ReadAllText(templateTableLR);
                 template = template.Replace(strGrammarName, p.GrammarName);
                 template = template.Replace(strsyntaxStateCount, table.syntaxStateCount.ToString());
@@ -52,6 +52,7 @@ namespace bitzhuwei.GrammarFormat {
                 File.WriteAllText(fullname, template);
             }
         }
+
         private void GenerateSyntaxParserSLR1(YieldContext context) {
             var p = context.parameter;
             var path = Path.Combine(p.generationDirectory, "SyntaxParser");
@@ -59,7 +60,7 @@ namespace bitzhuwei.GrammarFormat {
                 Directory.CreateDirectory(path);
             }
             {
-                var table = GetTableSetActionLines(context.slr1SyntaxInfo.table);
+                var table = GetTableSetActionLines(context.slr1SyntaxInfo, context.grammar.VnRegulations);
                 string template = File.ReadAllText(templateTableLR);
                 template = template.Replace(strGrammarName, p.GrammarName);
                 template = template.Replace(strsyntaxStateCount, table.syntaxStateCount.ToString());
@@ -79,7 +80,7 @@ namespace bitzhuwei.GrammarFormat {
                 Directory.CreateDirectory(path);
             }
             {
-                var table = GetTableSetActionLines(context.lalr1SyntaxInfo.table);
+                var table = GetTableSetActionLines(context.lalr1SyntaxInfo, context.grammar.VnRegulations);
                 string template = File.ReadAllText(templateTableLR);
                 template = template.Replace(strGrammarName, p.GrammarName);
                 template = template.Replace(strsyntaxStateCount, table.syntaxStateCount.ToString());
@@ -99,7 +100,7 @@ namespace bitzhuwei.GrammarFormat {
                 Directory.CreateDirectory(path);
             }
             {
-                var table = GetTableSetActionLines(context.lr1SyntaxInfo.table);
+                var table = GetTableSetActionLines(context.lr1SyntaxInfo, context.grammar.VnRegulations);
                 string template = File.ReadAllText(templateTableLR);
                 template = template.Replace(strGrammarName, p.GrammarName);
                 template = template.Replace(strsyntaxStateCount, table.syntaxStateCount.ToString());

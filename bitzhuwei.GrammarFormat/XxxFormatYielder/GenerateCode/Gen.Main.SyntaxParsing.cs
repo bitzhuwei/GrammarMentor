@@ -35,7 +35,7 @@ namespace bitzhuwei.GrammarFormat {
             }
         }
 
-        private void GenerateMainLR0(YieldContext context) {
+        private void GenerateDocLR0(YieldContext context) {
             var p = context.parameter;
             //var now = DateTime.Now.ToString();
             var grammar = context.grammar.Print();
@@ -65,7 +65,7 @@ namespace bitzhuwei.GrammarFormat {
             }
         }
 
-        private void GenerateMainSLR1(YieldContext context) {
+        private void GenerateDocSLR1(YieldContext context) {
             var p = context.parameter;
             //var now = DateTime.Now.ToString();
             var grammar = context.grammar.Print();
@@ -94,7 +94,7 @@ namespace bitzhuwei.GrammarFormat {
                 //template = template.Replace(strSLR1Edges, slr1EdgeList);
             }
         }
-        private void GenerateMainLALR1(YieldContext context) {
+        private void GenerateDocLALR1(YieldContext context) {
             var p = context.parameter;
             //var now = DateTime.Now.ToString();
             var grammar = context.grammar.Print();
@@ -124,7 +124,7 @@ namespace bitzhuwei.GrammarFormat {
             }
         }
 
-        private void GenerateMainLR1(YieldContext context) {
+        private void GenerateDocLR1(YieldContext context) {
             var p = context.parameter;
             //var now = DateTime.Now.ToString();
             var grammar = context.grammar.Print();

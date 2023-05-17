@@ -36,15 +36,15 @@ namespace bitzhuwei.GrammarFormat {
             return inserted;
         }
 
-        public void Print(System.IO.TextWriter stream) {
-            stream.Write("FOLLOW( "); stream.Write(this.Vn); stream.Write(" ) = { ");
+        public void Print(System.IO.TextWriter w) {
+            w.Write("FOLLOW( "); w.Write(this.Vn); w.Write(" ) = { ");
             var count = this.m_Values.Count;
             for (int i = 0; i < count; i++) {
                 var value = this.m_Values[i];
-                stream.Write(value);
-                stream.Write(" ");
+                w.Write(value);
+                w.Write(" ");
             }
-            stream.Write("}");
+            w.Write("}");
         }
 
         public override string ToString() {

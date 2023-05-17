@@ -74,7 +74,8 @@ namespace bitzhuwei.GrammarFormat {
         /// <param name="dotPosition">圆点的位置</param>
         /// <param name="lookAhead">a Vn or a Vt</param>
         private LALR1Item(VnRegulationDraft regulation, int dotPosition, string/*Node.type*/ lookAhead) {
-            if (regulation == null || lookAhead == null) { throw new ArgumentNullException(); }
+            if (regulation == null) { throw new ArgumentNullException($"{nameof(regulation)}"); }
+            if (lookAhead == null) { throw new ArgumentNullException($"{nameof(lookAhead)}"); }
             if (dotPosition < 0 || regulation.Right.Count < dotPosition) { throw new ArgumentOutOfRangeException($"{nameof(dotPosition)}"); }
 
             this.VnRegulation = regulation;
@@ -110,7 +111,9 @@ namespace bitzhuwei.GrammarFormat {
         /// </summary>
         public readonly IReadOnlyList<string/*Node.type*/> betaZ;
 
-        public void Print(System.IO.TextWriter w) {
+        public void Print(System.IO.TextWriter w, VnRegulationDraft[] regulations = null) {
+            if (regulations != null) { w.Write($"[{Array.IndexOf(regulations, this.VnRegulation)}] "); }
+
             w.Write(this.VnRegulation.left); w.Write(" : ");
 
             var right = this.VnRegulation.Right; var count = right.Count;
@@ -138,6 +141,7 @@ namespace bitzhuwei.GrammarFormat {
 
         public void ToMermaid(TextWriter w, VnRegulationDraft[] regulations) {
             if (regulations != null) { w.Write($"[{Array.IndexOf(regulations, this.VnRegulation)}] "); }
+
             w.Write(this.VnRegulation.left); w.Write(" : ");
 
             var right = this.VnRegulation.Right; var count = right.Count;

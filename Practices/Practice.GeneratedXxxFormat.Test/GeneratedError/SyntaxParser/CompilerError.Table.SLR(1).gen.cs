@@ -24,12 +24,16 @@ namespace bitzhuwei.ErrorFormat {
                 list[i] = new SyntaxState($"{nameof(CompilerError)}.syntaxStates[{i}]");
             }
             // 4 actions. 0 conflicts.
-            // list[0]
+            // syntaxStates[0]:
+            // [-1] Error2> : ⏳ PreRegex ;
+            // [0] PreRegex : ⏳ 'refVt' ;
             list[0].actionDict.Add(EType.PreRegex, new LRGotoAction(syntaxStates[1]));/*Actions[0]*/
             list[0].actionDict.Add(EType.@refVt, new LRShiftInAction(syntaxStates[2]));/*Actions[1]*/
-            // list[1]
+            // syntaxStates[1]:
+            // [-1] Error2> : PreRegex ⏳ ;
             list[1].actionDict.Add(EType.@EndOfTokenList, new LRAcceptAction(/*no param*/));/*Actions[2]*/
-            // list[2]
+            // syntaxStates[2]:
+            // [0] PreRegex : 'refVt' ⏳ ;
             list[2].actionDict.Add(EType.@EndOfTokenList, new LRReducitonAction(regulations[0]));/*Actions[3]*/
 
         }

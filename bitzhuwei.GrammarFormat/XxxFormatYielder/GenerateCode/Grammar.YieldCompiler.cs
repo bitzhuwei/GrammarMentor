@@ -127,7 +127,7 @@ namespace bitzhuwei.GrammarFormat {
                 }
                 context.lr0SyntaxInfo = grammar.VnRegulations.GetLR0SyntaxInfo(eGammar.VnRegulations);
                 logWriter.WriteLine($"{DateTime.Now} GenerateMainLR0..");
-                this.GenerateMainLR0(context);
+                this.GenerateDocLR0(context);
                 logWriter.WriteLine($"{DateTime.Now} GenerateSyntaxParserLR0..");
                 this.GenerateSyntaxParserLR0(context);
                 {
@@ -137,7 +137,7 @@ namespace bitzhuwei.GrammarFormat {
                 logWriter.WriteLine($"{DateTime.Now} GetSLR1SyntaxInfo..");
                 context.slr1SyntaxInfo = grammar.VnRegulations.GetSLR1SyntaxInfo(eGammar.VnRegulations, eNFF.followDict);
                 logWriter.WriteLine($"{DateTime.Now} GenerateMainSLR1..");
-                this.GenerateMainSLR1(context);
+                this.GenerateDocSLR1(context);
                 logWriter.WriteLine($"{DateTime.Now} GenerateSyntaxParserSLR1..");
                 this.GenerateSyntaxParserSLR1(context);
                 {
@@ -147,7 +147,7 @@ namespace bitzhuwei.GrammarFormat {
                 logWriter.WriteLine($"{DateTime.Now} lalr1SyntaxInfo..");
                 context.lalr1SyntaxInfo = grammar.VnRegulations.GetLALR1SyntaxInfo(eGammar.VnRegulations, eNFF.nullableDict, eNFF.firstDict);
                 logWriter.WriteLine($"{DateTime.Now} GenerateMainLALR1..");
-                this.GenerateMainLALR1(context);
+                this.GenerateDocLALR1(context);
                 logWriter.WriteLine($"{DateTime.Now} GenerateSyntaxParserLALR1..");
                 this.GenerateSyntaxParserLALR1(context);
                 {
@@ -157,7 +157,7 @@ namespace bitzhuwei.GrammarFormat {
                 logWriter.WriteLine($"{DateTime.Now} GetLR1SyntaxInfo..");
                 context.lr1SyntaxInfo = grammar.VnRegulations.GetLR1SyntaxInfo(eGammar.VnRegulations, eNFF.nullableDict, eNFF.firstDict);
                 logWriter.WriteLine($"{DateTime.Now} GenerateMainLR1..");
-                this.GenerateMainLR1(context);
+                this.GenerateDocLR1(context);
                 logWriter.WriteLine($"{DateTime.Now} GenerateSyntaxParserLR1..");
                 this.GenerateSyntaxParserLR1(context);
             }

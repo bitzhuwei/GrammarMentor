@@ -24,26 +24,36 @@ namespace bitzhuwei.ABBFormat {
                 list[i] = new SyntaxState($"{nameof(CompilerABB)}.syntaxStates[{i}]");
             }
             // 18 actions. 0 conflicts.
-            // list[0]
+            // syntaxStates[0]:
+            // [-1] BCounter> : ⏳ A ;
+            // [0] A : ⏳ A '+' B ;
+            // [1] A : ⏳ 'a' ;
             list[0].actionDict.Add(EType.A, new LRGotoAction(syntaxStates[1]));/*Actions[0]*/
             list[0].actionDict.Add(EType.@a, new LRShiftInAction(syntaxStates[2]));/*Actions[1]*/
-            // list[1]
+            // syntaxStates[1]:
+            // [-1] BCounter> : A ⏳ ;
+            // [0] A : A ⏳ '+' B ;
             list[1].actionDict.Add(EType.@Plus, new LRShiftInAction(syntaxStates[3]));/*Actions[2]*/
             list[1].actionDict.Add(EType.@EndOfTokenList, new LRAcceptAction(/*no param*/));/*Actions[3]*/
-            // list[2]
+            // syntaxStates[2]:
+            // [1] A : 'a' ⏳ ;
             list[2].actionDict.Add(EType.@Plus, new LRReducitonAction(regulations[1]));/*Actions[4]*/
             list[2].actionDict.Add(EType.@a, new LRReducitonAction(regulations[1]));/*Actions[5]*/
             list[2].actionDict.Add(EType.@b, new LRReducitonAction(regulations[1]));/*Actions[6]*/
             list[2].actionDict.Add(EType.@EndOfTokenList, new LRReducitonAction(regulations[1]));/*Actions[7]*/
-            // list[3]
+            // syntaxStates[3]:
+            // [0] A : A '+' ⏳ B ;
+            // [2] B : ⏳ 'b' ;
             list[3].actionDict.Add(EType.B, new LRGotoAction(syntaxStates[4]));/*Actions[8]*/
             list[3].actionDict.Add(EType.@b, new LRShiftInAction(syntaxStates[5]));/*Actions[9]*/
-            // list[4]
+            // syntaxStates[4]:
+            // [0] A : A '+' B ⏳ ;
             list[4].actionDict.Add(EType.@Plus, new LRReducitonAction(regulations[0]));/*Actions[10]*/
             list[4].actionDict.Add(EType.@a, new LRReducitonAction(regulations[0]));/*Actions[11]*/
             list[4].actionDict.Add(EType.@b, new LRReducitonAction(regulations[0]));/*Actions[12]*/
             list[4].actionDict.Add(EType.@EndOfTokenList, new LRReducitonAction(regulations[0]));/*Actions[13]*/
-            // list[5]
+            // syntaxStates[5]:
+            // [2] B : 'b' ⏳ ;
             list[5].actionDict.Add(EType.@Plus, new LRReducitonAction(regulations[2]));/*Actions[14]*/
             list[5].actionDict.Add(EType.@a, new LRReducitonAction(regulations[2]));/*Actions[15]*/
             list[5].actionDict.Add(EType.@b, new LRReducitonAction(regulations[2]));/*Actions[16]*/

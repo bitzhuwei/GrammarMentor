@@ -36,18 +36,18 @@ namespace bitzhuwei.Compiler {
         }
 
         /// <summary>
-        /// from keyNodeType to <see cref="ParsingAction"/>.
+        /// from `V` to <see cref="ParsingAction"/>.
         /// </summary>
-        public readonly Dictionary<string, ParsingAction> actionDict = new Dictionary<string, ParsingAction>();
+        public readonly Dictionary<string/*V*/, ParsingAction> actionDict = new Dictionary<string, ParsingAction>();
         public ParsingAction errorHandler;
 
         /// <summary>
-        /// Get handler of this state according to specified <paramref name="nodeType"/>
+        /// Get handler of this state according to specified <paramref name="V"/>
         /// </summary>
-        /// <param name="nodeType"></param>
+        /// <param name="V"></param>
         /// <returns></returns>
-        public ParsingAction GetAction(string nodeType) {
-            if (!this.actionDict.TryGetValue(nodeType, out var action)) {
+        public ParsingAction GetAction(string V) {
+            if (!this.actionDict.TryGetValue(V, out var action)) {
                 action = this.errorHandler;
             }
 

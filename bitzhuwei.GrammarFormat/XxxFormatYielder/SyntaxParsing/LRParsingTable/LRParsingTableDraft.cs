@@ -36,15 +36,14 @@ namespace bitzhuwei.GrammarFormat {
 
         private Dictionary<string, List<LRParsingActionDraft>> parsingTable =
             new Dictionary<string, List<LRParsingActionDraft>>();
-        //TODO: rename "nextNode"
         /// <summary>
         /// 设置给定语法类型、单词类型所对应的分析函数
         /// </summary>
         /// <param name="stateId"></param>
-        /// <param name="nextNode"></param>
+        /// <param name="V">next node</param>
         /// <param name="parsingAction"></param>
-        public void SetAction(int stateId, string/*TreeNodeType*/ nextNode, LRParsingActionDraft parsingAction) {
-            var key = $"{stateId}{keySeparator}{nextNode}";
+        public void SetAction(int stateId, string/*V*/ V, LRParsingActionDraft parsingAction) {
+            var key = $"{stateId}{keySeparator}{V}";
 
             if (parsingTable.TryGetValue(key, out var parsingActions)) {
                 parsingActions.Add(parsingAction);
@@ -56,15 +55,14 @@ namespace bitzhuwei.GrammarFormat {
             }
         }
 
-        // rename "next"
         /// <summary>
         /// 获取处理函数
         /// </summary>
-        /// <param name="leftNode">当前结非终点类型</param>
-        /// <param name="nextNode">要处理的结点类型</param>
+        /// <param name="stateId"></param>
+        /// <param name="V">next node</param>
         /// <returns></returns>
-        public IReadOnlyList<LRParsingActionDraft> GetActions(int stateId, string/*TreeNodeType*/ nextNode) {
-            var key = $"{stateId}{keySeparator}{nextNode}";
+        public IReadOnlyList<LRParsingActionDraft> GetActions(int stateId, string/*V*/ V) {
+            var key = $"{stateId}{keySeparator}{V}";
             if (parsingTable.TryGetValue(key, out var parsingActions)) {
                 return parsingActions;
             }

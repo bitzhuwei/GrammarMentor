@@ -24,21 +24,35 @@ namespace bitzhuwei.GrammarFormat {
                 list[i] = new SyntaxState($"{nameof(CompilerGrammar)}.syntaxStates[{i}]");
             }
             // 146 actions. 2 conflicts.
-            // list[0]
+            // syntaxStates[0]:
+            // [-1] GrammarDraft> : ⏳ StatementList ;
+            // [0] StatementList : ⏳ StatementList Statement ;
+            // [1] StatementList : ⏳ Statement ;
+            // [2] Statement : ⏳ SyntaxProduction ;
+            // [3] Statement : ⏳ LexiProduction ;
+            // [4] SyntaxProduction : ⏳ 'Vn' ':' CandidateList ';' ;
+            // [13] LexiProduction : ⏳ 'Vt' ':' 'pattern' ';' ;
             list[0].actionDict.Add(EType.StatementList, new LRGotoAction(syntaxStates[1]));/*Actions[0]*/
             list[0].actionDict.Add(EType.Statement, new LRGotoAction(syntaxStates[2]));/*Actions[1]*/
             list[0].actionDict.Add(EType.SyntaxProduction, new LRGotoAction(syntaxStates[3]));/*Actions[2]*/
             list[0].actionDict.Add(EType.LexiProduction, new LRGotoAction(syntaxStates[4]));/*Actions[3]*/
             list[0].actionDict.Add(EType.@Vn, new LRShiftInAction(syntaxStates[5]));/*Actions[4]*/
             list[0].actionDict.Add(EType.@Vt, new LRShiftInAction(syntaxStates[6]));/*Actions[5]*/
-            // list[1]
+            // syntaxStates[1]:
+            // [-1] GrammarDraft> : StatementList ⏳ ;
+            // [0] StatementList : StatementList ⏳ Statement ;
+            // [2] Statement : ⏳ SyntaxProduction ;
+            // [3] Statement : ⏳ LexiProduction ;
+            // [4] SyntaxProduction : ⏳ 'Vn' ':' CandidateList ';' ;
+            // [13] LexiProduction : ⏳ 'Vt' ':' 'pattern' ';' ;
             list[1].actionDict.Add(EType.Statement, new LRGotoAction(syntaxStates[7]));/*Actions[6]*/
             list[1].actionDict.Add(EType.SyntaxProduction, new LRGotoAction(syntaxStates[3]));/*Actions[7]*/
             list[1].actionDict.Add(EType.LexiProduction, new LRGotoAction(syntaxStates[4]));/*Actions[8]*/
             list[1].actionDict.Add(EType.@Vn, new LRShiftInAction(syntaxStates[5]));/*Actions[9]*/
             list[1].actionDict.Add(EType.@Vt, new LRShiftInAction(syntaxStates[6]));/*Actions[10]*/
             list[1].actionDict.Add(EType.@EndOfTokenList, new LRAcceptAction(/*no param*/));/*Actions[11]*/
-            // list[2]
+            // syntaxStates[2]:
+            // [1] StatementList : Statement ⏳ ;
             list[2].actionDict.Add(EType.@Vn, new LRReducitonAction(regulations[1]));/*Actions[12]*/
             list[2].actionDict.Add(EType.@Colon, new LRReducitonAction(regulations[1]));/*Actions[13]*/
             list[2].actionDict.Add(EType.@Semicolon, new LRReducitonAction(regulations[1]));/*Actions[14]*/
@@ -47,7 +61,8 @@ namespace bitzhuwei.GrammarFormat {
             list[2].actionDict.Add(EType.@Vt, new LRReducitonAction(regulations[1]));/*Actions[17]*/
             list[2].actionDict.Add(EType.@pattern, new LRReducitonAction(regulations[1]));/*Actions[18]*/
             list[2].actionDict.Add(EType.@EndOfTokenList, new LRReducitonAction(regulations[1]));/*Actions[19]*/
-            // list[3]
+            // syntaxStates[3]:
+            // [2] Statement : SyntaxProduction ⏳ ;
             list[3].actionDict.Add(EType.@Vn, new LRReducitonAction(regulations[2]));/*Actions[20]*/
             list[3].actionDict.Add(EType.@Colon, new LRReducitonAction(regulations[2]));/*Actions[21]*/
             list[3].actionDict.Add(EType.@Semicolon, new LRReducitonAction(regulations[2]));/*Actions[22]*/
@@ -56,7 +71,8 @@ namespace bitzhuwei.GrammarFormat {
             list[3].actionDict.Add(EType.@Vt, new LRReducitonAction(regulations[2]));/*Actions[25]*/
             list[3].actionDict.Add(EType.@pattern, new LRReducitonAction(regulations[2]));/*Actions[26]*/
             list[3].actionDict.Add(EType.@EndOfTokenList, new LRReducitonAction(regulations[2]));/*Actions[27]*/
-            // list[4]
+            // syntaxStates[4]:
+            // [3] Statement : LexiProduction ⏳ ;
             list[4].actionDict.Add(EType.@Vn, new LRReducitonAction(regulations[3]));/*Actions[28]*/
             list[4].actionDict.Add(EType.@Colon, new LRReducitonAction(regulations[3]));/*Actions[29]*/
             list[4].actionDict.Add(EType.@Semicolon, new LRReducitonAction(regulations[3]));/*Actions[30]*/
@@ -65,11 +81,14 @@ namespace bitzhuwei.GrammarFormat {
             list[4].actionDict.Add(EType.@Vt, new LRReducitonAction(regulations[3]));/*Actions[33]*/
             list[4].actionDict.Add(EType.@pattern, new LRReducitonAction(regulations[3]));/*Actions[34]*/
             list[4].actionDict.Add(EType.@EndOfTokenList, new LRReducitonAction(regulations[3]));/*Actions[35]*/
-            // list[5]
+            // syntaxStates[5]:
+            // [4] SyntaxProduction : 'Vn' ⏳ ':' CandidateList ';' ;
             list[5].actionDict.Add(EType.@Colon, new LRShiftInAction(syntaxStates[8]));/*Actions[36]*/
-            // list[6]
+            // syntaxStates[6]:
+            // [13] LexiProduction : 'Vt' ⏳ ':' 'pattern' ';' ;
             list[6].actionDict.Add(EType.@Colon, new LRShiftInAction(syntaxStates[9]));/*Actions[37]*/
-            // list[7]
+            // syntaxStates[7]:
+            // [0] StatementList : StatementList Statement ⏳ ;
             list[7].actionDict.Add(EType.@Vn, new LRReducitonAction(regulations[0]));/*Actions[38]*/
             list[7].actionDict.Add(EType.@Colon, new LRReducitonAction(regulations[0]));/*Actions[39]*/
             list[7].actionDict.Add(EType.@Semicolon, new LRReducitonAction(regulations[0]));/*Actions[40]*/
@@ -78,7 +97,16 @@ namespace bitzhuwei.GrammarFormat {
             list[7].actionDict.Add(EType.@Vt, new LRReducitonAction(regulations[0]));/*Actions[43]*/
             list[7].actionDict.Add(EType.@pattern, new LRReducitonAction(regulations[0]));/*Actions[44]*/
             list[7].actionDict.Add(EType.@EndOfTokenList, new LRReducitonAction(regulations[0]));/*Actions[45]*/
-            // list[8]
+            // syntaxStates[8]:
+            // [4] SyntaxProduction : 'Vn' ':' ⏳ CandidateList ';' ;
+            // [5] CandidateList : ⏳ CandidateList '|' Candidate ;
+            // [6] CandidateList : ⏳ Candidate ;
+            // [7] Candidate : ⏳ VList ;
+            // [8] Candidate : ⏳ 'empty' ;
+            // [9] VList : ⏳ VList V ;
+            // [10] VList : ⏳ V ;
+            // [11] V : ⏳ 'Vn' ;
+            // [12] V : ⏳ 'Vt' ;
             list[8].actionDict.Add(EType.CandidateList, new LRGotoAction(syntaxStates[10]));/*Actions[46]*/
             list[8].actionDict.Add(EType.Candidate, new LRGotoAction(syntaxStates[11]));/*Actions[47]*/
             list[8].actionDict.Add(EType.VList, new LRGotoAction(syntaxStates[12]));/*Actions[48]*/
@@ -86,12 +114,16 @@ namespace bitzhuwei.GrammarFormat {
             list[8].actionDict.Add(EType.V, new LRGotoAction(syntaxStates[14]));/*Actions[50]*/
             list[8].actionDict.Add(EType.@Vn, new LRShiftInAction(syntaxStates[15]));/*Actions[51]*/
             list[8].actionDict.Add(EType.@Vt, new LRShiftInAction(syntaxStates[16]));/*Actions[52]*/
-            // list[9]
+            // syntaxStates[9]:
+            // [13] LexiProduction : 'Vt' ':' ⏳ 'pattern' ';' ;
             list[9].actionDict.Add(EType.@pattern, new LRShiftInAction(syntaxStates[17]));/*Actions[53]*/
-            // list[10]
+            // syntaxStates[10]:
+            // [4] SyntaxProduction : 'Vn' ':' CandidateList ⏳ ';' ;
+            // [5] CandidateList : CandidateList ⏳ '|' Candidate ;
             list[10].actionDict.Add(EType.@Semicolon, new LRShiftInAction(syntaxStates[18]));/*Actions[54]*/
             list[10].actionDict.Add(EType.@Pipe, new LRShiftInAction(syntaxStates[19]));/*Actions[55]*/
-            // list[11]
+            // syntaxStates[11]:
+            // [6] CandidateList : Candidate ⏳ ;
             list[11].actionDict.Add(EType.@Vn, new LRReducitonAction(regulations[6]));/*Actions[56]*/
             list[11].actionDict.Add(EType.@Colon, new LRReducitonAction(regulations[6]));/*Actions[57]*/
             list[11].actionDict.Add(EType.@Semicolon, new LRReducitonAction(regulations[6]));/*Actions[58]*/
@@ -100,7 +132,11 @@ namespace bitzhuwei.GrammarFormat {
             list[11].actionDict.Add(EType.@Vt, new LRReducitonAction(regulations[6]));/*Actions[61]*/
             list[11].actionDict.Add(EType.@pattern, new LRReducitonAction(regulations[6]));/*Actions[62]*/
             list[11].actionDict.Add(EType.@EndOfTokenList, new LRReducitonAction(regulations[6]));/*Actions[63]*/
-            // list[12]
+            // syntaxStates[12]:
+            // [7] Candidate : VList ⏳ ;
+            // [9] VList : VList ⏳ V ;
+            // [11] V : ⏳ 'Vn' ;
+            // [12] V : ⏳ 'Vt' ;
             //@Vn repeated 2 times
             //@Vt repeated 2 times
             list[12].actionDict.Add(EType.V, new LRGotoAction(syntaxStates[20]));/*Actions[64]*/
@@ -114,7 +150,8 @@ namespace bitzhuwei.GrammarFormat {
             list[12].actionDict.Add(EType.@empty, new LRReducitonAction(regulations[7]));/*Actions[72]*/
             list[12].actionDict.Add(EType.@pattern, new LRReducitonAction(regulations[7]));/*Actions[73]*/
             list[12].actionDict.Add(EType.@EndOfTokenList, new LRReducitonAction(regulations[7]));/*Actions[74]*/
-            // list[13]
+            // syntaxStates[13]:
+            // [8] Candidate : 'empty' ⏳ ;
             list[13].actionDict.Add(EType.@Vn, new LRReducitonAction(regulations[8]));/*Actions[75]*/
             list[13].actionDict.Add(EType.@Colon, new LRReducitonAction(regulations[8]));/*Actions[76]*/
             list[13].actionDict.Add(EType.@Semicolon, new LRReducitonAction(regulations[8]));/*Actions[77]*/
@@ -123,7 +160,8 @@ namespace bitzhuwei.GrammarFormat {
             list[13].actionDict.Add(EType.@Vt, new LRReducitonAction(regulations[8]));/*Actions[80]*/
             list[13].actionDict.Add(EType.@pattern, new LRReducitonAction(regulations[8]));/*Actions[81]*/
             list[13].actionDict.Add(EType.@EndOfTokenList, new LRReducitonAction(regulations[8]));/*Actions[82]*/
-            // list[14]
+            // syntaxStates[14]:
+            // [10] VList : V ⏳ ;
             list[14].actionDict.Add(EType.@Vn, new LRReducitonAction(regulations[10]));/*Actions[83]*/
             list[14].actionDict.Add(EType.@Colon, new LRReducitonAction(regulations[10]));/*Actions[84]*/
             list[14].actionDict.Add(EType.@Semicolon, new LRReducitonAction(regulations[10]));/*Actions[85]*/
@@ -132,7 +170,8 @@ namespace bitzhuwei.GrammarFormat {
             list[14].actionDict.Add(EType.@Vt, new LRReducitonAction(regulations[10]));/*Actions[88]*/
             list[14].actionDict.Add(EType.@pattern, new LRReducitonAction(regulations[10]));/*Actions[89]*/
             list[14].actionDict.Add(EType.@EndOfTokenList, new LRReducitonAction(regulations[10]));/*Actions[90]*/
-            // list[15]
+            // syntaxStates[15]:
+            // [11] V : 'Vn' ⏳ ;
             list[15].actionDict.Add(EType.@Vn, new LRReducitonAction(regulations[11]));/*Actions[91]*/
             list[15].actionDict.Add(EType.@Colon, new LRReducitonAction(regulations[11]));/*Actions[92]*/
             list[15].actionDict.Add(EType.@Semicolon, new LRReducitonAction(regulations[11]));/*Actions[93]*/
@@ -141,7 +180,8 @@ namespace bitzhuwei.GrammarFormat {
             list[15].actionDict.Add(EType.@Vt, new LRReducitonAction(regulations[11]));/*Actions[96]*/
             list[15].actionDict.Add(EType.@pattern, new LRReducitonAction(regulations[11]));/*Actions[97]*/
             list[15].actionDict.Add(EType.@EndOfTokenList, new LRReducitonAction(regulations[11]));/*Actions[98]*/
-            // list[16]
+            // syntaxStates[16]:
+            // [12] V : 'Vt' ⏳ ;
             list[16].actionDict.Add(EType.@Vn, new LRReducitonAction(regulations[12]));/*Actions[99]*/
             list[16].actionDict.Add(EType.@Colon, new LRReducitonAction(regulations[12]));/*Actions[100]*/
             list[16].actionDict.Add(EType.@Semicolon, new LRReducitonAction(regulations[12]));/*Actions[101]*/
@@ -150,9 +190,11 @@ namespace bitzhuwei.GrammarFormat {
             list[16].actionDict.Add(EType.@Vt, new LRReducitonAction(regulations[12]));/*Actions[104]*/
             list[16].actionDict.Add(EType.@pattern, new LRReducitonAction(regulations[12]));/*Actions[105]*/
             list[16].actionDict.Add(EType.@EndOfTokenList, new LRReducitonAction(regulations[12]));/*Actions[106]*/
-            // list[17]
+            // syntaxStates[17]:
+            // [13] LexiProduction : 'Vt' ':' 'pattern' ⏳ ';' ;
             list[17].actionDict.Add(EType.@Semicolon, new LRShiftInAction(syntaxStates[21]));/*Actions[107]*/
-            // list[18]
+            // syntaxStates[18]:
+            // [4] SyntaxProduction : 'Vn' ':' CandidateList ';' ⏳ ;
             list[18].actionDict.Add(EType.@Vn, new LRReducitonAction(regulations[4]));/*Actions[108]*/
             list[18].actionDict.Add(EType.@Colon, new LRReducitonAction(regulations[4]));/*Actions[109]*/
             list[18].actionDict.Add(EType.@Semicolon, new LRReducitonAction(regulations[4]));/*Actions[110]*/
@@ -161,14 +203,22 @@ namespace bitzhuwei.GrammarFormat {
             list[18].actionDict.Add(EType.@Vt, new LRReducitonAction(regulations[4]));/*Actions[113]*/
             list[18].actionDict.Add(EType.@pattern, new LRReducitonAction(regulations[4]));/*Actions[114]*/
             list[18].actionDict.Add(EType.@EndOfTokenList, new LRReducitonAction(regulations[4]));/*Actions[115]*/
-            // list[19]
+            // syntaxStates[19]:
+            // [5] CandidateList : CandidateList '|' ⏳ Candidate ;
+            // [7] Candidate : ⏳ VList ;
+            // [8] Candidate : ⏳ 'empty' ;
+            // [9] VList : ⏳ VList V ;
+            // [10] VList : ⏳ V ;
+            // [11] V : ⏳ 'Vn' ;
+            // [12] V : ⏳ 'Vt' ;
             list[19].actionDict.Add(EType.Candidate, new LRGotoAction(syntaxStates[22]));/*Actions[116]*/
             list[19].actionDict.Add(EType.VList, new LRGotoAction(syntaxStates[12]));/*Actions[117]*/
             list[19].actionDict.Add(EType.@empty, new LRShiftInAction(syntaxStates[13]));/*Actions[118]*/
             list[19].actionDict.Add(EType.V, new LRGotoAction(syntaxStates[14]));/*Actions[119]*/
             list[19].actionDict.Add(EType.@Vn, new LRShiftInAction(syntaxStates[15]));/*Actions[120]*/
             list[19].actionDict.Add(EType.@Vt, new LRShiftInAction(syntaxStates[16]));/*Actions[121]*/
-            // list[20]
+            // syntaxStates[20]:
+            // [9] VList : VList V ⏳ ;
             list[20].actionDict.Add(EType.@Vn, new LRReducitonAction(regulations[9]));/*Actions[122]*/
             list[20].actionDict.Add(EType.@Colon, new LRReducitonAction(regulations[9]));/*Actions[123]*/
             list[20].actionDict.Add(EType.@Semicolon, new LRReducitonAction(regulations[9]));/*Actions[124]*/
@@ -177,7 +227,8 @@ namespace bitzhuwei.GrammarFormat {
             list[20].actionDict.Add(EType.@Vt, new LRReducitonAction(regulations[9]));/*Actions[127]*/
             list[20].actionDict.Add(EType.@pattern, new LRReducitonAction(regulations[9]));/*Actions[128]*/
             list[20].actionDict.Add(EType.@EndOfTokenList, new LRReducitonAction(regulations[9]));/*Actions[129]*/
-            // list[21]
+            // syntaxStates[21]:
+            // [13] LexiProduction : 'Vt' ':' 'pattern' ';' ⏳ ;
             list[21].actionDict.Add(EType.@Vn, new LRReducitonAction(regulations[13]));/*Actions[130]*/
             list[21].actionDict.Add(EType.@Colon, new LRReducitonAction(regulations[13]));/*Actions[131]*/
             list[21].actionDict.Add(EType.@Semicolon, new LRReducitonAction(regulations[13]));/*Actions[132]*/
@@ -186,7 +237,8 @@ namespace bitzhuwei.GrammarFormat {
             list[21].actionDict.Add(EType.@Vt, new LRReducitonAction(regulations[13]));/*Actions[135]*/
             list[21].actionDict.Add(EType.@pattern, new LRReducitonAction(regulations[13]));/*Actions[136]*/
             list[21].actionDict.Add(EType.@EndOfTokenList, new LRReducitonAction(regulations[13]));/*Actions[137]*/
-            // list[22]
+            // syntaxStates[22]:
+            // [5] CandidateList : CandidateList '|' Candidate ⏳ ;
             list[22].actionDict.Add(EType.@Vn, new LRReducitonAction(regulations[5]));/*Actions[138]*/
             list[22].actionDict.Add(EType.@Colon, new LRReducitonAction(regulations[5]));/*Actions[139]*/
             list[22].actionDict.Add(EType.@Semicolon, new LRReducitonAction(regulations[5]));/*Actions[140]*/

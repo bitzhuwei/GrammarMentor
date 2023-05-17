@@ -24,48 +24,70 @@ namespace bitzhuwei.SESFormat {
                 list[i] = new SyntaxState($"{nameof(CompilerSES)}.syntaxStates[{i}]");
             }
             // 32 actions. 0 conflicts.
-            // list[0]
+            // syntaxStates[0]:
+            // [-1] SES2> : ⏳ S ;
+            // [0] S : ⏳ N V N ;
+            // [1] N : ⏳ 's' ;
+            // [2] N : ⏳ 't' ;
+            // [3] N : ⏳ 'g' ;
+            // [4] N : ⏳ 'w' ;
             list[0].actionDict.Add(EType.S, new LRGotoAction(syntaxStates[1]));/*Actions[0]*/
             list[0].actionDict.Add(EType.N, new LRGotoAction(syntaxStates[2]));/*Actions[1]*/
             list[0].actionDict.Add(EType.@s, new LRShiftInAction(syntaxStates[3]));/*Actions[2]*/
             list[0].actionDict.Add(EType.@t, new LRShiftInAction(syntaxStates[4]));/*Actions[3]*/
             list[0].actionDict.Add(EType.@g, new LRShiftInAction(syntaxStates[5]));/*Actions[4]*/
             list[0].actionDict.Add(EType.@w, new LRShiftInAction(syntaxStates[6]));/*Actions[5]*/
-            // list[1]
+            // syntaxStates[1]:
+            // [-1] SES2> : S ⏳ ;
             list[1].actionDict.Add(EType.@EndOfTokenList, new LRAcceptAction(/*no param*/));/*Actions[6]*/
-            // list[2]
+            // syntaxStates[2]:
+            // [0] S : N ⏳ V N ;
+            // [5] V : ⏳ 'e' ;
+            // [6] V : ⏳ 'd' ;
             list[2].actionDict.Add(EType.V, new LRGotoAction(syntaxStates[7]));/*Actions[7]*/
             list[2].actionDict.Add(EType.@e, new LRShiftInAction(syntaxStates[8]));/*Actions[8]*/
             list[2].actionDict.Add(EType.@d, new LRShiftInAction(syntaxStates[9]));/*Actions[9]*/
-            // list[3]
+            // syntaxStates[3]:
+            // [1] N : 's' ⏳ ;
             list[3].actionDict.Add(EType.@e, new LRReducitonAction(regulations[1]));/*Actions[10]*/
             list[3].actionDict.Add(EType.@d, new LRReducitonAction(regulations[1]));/*Actions[11]*/
-            // list[4]
+            // syntaxStates[4]:
+            // [2] N : 't' ⏳ ;
             list[4].actionDict.Add(EType.@e, new LRReducitonAction(regulations[2]));/*Actions[12]*/
             list[4].actionDict.Add(EType.@d, new LRReducitonAction(regulations[2]));/*Actions[13]*/
-            // list[5]
+            // syntaxStates[5]:
+            // [3] N : 'g' ⏳ ;
             list[5].actionDict.Add(EType.@e, new LRReducitonAction(regulations[3]));/*Actions[14]*/
             list[5].actionDict.Add(EType.@d, new LRReducitonAction(regulations[3]));/*Actions[15]*/
-            // list[6]
+            // syntaxStates[6]:
+            // [4] N : 'w' ⏳ ;
             list[6].actionDict.Add(EType.@e, new LRReducitonAction(regulations[4]));/*Actions[16]*/
             list[6].actionDict.Add(EType.@d, new LRReducitonAction(regulations[4]));/*Actions[17]*/
-            // list[7]
+            // syntaxStates[7]:
+            // [0] S : N V ⏳ N ;
+            // [1] N : ⏳ 's' ;
+            // [2] N : ⏳ 't' ;
+            // [3] N : ⏳ 'g' ;
+            // [4] N : ⏳ 'w' ;
             list[7].actionDict.Add(EType.N, new LRGotoAction(syntaxStates[10]));/*Actions[18]*/
             list[7].actionDict.Add(EType.@s, new LRShiftInAction(syntaxStates[3]));/*Actions[19]*/
             list[7].actionDict.Add(EType.@t, new LRShiftInAction(syntaxStates[4]));/*Actions[20]*/
             list[7].actionDict.Add(EType.@g, new LRShiftInAction(syntaxStates[5]));/*Actions[21]*/
             list[7].actionDict.Add(EType.@w, new LRShiftInAction(syntaxStates[6]));/*Actions[22]*/
-            // list[8]
+            // syntaxStates[8]:
+            // [5] V : 'e' ⏳ ;
             list[8].actionDict.Add(EType.@s, new LRReducitonAction(regulations[5]));/*Actions[23]*/
             list[8].actionDict.Add(EType.@t, new LRReducitonAction(regulations[5]));/*Actions[24]*/
             list[8].actionDict.Add(EType.@g, new LRReducitonAction(regulations[5]));/*Actions[25]*/
             list[8].actionDict.Add(EType.@w, new LRReducitonAction(regulations[5]));/*Actions[26]*/
-            // list[9]
+            // syntaxStates[9]:
+            // [6] V : 'd' ⏳ ;
             list[9].actionDict.Add(EType.@s, new LRReducitonAction(regulations[6]));/*Actions[27]*/
             list[9].actionDict.Add(EType.@t, new LRReducitonAction(regulations[6]));/*Actions[28]*/
             list[9].actionDict.Add(EType.@g, new LRReducitonAction(regulations[6]));/*Actions[29]*/
             list[9].actionDict.Add(EType.@w, new LRReducitonAction(regulations[6]));/*Actions[30]*/
-            // list[10]
+            // syntaxStates[10]:
+            // [0] S : N V N ⏳ ;
             list[10].actionDict.Add(EType.@EndOfTokenList, new LRReducitonAction(regulations[0]));/*Actions[31]*/
 
         }

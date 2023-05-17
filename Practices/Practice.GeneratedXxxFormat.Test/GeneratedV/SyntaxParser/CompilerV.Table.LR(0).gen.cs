@@ -24,12 +24,16 @@ namespace bitzhuwei.VFormat {
                 list[i] = new SyntaxState($"{nameof(CompilerV)}.syntaxStates[{i}]");
             }
             // 5 actions. 0 conflicts.
-            // list[0]
+            // syntaxStates[0]:
+            // [-1] V2> : ⏳ V ;
+            // [0] V : ⏳ 'Vt' ;
             list[0].actionDict.Add(EType.V, new LRGotoAction(syntaxStates[1]));/*Actions[0]*/
             list[0].actionDict.Add(EType.@Vt, new LRShiftInAction(syntaxStates[2]));/*Actions[1]*/
-            // list[1]
+            // syntaxStates[1]:
+            // [-1] V2> : V ⏳ ;
             list[1].actionDict.Add(EType.@EndOfTokenList, new LRAcceptAction(/*no param*/));/*Actions[2]*/
-            // list[2]
+            // syntaxStates[2]:
+            // [0] V : 'Vt' ⏳ ;
             list[2].actionDict.Add(EType.@Vt, new LRReducitonAction(regulations[0]));/*Actions[3]*/
             list[2].actionDict.Add(EType.@EndOfTokenList, new LRReducitonAction(regulations[0]));/*Actions[4]*/
 

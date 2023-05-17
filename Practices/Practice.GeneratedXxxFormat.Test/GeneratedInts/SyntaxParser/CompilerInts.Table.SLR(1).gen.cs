@@ -24,20 +24,30 @@ namespace bitzhuwei.IntsFormat {
                 list[i] = new SyntaxState($"{nameof(CompilerInts)}.syntaxStates[{i}]");
             }
             // 11 actions. 0 conflicts.
-            // list[0]
+            // syntaxStates[0]:
+            // [-1] IntArray> : ⏳ Ints ;
+            // [0] Ints : ⏳ Ints Int ;
+            // [1] Ints : ⏳ Int ;
+            // [2] Int : ⏳ 'integer' ;
             list[0].actionDict.Add(EType.Ints, new LRGotoAction(syntaxStates[1]));/*Actions[0]*/
             list[0].actionDict.Add(EType.Int, new LRGotoAction(syntaxStates[2]));/*Actions[1]*/
             list[0].actionDict.Add(EType.@integer, new LRShiftInAction(syntaxStates[3]));/*Actions[2]*/
-            // list[1]
+            // syntaxStates[1]:
+            // [-1] IntArray> : Ints ⏳ ;
+            // [0] Ints : Ints ⏳ Int ;
+            // [2] Int : ⏳ 'integer' ;
             list[1].actionDict.Add(EType.Int, new LRGotoAction(syntaxStates[4]));/*Actions[3]*/
             list[1].actionDict.Add(EType.@integer, new LRShiftInAction(syntaxStates[3]));/*Actions[4]*/
             list[1].actionDict.Add(EType.@EndOfTokenList, new LRAcceptAction(/*no param*/));/*Actions[5]*/
-            // list[2]
+            // syntaxStates[2]:
+            // [1] Ints : Int ⏳ ;
             list[2].actionDict.Add(EType.@integer, new LRReducitonAction(regulations[1]));/*Actions[6]*/
             list[2].actionDict.Add(EType.@EndOfTokenList, new LRReducitonAction(regulations[1]));/*Actions[7]*/
-            // list[3]
+            // syntaxStates[3]:
+            // [2] Int : 'integer' ⏳ ;
             list[3].actionDict.Add(EType.@integer, new LRReducitonAction(regulations[2]));/*Actions[8]*/
-            // list[4]
+            // syntaxStates[4]:
+            // [0] Ints : Ints Int ⏳ ;
             list[4].actionDict.Add(EType.@integer, new LRReducitonAction(regulations[0]));/*Actions[9]*/
             list[4].actionDict.Add(EType.@EndOfTokenList, new LRReducitonAction(regulations[0]));/*Actions[10]*/
 

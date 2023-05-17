@@ -92,7 +92,6 @@ namespace bitzhuwei.GrammarFormat {
             }
             {
                 var list = new List<string/*Node.type*/>();
-                //TODO: dot position + 1 or not + 1 ?
                 for (int i = dotPosition + 1; i < count; i++) {
                     list.Add(right[i]);
                 }
@@ -112,7 +111,9 @@ namespace bitzhuwei.GrammarFormat {
         /// </summary>
         public readonly IReadOnlyList<string/*Node.type*/> betaZ;
 
-        public void Print(System.IO.TextWriter w) {
+        public void Print(System.IO.TextWriter w, VnRegulationDraft[] regulations = null) {
+            if (regulations != null) { w.Write($"[{Array.IndexOf(regulations, this.VnRegulation)}] "); }
+
             w.Write(this.VnRegulation.left); w.Write(" : ");
 
             var right = this.VnRegulation.Right; var count = right.Count;
@@ -140,6 +141,7 @@ namespace bitzhuwei.GrammarFormat {
 
         public void ToMermaid(TextWriter w, VnRegulationDraft[] regulations) {
             if (regulations != null) { w.Write($"[{Array.IndexOf(regulations, this.VnRegulation)}] "); }
+
             w.Write(this.VnRegulation.left); w.Write(" : ");
 
             var right = this.VnRegulation.Right; var count = right.Count;
